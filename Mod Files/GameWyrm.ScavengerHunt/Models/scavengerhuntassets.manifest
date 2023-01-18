@@ -1,0 +1,62 @@
+ManifestFileVersion: 0
+CRC: 139816217
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 37d462c73453bfc1ebd5e22bbcf017ef
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ce2990554d8fefba8eeeb5268dad7fb3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Nomai Keys/Prefabs/Orb Lock.prefab
+- Assets/Nomai Keys/Prefabs/NK P9.prefab
+- Assets/Nomai Keys/Prefabs/NK P6.prefab
+- Assets/Nomai Keys/Materials/Uncollected.mat
+- Assets/Nomai Keys/Prefabs/NK12.prefab
+- Assets/Nomai Keys/Prefabs/NK P10.prefab
+- Assets/Nomai Keys/Prefabs/NK10.prefab
+- Assets/Nomai Keys/Prefabs/NK3.prefab
+- Assets/Nomai Keys/Prefabs/NK P1.prefab
+- Assets/Nomai Keys/Prefabs/NK4.prefab
+- Assets/Nomai Keys/Materials/Collected.mat
+- Assets/Nomai Keys/Prefabs/NK9.prefab
+- Assets/Nomai Keys/Prefabs/NK P11.prefab
+- Assets/Nomai Keys/Prefabs/Nomai Key Whole.prefab
+- Assets/Nomai Keys/Prefabs/NK8.prefab
+- Assets/Nomai Keys/Prefabs/NK P3.prefab
+- Assets/Nomai Keys/Prefabs/NK1.prefab
+- Assets/Nomai Keys/Prefabs/NK P7.prefab
+- Assets/Nomai Keys/Prefabs/NK11.prefab
+- Assets/Nomai Keys/Prefabs/NK P8.prefab
+- Assets/Nomai Keys/Prefabs/NK7.prefab
+- Assets/Nomai Keys/Prefabs/NK2.prefab
+- Assets/Nomai Keys/Prefabs/NK P5.prefab
+- Assets/Nomai Keys/Prefabs/NK5.prefab
+- Assets/Nomai Keys/Prefabs/NK P2.prefab
+- Assets/Nomai Keys/Prefabs/NK P4.prefab
+- Assets/Nomai Keys/Prefabs/NK P12.prefab
+- Assets/Nomai Keys/Prefabs/NK6.prefab
+Dependencies: []

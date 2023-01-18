@@ -1,0 +1,37 @@
+This was originally going to be the background story on the GitHub readme, but, it ended up being terrible. If you really want to see my attempt to make this mod lore-friendly, well, enjoy.
+
+*Your translator tool emits a satisfactory whirl as you  lift it up to the Nomai text.*
+
+CLARY: A concern has been rising among certain members of the team that the Ash Twin Project is lacking in security. While transport between the Project and other towers is regulated, there is fear that those who protest our goals may attempt to sabatoge the Project.
+
+CLARY: *(sigh)*
+
+CLARY: *While I can't say I blame them,* the construction of the Ash Twin Project and the Sun Station is of utmost importance to our clan. As such, I've taken some measures to protect access to the most important aspect of the Project. The Advanced Warp Core's housing is controlled by an interface that will now lock itself if needed.
+
+CLARY: Should this lockdown be triggered, either manually or by a detected disaster, a series of keys will be warped to various members of the Ash Twin Project team. All 12 of these keys are needed to deauthorize lockdown.
+
+  POKE: A "detected disaster?" What are you anticipating?
+  
+  CLARY: I don't actually anticipate any major conflict, but I've set up the Project to be able to tell if any unauthorized modifications are made while none of us are in here, or if the Project detects suspicious changes in our vitals.
+  
+  PYE: I certainly hope no such disasters occur! But, perhaps it is prudent to provide a backup plan.
+  
+PYE: Why 12 keys, might I ask?
+
+CLARY: Ah, I admit the number is somewhat arbitrary. The inspiration for this came from an old tale about a heroine who had to gather 12 keys.
+
+POKE: Well, we wouldn't have to search for the keys, would we?
+
+CLARY: We shouln't need to, but, assuming a worst-case scenario, in the case the Project is unable to distribute keys to any of us, the keys will be placed in random locations in our solar system.
+
+PYE: ...Why?
+
+POKE: Well, to cause such an event, it would either be due to an uprising, or a hostile alien invasion. In case of an uprising, it's unlikely any rebels would be skilled enough pilots to visit every location that a key resides. In case of invasion, the locations of the keys are relayed by the locking mechanicsm, so to find them, you would need to be able to read Nomai.
+
+PYE: ...
+
+CLARY: You have quite the imagination. But, I suppose that is a potential scenario for this to system to be helpful.
+
+PYE: So then, what is the real reason?
+
+CLARY: Oh, what's this? A comet has arrived in our system? Let's forget about this conversation and check it out!
