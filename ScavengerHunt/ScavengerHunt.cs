@@ -3,16 +3,45 @@ using OWML.ModHelper;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace ScavengerHunt
 {
     public class ScavengerHunt : ModBehaviour
     {
+        public static ScavengerHunt Main
+        {
+            get 
+            {
+                GameObject instance = GameObject.Find("GameWyrm.ScavengerHunt");
+                return instance.GetComponent<ScavengerHunt>(); 
+            }
+        }
+
+        public static List<string> KeyNames = new List<string>
+        {
+            "TRUTH",
+            "CURIOSITY",
+            "ELDER",
+            "WILD",
+            "LIFEGIVER",
+            "EXPLORER",
+            "NOMAI",
+            "NATURE",
+            "SUN",
+            "WORLD",
+            "SPIRIT",
+            "NEWBORN"
+        };
+
+        public int keysFound;
         public AssetBundle assets;
+        public LockManager lockManager;
 
         GameObject orb;
         List<GameObject> positionalIndicators;
         NomaiInterfaceOrb orbInterface;
+        ItemManager itemManager;
         bool searching;
         bool inGame;
         int indicatorIndex = 0;
@@ -24,7 +53,8 @@ namespace ScavengerHunt
             // You won't be able to access OWML's mod helper in Awake.
             // So you probably don't want to do anything here.
             // Use Start() instead.
-            positionalIndicators = new List<GameObject>();
+            positionalIndicators = new List<GameObject>(5);
+            itemManager = new ItemManager();
         }
 
         private void Start()
@@ -90,7 +120,7 @@ namespace ScavengerHunt
                 }
             }
 
-            if (Keyboard.current[Key.J].wasPressedThisFrame)
+            if (Keyboard.current[Key.J].wasPressedThisFrame || Gamepad.current[GamepadButton.DpadRight].wasPressedThisFrame)
             {
                 GrabObjectPosition();
             }
@@ -100,7 +130,7 @@ namespace ScavengerHunt
         {
             Transform player = Locator.GetPlayerCamera().transform;
             Transform playerBody = Locator.GetPlayerBody().transform;
-            LayerMask mask = LayerMask.GetMask("Default", "IgnoreSun");
+            LayerMask mask = LayerMask.GetMask("Default", "IgnoreSun", "IgnoreOrbRaycast");
             Physics.Raycast(player.position, player.TransformDirection(Vector3.forward), out RaycastHit hit, 1000f, mask); //Ignore layer 8!
             Collider collider = hit.collider;
             Vector3 relativePos = collider.transform.InverseTransformPoint(player.position);
@@ -113,7 +143,7 @@ namespace ScavengerHunt
                 go = go.transform.parent.gameObject;
             }
             
-            if (positionalIndicators.Count < 5)
+            if (positionalIndicators[indicatorIndex] == null)
             {
                 GameObject indicator;
                 indicator = GameObject.CreatePrimitive(PrimitiveType.Capsule);
@@ -143,8 +173,25 @@ namespace ScavengerHunt
             mask.transform.parent = atp.transform.Find("Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0");
             mask.transform.localPosition = new Vector3(-23.4f, 11.4f, 0f);
             mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
-            LockManager lm = mask.AddComponent<LockManager>();
-            lm.main = this;
+            lockManager = mask.AddComponent<LockManager>();
+            lockManager.main = this;
+
+
+            /*GameObject keyParent = new GameObject();
+            keyParent.transform.parent = GameObject.Find("TimberHearth_Body").transform.Find("Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_5");
+            keyParent.transform.localPosition = new Vector3(52.2f, 5.7f, -12.3f);
+            keyParent.transform.localEulerAngles = new Vector3(348.5f, 238.3f, 11.6f);
+            GameObject key = Instantiate(assets.LoadAsset<GameObject>("NK1"), keyParent.transform);
+            ModHelper.Console.WriteLine("Created key at position " + keyParent.transform.localPosition, MessageType.Info);
+            KeyCollectable kc = key.AddComponent<KeyCollectable>();
+            kc.itemName = "KEY OF " + KeyNames[0];
+            kc.lockManager = lockManager;
+            kc.keyID = 0;*/
+
+            for (int i = 0; i < 12; i++)
+            {
+                itemManager.CreateKey(i);
+            }
         }
     }
 }

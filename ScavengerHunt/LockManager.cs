@@ -37,5 +37,12 @@ namespace ScavengerHunt
                 go.GetComponent<MeshRenderer>().material = uncollectedMat;
             }
         }
+
+        public void CollectKey(int keyID)
+        {
+            keys[keyID].GetComponent<MeshRenderer>().material = collectedMat;
+
+            //implement key collection for unlocking ATP
+        }
     }
 }

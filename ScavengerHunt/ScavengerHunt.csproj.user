@@ -2,4 +2,9 @@
   <PropertyGroup>
     <OutputPath>$(AppData)\OuterWildsModManager\OWML\Mods\GameWyrm.ScavengerHunt</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="KeyCollectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
