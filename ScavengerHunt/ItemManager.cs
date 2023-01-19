@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace ScavengerHunt
 {
+    /// <summary>
+    /// Class that spawns keys
+    /// </summary>
     public class ItemManager
     {
         public List<string> bodies = new List<string>();
@@ -84,8 +87,14 @@ namespace ScavengerHunt
 
         }
 
+        /// <summary>
+        /// Spawn key
+        /// </summary>
+        /// <param name="keyID">ID of the key. Should be unique.</param>
         public void CreateKey(int keyID)
         {
+            if (main.hasKey[keyID]) return;
+
             GameObject keyParent = new GameObject();
             keyParent.transform.parent = GameObject.Find(bodies[keyID]).transform.Find(parents[keyID]);
             keyParent.transform.localPosition = positions[keyID];
@@ -97,7 +106,7 @@ namespace ScavengerHunt
             kc.lockManager = main.lockManager;
             kc.keyID = keyID;
 
-            main.ModHelper.Console.WriteLine("Created key " + keyID);
+            main.LogMessage("Created key " + keyID);
         }
     }
 }

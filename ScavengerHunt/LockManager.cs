@@ -5,27 +5,39 @@ using UnityEngine;
 
 namespace ScavengerHunt
 {
+    /// <summary>
+    /// Class that handles the ATP orb lock and collecting keys
+    /// </summary>
     public class LockManager : MonoBehaviour
     {
-        public ScavengerHunt main;
+        /// <summary>
+        /// Obtained keys
+        /// </summary>
+        public bool[] hasKey;
+        /// <summary>
+        /// Amount of obtained keys
+        /// </summary>
+        public int keyCount;
 
+        //Singleton instance
+        ScavengerHunt main;
+        //List of key objects
         GameObject[] keys;
         Material uncollectedMat;
         Material collectedMat;
 
         private void Awake()
         {
-            transform.position = transform.position + transform.TransformDirection(Vector3.up * 0.5f);
+            main = ScavengerHunt.Main;
 
-            if (main == null)
-            {
-                Debug.Log("Main was not set!");
-                main = Resources.FindObjectsOfTypeAll<ScavengerHunt>()[0];
-            }
+            hasKey = new bool[12];
+            keyCount = main.keyCount;
+            transform.position = transform.position + transform.TransformDirection(Vector3.up * 0.5f);
 
             uncollectedMat = main.assets.LoadAsset<Material>("Uncollected");
             collectedMat = main.assets.LoadAsset<Material>("Collected");
 
+            //create keys
             keys = new GameObject[12];
 
             for (int i = 0; i < keys.Length; i++)
@@ -34,15 +46,44 @@ namespace ScavengerHunt
                 keys[i] = go;
                 go.transform.position = transform.position;
                 go.transform.rotation = transform.rotation;
-                go.GetComponent<MeshRenderer>().material = uncollectedMat;
+                if (!main.hasKey[i]) go.GetComponent<MeshRenderer>().material = uncollectedMat;
+
+                hasKey[i] = main.hasKey[i];
             }
         }
 
+        /// <summary>
+        /// Collect a key and save value to a file
+        /// </summary>
+        /// <param name="keyID">ID of the key</param>
         public void CollectKey(int keyID)
         {
+            hasKey[keyID] = true;
+            main.hasKey[keyID] = true;
             keys[keyID].GetComponent<MeshRenderer>().material = collectedMat;
 
-            //implement key collection for unlocking ATP
+            keyCount++;
+            main.keyCount++;
+
+            //Open ATP if all 12 keys are found
+            if (keyCount >= 12)
+            {
+                UnlockATP();
+            }
+
+            main.saveManager.SaveData(main.hasKey);
+        }
+
+        /// <summary>
+        /// Code for removing the lock on the ARP core
+        /// </summary>
+        public void UnlockATP()
+        {
+            NotificationData data = new NotificationData("ALL KEYS OBTAINED, ASH TWIN PROJECT UNLOCKED");
+            NotificationManager.s_instance.PostNotification(data);
+            main.orbLock.SetActive(false);
+            main.orbInterface.RemoveLock();
+            //main.orbInterface.RemoveAllLocks();
         }
     }
 }
