@@ -10,14 +10,14 @@ Scavenger Hunt adds up to 12 Nomai Keys in the Solar System, placed in random lo
 
 This mod (and readme) is still in development.
 
-##Installation
+## Installation
 There are no releases for this mod yet. However, you can currently install the mod and play through a pre-made hunt (it's made for testing, so it's not particularly difficult.) Try to find all 12 keys! Echoes of the Eye is required for the test, though it will not be required for the full release. No other mods are needed. 
 
 To install, download the repo and copy the contents of the Mod Files folder (GameWyrm.ScavengerHunt and all the files within) to your Outer Wilds Mod Manager mod folder and enable the mod within OWMM. 
 
 To uninstall, simply remove those files from your mods folder. 
 
-##Compatibility
+## Compatibility
 Scavenger Hunt is designed to be compatible with any mod, except mods that delete major objects in the base Hearthian Solar System. You should be able to use it with Randomizer and most New Horizons addons. 
 
 Quantum Space Buddies integration is planned for initial release. Key placement will be determined by the host file and keys will be shared.
