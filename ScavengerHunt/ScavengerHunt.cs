@@ -280,8 +280,9 @@ namespace ScavengerHunt
                     return;
                 }
             }
+            LogInfo("Accessing group " + groupSelector.GetInputText() + " on body " + GetBody(collider.gameObject).name);
             placer.LoadBody(GetBody(collider.gameObject).name);
-            placer.GetLocation(groupSelector.GetInputText());
+            placer.currentGroup = groupSelector.GetInputText();
         }
 
         /// <summary>
@@ -310,9 +311,10 @@ namespace ScavengerHunt
             string path = "";
             while (obj.parent != null)
             {
-                path = obj.name + path;
+                path = obj.name + "/" + path;
                 obj = obj.parent;
             }
+            path = path.TrimEnd('/');
             return path;
         }
 

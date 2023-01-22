@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using OWML.Common;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace ScavengerHunt
 {
@@ -39,11 +40,11 @@ namespace ScavengerHunt
         /// <summary>
         /// Name of the current body
         /// </summary>
-        public string currentBody;
+        public string currentBody = "";
         /// <summary>
         /// The group of spawn points currently active
         /// </summary>
-        public string currentGroup;
+        public string currentGroup = "";
         /// <summary>
         /// Currently json for editing
         /// </summary>
@@ -75,11 +76,19 @@ namespace ScavengerHunt
 
             if (Keyboard.current[Key.Numpad8].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadLeft].wasPressedThisFrame))
             {
-                if (currentGroup == "")
+                if (currentGroup == string.Empty)
                 {
                     NotificationData notif = new NotificationData("FAILURE: NO GROUP SELECTED");
                     NotificationManager.s_instance.PostNotification(notif);
                     main.LogError("No Group selected, select a group before saving data");
+                    return;
+                }
+                if (positionalIndicators.Count <= 0 || positionalIndicators[indicatorIndex] == null)
+                {
+                    NotificationData notif = new NotificationData("FAILURE: PLACE INDICATOR FIRST");
+                    NotificationManager.s_instance.PostNotification(notif);
+                    main.LogError("No Indicators placed, place one first to determine spawn point");
+                    return;
                 }
                 SaveSpawnLocation();
                 SaveBody();
@@ -91,6 +100,7 @@ namespace ScavengerHunt
             placements = main.ModHelper.Storage.Load<PlacementData>("PlacementInfo/" + bodyName + ".json");
             if (placements == null)
             {
+                main.LogInfo("Unable to find placement info for " + bodyName + ", creating new file");
                 placements = new PlacementData();
                 placements.system = SceneManager.GetActiveScene().name;
                 placements.bodyName = bodyName + " RENAME THIS IN THE JSON FILE";
@@ -107,9 +117,11 @@ namespace ScavengerHunt
         public Location GetLocation(string name)
         {
             Location location = placements.locations.SingleOrDefault(loc => loc.locationName == name);
-            if (location.locationName == "")
+            if (location.locationName == null)
             {
+                main.LogInfo("Created new location group");
                 location = new Location(name, new List<SpawnPoint>());
+                placements.locations.Add(location);
             }
             return location;
         }
@@ -124,6 +136,7 @@ namespace ScavengerHunt
             spawn.rotX = rotation.x;
             spawn.rotY = rotation.y;
             spawn.rotZ = rotation.z;
+            main.LogInfo("Attempting to create a spawnpoint");
             location.spawnPoints.Add(spawn);
         }
 
@@ -140,7 +153,7 @@ namespace ScavengerHunt
             Transform playerBody = Locator.GetPlayerBody().transform;
 
             //layers of valid collision for raycast
-            LayerMask mask = LayerMask.GetMask("Default", "IgnoreSun", "IgnoreOrbRaycast");
+            LayerMask mask = LayerMask.GetMask("Default", "IgnoreSun", "IgnoreOrbRaycast", "Primitive");
             Physics.Raycast(player.position, player.TransformDirection(Vector3.forward), out RaycastHit hit, 1000f, mask); //Ignore layer 8!
 
             Collider collider = hit.collider;
@@ -174,6 +187,7 @@ namespace ScavengerHunt
             positionalIndicators[indicatorIndex].transform.rotation = playerBody.rotation;
             positionalIndicators[indicatorIndex].transform.parent = hit.collider.transform;
             positionalIndicators[indicatorIndex].GetComponent<MeshRenderer>().material = main.uncollectedMat;
+            main.LogInfo("Normal: " + hit.normal);
 
             main.LogMessage("Collider found: " + hitname + "\nPosition: " + relativePos.ToString() + "\nRotation: " + positionalIndicators[indicatorIndex].transform.localEulerAngles);
 
@@ -189,13 +203,15 @@ namespace ScavengerHunt
         /// </summary>
         private void SaveSpawnLocation()
         {
+            LoadBody(currentBody);
+
             GameObject indicator = positionalIndicators[indicatorIndex];
             AddSpawnpoint(GetLocation(currentGroup), ScavengerHunt.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
             indicator.GetComponent<MeshRenderer>().material = main.collectedMat;
 
             NotificationData notif = new NotificationData("NEW LOCATION SAVED");
             NotificationManager.s_instance.PostNotification(notif);
-            main.LogSuccess("Saved new spawn location for " + currentBody + "." + currentGroup);
+            main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
         }
 
         private GameObject Indicator()
@@ -205,12 +221,14 @@ namespace ScavengerHunt
             indicator.GetComponent<MeshRenderer>().material = main.uncollectedMat;
             indicator.GetComponent<CapsuleCollider>().enabled = false;
             indicator.transform.localScale = Vector3.one * 0.5f;
+            indicator.AddComponent<MatchPlayerRotation>();
             return indicator;
         }
 
         /// <summary>
         /// Overall locations that items can spawn, holds multiple SpawnPoints
         /// </summary>
+        [Serializable]
         public struct Location
         {
             /// <summary>
@@ -232,6 +250,7 @@ namespace ScavengerHunt
         /// <summary>
         /// Locations that items can spawn
         /// </summary>
+        [Serializable]
         public struct SpawnPoint
         {
             /// <summary>

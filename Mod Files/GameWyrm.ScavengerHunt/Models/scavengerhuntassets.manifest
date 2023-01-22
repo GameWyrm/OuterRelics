@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3940304503
+CRC: 4116133311
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 07c085a6b62daa3185615704c970f379
+    Hash: 48401a68535e7ea852ef47d3d7ebfb67
   TypeTreeHash:
     serializedVersion: 2
     Hash: 1705ce32fe81546cc45de24fff51b27f
@@ -68,6 +68,7 @@ Assets:
 - Assets/Nomai Keys/Prefabs/NK1.prefab
 - Assets/Nomai Keys/Prefabs/NK10.prefab
 - Assets/Nomai Keys/Prefabs/NK11.prefab
+- Assets/Nomai Keys/Prefabs/Nomai Key Placement Indicator.prefab
 - Assets/Nomai Keys/Prefabs/NK P7.prefab
 - Assets/Nomai Keys/CityLights_Off_01.ogg
 - Assets/Nomai Keys/Prefabs/NK12.prefab
