@@ -53,11 +53,11 @@ namespace ScavengerHunt
         /// <summary>
         /// Total found keys
         /// </summary>
-        public int keyCount;
+        public int keyCount = 0; //TODO FIX
         /// <summary>
         /// Specific keys found
         /// </summary>
-        public bool[] hasKey;
+        public bool[] hasKey = new bool[12]; //TODO FIX
         /// <summary>
         /// Enables debug tools and placing indicators
         /// </summary>
@@ -100,7 +100,7 @@ namespace ScavengerHunt
         //Handles spawning items in the world
         ItemManager itemManager;
         //Handles placing indicators
-        PlacerAssist placer;
+        PlacerManager placer;
         Menu scavengerHuntMenu;
         PopupInputMenu groupSelector;
         //Menu Framework
@@ -117,17 +117,17 @@ namespace ScavengerHunt
             //Initialize objects independant of OWML
             positionalIndicators = new List<GameObject>();
             itemManager = new ItemManager();
-            placer = gameObject.AddComponent<PlacerAssist>();
+            placer = gameObject.AddComponent<PlacerManager>();
         }
 
         private void Start()
         {
-            saveManager = new SaveManager();
+            //saveManager = new SaveManager();
 
             //Load save data
-            hasKey = saveManager.GetKeyList();
+            /*hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
-            LogInfo("Loaded save data with " + keyCount + " total found keys.");
+            LogInfo("Loaded save data with " + keyCount + " total found keys.");*/ //Change this once spawning is finalized
 
             //Load game assets
             assets = ModHelper.Assets.LoadBundle("Models/scavengerhuntassets");
@@ -240,10 +240,7 @@ namespace ScavengerHunt
             mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
             lockManager = mask.AddComponent<LockManager>();
 
-            for (int i = 0; i < 12; i++)
-            {
-                itemManager.CreateKey(i);
-            }
+            itemManager.Randomize();
 
             //Menu stuff
 

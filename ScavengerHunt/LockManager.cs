@@ -71,7 +71,7 @@ namespace ScavengerHunt
                 UnlockATP();
             }
 
-            main.saveManager.SaveData(main.hasKey);
+            //main.saveManager.SaveData(main.hasKey); //TODO fix
         }
 
         /// <summary>
@@ -83,7 +83,6 @@ namespace ScavengerHunt
             NotificationManager.s_instance.PostNotification(data);
             main.orbLock.SetActive(false);
             main.orbInterface.RemoveLock();
-            //main.orbInterface.RemoveAllLocks();
         }
     }
 }

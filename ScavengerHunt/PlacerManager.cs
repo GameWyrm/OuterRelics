@@ -5,34 +5,14 @@ using UnityEngine.SceneManagement;
 using OWML.Common;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace ScavengerHunt
 {
     /// <summary>
-    /// Class for indicator placements
+    /// Class for indicator placement and saving locations
     /// </summary>
-    public class PlacerAssist : MonoBehaviour
+    public class PlacerManager : MonoBehaviour
     {
-        public class PlacementData
-        {
-            /// <summary>
-            /// Scene that the placement data will activate
-            /// </summary>
-            public string system;
-            /// <summary>
-            /// User-friendly version of the planet/object name (for example, "Ember Twin" instead of the default "CaveTwin_Body").
-            /// This is used for the hint system. If left blank, will use the body name.
-            /// </summary>
-            public string bodyName;
-            /// <summary>
-            /// List of overarching areas that contain spawn points (for example, "Chert's Camp" or "Tower of Quantum Knowledge")
-            /// </summary>
-            public List<Location> locations;
-
-            
-        }
-
         /// <summary>
         /// While true, indicator placer inputs will be enabled
         /// </summary>
@@ -120,7 +100,7 @@ namespace ScavengerHunt
             if (location.locationName == null)
             {
                 main.LogInfo("Created new location group");
-                location = new Location(name, new List<SpawnPoint>());
+                location = new Location(name, currentBody, new List<SpawnPoint>());
                 placements.locations.Add(location);
             }
             return location;
@@ -223,65 +203,6 @@ namespace ScavengerHunt
             indicator.transform.localScale = Vector3.one * 0.5f;
             indicator.AddComponent<MatchPlayerRotation>();
             return indicator;
-        }
-
-        /// <summary>
-        /// Overall locations that items can spawn, holds multiple SpawnPoints
-        /// </summary>
-        [Serializable]
-        public struct Location
-        {
-            /// <summary>
-            /// User-friendly name of the location that spawns are placed in. Used for hint system.
-            /// </summary>
-            public string locationName;
-            /// <summary>
-            /// List of specific locations that items can spawn
-            /// </summary>
-            public List<SpawnPoint> spawnPoints;
-
-            public Location(string locationName, List<SpawnPoint> spawnPoints)
-            {
-                this.locationName = locationName;
-                this.spawnPoints = spawnPoints;
-            }
-        }
-
-        /// <summary>
-        /// Locations that items can spawn
-        /// </summary>
-        [Serializable]
-        public struct SpawnPoint
-        {
-            /// <summary>
-            /// Additional information about the spawn for hint system. Optional.
-            /// </summary>
-            public string spawnPointName;
-            /// <summary>
-            /// GameObject that item gets parented to
-            /// </summary>
-            public string parent;
-            /// <summary>
-            /// Transform of the spawn point
-            /// </summary>
-            public float posX;
-            public float posY;
-            public float posZ;
-            public float rotX;
-            public float rotY;
-            public float rotZ;
-
-            public SpawnPoint(string spawnPointName, string parent, float posX, float posY, float posZ, float rotX, float rotY, float rotZ)
-            {
-                this.spawnPointName = spawnPointName;
-                this.parent = parent;
-                this.posX = posX;
-                this.posY = posY;
-                this.posZ = posZ;
-                this.rotX = rotX;
-                this.rotY = rotY;
-                this.rotZ = rotZ;
-            }
         }
     }
 }

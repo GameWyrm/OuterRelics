@@ -15,11 +15,12 @@ namespace ScavengerHunt
 
         private ScavengerHuntSaveData saveData;
         private ScavengerHunt main;
+        string profile => StandaloneProfileManager.s_instance.currentProfile.profileName;
 
         public SaveManager()
         {
             main = ScavengerHunt.Main;
-            saveData = main.ModHelper.Storage.Load<ScavengerHuntSaveData>("ScavengerHuntSave.json");
+            saveData = main.ModHelper.Storage.Load<ScavengerHuntSaveData>("SaveData/" + profile + "ScavengerHuntSave.json");
             if (saveData == null)
             {
                 saveData = new ScavengerHuntSaveData();
@@ -43,7 +44,7 @@ namespace ScavengerHunt
                 }
             }
 
-            main.ModHelper.Storage.Save<ScavengerHuntSaveData>(saveData, "ScavengerHuntSave.json");
+            main.ModHelper.Storage.Save<ScavengerHuntSaveData>(saveData, "SaveData/" + profile + "ScavengerHuntSave.json");
 
             main.LogInfo("Saved Scavenger Hunt data");
         }
