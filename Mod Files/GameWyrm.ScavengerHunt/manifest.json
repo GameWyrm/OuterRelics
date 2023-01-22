@@ -6,5 +6,7 @@
   "uniqueName": "GameWyrm.ScavengerHunt",
   "version": "0.1.0",
   "owmlVersion": "2.9.0",
-  "dependencies": []
+    "dependencies": [
+        "_nebula.MenuFramework"
+    ]
 }
