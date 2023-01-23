@@ -1,0 +1,22 @@
+{
+  "system": "SolarSystem",
+  "bodyName": "Eye Locator Probe",
+  "locations": [
+    {
+      "locationName": "Eye Decal",
+      "body": "NomaiProbe_Body",
+      "spawnPoints": [
+        {
+          "spawnPointName": null,
+          "parent": "Structure_NOM_Probe_Renderer",
+          "posX": -3.18967628,
+          "posY": 4.58035135,
+          "posZ": 3.26477647,
+          "rotX": 278.3122,
+          "rotY": 254.53299,
+          "rotZ": 241.280243
+        }
+      ]
+    }
+  ]
+}

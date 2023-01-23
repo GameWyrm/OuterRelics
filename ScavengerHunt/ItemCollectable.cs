@@ -55,7 +55,7 @@ namespace ScavengerHunt
             itemGet = new NotificationData(itemName + " ACQUIRED");
             holder = transform.parent.gameObject;
             holder.transform.position = holder.transform.position + holder.transform.TransformDirection(Vector3.up * 0.5f);
-            main.LogSuccess("Item " + gameObject.name + " has been created");
+            //main.LogSuccess("Item " + gameObject.name + " has been created");
             itemGet.minDuration = 5;
 
             animator = GetComponent<Animator>();
@@ -95,13 +95,21 @@ namespace ScavengerHunt
         /// </summary>
         private void DLCRendererCheck()
         {
+            if (transform.parent.transform.parent.transform.parent == null)
+            {
+                main.LogInfo("No higher parent found");
+                return;
+            }
             MeshRenderer[] renderers = transform.parent.transform.parent.transform.parent.gameObject.GetComponentsInChildren<MeshRenderer>();
-
             foreach (MeshRenderer renderer in renderers)
             {
+                //main.LogInfo("2: " + (renderer == null ? "NULL" : "NOT NULL"));
                 if (renderer == myRenderer) continue;
-                else siblingRenderer = renderer;
-                main.LogMessage("A sibling was found for " + transform.parent.name);
+                else
+                {
+                    siblingRenderer = renderer;
+                }
+                //main.LogMessage("A sibling was found for " + transform.parent.name);
                 return;
             }
 

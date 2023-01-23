@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace ScavengerHunt
 {
@@ -15,7 +17,7 @@ namespace ScavengerHunt
         /// <summary>
         /// If true, only one spawn will be used per location. If false, any spawnpoint can be used.
         /// </summary>
-        public bool SinglePerGroup = true;
+        public bool SinglePerGroup;
         /// <summary>
         /// List of JSON files that should be loaded for locations
         /// </summary>
@@ -41,16 +43,25 @@ namespace ScavengerHunt
             };
 
             main = ScavengerHunt.Main;
+
+            seed = "Seed";
+
+            SinglePerGroup = false;
         }
 
         public void Randomize()
         {
-            if (seed != null && seed == "")
+            if (seed != null && seed != "")
             {
-                Random.State oldState = Random.state;
+                main.LogInfo("Randomizing with seed " + seed);
                 Random.InitState(seed.GetHashCode());
             }
-
+            else
+            {
+                main.LogInfo("No seed provided, using random seed");
+                Random.InitState((int)DateTime.Now.Ticks);
+            }
+            
             locations = new List<Location>();
             foreach (string file in loadedFiles)
             {
@@ -60,22 +71,31 @@ namespace ScavengerHunt
                     locations.Add(loc);
                 }
             }
-            unusedLocations = new List<Location>(locations);
 
-            
+            unusedLocations = new List<Location>(locations);
 
             for (int i = 0; i < 12; i++)
             {
-                Location loc;
-                int locIndex = Random.Range(0, unusedLocations.Count - 1);
-                loc = unusedLocations[locIndex];
-                unusedLocations.RemoveAt(locIndex);
+                int locIndex = Random.Range(0, unusedLocations.Count);
+                main.LogInfo("Location Index picked: " + locIndex + "(" + unusedLocations[locIndex].locationName + "), Location Count: " + unusedLocations.Count);
 
                 SpawnPoint spawn;
-                int spawnIndex = Random.Range(0, loc.spawnPoints.Count - 1);
-                spawn = loc.spawnPoints[spawnIndex];
+                int spawnIndex = Random.Range(0, unusedLocations[locIndex].spawnPoints.Count);
+                main.LogInfo("Spawnpoint Index picked: " + spawnIndex + "(" + unusedLocations[locIndex].spawnPoints[spawnIndex].spawnPointName + "), Spawn Count: " + unusedLocations[locIndex].spawnPoints.Count);
+                spawn = unusedLocations[locIndex].spawnPoints[spawnIndex];
 
-                CreateKey(i, loc, spawn);
+                CreateKey(i, unusedLocations[locIndex], spawn);
+
+
+                if (SinglePerGroup)
+                {
+                    unusedLocations.RemoveAt(locIndex);
+                }
+                else
+                {
+                    unusedLocations[locIndex].spawnPoints.RemoveAt(spawnIndex);
+                    if (unusedLocations[locIndex].spawnPoints.Count == 0) unusedLocations.RemoveAt(locIndex);
+                }
             }
         }
 
