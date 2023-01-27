@@ -1,0 +1,117 @@
+{
+  "system": "SolarSystem",
+  "body": "BrittleHollow_Body",
+  "bodyName": "BrittleHollow_Body RENAME THIS IN THE JSON FILE",
+  "locations": [
+    {
+      "locationName": "North Pole",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Tower",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -31.4047165,
+          "posY": 323.199768,
+          "posZ": -31.3988,
+          "rotX": 7.209741,
+          "rotY": 226.308823,
+          "rotZ": 0.17983076
+        },
+        {
+          "spawnPointName": "Warp Arrival",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -26.06143,
+          "posY": 277.455261,
+          "posZ": 110.611359,
+          "rotX": 20.4214859,
+          "rotY": 7.1975646,
+          "rotZ": 7.61878824
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_NorthPoleSurface/Interactables_NorthPoleSurface/LowBuilding/Prefab_NOM_RemoteViewer/Structure_NOM_RemoteViewer/Structure_NOM_RemoteViewer_Collider",
+          "posX": -0.4356658,
+          "posY": -0.09819326,
+          "posZ": 0.423173726,
+          "rotX": 357.6566,
+          "rotY": 324.9935,
+          "rotZ": 1.49215162
+        },
+        {
+          "spawnPointName": "Above City Secret Entrance",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -105.55262,
+          "posY": 276.16156,
+          "posZ": -14.3445511,
+          "rotX": 340.06955,
+          "rotY": 59.82377,
+          "rotZ": 7.88849735
+        },
+        {
+          "spawnPointName": "City Secret Entrance",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -83.05865,
+          "posY": 261.075,
+          "posZ": -8.087166,
+          "rotX": 347.045654,
+          "rotY": 130.741119,
+          "rotZ": 347.278564
+        }
+      ]
+    },
+    {
+      "locationName": "Hanging City Meltwater District",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Black Hole Forge Controls",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Interactables_HangingCity_District2/VisibleFrom_HangingCity/Interactables Forge Control Room/Structure_BH_ForgeControlRoom/Structure_BH_ForgeControlRoom_Col",
+          "posX": -31.0729961,
+          "posY": 169.178528,
+          "posZ": -13.2146454,
+          "rotX": 2.5940876,
+          "rotY": 139.158417,
+          "rotZ": 348.330475
+        },
+        {
+          "spawnPointName": "Bridge",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 5.00147057,
+          "posY": 175.702362,
+          "posZ": 39.5250244,
+          "rotX": 11.7941017,
+          "rotY": 0.378490418,
+          "rotZ": 358.496063
+        },
+        {
+          "spawnPointName": "Bottom of the Waterfall",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Geometry_HangingCity/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -62.82495,
+          "posY": 168.042419,
+          "posZ": -0.734184265,
+          "rotX": 20.285,
+          "rotY": 268.994171,
+          "rotZ": 359.8889
+        },
+        {
+          "spawnPointName": "Scroll House",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -30.95816,
+          "posY": 180.76828,
+          "posZ": 3.91496563,
+          "rotX": 356.966339,
+          "rotY": 20.6756439,
+          "rotZ": 9.5218935
+        },
+        {
+          "spawnPointName": "Poke's House",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -37.9471169,
+          "posY": 191.502365,
+          "posZ": -10.0460148,
+          "rotX": 352.5793,
+          "rotY": 20.7885628,
+          "rotZ": 9.393138
+        }
+      ]
+    }
+  ]
+}

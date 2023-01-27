@@ -1,0 +1,52 @@
+{
+  "system": "SolarSystem",
+  "body": "GabbroIsland_Body",
+  "bodyName": "Giant's Deep",
+  "locations": [
+    {
+      "locationName": "Gabbro's Island",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Launch Zone",
+          "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 10.7338791,
+          "posY": 4.90415955,
+          "posZ": -11.1473732,
+          "rotX": 358.5418,
+          "rotY": 2.83454061,
+          "rotZ": 358.7214
+        },
+        {
+          "spawnPointName": "Ghost Matter",
+          "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 20.1822567,
+          "posY": 1.40204668,
+          "posZ": 15.2253809,
+          "rotX": 358.39325,
+          "rotY": 136.919876,
+          "rotZ": 2.87232137
+        },
+        {
+          "spawnPointName": "Gabbro",
+          "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -9.765476,
+          "posY": -1.11304057,
+          "posZ": 46.2090225,
+          "rotX": 4.908522,
+          "rotY": 1.36409414,
+          "rotZ": 1.242461
+        },
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 37.4669952,
+          "posY": 18.6002979,
+          "posZ": 6.73768425,
+          "rotX": 358.962036,
+          "rotY": 180.599045,
+          "rotZ": 4.12416
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "system": "SolarSystem",
+  "body": "TimberHearth_Body",
+  "bodyName": "Timber Hearth",
+  "locations": [
+    {
+      "locationName": "Village",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_5",
+          "posX": 51.37283,
+          "posY": 3.96417618,
+          "posZ": -12.4716482,
+          "rotX": 5.34762955,
+          "rotY": 38.59647,
+          "rotZ": 345.5195
+        },
+        {
+          "spawnPointName": "Mica's Overlook",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_3",
+          "posX": 16.12356,
+          "posY": 19.43372,
+          "posZ": -23.5926132,
+          "rotX": 351.525055,
+          "rotY": 352.093231,
+          "rotZ": 356.403717
+        },
+        {
+          "spawnPointName": "Central Geyser",
+          "parent": "Sector_TH/Sector_Village/Sector_LowerVillage/Geometry_LowerVillage/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 7.2798543,
+          "posY": 9.324141,
+          "posZ": 5.72133446,
+          "rotX": 0.6072897,
+          "rotY": 353.068878,
+          "rotZ": 357.6588
+        },
+        {
+          "spawnPointName": "Scout Launcher Tower",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -41.18392,
+          "posY": 58.857502,
+          "posZ": -12.883316,
+          "rotX": 1.49147475,
+          "rotY": 174.324081,
+          "rotZ": 349.928375
+        },
+        {
+          "spawnPointName": "Museum",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 15.3357544,
+          "posY": 30.9915428,
+          "posZ": 75.61491,
+          "rotX": 16.7035484,
+          "rotY": 40.1230927,
+          "rotZ": 9.372367
+        },
+        {
+          "spawnPointName": "Graveyard",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 103.27655,
+          "posY": -10.40696,
+          "posZ": 34.6771164,
+          "rotX": 31.1594563,
+          "rotY": 84.7767,
+          "rotZ": 6.95695734
+        },
+        {
+          "spawnPointName": "Launch Pad",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 65.08317,
+          "posY": 41.3599625,
+          "posZ": 17.3805428,
+          "rotX": 16.1768551,
+          "rotY": 87.1143341,
+          "rotZ": 3.28829956
+        }
+      ]
+    },
+    {
+      "locationName": "Zero-G Cave",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entrance",
+          "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -7.628886,
+          "posY": 26.7875519,
+          "posZ": 83.86869,
+          "rotX": 52.7102661,
+          "rotY": 55.1433067,
+          "rotZ": 55.9932
+        },
+        {
+          "spawnPointName": "Tuff",
+          "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6.569749,
+          "posY": -0.199035645,
+          "posZ": 94.4823456,
+          "rotX": 7.748386,
+          "rotY": 91.99326,
+          "rotZ": 89.85989
+        },
+        {
+          "spawnPointName": "Hidden Platform",
+          "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -4.0223484,
+          "posY": -9.711079,
+          "posZ": 74.53849,
+          "rotX": 300.060242,
+          "rotY": 280.979858,
+          "rotZ": 254.138428
+        }
+      ]
+    },
+    {
+      "locationName": "Quantum Crater",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Chert's Tower",
+          "parent": "Sector_TH/Sector_QuantumGroveEntrance/Geometry_QuantumGroveEntrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 77.53568,
+          "posY": -247.542709,
+          "posZ": -32.7704849,
+          "rotX": 17.9711266,
+          "rotY": 273.143127,
+          "rotZ": 173.745651
+        },
+        {
+          "spawnPointName": "In the Cave",
+          "parent": "Sector_TH/Sector_QuantumGroveEntrance/Geometry_QuantumGroveEntrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 35.9858856,
+          "posY": -204.9162,
+          "posZ": -29.1951561,
+          "rotX": 11.0769138,
+          "rotY": 341.963684,
+          "rotZ": 186.8815
+        },
+        {
+          "spawnPointName": "Quantum Shard",
+          "parent": "Sector_TH/Sector_QuantumGrove/Interactables_QuantumGrove/QuantumShard/Rock_TH_Grove_QRock/Collider_TH_GROVE_QRock",
+          "posX": 0.104590178,
+          "posY": 7.60828733,
+          "posZ": -0.1684115,
+          "rotX": 359.283661,
+          "rotY": 255.784851,
+          "rotZ": 0.0506651029
+        }
+      ]
+    },
+    {
+      "locationName": "Underground Waterways",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Below Quantum Grove",
+          "parent": "Sector_TH/Sector_WaterWays/Geometry_WaterWays/Terrain_TH_UnderwaterCaves/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -21.6110554,
+          "posY": -123.248787,
+          "posZ": -5.221646,
+          "rotX": 9.961715,
+          "rotY": 40.7932777,
+          "rotZ": 174.060974
+        },
+        {
+          "spawnPointName": "Below Mining Site 2b",
+          "parent": "Sector_TH/Sector_WaterWays/Interactables_WaterWays/Arc_TH_Mine_FindingHearthianLife",
+          "posX": -0.702414036,
+          "posY": 0.49438,
+          "posZ": 0.250085622,
+          "rotX": 44.0778122,
+          "rotY": 272.11615,
+          "rotZ": 271.851044
+        },
+        {
+          "spawnPointName": "Junk Pit",
+          "parent": "Sector_TH/Sector_WaterWays/Geometry_WaterWays/Terrain_TH_UnderwaterCaves/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 27.9978027,
+          "posY": 24.7738075,
+          "posZ": 95.27461,
+          "rotX": 289.725464,
+          "rotY": 145.7386,
+          "rotZ": 48.6263237
+        }
+      ]
+    },
+    {
+      "locationName": "Dark Bramble Seed",
+      "spawnPoints": [
+        {
+          "spawnPointName": "On Ice",
+          "parent": "Sector_TH/Sector_ImpactCrater/Geo_ImpactCrater/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 89.995575,
+          "posY": 174.281143,
+          "posZ": -75.5262146,
+          "rotX": 337.626373,
+          "rotY": 4.079783,
+          "rotZ": 333.0835
+        },
+        {
+          "spawnPointName": "Tektite",
+          "parent": "Sector_TH/Sector_ImpactCrater/Geo_ImpactCrater/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 75.7466049,
+          "posY": 160.427444,
+          "posZ": -53.3985062,
+          "rotX": 28.4886932,
+          "rotY": 135.6274,
+          "rotZ": 5.202209
+        }
+      ]
+    },
+    {
+      "locationName": "Nomai Ruins",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Arrival",
+          "parent": "Sector_TH/Geometry_TH/ControlledByProxy_Base/AudioColliders_TH_Surface",
+          "posX": -240.934708,
+          "posY": -42.0189934,
+          "posZ": -50.75948,
+          "rotX": 348.651154,
+          "rotY": 345.4902,
+          "rotZ": 100.009956
+        },
+        {
+          "spawnPointName": "Bridge Center",
+          "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_7",
+          "posX": -149.335251,
+          "posY": -67.74527,
+          "posZ": -151.476578,
+          "rotX": 18.764883,
+          "rotY": 129.478485,
+          "rotZ": 251.656616
+        },
+        {
+          "spawnPointName": "Exterior Alcove",
+          "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_11",
+          "posX": -92.63299,
+          "posY": -149.500366,
+          "posZ": -148.240051,
+          "rotX": 14.8290987,
+          "rotY": 109.695534,
+          "rotZ": 227.947357
+        },
+        {
+          "spawnPointName": "Log Ramp",
+          "parent": "Sector_TH/Sector_NomaiCrater/Props_NomaiCrater/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -88.52925,
+          "posY": -35.7386,
+          "posZ": -156.695755,
+          "rotX": 313.222473,
+          "rotY": 286.121277,
+          "rotZ": 107.365623
+        },
+        {
+          "spawnPointName": "Log Top",
+          "parent": "Sector_TH/Sector_NomaiCrater/Props_NomaiCrater/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -122.593964,
+          "posY": -77.90779,
+          "posZ": -110.81572,
+          "rotX": 51.6214027,
+          "rotY": 352.172943,
+          "rotZ": 131.617676
+        },
+        {
+          "spawnPointName": "Cave",
+          "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_10",
+          "posX": -87.9191,
+          "posY": -110.61731,
+          "posZ": -172.547424,
+          "rotX": 44.3836555,
+          "rotY": 85.1506348,
+          "rotZ": 227.5315
+        },
+        {
+          "spawnPointName": "Mining Site Entry",
+          "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_6",
+          "posX": -64.95658,
+          "posY": -86.32852,
+          "posZ": -183.972488,
+          "rotX": 295.438568,
+          "rotY": 183.355438,
+          "rotZ": 194.6935
+        }
+      ]
+    },
+    {
+      "locationName": "Mining Site 2b",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Middle Platform",
+          "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 63.79104,
+          "posY": 166.65123,
+          "posZ": 42.78621,
+          "rotX": 18.2379723,
+          "rotY": 14.7143145,
+          "rotZ": 343.9077
+        },
+        {
+          "spawnPointName": "Active Mining Strip",
+          "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 83.7286758,
+          "posY": 137.392349,
+          "posZ": 22.7434,
+          "rotX": 30.8504448,
+          "rotY": 72.9148,
+          "rotZ": 358.985748
+        },
+        {
+          "spawnPointName": "Between Geysers",
+          "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 38.9527969,
+          "posY": 134.076691,
+          "posZ": 12.7422409,
+          "rotX": 14.5679369,
+          "rotY": 56.7674522,
+          "rotZ": 355.618774
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 67.451416,
+          "posY": 204.018158,
+          "posZ": -22.3816681,
+          "rotX": 15.6254568,
+          "rotY": 76.37742,
+          "rotZ": 349.9616
+        }
+      ]
+    },
+    {
+      "locationName": "Radio Tower",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Roof",
+          "parent": "Sector_TH/Sector_RadioTower/RadioTower_DLC/Geo_RadioTower/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -6.390209,
+          "posY": 8.329665,
+          "posZ": -36.1850739,
+          "rotX": 351.8674,
+          "rotY": 29.0735722,
+          "rotZ": 357.363983
+        },
+        {
+          "spawnPointName": "Tower",
+          "parent": "Sector_TH/Sector_RadioTower/RadioTower_DLC/Geo_RadioTower/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 4.50470734,
+          "posY": 30.8370972,
+          "posZ": -41.71421,
+          "rotX": 7.7983036,
+          "rotY": 181.289276,
+          "rotZ": 1.1112746
+        },
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_TH/Geometry_TH/ControlledByProxy_Base/Terrain_TH_Surface_v2/TH_Surface",
+          "posX": -163.536377,
+          "posY": 157.025467,
+          "posZ": 105.399216,
+          "rotX": 48.47804,
+          "rotY": 323.8047,
+          "rotZ": 16.1889877
+        }
+      ]
+    }
+  ]
+}

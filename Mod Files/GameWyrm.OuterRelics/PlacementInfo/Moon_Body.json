@@ -1,0 +1,107 @@
+{
+  "system": "SolarSystem",
+  "body": "Moon_Body",
+  "bodyName": "Attelrock",
+  "locations": [
+    {
+      "locationName": "Esker's Outpost",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Roof",
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -34.0403824,
+          "posY": 34.75296,
+          "posZ": -69.59514,
+          "rotX": 64.47473,
+          "rotY": 209.611237,
+          "rotZ": 3.18383265
+        },
+        {
+          "spawnPointName": "Esker",
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -23.759552,
+          "posY": 38.2394562,
+          "posZ": -51.027195,
+          "rotX": 32.9484673,
+          "rotY": 144.4251,
+          "rotZ": 313.8557
+        },
+        {
+          "spawnPointName": "Signalscope Lookout",
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -10.5775537,
+          "posY": 76.94377,
+          "posZ": 0.190809682,
+          "rotX": 350.3635,
+          "rotY": 87.20437,
+          "rotZ": 0.531033337
+        }
+      ]
+    },
+    {
+      "locationName": "Dark Side Crater",
+      "spawnPoints": [
+        {
+          "spawnPointName": null,
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -24.1827164,
+          "posY": 10.8704071,
+          "posZ": 22.7265186,
+          "rotX": 344.988861,
+          "rotY": 222.059158,
+          "rotZ": 287.848572
+        }
+      ]
+    },
+    {
+      "locationName": "First Landing",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Spaceship Alpha",
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 46.76803,
+          "posY": -11.9919128,
+          "posZ": -55.6125259,
+          "rotX": 78.7724,
+          "rotY": 6.94109535,
+          "rotZ": 226.16861
+        },
+        {
+          "spawnPointName": "Claim",
+          "parent": "Sector_THM/Props_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 43.4295425,
+          "posY": 34.8101959,
+          "posZ": -56.556057,
+          "rotX": 295.275269,
+          "rotY": 310.130737,
+          "rotZ": 11.0396214
+        }
+      ]
+    },
+    {
+      "locationName": "Quantum Moon Locator",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Platform",
+          "parent": "Sector_THM/Interactables_THM/Interactibles_SignalDish/SignalDish_Interface/TrackCover/topSwitch_collider (1)",
+          "posX": 1.18649459,
+          "posY": -0.2339783,
+          "posZ": 1.70070744,
+          "rotX": 2.01846552,
+          "rotY": 180.742386,
+          "rotZ": 180.0178
+        },
+        {
+          "spawnPointName": "Inside",
+          "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -4.244374,
+          "posY": -67.37743,
+          "posZ": 9.281867,
+          "rotX": 354.2514,
+          "rotY": 327.0008,
+          "rotZ": 181.264755
+        }
+      ]
+    }
+  ]
+}

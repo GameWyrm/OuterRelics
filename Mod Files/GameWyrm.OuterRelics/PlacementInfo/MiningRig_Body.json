@@ -1,0 +1,22 @@
+{
+    "system": "SolarSystem",
+    "body": "MiningRig_Body",
+    "bodyName": "Timber Hearth",
+    "Locations": [
+        {
+        "locationName": "Zero-G Cave",
+        "spawnPoints": [
+                {
+                    "spawnPointName": "Satallite",
+                    "parent": "Structure_TH_HEA_MiningRig/Colliders",
+                    "posX": 4.637916,
+                    "posY": 6.619713,
+                    "posZ": -5.06576061,
+                    "rotX": 87.86631,
+                    "rotY": 163.75293,
+                    "rotZ": 282.523163
+                }
+            ]
+        }
+    ]
+}

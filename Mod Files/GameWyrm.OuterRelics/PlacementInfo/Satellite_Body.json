@@ -1,0 +1,22 @@
+{
+    "system": "SolarSystem",
+    "body": "Satellite_Body",
+    "bodyName": "Timber Hearth",
+    "Locations": [
+    {
+        "locationName": "Postcards From Space Satellite",
+        "spawnPoints": [
+          {
+            "spawnPointName": null,
+            "parent": "Collider",
+            "posX": 0,
+            "posY": 0.5,
+            "posZ": 0,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0
+          }
+        ]
+      }
+    ]
+}

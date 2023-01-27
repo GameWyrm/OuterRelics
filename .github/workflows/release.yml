@@ -12,7 +12,7 @@ on:
 
 env:
     PROJ_USERNAME: GameWyrm
-    PROJ_NAME: ScavengerHunt
+    PROJ_NAME: OuterRelics
 
 jobs:
     pre_job:

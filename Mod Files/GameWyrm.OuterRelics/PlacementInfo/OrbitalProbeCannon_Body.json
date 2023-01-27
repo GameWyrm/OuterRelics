@@ -1,0 +1,112 @@
+{
+  "system": "SolarSystem",
+  "body": "OrbitalProbeCannon_Body",
+  "bodyName": "Orbital Probe Cannon",
+  "locations": [
+    {
+      "locationName": "Hub",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Inside",
+          "parent": "Sector_OrbitalProbeCannon/Geo_OrbitalProbeCannon/ControlledByProxy_OrbitalProbeCannon/Structure_NOM_OrbitalProbeCannon/OPC_Hub_Collider",
+          "posX": 14.57713,
+          "posY": 0.352564335,
+          "posZ": 0.117022514,
+          "rotX": 319.062317,
+          "rotY": 189.948746,
+          "rotZ": 264.2668
+        },
+        {
+          "spawnPointName": "Outside",
+          "parent": "Sector_OrbitalProbeCannon/Geo_OrbitalProbeCannon/ControlledByProxy_OrbitalProbeCannon/Structure_NOM_OrbitalProbeCannon/OPC_Hub_Collider",
+          "posX": 14.7994385,
+          "posY": -0.329814672,
+          "posZ": -0.239906311,
+          "rotX": 47.2011948,
+          "rotY": 160.163971,
+          "rotZ": 74.98898
+        }
+      ]
+    },
+    {
+      "locationName": "Control Module",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Orb Floor",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Intact/Geo_CannonHub/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.3729788,
+          "posY": -8.707031,
+          "posZ": -8.736153,
+          "rotX": 7.792655,
+          "rotY": 90.00026,
+          "rotZ": 89.9995041
+        },
+        {
+          "spawnPointName": "Goop",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Intact/Interactables_Module_Intact/Effects_NOM_Hologram_Collider",
+          "posX": -0.245003954,
+          "posY": -0.532805443,
+          "posZ": -12.7592916,
+          "rotX": 305.5874,
+          "rotY": 89.9999847,
+          "rotZ": 89.9996643
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Intact/Props_Module_Intact/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 7.32268429,
+          "posY": 7.6800127,
+          "posZ": -0.1680267,
+          "rotX": -3.639295E-05,
+          "rotY": 262.2851,
+          "rotZ": 180.0
+        },
+        {
+          "spawnPointName": "Rail",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Intact/Geo_CannonHub/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 9.106603,
+          "posY": -8.828294,
+          "posZ": -3.9261167,
+          "rotX": 15.0287657,
+          "rotY": 84.53792,
+          "rotZ": 88.57984
+        }
+      ]
+    },
+    {
+      "locationName": "Launch Module",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Floor",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Broken/Geo_CannonBase/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -8.32441,
+          "posY": 4.889415,
+          "posZ": 8.739711,
+          "rotX": 294.301331,
+          "rotY": 89.99935,
+          "rotZ": 270.000732
+        },
+        {
+          "spawnPointName": "Goop",
+          "parent": "Sector_OrbitalProbeCannon/Sector_Module_Broken/Geo_CannonBase/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.07584763,
+          "posY": -0.180500031,
+          "posZ": -15.0641918,
+          "rotX": 47.9223747,
+          "rotY": 280.125244,
+          "rotZ": 278.842
+        },
+        {
+          "spawnPointName": "Debris",
+          "parent": "StarTileDebris_Large (1)",
+          "posX": 0.05358833,
+          "posY": 0.07081756,
+          "posZ": 0.4163668,
+          "rotX": 320.2335,
+          "rotY": 252.4177,
+          "rotZ": 229.686325
+        }
+      ]
+    }
+  ]
+}
