@@ -1,0 +1,762 @@
+{
+  "system": "SolarSystem",
+  "body": "CaveTwin_Body",
+  "bodyName": "Ember Twin",
+  "locations": [
+    {
+      "locationName": "Lakebed Cave",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entrance",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": 9.646823,
+          "posY": 25.78197,
+          "posZ": -11.6526928,
+          "rotX": 22.9008484,
+          "rotY": 149.326035,
+          "rotZ": 4.569557
+        },
+        {
+          "spawnPointName": "First Sandfall",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": -13.2450218,
+          "posY": 27.4121418,
+          "posZ": -22.4954262,
+          "rotX": 359.537445,
+          "rotY": 127.391693,
+          "rotZ": 316.580841
+        },
+        {
+          "spawnPointName": "Fossil Cave",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_9",
+          "posX": 5.710021,
+          "posY": 35.91295,
+          "posZ": -39.7047958,
+          "rotX": 357.615326,
+          "rotY": 83.86417,
+          "rotZ": 311.783051
+        },
+        {
+          "spawnPointName": "Sand River",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_LakebedCaves/Geometry_LakebedCaves/BakedTerrain_CT_SandSlideRocks",
+          "posX": -63.73404,
+          "posY": 68.04459,
+          "posZ": -7.77401733,
+          "rotX": 14.2419977,
+          "rotY": 335.090668,
+          "rotZ": 40.7868
+        },
+        {
+          "spawnPointName": "Past Second Sandfall",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_17",
+          "posX": -97.47747,
+          "posY": 51.83716,
+          "posZ": 19.900568,
+          "rotX": 31.98399,
+          "rotY": 213.381256,
+          "rotZ": 304.570923
+        },
+        {
+          "spawnPointName": "Quantum Graveyard",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_LakebedQuantum/Interactables_LakebedQuantum/Arc_CT_Quantum_EntanglementHint",
+          "posX": 2.62460279,
+          "posY": 1.42991114,
+          "posZ": 0.1524601,
+          "rotX": 81.89051,
+          "rotY": 289.4648,
+          "rotZ": 288.0705
+        },
+        {
+          "spawnPointName": "Rock",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Interactables_NorthUnderground/QuantumEntanglementRock/Rocks_HCT_QuantumEntanglement_v2/Collider_QuantumEntanglementRock",
+          "posX": 1.09677315,
+          "posY": 3.83274531,
+          "posZ": 0.461573362,
+          "rotX": 358.4316,
+          "rotY": 251.966858,
+          "rotZ": 359.9268
+        },
+        {
+          "spawnPointName": "Coleus' Cave",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_18",
+          "posX": 27.4639282,
+          "posY": 83.10919,
+          "posZ": -96.61772,
+          "rotX": 318.744629,
+          "rotY": 296.64032,
+          "rotZ": 34.59324
+        },
+        {
+          "spawnPointName": "Search Efforts",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 108.603058,
+          "posY": 71.58264,
+          "posZ": 11.1954422,
+          "rotX": 325.273315,
+          "rotY": 330.1291,
+          "rotZ": 310.112122
+        },
+        {
+          "spawnPointName": "Quantum Stalagmites",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": -54.3923645,
+          "posY": 62.71331,
+          "posZ": 100.009079,
+          "rotX": 19.9757366,
+          "rotY": 254.191833,
+          "rotZ": 301.3155
+        }
+      ]
+    },
+    {
+      "locationName": "Northern Lakebed",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Chert's Camp",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": 2.41957188,
+          "posY": 156.833359,
+          "posZ": 2.742723,
+          "rotX": 357.781677,
+          "rotY": 233.560883,
+          "rotZ": 359.717133
+        },
+        {
+          "spawnPointName": "Staircase",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_3",
+          "posX": 10.0502691,
+          "posY": 89.5334,
+          "posZ": 29.180027,
+          "rotX": 17.5629253,
+          "rotY": 25.1372375,
+          "rotZ": 2.010134
+        },
+        {
+          "spawnPointName": "Cave Path to Gravity Cannon",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_BridgePath/Geo_BridgePath/BakedTerrain_CT_bridgePathQuantum_RocksandPillars",
+          "posX": 92.83793,
+          "posY": 68.04662,
+          "posZ": -32.76671,
+          "rotX": 5.97599554,
+          "rotY": 25.8731689,
+          "rotZ": 305.132446
+        },
+        {
+          "spawnPointName": "Path to Escape Pod",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": -90.08817,
+          "posY": 71.17534,
+          "posZ": 94.84551,
+          "rotX": 319.095825,
+          "rotY": 201.377716,
+          "rotZ": 307.232
+        },
+        {
+          "spawnPointName": "Chert's Ship",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 19.902792,
+          "posY": 120.03627,
+          "posZ": -115.092682,
+          "rotX": 318.72644,
+          "rotY": 318.005859,
+          "rotZ": 21.7826481
+        },
+        {
+          "spawnPointName": "Open Path to Gravity Cannon",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": -46.89805,
+          "posY": 35.71094,
+          "posZ": -103.25338,
+          "rotX": 69.2561951,
+          "rotY": 177.026245,
+          "rotZ": 334.00174
+        }
+      ]
+    },
+    {
+      "locationName": "Quantum Moon Locator",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Platform",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthSurface/Sector_SouthPole/Interactables_SouthPole/SouthPole_VisibleFromFar/Structure_NOM_StargazingPlatform/StargazingPlatform/collider",
+          "posX": -0.0259811673,
+          "posY": 1.24558556,
+          "posZ": 0.00337329041,
+          "rotX": 359.216064,
+          "rotY": 314.955627,
+          "rotZ": 0.005681675
+        },
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_17",
+          "posX": -42.7272644,
+          "posY": -172.614029,
+          "posZ": 24.1388512,
+          "rotX": 345.5053,
+          "rotY": 284.584259,
+          "rotZ": 184.015381
+        },
+        {
+          "spawnPointName": "Trees",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": 19.30072,
+          "posY": -179.381927,
+          "posZ": -71.89014,
+          "rotX": 338.823547,
+          "rotY": 157.290726,
+          "rotZ": 182.919876
+        },
+        {
+          "spawnPointName": "Bottom of Stairs",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": 20.939846,
+          "posY": -59.7774162,
+          "posZ": 117.942886,
+          "rotX": 337.155029,
+          "rotY": 86.36014,
+          "rotZ": 119.580124
+        },
+        {
+          "spawnPointName": "Warp Arrival",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 85.21178,
+          "posY": -71.2756958,
+          "posZ": 113.042732,
+          "rotX": 64.36827,
+          "rotY": 221.38652,
+          "rotZ": 183.9532
+        }
+      ]
+    },
+    {
+      "locationName": "High Energy Lab",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_5",
+          "posX": 111.06916,
+          "posY": 80.5011444,
+          "posZ": 96.08156,
+          "rotX": 316.10144,
+          "rotY": 168.248352,
+          "rotZ": 49.9976273
+        },
+        {
+          "spawnPointName": "Bridge",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+          "posX": 107.419838,
+          "posY": 2.273443,
+          "posZ": 65.6594849,
+          "rotX": 69.4016342,
+          "rotY": 141.501678,
+          "rotZ": 83.06741
+        },
+        {
+          "spawnPointName": "Trailhead Entry",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -24.1261749,
+          "posY": -34.9825935,
+          "posZ": 10.4339657,
+          "rotX": 338.373077,
+          "rotY": 245.618866,
+          "rotZ": 206.485519
+        },
+        {
+          "spawnPointName": "Cable at Wall",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": 35.3150177,
+          "posY": -28.2184734,
+          "posZ": -18.7057629,
+          "rotX": 22.9136868,
+          "rotY": 16.2138577,
+          "rotZ": 233.342163
+        },
+        {
+          "spawnPointName": "Elevator",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": 36.7494621,
+          "posY": -29.0556221,
+          "posZ": 13.0058937,
+          "rotX": 350.229736,
+          "rotY": 353.040924,
+          "rotZ": 231.6784
+        },
+        {
+          "spawnPointName": "Inside the Bridge",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 95.81115,
+          "posY": 5.57683325,
+          "posZ": 60.3126678,
+          "rotX": 294.372955,
+          "rotY": 326.3894,
+          "rotZ": 272.4143
+        },
+        {
+          "spawnPointName": "Testing Area",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/Geometry_TimeLoopExperiment/ControlledByProxy_Arch/Structure_NOM_TimeLoopExperiment/TLE_Collider/TLE_interiorCollider",
+          "posX": -0.645130336,
+          "posY": -15.0189428,
+          "posZ": -15.4848585,
+          "rotX": 0.0136645548,
+          "rotY": 179.404465,
+          "rotZ": 359.9583
+        },
+        {
+          "spawnPointName": "Tower Diagrams",
+          "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/Geometry_TimeLoopExperiment/ControlledByProxy_Arch/Structure_NOM_TimeLoopExperiment/TLE_Collider/TLE_interiorCollider",
+          "posX": -0.465260625,
+          "posY": 1.08109307,
+          "posZ": -12.5370531,
+          "rotX": 0.0137672033,
+          "rotY": 179.564392,
+          "rotZ": 359.958282
+        }
+      ]
+    },
+    {
+      "locationName": "Gravity Cannon",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Launch Platform",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_Arch/Structure_NOM_GravityCannon_HT/Structure_NOM_GravityCannon/Structure_NOM_GravityCannon_LaunchuingPlatform_Collider",
+          "posX": -0.00282526016,
+          "posY": 17.8717575,
+          "posZ": -0.175624847,
+          "rotX": 29.4856262,
+          "rotY": 184.6292,
+          "rotZ": 1.64658356
+        },
+        {
+          "spawnPointName": "Controls",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_GravityCannon/Geometry_GravityCannon/GravityCannon_VisibleFrom_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 12.7975655,
+          "posY": -82.0441055,
+          "posZ": -80.1153946,
+          "rotX": 317.235,
+          "rotY": 174.022583,
+          "rotZ": 177.7881
+        },
+        {
+          "spawnPointName": "Secret Entrance",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+          "posX": 18.2409248,
+          "posY": -108.383659,
+          "posZ": -79.05524,
+          "rotX": 38.5651932,
+          "rotY": 2.50852466,
+          "rotZ": 189.256683
+        },
+        {
+          "spawnPointName": "Ghost Matter Safety Ledge",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_CannonPath/Geometry_CannonPath/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 11.3247175,
+          "posY": -115.955208,
+          "posZ": -53.11974,
+          "rotX": 26.0525131,
+          "rotY": 357.5949,
+          "rotZ": 184.091064
+        }
+      ]
+    },
+    {
+      "locationName": "Sunless City Eye Shrine",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Solanum's Room",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_EyeDistrict/Geometry_EyeDistrict/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 38.16816,
+          "posY": -103.320221,
+          "posZ": -22.89848,
+          "rotX": 345.54718,
+          "rotY": 75.78999,
+          "rotZ": 196.298157
+        },
+        {
+          "spawnPointName": "Overlook",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 24.19735,
+          "posY": -120.441452,
+          "posZ": 2.56766748,
+          "rotX": 12.03714,
+          "rotY": 278.455231,
+          "rotZ": 182.85495
+        },
+        {
+          "spawnPointName": "Above Door",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Lighting_City/Lights_EyeDistrict/Prefab_NOM_RotatingDoor/NOM_RotatingDoor_Exterior_Collider",
+          "posX": -1.06236255,
+          "posY": 2.00000477,
+          "posZ": -0.9989689,
+          "rotX": 359.993256,
+          "rotY": 31.796627,
+          "rotZ": 0.0115518374
+        },
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_EyeDistrict/Geometry_EyeDistrict/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 58.6143,
+          "posY": -120.104935,
+          "posZ": -16.2221642,
+          "rotX": 343.831055,
+          "rotY": 112.366692,
+          "rotZ": 178.385529
+        },
+        {
+          "spawnPointName": "Shrine Exit",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_EyeDistrict/Geometry_EyeDistrict/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 50.2393036,
+          "posY": -126.1464,
+          "posZ": -21.79442,
+          "rotX": 16.1771641,
+          "rotY": 281.119843,
+          "rotZ": 178.472473
+        },
+        {
+          "spawnPointName": "Path to Gravity Cannon",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 15.8590727,
+          "posY": -127.507927,
+          "posZ": -13.4335327,
+          "rotX": 9.708343,
+          "rotY": 327.785217,
+          "rotZ": 182.784241
+        },
+        {
+          "spawnPointName": "Ledge by Elevator",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_EyeDistrict/Geometry_EyeDistrict/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 56.6339874,
+          "posY": -112.756638,
+          "posZ": -11.0623016,
+          "rotX": 1.12861979,
+          "rotY": 12.7108688,
+          "rotZ": 196.209
+        },
+        {
+          "spawnPointName": "Exterior Window",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_3",
+          "posX": 79.9967346,
+          "posY": -124.173241,
+          "posZ": -22.7944145,
+          "rotX": 16.22287,
+          "rotY": 289.8092,
+          "rotZ": 180.901047
+        }
+      ]
+    },
+    {
+      "locationName": "Sunless City Hub",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Power Controls",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_PowerGrove/Interactables_PowerConsole/Structure_NOM_PowerTower_Platform/Structure_NOM_PowerTower_Platform_Collider",
+          "posX": 0.09742227,
+          "posY": 0.232034311,
+          "posZ": 1.13642228,
+          "rotX": 341.9619,
+          "rotY": 179.583313,
+          "rotZ": 0.321318626
+        },
+        {
+          "spawnPointName": "Trees Ledge",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6.329115,
+          "posY": -116.625046,
+          "posZ": 27.3681335,
+          "rotX": 14.6293573,
+          "rotY": 191.913391,
+          "rotZ": 179.752731
+        },
+        {
+          "spawnPointName": "Elevator Tower",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Geometry_City/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 17.3058968,
+          "posY": -49.043293,
+          "posZ": 2.52176976,
+          "rotX": 342.9997,
+          "rotY": 81.66446,
+          "rotZ": 180.000916
+        },
+        {
+          "spawnPointName": "Above the Elevator",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Geometry_City/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 15.6280708,
+          "posY": -65.97427,
+          "posZ": 4.17606449,
+          "rotX": 355.433258,
+          "rotY": 139.711655,
+          "rotZ": 167.5621
+        },
+        {
+          "spawnPointName": "Stairs",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Geometry_City/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -14.0893555,
+          "posY": -70.0041,
+          "posZ": -6.0520153,
+          "rotX": 12.9488468,
+          "rotY": 55.3185959,
+          "rotZ": 177.579117
+        }
+      ]
+    },
+    {
+      "locationName": "Sunless City Stepping Stone District",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Taget's House",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -35.67177,
+          "posY": -90.28822,
+          "posZ": -1.83109665,
+          "rotX": 339.446533,
+          "rotY": 272.898,
+          "rotZ": 177.838882
+        },
+        {
+          "spawnPointName": "Laevi's House",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -20.9288521,
+          "posY": -94.6328049,
+          "posZ": -17.4667244,
+          "rotX": 17.25826,
+          "rotY": 45.86716,
+          "rotZ": 178.828888
+        },
+        {
+          "spawnPointName": "Overlook",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_18",
+          "posX": 6.518832,
+          "posY": -86.24878,
+          "posZ": -7.11112356,
+          "rotX": 8.594197,
+          "rotY": 339.2658,
+          "rotZ": 182.373337
+        },
+        {
+          "spawnPointName": "Stepping Stones",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_FossilPath/Geometry_FossilPath/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -16.88977,
+          "posY": -60.53496,
+          "posZ": -47.15742,
+          "rotX": 342.7446,
+          "rotY": 262.066467,
+          "rotZ": 145.54184
+        },
+        {
+          "spawnPointName": "Stairs",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_FossilPath/Geometry_FossilPath/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -53.8535423,
+          "posY": -71.85106,
+          "posZ": 16.7591515,
+          "rotX": 344.232025,
+          "rotY": 221.476257,
+          "rotZ": 214.284821
+        },
+        {
+          "spawnPointName": "Anglerfish's Maw",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_FossilCave/Interactables_FossilCave/Structure_DB_AnglerfishSkeleton/anglerfish_skeleton_head",
+          "posX": -0.210638061,
+          "posY": -18.9682961,
+          "posZ": 17.24481,
+          "rotX": 23.8300266,
+          "rotY": 353.827148,
+          "rotZ": 356.448181
+        },
+        {
+          "spawnPointName": "Exit to Surface",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_3",
+          "posX": -95.3966,
+          "posY": -111.01947,
+          "posZ": -30.0072021,
+          "rotX": 14.4060049,
+          "rotY": 357.4467,
+          "rotZ": 139.705887
+        }
+      ]
+    },
+    {
+      "locationName": "Sunless City Anglerfish Overlook",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Top of Elevator",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Geometry_City/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -17.1722775,
+          "posY": -102.0745,
+          "posZ": 22.2696037,
+          "rotX": 352.629639,
+          "rotY": 267.571716,
+          "rotZ": 192.532913
+        },
+        {
+          "spawnPointName": "Plaza",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -27.2991314,
+          "posY": -105.335846,
+          "posZ": -23.9759789,
+          "rotX": 341.573425,
+          "rotY": 225.7402,
+          "rotZ": 178.518982
+        },
+        {
+          "spawnPointName": "Top Floor",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -12.1497545,
+          "posY": -117.902527,
+          "posZ": -35.4018745,
+          "rotX": 18.95596,
+          "rotY": 18.1308231,
+          "rotZ": 179.770157
+        },
+        {
+          "spawnPointName": "Scroll Room",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -28.1887169,
+          "posY": -101.250313,
+          "posZ": -38.75229,
+          "rotX": 341.519531,
+          "rotY": 219.919342,
+          "rotZ": 180.362885
+        }
+      ]
+    },
+    {
+      "locationName": "Escape Pod",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Beacon",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_9",
+          "posX": -75.70394,
+          "posY": -106.654427,
+          "posZ": 57.22718,
+          "rotX": 13.8748446,
+          "rotY": 203.097748,
+          "rotZ": 220.192459
+        },
+        {
+          "spawnPointName": "Top",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_EscapePod/Geometry_EscapePod/EscapePod/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.002213478,
+          "posY": 17.6157742,
+          "posZ": -5.738551,
+          "rotX": 22.4551239,
+          "rotY": 180.620728,
+          "rotZ": 0.278905481
+        },
+        {
+          "spawnPointName": "Diagnosis",
+          "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_EscapePod/Geometry_EscapePod/EscapePod/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -3.49524951,
+          "posY": -1.74254608,
+          "posZ": -11.803957,
+          "rotX": 4.536099,
+          "rotY": 262.1892,
+          "rotZ": 27.8153915
+        },
+        {
+          "spawnPointName": "Exit",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -82.54568,
+          "posY": -56.46176,
+          "posZ": 52.2265968,
+          "rotX": 318.210938,
+          "rotY": 358.9405,
+          "rotZ": 133.655167
+        }
+      ]
+    },
+    {
+      "locationName": "Caves to Sunless City",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Trees",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_9",
+          "posX": -17.0097885,
+          "posY": -29.55222,
+          "posZ": 90.66899,
+          "rotX": 298.10614,
+          "rotY": 37.50417,
+          "rotZ": 134.764191
+        },
+        {
+          "spawnPointName": "Interesting Rocks",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -109.514847,
+          "posY": -49.1359863,
+          "posZ": 32.9889145,
+          "rotX": 64.97356,
+          "rotY": 140.220718,
+          "rotZ": 210.495972
+        },
+        {
+          "spawnPointName": "Terrifying Dead End",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -85.7187958,
+          "posY": -84.81295,
+          "posZ": 9.054152,
+          "rotX": 15.7026291,
+          "rotY": 172.416748,
+          "rotZ": 223.885864
+        },
+        {
+          "spawnPointName": "Bottom of Entry Ravine",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -46.877758,
+          "posY": -36.209446,
+          "posZ": 41.04968,
+          "rotX": 334.22995,
+          "rotY": 239.99649,
+          "rotZ": 234.961456
+        },
+        {
+          "spawnPointName": "Platforming Area Bottom",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -24.4158211,
+          "posY": -44.7619858,
+          "posZ": 50.72216,
+          "rotX": 357.437439,
+          "rotY": 249.745331,
+          "rotZ": 231.260635
+        },
+        {
+          "spawnPointName": "Platforming Area Dead End",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_9",
+          "posX": 18.532692,
+          "posY": -44.2865562,
+          "posZ": 73.1548538,
+          "rotX": 303.078674,
+          "rotY": 5.598747,
+          "rotZ": 187.39064
+        },
+        {
+          "spawnPointName": "Below the Hole",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_9",
+          "posX": 28.371,
+          "posY": -58.8572731,
+          "posZ": 58.2604523,
+          "rotX": 331.58902,
+          "rotY": 83.5899,
+          "rotZ": 141.26207
+        },
+        {
+          "spawnPointName": "Behind Sandfall",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_3",
+          "posX": -6.043023,
+          "posY": -49.5672836,
+          "posZ": 82.90653,
+          "rotX": 15.5329809,
+          "rotY": 257.82962,
+          "rotZ": 238.305908
+        },
+        {
+          "spawnPointName": "Anglerfish Overlook",
+          "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_3",
+          "posX": -63.5564651,
+          "posY": -105.104507,
+          "posZ": 13.26619,
+          "rotX": 337.822144,
+          "rotY": 237.1115,
+          "rotZ": 201.675522
+        }
+      ]
+    }
+  ]
+}

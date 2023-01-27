@@ -56,7 +56,11 @@ namespace OuterRelics
                 "PlacementInfo/OrbitalProbeCannon_Body.json",
                 "PlacementInfo/QuantumIsland_Body.json",
                 "PlacementInfo/QuantumMoon_Body.json",
-                "PlacementInfo/StatueIsland_Body.json"
+                "PlacementInfo/StatueIsland_Body.json",
+                "PlacementInfo/BrittleHollow_Body.json",
+                "PlacementInfo/CaveTwin_Body.json",
+                "PlacementInfo/TowerTwin_Body.json",
+                "PlacementInfo/VolcanicMoon_Body.json"
             };
 
             placements = new List<PlacementData>();
