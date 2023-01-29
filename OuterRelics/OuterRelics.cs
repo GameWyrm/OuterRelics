@@ -209,11 +209,6 @@ namespace OuterRelics
             }
         }
 
-        private void NewGroupButton()
-        {
-            //var myButton =
-        }
-
         /// <summary>
         /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system
         /// </summary>
@@ -225,7 +220,7 @@ namespace OuterRelics
                 saveManager = new SaveManager();
             }
 
-            seed = saveManager.GetSeed();
+            if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
 
@@ -262,11 +257,9 @@ namespace OuterRelics
 
             if (debugMode)
             {
-                /*OuterRelicsPauseMenu = menuAPI.PauseMenu_MakePauseListMenu("OUTER RELICS");
-                menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS", OuterRelicsPauseMenu);*/
                 groupSelector = menuAPI.MakeInputFieldPopup("Select group of locations to place spawn points in within current body. If not found, will create a new group.", "User-Friendly name, i.e. \"Chert's Camp\".", "Change Group", "Cancel");
                 groupSelector.OnPopupConfirm += ConfirmGroup;
-                menuAPI.PauseMenu_MakeMenuOpenButton("SELECT OUTER RELICS PLACEMENT GROUP", groupSelector);
+                menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: SELECT PLACEMENT GROUP", groupSelector);
             }
 
             saveManager.SaveData();
@@ -347,10 +340,12 @@ namespace OuterRelics
             {
                 if (OWMath.ApproxEquals(Time.time, popupOpenTime)) return;
 
+                if (saveManager == null) saveManager = new SaveManager();
                 saveManager.ClearSaveData();
 
                 seedMenu.EnableMenu(false);
                 seed = seedMenu.GetInputText();
+                LogInfo($"Seed:{seed}");
                 PlayerData.SaveEyeCompletion();
                 if (PlayerData.LoadLoopCount() > 1)
                 {

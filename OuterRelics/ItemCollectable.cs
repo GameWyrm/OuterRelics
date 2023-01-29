@@ -53,6 +53,9 @@ namespace OuterRelics
         /// MeshRenderer attached to the item
         /// </summary>
         protected MeshRenderer myRenderer;
+
+        //Attempt to fix a rare bug where object appears at origin instead of initial spot and can be collected for a moment
+        private int frameCounter;
         
 
         private void Start()
@@ -97,6 +100,7 @@ namespace OuterRelics
 
         protected virtual void Update()
         {
+            frameCounter++;
             if (isDWLocation)
             {
                 myRenderer.enabled = PlayerState.InDreamWorld();
@@ -122,7 +126,7 @@ namespace OuterRelics
 
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.CompareTag("Player"))
+            if (collider.CompareTag("Player") && frameCounter >= 180)
             {
                 main.LogSuccess("A " + gameObject.name + " has been collected by the player");
                 NotificationManager.s_instance.PostNotification(itemGet);

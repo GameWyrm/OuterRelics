@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = System.Random;
 
 namespace OuterRelics
 {
@@ -34,10 +34,11 @@ namespace OuterRelics
         public List<PlacementData> placements;
 
         string seed => main.seed;
+        string spoilerLog;
 
         OuterRelics main;
         List<string> items = new List<string>();
-        string spoilerLog;
+        Random rnd;
 
         public ItemManager()
         {
@@ -62,7 +63,6 @@ namespace OuterRelics
                 "PlacementInfo/TowerTwin_Body.json",
                 "PlacementInfo/VolcanicMoon_Body.json",
                 "PlacementInfo/Comet_Body.json",
-                "PlacementInfo/SS_Debris_Body.json",
                 "PlacementInfo/SunStation_Body.json",
                 "PlacementInfo/WhiteholeStation_Body.json",
                 "PlacementInfo/DreamWorld_Body_Normal.json",
@@ -81,6 +81,8 @@ namespace OuterRelics
             main = OuterRelics.Main;
 
             SinglePerGroup = false;
+
+            rnd = new Random();
         }
 
         public void Randomize()
@@ -94,7 +96,7 @@ namespace OuterRelics
                 main.LogInfo("No seed provided, using random seed");
                 main.seed = DateTime.Now.Ticks.ToString();
             }
-            Random.InitState(seed.GetHashCode());
+            rnd = new Random(seed.GetHashCode());
             spoilerLog = $"Seed: {seed}\n";
 
             LoadFiles();
@@ -106,11 +108,11 @@ namespace OuterRelics
             {
                 PlacementData currentPlacement = WeightedPlacement(unusedPlacements);
                 
-                int locIndex = Random.Range(0, currentPlacement.locations.Count);
+                int locIndex = rnd.Next(0, currentPlacement.locations.Count - 1);
                 //main.LogInfo("Location Index picked: " + locIndex + "(" + currentPlacement.locations[locIndex].locationName + "), Location Count: " + currentPlacement.locations.Count);
 
                 SpawnPoint spawn;
-                int spawnIndex = Random.Range(0, currentPlacement.locations[locIndex].spawnPoints.Count);
+                int spawnIndex = rnd.Next(0, currentPlacement.locations[locIndex].spawnPoints.Count - 1);
                 //main.LogInfo("Spawn point index picked: " + spawnIndex + "(" + currentPlacement.locations[locIndex].spawnPoints[spawnIndex].spawnPointName + "), Spawn Count: " + currentPlacement.locations[locIndex].spawnPoints.Count);
                 spawn = currentPlacement.locations[locIndex].spawnPoints[spawnIndex];
 
@@ -186,7 +188,7 @@ namespace OuterRelics
                 if (i > 0) weights[i] += weights[i - 1];
             }
             //main.LogMessage("Established weights");
-            int placementIndex = Random.Range(0, weights[weights.Count - 1]);
+            int placementIndex = rnd.Next(0, weights[weights.Count - 1]);
             for (int i = 0; i < weights.Count; i++)
             {
                 if (placementIndex < weights[i])
