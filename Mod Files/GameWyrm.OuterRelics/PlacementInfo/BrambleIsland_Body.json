@@ -1,0 +1,52 @@
+{
+  "system": "SolarSystem",
+  "body": "BrambleIsland_Body",
+  "bodyName": "Giant's Deep",
+  "locations": [
+    {
+      "locationName": "Bramble Island",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Landing Zone",
+          "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 54.16656,
+          "posY": 10.3779736,
+          "posZ": -6.807945,
+          "rotX": 356.1275,
+          "rotY": 219.718246,
+          "rotZ": 5.16274
+        },
+        {
+          "spawnPointName": "Vine Tunnel",
+          "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 4.129056,
+          "posY": 7.797633,
+          "posZ": -46.2088928,
+          "rotX": 0.6218783,
+          "rotY": 252.480515,
+          "rotZ": 5.11560535
+        },
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -53.5587,
+          "posY": 20.4009686,
+          "posZ": 21.5880737,
+          "rotX": 353.61322,
+          "rotY": 96.18895,
+          "rotZ": 1.72319925
+        },
+        {
+          "spawnPointName": "Top",
+          "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -54.4556046,
+          "posY": 76.83401,
+          "posZ": 6.035727,
+          "rotX": 5.132676,
+          "rotY": 268.471771,
+          "rotZ": 359.255341
+        }
+      ]
+    }
+  ]
+}

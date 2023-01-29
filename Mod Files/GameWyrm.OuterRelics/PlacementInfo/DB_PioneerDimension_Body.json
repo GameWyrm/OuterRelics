@@ -1,0 +1,32 @@
+{
+  "system": "SolarSystem",
+  "body": "DB_PioneerDimension_Body",
+  "bodyName": "Dark Bramble",
+  "locations": [
+    {
+      "locationName": "Anglerfish Skeleton",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Feldspar's Camp",
+          "parent": "Sector_PioneerDimension/Geometry_PioneerDimension/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 11.9620008,
+          "posY": -18.2205067,
+          "posZ": -1.73717678,
+          "rotX": 13.2134991,
+          "rotY": 288.48877,
+          "rotZ": 7.79398775
+        },
+        {
+          "spawnPointName": "Lure",
+          "parent": "Sector_PioneerDimension/Geometry_PioneerDimension/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 32.2347221,
+          "posY": 25.1565723,
+          "posZ": -13.4976454,
+          "rotX": 335.4998,
+          "rotY": 355.178925,
+          "rotZ": 175.6674
+        }
+      ]
+    }
+  ]
+}

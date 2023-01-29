@@ -1,0 +1,117 @@
+{
+  "system": "SolarSystem",
+  "body": "Comet_Body",
+  "bodyName": "Interloper",
+  "locations": [
+    {
+      "locationName": "Exterior",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Front",
+          "parent": "Sector_CO/Geometry_CO/General_Batched/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -83.3535156,
+          "posY": -9.25886,
+          "posZ": -17.1671066,
+          "rotX": 83.85315,
+          "rotY": 34.9552231,
+          "rotZ": 136.8878
+        },
+        {
+          "spawnPointName": "Shuttle Landing",
+          "parent": "Sector_CO/Geometry_CO/General_Batched/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 80.03325,
+          "posY": 2.93824387,
+          "posZ": -1.28237915,
+          "rotX": 83.9345,
+          "rotY": 137.77388,
+          "rotZ": 46.8562775
+        },
+        {
+          "spawnPointName": "Longest Spike",
+          "parent": "Sector_CO/Geometry_CO/Frictionless_Batched/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 217.166672,
+          "posY": 2.28981972,
+          "posZ": -13.5057831,
+          "rotX": 77.09725,
+          "rotY": 55.3848076,
+          "rotZ": 337.435333
+        }
+      ]
+    },
+    {
+      "locationName": "Interior",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entry",
+          "parent": "Sector_CO/Geometry_CO/Frictionless_Batched/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -62.98764,
+          "posY": -1.41186571,
+          "posZ": 3.40218353,
+          "rotX": 21.3634872,
+          "rotY": 0.8433115,
+          "rotZ": 90.3965
+        },
+        {
+          "spawnPointName": "First Camp",
+          "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_NotIce/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -2.66612339,
+          "posY": -57.8308525,
+          "posZ": 25.7325687,
+          "rotX": 3.988828,
+          "rotY": 85.58514,
+          "rotZ": 155.873352
+        },
+        {
+          "spawnPointName": "Deadly Fork",
+          "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_Ice/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -1.95442581,
+          "posY": -40.17187,
+          "posZ": 43.8526459,
+          "rotX": 321.21637,
+          "rotY": 11.8464,
+          "rotZ": 169.327362
+        },
+        {
+          "spawnPointName": "Behind the Pillar",
+          "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_NotIce/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 42.9339523,
+          "posY": -32.9072037,
+          "posZ": -26.2104416,
+          "rotX": 353.891632,
+          "rotY": 38.84426,
+          "rotZ": 236.181534
+        },
+        {
+          "spawnPointName": "The Interloper's Secret Slide",
+          "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_Ice/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 31.9124,
+          "posY": 20.9690571,
+          "posZ": 1.96217728,
+          "rotX": 299.29718,
+          "rotY": 255.319565,
+          "rotZ": 9.299199
+        },
+        {
+          "spawnPointName": "Poke",
+          "parent": "Sector_CO/Sector_CometInterior/Props_CometInterior/Prefab_NOM_Dead_Suit (1)/Character_NOM_Dead_Suit",
+          "posX": -0.1325605,
+          "posY": 2.424439,
+          "posZ": -0.5655659,
+          "rotX": 56.77479,
+          "rotY": 163.465271,
+          "rotZ": 334.844269
+        },
+        {
+          "spawnPointName": "Center",
+          "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_NotIce/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -15.3163805,
+          "posY": 2.25466061,
+          "posZ": -22.632885,
+          "rotX": 347.5727,
+          "rotY": 103.942657,
+          "rotZ": 105.330986
+        }
+      ]
+    }
+  ]
+}

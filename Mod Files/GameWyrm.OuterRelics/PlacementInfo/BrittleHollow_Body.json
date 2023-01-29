@@ -1,0 +1,942 @@
+{
+  "system": "SolarSystem",
+  "body": "BrittleHollow_Body",
+  "bodyName": "Brittle Hollow",
+  "locations": [
+    {
+      "locationName": "North Pole",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Tower",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -31.4047165,
+          "posY": 323.199768,
+          "posZ": -31.3988,
+          "rotX": 7.209741,
+          "rotY": 226.308823,
+          "rotZ": 0.17983076
+        },
+        {
+          "spawnPointName": "Warp Arrival",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -26.06143,
+          "posY": 277.455261,
+          "posZ": 110.611359,
+          "rotX": 20.4214859,
+          "rotY": 7.1975646,
+          "rotZ": 7.61878824
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_NorthPoleSurface/Interactables_NorthPoleSurface/LowBuilding/Prefab_NOM_RemoteViewer/Structure_NOM_RemoteViewer/Structure_NOM_RemoteViewer_Collider",
+          "posX": -0.4356658,
+          "posY": -0.09819326,
+          "posZ": 0.423173726,
+          "rotX": 357.6566,
+          "rotY": 324.9935,
+          "rotZ": 1.49215162
+        },
+        {
+          "spawnPointName": "Above City Secret Entrance",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -105.55262,
+          "posY": 276.16156,
+          "posZ": -14.3445511,
+          "rotX": 340.06955,
+          "rotY": 59.82377,
+          "rotZ": 7.88849735
+        },
+        {
+          "spawnPointName": "City Secret Entrance",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -83.05865,
+          "posY": 261.075,
+          "posZ": -8.087166,
+          "rotX": 347.045654,
+          "rotY": 130.741119,
+          "rotZ": 347.278564
+        }
+      ]
+    },
+    {
+      "locationName": "Hanging City Meltwater District",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Black Hole Forge Controls",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Interactables_HangingCity_District2/VisibleFrom_HangingCity/Interactables Forge Control Room/Structure_BH_ForgeControlRoom/Structure_BH_ForgeControlRoom_Col",
+          "posX": -31.0729961,
+          "posY": 169.178528,
+          "posZ": -13.2146454,
+          "rotX": 2.5940876,
+          "rotY": 139.158417,
+          "rotZ": 348.330475
+        },
+        {
+          "spawnPointName": "Bridge",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 5.00147057,
+          "posY": 175.702362,
+          "posZ": 39.5250244,
+          "rotX": 11.7941017,
+          "rotY": 0.378490418,
+          "rotZ": 358.496063
+        },
+        {
+          "spawnPointName": "Bottom of the Waterfall",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Geometry_HangingCity/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -62.82495,
+          "posY": 168.042419,
+          "posZ": -0.734184265,
+          "rotX": 20.285,
+          "rotY": 268.994171,
+          "rotZ": 359.8889
+        },
+        {
+          "spawnPointName": "Scroll House",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -30.95816,
+          "posY": 180.76828,
+          "posZ": 3.91496563,
+          "rotX": 356.966339,
+          "rotY": 20.6756439,
+          "rotZ": 9.5218935
+        },
+        {
+          "spawnPointName": "Poke's House",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -37.9471169,
+          "posY": 191.502365,
+          "posZ": -10.0460148,
+          "rotX": 352.5793,
+          "rotY": 20.7885628,
+          "rotZ": 9.393138
+        }
+      ]
+    },
+    {
+      "locationName": "Hanging City Eye Shrine",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Between Entries",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6.001899,
+          "posY": 210.3048,
+          "posZ": 49.5706139,
+          "rotX": 12.1215191,
+          "rotY": 359.8479,
+          "rotZ": 358.3777
+        },
+        {
+          "spawnPointName": "First Building",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 2740.4624,
+          "posY": 22464.6,
+          "posZ": 3443.33643,
+          "rotX": 351.875061,
+          "rotY": 262.677734,
+          "rotZ": 352.300232
+        },
+        {
+          "spawnPointName": "Second Building",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 3763.87744,
+          "posY": 22926.9551,
+          "posZ": 1397.24756,
+          "rotX": 358.2695,
+          "rotY": 166.4409,
+          "rotZ": 9.861776
+        },
+        {
+          "spawnPointName": "Shrine Overlook",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6060.71338,
+          "posY": 22391.2422,
+          "posZ": 1783.01965,
+          "rotX": 344.586121,
+          "rotY": 271.8782,
+          "rotZ": 355.111
+        },
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 8009.075,
+          "posY": 20319.209,
+          "posZ": 2753.03418,
+          "rotX": 21.3353653,
+          "rotY": 84.93311,
+          "rotZ": 5.31134462
+        },
+        {
+          "spawnPointName": "Hidden Overlook",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6318.607,
+          "posY": 21281.6445,
+          "posZ": 4085.12354,
+          "rotX": 2.96908045,
+          "rotY": 335.8976,
+          "rotZ": 340.767059
+        },
+        {
+          "spawnPointName": "Solanum's Overlook",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 5484.882,
+          "posY": 22859.5,
+          "posZ": 3487.58838,
+          "rotX": 353.863525,
+          "rotY": 166.772873,
+          "rotZ": 14.9653206
+        },
+        {
+          "spawnPointName": "Above First Building",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Props_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 36.572403,
+          "posY": 234.098358,
+          "posZ": 23.1047554,
+          "rotX": 349.052277,
+          "rotY": 249.748169,
+          "rotZ": 357.825531
+        },
+        {
+          "spawnPointName": "Cassava's Log",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Interactables_HangingCity_District3/Prefab_NOM_Recorder/Props_NOM_Recorder/Props_NOM_Recorder_Col",
+          "posX": -0.1841988,
+          "posY": 0.5485788,
+          "posZ": 0.181254953,
+          "rotX": 2.756543,
+          "rotY": 149.537216,
+          "rotZ": 358.355255
+        },
+        {
+          "spawnPointName": "Elevator Bottom",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 5968.646,
+          "posY": 20758.8418,
+          "posZ": 1694.13354,
+          "rotX": 4.804153,
+          "rotY": 2.51135087,
+          "rotZ": 344.22998
+        }
+      ]
+    },
+    {
+      "locationName": "Hanging City School District",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entry",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 3.09376049,
+          "posY": 142.240646,
+          "posZ": 24.2670479,
+          "rotX": 349.067383,
+          "rotY": 180.256378,
+          "rotZ": 1.18176162
+        },
+        {
+          "spawnPointName": "Hidden Behind Glacier",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Geometry_HangingCity/BatchedGroup/BatchedMeshColliders_2",
+          "posX": -37.68927,
+          "posY": 146.220657,
+          "posZ": 26.11523,
+          "rotX": 6.270328,
+          "rotY": 236.3081,
+          "rotZ": 343.847443
+        },
+        {
+          "spawnPointName": "Dining Area",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 34.51006,
+          "posY": -7.67860031,
+          "posZ": 12.4515533,
+          "rotX": 357.41272,
+          "rotY": 154.534744,
+          "rotZ": 17.2434368
+        },
+        {
+          "spawnPointName": "Overlook",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 24.5606575,
+          "posY": 3.16638184,
+          "posZ": 44.4103622,
+          "rotX": 340.0148,
+          "rotY": 177.1696,
+          "rotZ": 10.6324224
+        },
+        {
+          "spawnPointName": "Ghostly Dining Area",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 23.52052,
+          "posY": -21.78569,
+          "posZ": 41.4857,
+          "rotX": 334.704559,
+          "rotY": 223.558655,
+          "rotZ": 353.086823
+        },
+        {
+          "spawnPointName": "Tree",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 10.2667513,
+          "posY": 3.99998,
+          "posZ": 17.3913574,
+          "rotX": 353.9404,
+          "rotY": 141.107178,
+          "rotZ": 9.968188
+        },
+        {
+          "spawnPointName": "Classroom",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 22.717329,
+          "posY": 14.7055969,
+          "posZ": 20.81559,
+          "rotX": 353.832855,
+          "rotY": 149.9778,
+          "rotZ": 12.8684578
+        },
+        {
+          "spawnPointName": "Low Room",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 12.7792177,
+          "posY": -13.9235182,
+          "posZ": 25.3248386,
+          "rotX": 351.028076,
+          "rotY": 141.02916,
+          "rotZ": 14.1669855
+        },
+        {
+          "spawnPointName": "Bottom Room",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 11.2579222,
+          "posY": -22.3057423,
+          "posZ": 25.65285,
+          "rotX": 348.695862,
+          "rotY": 148.003342,
+          "rotZ": 13.482872
+        }
+      ]
+    },
+    {
+      "locationName": "Hanging City Black Hole Forge",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entry",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Geometry_HangingCity_District4/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 8.008627,
+          "posY": 268.183777,
+          "posZ": 64.72605,
+          "rotX": 12.7170677,
+          "rotY": 359.795227,
+          "rotZ": 358.2932
+        },
+        {
+          "spawnPointName": "Warp Arrival",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Interactables_HangingCity_District4/Structure_NOM_BH_WarpPathUpside/Structure_BH_WarpPathUpside_Collider",
+          "posX": 6.15635967,
+          "posY": 1.16235352,
+          "posZ": 21.3456726,
+          "rotX": 3.88463688,
+          "rotY": 355.880829,
+          "rotZ": 179.707382
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Interactables_HangingCity_District4/Structure_NOM_BH_WarpPathUpside/Structure_BH_WarpPathUpside_Collider",
+          "posX": -19.6433372,
+          "posY": -0.4225464,
+          "posZ": -37.75485,
+          "rotX": -2.92577965E-06,
+          "rotY": 355.9358,
+          "rotZ": 180.0
+        },
+        {
+          "spawnPointName": "Forge Interior",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_BlackHoleForge/BlackHoleForgePivot/Geometry_BlackHoleForge/BlackHoleForge_Interior/bhf_floors",
+          "posX": 0.0430649854,
+          "posY": 71.2529144,
+          "posZ": -1.92113686,
+          "rotX": 88.5627747,
+          "rotY": 270.137146,
+          "rotZ": 270.156219
+        },
+        {
+          "spawnPointName": "Entry Path Exterior",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -1.50845718,
+          "posY": 236.496643,
+          "posZ": 60.7408257,
+          "rotX": 4.07143164,
+          "rotY": 69.90934,
+          "rotZ": 13.6780224
+        },
+        {
+          "spawnPointName": "Forge Top",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_BlackHoleForge/BlackHoleForgePivot/Interactables_BlackHoleForge/BlackHoleForge_EntrancePivot/Geometry_BlackHoleForge_Entrance/BlackHoleForge_Door_Collider",
+          "posX": 0.314550877,
+          "posY": 8.104713,
+          "posZ": 1.27650738,
+          "rotX": 359.37677,
+          "rotY": 270.128662,
+          "rotZ": 352.577118
+        }
+      ]
+    },
+    {
+      "locationName": "Escape Pod",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Distress Beacon",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_SurfaceRocks",
+          "posX": -25.90076,
+          "posY": 347.7008,
+          "posZ": 28.7382813,
+          "rotX": 4.99593353,
+          "rotY": 349.199127,
+          "rotZ": 3.30057573
+        },
+        {
+          "spawnPointName": "Top of the Pod",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/EscapePod_Socket/Geometry_EscapePod/Structure_NOM_EscapePod_HT/escape_pod_ext/ext_collider_brokenBack",
+          "posX": -2.49789238,
+          "posY": 29.4367332,
+          "posZ": -17.7804012,
+          "rotX": 0.13255617,
+          "rotY": 79.2630539,
+          "rotZ": 337.668762
+        },
+        {
+          "spawnPointName": "Pod Diagnosis",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/EscapePod_Socket/Geometry_EscapePod/Structure_NOM_EscapePod_HT/interior/int_collider",
+          "posX": 3.01490712,
+          "posY": -1.74220276,
+          "posZ": -11.9103737,
+          "rotX": 9.776434,
+          "rotY": 100.254486,
+          "rotZ": 339.185
+        },
+        {
+          "spawnPointName": "Path to Settlement",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_NorthFragment/Geometry_NorthFragment/BakedTerrain_NorthFragment",
+          "posX": -32.100605,
+          "posY": 296.7616,
+          "posZ": -49.55121,
+          "rotX": 10.9019547,
+          "rotY": 218.3644,
+          "rotZ": 1.03942406
+        }
+      ]
+    },
+    {
+      "locationName": "Old Settlement",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entry",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_UnderRocks",
+          "posX": -15.4146061,
+          "posY": 271.0298,
+          "posZ": 19.1843872,
+          "rotX": 4.248995,
+          "rotY": 310.4612,
+          "rotZ": 359.035583
+        },
+        {
+          "spawnPointName": "Exit to Hanging City",
+          "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_UnderRocks",
+          "posX": -64.28408,
+          "posY": 264.303619,
+          "posZ": 8.85791,
+          "rotX": 357.1198,
+          "rotY": 179.054062,
+          "rotZ": 346.353882
+        },
+        {
+          "spawnPointName": "Eye Record",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 0/Core_OldSettlement0/Interactables_Core_OldSettlement0/probeWindow (1)",
+          "posX": -0.147843331,
+          "posY": 0.0501592979,
+          "posZ": 0.357291,
+          "rotX": 359.7865,
+          "rotY": 8.192693,
+          "rotZ": 359.984741
+        },
+        {
+          "spawnPointName": "Ilex's Space",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 5/Core_OldSettlement 5/Geometry_Core_OldSettlement 5/ControlledByProxy_OldSettlement5/Terrain_Core_OldSettlement 5/BakedTerrain_OldSettlement_5_B_Core",
+          "posX": 0.177819028,
+          "posY": 261.100983,
+          "posZ": -8.306893,
+          "rotX": 1.38365519,
+          "rotY": 168.93364,
+          "rotZ": 359.687836
+        },
+        {
+          "spawnPointName": "Tree",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 5/Core_OldSettlement 5/Geometry_Core_OldSettlement 5/ControlledByProxy_OldSettlement5/Terrain_Core_OldSettlement 5/BakedTerrain_OldSettlement_5_B_Core",
+          "posX": -0.8455915,
+          "posY": 247.971741,
+          "posZ": -3.07322526,
+          "rotX": 0.2101385,
+          "rotY": 184.991241,
+          "rotZ": 359.8611
+        },
+        {
+          "spawnPointName": "Vessel Record",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 0/Core_OldSettlement0/Geometry_Core_OS0/ControlledByProxy_OldSettlement0/Terrain_Core_OS0/BakedTerrain_OldSettlement_0_Bottom_Core",
+          "posX": 3.49752116,
+          "posY": 239.90358,
+          "posZ": 0.0389397,
+          "rotX": 0.09146786,
+          "rotY": 91.4313,
+          "rotZ": 0.0493727252
+        },
+        {
+          "spawnPointName": "Plume's Overlook",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 3/Core_OldSettlement 3/Geometry_Core_OldSettlement 3/ControlledByProxy_OldSettlement3/Terrain_Core_OldSettlement 3/BakedTerrain_Fragment_OldSettlement_3_Core",
+          "posX": 5.4320035,
+          "posY": 258.045227,
+          "posZ": 10.1036434,
+          "rotX": 1.76975977,
+          "rotY": 18.9909458,
+          "rotZ": 359.5973
+        },
+        {
+          "spawnPointName": "Hanging City Overlook",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 1/Core_OldSettlement 1/Geometry_Core_OldSettlement 1/ControlledByProxy_OldSettlement1/Terrain_OldSettlement 1/BakedTerrain_OldSettlement_1_Core",
+          "posX": -8.379418,
+          "posY": 254.444611,
+          "posZ": 5.078896,
+          "rotX": 0.8855296,
+          "rotY": 255.0658,
+          "rotZ": 358.391144
+        },
+        {
+          "spawnPointName": "Kousa's Room",
+          "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 1/Core_OldSettlement 1/Geometry_Core_OldSettlement 1/Architecture_OldSettlement 1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -1.55112541,
+          "posY": 252.1667,
+          "posZ": -4.964354,
+          "rotX": 0.179876909,
+          "rotY": 207.2086,
+          "rotZ": 0.1923522
+        },
+        {
+          "spawnPointName": "Path to Hanging City",
+          "parent": "Sector_BH/Sector_NorthHemisphere/Sector Migration Path/Fragment MigrationPath 3/Geometry_MP3/BakedTerrain_MigrationPath 3",
+          "posX": 17.0951881,
+          "posY": 283.8433,
+          "posZ": 5.372513,
+          "rotX": 0.7634612,
+          "rotY": 6.829841,
+          "rotZ": 180.082123
+        }
+      ]
+    },
+    {
+      "locationName": "Gravity Cannon",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Surface Garden",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_GravityCannonRocks/Terrain_GravityCannon/BakedTerrain_GravityCannonRocks",
+          "posX": 70.9236145,
+          "posY": 286.586273,
+          "posZ": -24.87871,
+          "rotX": 13.9189873,
+          "rotY": 117.049049,
+          "rotZ": 1.93616652
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -276.7331,
+          "posY": 54.3993225,
+          "posZ": 83.48736,
+          "rotX": 74.20456,
+          "rotY": 331.4535,
+          "rotZ": 43.71911
+        },
+        {
+          "spawnPointName": "Cannon Overlook",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -278.322266,
+          "posY": 31.1726685,
+          "posZ": 74.93737,
+          "rotX": 70.0237045,
+          "rotY": 214.478058,
+          "rotZ": 290.337677
+        },
+        {
+          "spawnPointName": "Elevator Near Top",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -265.368835,
+          "posY": 34.63864,
+          "posZ": 74.26349,
+          "rotX": 54.0252838,
+          "rotY": 4.84374046,
+          "rotZ": 77.0949249
+        },
+        {
+          "spawnPointName": "Path to Crossroads (East)",
+          "parent": "Sector_BH/Sector Cannon Path/Fragment CannonPath_3/Core_CannonPath_3/Geometry_Core_CannonPath_3/BakedTerrain_Fragment CannonPath_3_Core",
+          "posX": -229.075821,
+          "posY": 38.3115845,
+          "posZ": 103.049286,
+          "rotX": 343.779938,
+          "rotY": 25.9737453,
+          "rotZ": 81.18001
+        },
+        {
+          "spawnPointName": "Hidden House",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -239.124222,
+          "posY": 30.283783,
+          "posZ": 65.4768448,
+          "rotX": 283.928284,
+          "rotY": 41.5158539,
+          "rotZ": 62.9409
+        },
+        {
+          "spawnPointName": "Path to Observatory",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_GravityCannonRocks/Terrain_GravityCannon/BakedTerrain_GravityCannonRocks",
+          "posX": 0.335525066,
+          "posY": 251.108521,
+          "posZ": -50.97009,
+          "rotX": 10.6098366,
+          "rotY": 181.091553,
+          "rotZ": 0.292544544
+        },
+        {
+          "spawnPointName": "Launch Platform",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPC/Structure_NOM_GravityCannon_BH/Structure_NOM_GravityCannon_LaunchuingPlatform_Collider",
+          "posX": 0.0,
+          "posY": 17.871851,
+          "posZ": 0.0,
+          "rotX": 359.433655,
+          "rotY": 180.43573,
+          "rotZ": 359.990784
+        },
+        {
+          "spawnPointName": "Path to Crossroads (West)",
+          "parent": "Sector_BH/Sector Cannon Path/Fragment CannonPath_1/Core_CannonPath_1/Geometry_Core_CannonPath_1/BakedTerrain_Fragment CannonPath_1_Core",
+          "posX": -229.6921,
+          "posY": -49.9191742,
+          "posZ": 84.42423,
+          "rotX": 31.8657875,
+          "rotY": 26.06921,
+          "rotZ": 102.887077
+        },
+        {
+          "spawnPointName": "Shuttle Controls",
+          "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPC/Structure_BH_GravityCannonPath/ramp_col",
+          "posX": 0.5916879,
+          "posY": -0.9863739,
+          "posZ": 31.5874424,
+          "rotX": 351.7313,
+          "rotY": 181.368469,
+          "rotZ": 359.9619
+        }
+      ]
+    },
+    {
+      "locationName": "Crossroads",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Riebeck's Camp",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -13.8727474,
+          "posY": 156.162155,
+          "posZ": -0.2627716,
+          "rotX": 4.234924,
+          "rotY": 273.229584,
+          "rotZ": 0.362407029
+        },
+        {
+          "spawnPointName": "Map",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -1.28589642,
+          "posY": 198.447662,
+          "posZ": -5.44308472,
+          "rotX": 1.01110947,
+          "rotY": 183.34816,
+          "rotZ": 359.722473
+        },
+        {
+          "spawnPointName": "Ledge",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -5.91596651,
+          "posY": 263.086121,
+          "posZ": 2.61752319,
+          "rotX": 358.3292,
+          "rotY": 121.683235,
+          "rotZ": 359.825775
+        },
+        {
+          "spawnPointName": "Entry Roof",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -8.022774,
+          "posY": 285.4309,
+          "posZ": -12.6692505,
+          "rotX": 2.05410838,
+          "rotY": 184.341309,
+          "rotZ": 358.589325
+        },
+        {
+          "spawnPointName": "Campsite",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 5.823194,
+          "posY": 287.31076,
+          "posZ": 31.8226624,
+          "rotX": 359.250732,
+          "rotY": 103.946953,
+          "rotZ": 6.43102455
+        },
+        {
+          "spawnPointName": "Gravity Crystal Workshop",
+          "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 16.01461,
+          "posY": 288.3623,
+          "posZ": 7.99084473,
+          "rotX": 3.09666252,
+          "rotY": 46.65823,
+          "rotZ": 358.9849
+        }
+      ]
+    },
+    {
+      "locationName": "Tower of Quantum Knowledge",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Quantum Rock",
+          "parent": "Sector_BH/Sector_QuantumFragment/Interactables_QuantumFragment/Surface_QRock_Shard/QuantumShard/Structure_BH_QuantumShard/Rock_BH_Quantum_Rock/COL_BH_Quantum",
+          "posX": 1.335707,
+          "posY": 22.2667313,
+          "posZ": 0.00372366444,
+          "rotX": 359.27124,
+          "rotY": 297.072571,
+          "rotZ": 359.715942
+        },
+        {
+          "spawnPointName": "Arch",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 17.482317,
+          "posY": 270.869873,
+          "posZ": 2.63105559,
+          "rotX": 3.52862668,
+          "rotY": 74.26871,
+          "rotZ": 359.541962
+        },
+        {
+          "spawnPointName": "Path to Observatory",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_FragmentRocks",
+          "posX": 44.0022774,
+          "posY": 197.082733,
+          "posZ": 5.10860062,
+          "rotX": 7.100623,
+          "rotY": 31.3141747,
+          "rotZ": 350.0561
+        },
+        {
+          "spawnPointName": "Below the Stairs",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -4.897694,
+          "posY": 223.128235,
+          "posZ": -22.4386368,
+          "rotX": 0.3087822,
+          "rotY": 124.171463,
+          "rotZ": 354.536652
+        },
+        {
+          "spawnPointName": "Elevator Ledge",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_Elevator_Rocks",
+          "posX": -0.638095856,
+          "posY": 151.06192,
+          "posZ": 29.1147652,
+          "rotX": 355.4491,
+          "rotY": 248.428314,
+          "rotZ": 349.764374
+        },
+        {
+          "spawnPointName": "Bottom Center",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_Elevator_Rocks",
+          "posX": 0.03687668,
+          "posY": 126.40506,
+          "posZ": 0.991811752,
+          "rotX": 358.930725,
+          "rotY": 231.963577,
+          "rotZ": 359.642151
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.488792479,
+          "posY": 185.164886,
+          "posZ": 11.7641125,
+          "rotX": 0.301531941,
+          "rotY": 303.145782,
+          "rotZ": 356.880249
+        },
+        {
+          "spawnPointName": "Reading Room",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -9.695291,
+          "posY": 206.986847,
+          "posZ": 10.1212959,
+          "rotX": 3.21843863,
+          "rotY": 321.4278,
+          "rotZ": 0.362575263
+        },
+        {
+          "spawnPointName": "Quantum Moon Locator",
+          "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -8.435594,
+          "posY": 228.751587,
+          "posZ": 9.753259,
+          "rotX": 2.67270422,
+          "rotY": 324.248169,
+          "rotZ": 0.299618065
+        }
+      ]
+    },
+    {
+      "locationName": "Observatory",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Ghost Matter Safety",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_3",
+          "posX": 32.66638,
+          "posY": -205.673,
+          "posZ": -34.1735573,
+          "rotX": 12.1518049,
+          "rotY": 346.171478,
+          "rotZ": 186.412308
+        },
+        {
+          "spawnPointName": "Tree Root",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Props_SouthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 23.6869354,
+          "posY": -225.123047,
+          "posZ": 10.0740814,
+          "rotX": 358.0524,
+          "rotY": 2.7952826,
+          "rotZ": 185.868454
+        },
+        {
+          "spawnPointName": "Broken Bridge",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 4.81601238,
+          "posY": -245.3027,
+          "posZ": 12.2350454,
+          "rotX": 357.8071,
+          "rotY": 354.014679,
+          "rotZ": 181.414169
+        },
+        {
+          "spawnPointName": "Leap of Faith",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -19.697773,
+          "posY": -233.213913,
+          "posZ": 50.44092,
+          "rotX": 86.26849,
+          "rotY": 109.748909,
+          "rotZ": 201.1017
+        },
+        {
+          "spawnPointName": "Entry from Gravity Cannon",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_4",
+          "posX": -35.8360252,
+          "posY": -208.2427,
+          "posZ": 14.4038086,
+          "rotX": 9.764832,
+          "rotY": 78.44143,
+          "rotZ": 174.23262
+        },
+        {
+          "spawnPointName": "Hidden Room",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 12.9497643,
+          "posY": -255.0,
+          "posZ": 36.6288872,
+          "rotX": 354.891785,
+          "rotY": 66.00525,
+          "rotZ": 173.732086
+        },
+        {
+          "spawnPointName": "Surface Entrance",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 1.00860214,
+          "posY": -291.9751,
+          "posZ": 64.56733,
+          "rotX": 348.3172,
+          "rotY": 359.106659,
+          "rotZ": 180.3823
+        },
+        {
+          "spawnPointName": "Riebeck's Ship",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.433200836,
+          "posY": -284.5968,
+          "posZ": 105.835419,
+          "rotX": 4.08029747,
+          "rotY": 98.61139,
+          "rotZ": 159.853516
+        },
+        {
+          "spawnPointName": "Top of the Observatory",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.008726537,
+          "posY": -343.655121,
+          "posZ": 0.391582668,
+          "rotX": 0.248443648,
+          "rotY": 180.656052,
+          "rotZ": 180.002777
+        },
+        {
+          "spawnPointName": "Goop",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Interactables_Observatory/HologramProjector/Effects_NOM_Hologram_Collider",
+          "posX": 0.267219365,
+          "posY": -0.9288492,
+          "posZ": -12.751956,
+          "rotX": 270.052338,
+          "rotY": 180.057144,
+          "rotZ": 0.0
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -26.31097,
+          "posY": -292.103149,
+          "posZ": 14.0441189,
+          "rotX": 4.765058E-06,
+          "rotY": 313.3958,
+          "rotZ": 180.0
+        },
+        {
+          "spawnPointName": "Tornado",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -18.27368,
+          "posY": -293.43512,
+          "posZ": -29.45384,
+          "rotX": 7.28439727E-06,
+          "rotY": 28.2189751,
+          "rotZ": 180.0
+        },
+        {
+          "spawnPointName": "Retrograde Tornado",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.8091116,
+          "posY": -293.435059,
+          "posZ": -34.8362656,
+          "rotX": 3.24756365E-06,
+          "rotY": 14.7104282,
+          "rotZ": 180.0
+        },
+        {
+          "spawnPointName": "Top Deck",
+          "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -17.2364082,
+          "posY": -312.966766,
+          "posZ": -22.8895664,
+          "rotX": -6.04528577E-06,
+          "rotY": 223.735138,
+          "rotZ": 180.0
+        }
+      ]
+    }
+  ]
+}

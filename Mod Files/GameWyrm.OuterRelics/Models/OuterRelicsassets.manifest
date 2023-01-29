@@ -1,0 +1,84 @@
+ManifestFileVersion: 0
+CRC: 2384217559
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 286648ce69c0876ab89b2d2cc5f54688
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1705ce32fe81546cc45de24fff51b27f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 034b758dcb27c9746a7640cdb345b333, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Nomai Keys/Prefabs/Orb Lock.prefab
+- Assets/Nomai Keys/Prefabs/NK P9.prefab
+- Assets/Nomai Keys/Prefabs/NK P6.prefab
+- Assets/Nomai Keys/Materials/Uncollected.mat
+- Assets/Nomai Keys/Prefabs/NK5.prefab
+- Assets/Nomai Keys/Materials/DW Uncollected.mat
+- Assets/Nomai Keys/Prefabs/NK7.prefab
+- Assets/Nomai Keys/Prefabs/NK P10.prefab
+- Assets/Nomai Keys/Prefabs/NK6.prefab
+- Assets/Nomai Keys/Materials/DW Collected.mat
+- Assets/Nomai Keys/Prefabs/NK P1.prefab
+- Assets/Nomai Keys/Materials/Collected.mat
+- Assets/Nomai Keys/Prefabs/NK P11.prefab
+- Assets/Nomai Keys/Prefabs/Nomai Key Whole.prefab
+- Assets/Nomai Keys/Prefabs/NK3.prefab
+- Assets/Nomai Keys/Prefabs/NK8.prefab
+- Assets/Nomai Keys/Prefabs/NK4.prefab
+- Assets/Nomai Keys/Prefabs/NK P3.prefab
+- Assets/Nomai Keys/Prefabs/NK1.prefab
+- Assets/Nomai Keys/Prefabs/NK10.prefab
+- Assets/Nomai Keys/Prefabs/NK11.prefab
+- Assets/Nomai Keys/Prefabs/Nomai Key Placement Indicator.prefab
+- Assets/Nomai Keys/Prefabs/NK P7.prefab
+- Assets/Nomai Keys/CityLights_Off_01.ogg
+- Assets/Nomai Keys/Prefabs/NK12.prefab
+- Assets/Nomai Keys/Prefabs/NK P8.prefab
+- Assets/Nomai Keys/Prefabs/NK2.prefab
+- Assets/Nomai Keys/Prefabs/NK P5.prefab
+- Assets/Nomai Keys/Prefabs/NK P2.prefab
+- Assets/Nomai Keys/Prefabs/NK P4.prefab
+- Assets/Nomai Keys/Prefabs/NK9.prefab
+- Assets/Nomai Keys/Prefabs/NK P12.prefab
+Dependencies: []

@@ -1,0 +1,42 @@
+{
+  "system": "SolarSystem",
+  "body": "DB_VesselDimension_Body",
+  "bodyName": "DB_VesselDimension_Body RENAME THIS IN THE JSON FILE",
+  "locations": [
+    {
+      "locationName": "Vessel",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Dead End",
+          "parent": "Sector_VesselDimension/Geometry_VesselDimension/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 21.0357037,
+          "posY": 8.922761,
+          "posZ": -62.46013,
+          "rotX": 8.208799,
+          "rotY": 226.417145,
+          "rotZ": 343.92337
+        },
+        {
+          "spawnPointName": "Incoming Transmission",
+          "parent": "Sector_VesselDimension/Geometry_VesselDimension/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 155.271667,
+          "posY": 27.444,
+          "posZ": -3.03610921,
+          "rotX": 16.0582447,
+          "rotY": 12.7636824,
+          "rotZ": 7.7816124
+        },
+        {
+          "spawnPointName": "Signal Room",
+          "parent": "Sector_VesselDimension/Geometry_VesselDimension/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 129.183441,
+          "posY": -1.75106871,
+          "posZ": -15.8713636,
+          "rotX": 1.17154837,
+          "rotY": 281.524933,
+          "rotZ": 348.865662
+        }
+      ]
+    }
+  ]
+}

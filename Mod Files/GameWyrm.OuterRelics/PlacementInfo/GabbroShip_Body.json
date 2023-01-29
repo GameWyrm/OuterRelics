@@ -1,0 +1,22 @@
+{
+  "system": "SolarSystem",
+  "body": "GabbroShip_Body",
+  "bodyName": "Giant's Deep",
+  "locations": [
+    {
+      "locationName": "Gabbro's Ship",
+      "spawnPoints": [
+        {
+          "spawnPointName": null,
+          "parent": "Sector_GabbroShip/Geometry_GabbroShip/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.02479302,
+          "posY": 9.659112,
+          "posZ": -1.40789807,
+          "rotX": 359.878632,
+          "rotY": 272.829132,
+          "rotZ": 0.15901421
+        }
+      ]
+    }
+  ]
+}
