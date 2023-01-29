@@ -11,7 +11,7 @@ Outer Relics adds up to 12 Nomai Keys in the Solar System, placed in random loca
 This mod (and readme) is still in development.
 
 ## Installation
-There are no releases for this mod yet. However, you can currently install the mod and play through a pre-made hunt (it's made for testing, so it's not particularly difficult.) Try to find all 12 keys! Echoes of the Eye is required for the test, though it will not be required for the full release. No other mods are needed. 
+There are no releases for this mod yet. However, you can currently install the mod and play through a randomized hunt. Try to find all 12 keys! Echoes of the Eye is required for the test, though it will not be required for the full release. No other mods are needed. 
 
 To install, download the repo and copy the contents of the Mod Files folder (GameWyrm.ScavengerHunt and all the files within) to your Outer Wilds Mod Manager mod folder and enable the mod within OWMM. 
 
