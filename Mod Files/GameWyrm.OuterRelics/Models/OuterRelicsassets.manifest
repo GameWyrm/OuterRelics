@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4116133311
+CRC: 2384217559
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 48401a68535e7ea852ef47d3d7ebfb67
+    Hash: 286648ce69c0876ab89b2d2cc5f54688
   TypeTreeHash:
     serializedVersion: 2
     Hash: 1705ce32fe81546cc45de24fff51b27f
@@ -54,9 +54,11 @@ Assets:
 - Assets/Nomai Keys/Prefabs/NK P6.prefab
 - Assets/Nomai Keys/Materials/Uncollected.mat
 - Assets/Nomai Keys/Prefabs/NK5.prefab
+- Assets/Nomai Keys/Materials/DW Uncollected.mat
 - Assets/Nomai Keys/Prefabs/NK7.prefab
 - Assets/Nomai Keys/Prefabs/NK P10.prefab
 - Assets/Nomai Keys/Prefabs/NK6.prefab
+- Assets/Nomai Keys/Materials/DW Collected.mat
 - Assets/Nomai Keys/Prefabs/NK P1.prefab
 - Assets/Nomai Keys/Materials/Collected.mat
 - Assets/Nomai Keys/Prefabs/NK P11.prefab

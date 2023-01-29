@@ -15,7 +15,7 @@ namespace OuterRelics
         /// <summary>
         /// The seed for randomization. Two runs with the same seed and settings will be identical.
         /// </summary>
-        public string seed;
+        //public string seed;
         /// <summary>
         /// If true, only one spawn will be used per location. If false, any spawnpoint can be used.
         /// </summary>
@@ -33,7 +33,7 @@ namespace OuterRelics
         /// </summary>
         public List<PlacementData> placements;
 
-        
+        string seed => main.seed;
 
         OuterRelics main;
         List<string> items = new List<string>();
@@ -60,14 +60,25 @@ namespace OuterRelics
                 "PlacementInfo/BrittleHollow_Body.json",
                 "PlacementInfo/CaveTwin_Body.json",
                 "PlacementInfo/TowerTwin_Body.json",
-                "PlacementInfo/VolcanicMoon_Body.json"
+                "PlacementInfo/VolcanicMoon_Body.json",
+                "PlacementInfo/Comet_Body.json",
+                "PlacementInfo/SS_Debris_Body.json",
+                "PlacementInfo/SunStation_Body.json",
+                "PlacementInfo/WhiteholeStation_Body.json",
+                "PlacementInfo/DreamWorld_Body_Normal.json",
+                "PlacementInfo/DreamWorld_Body_LightsOut.json",
+                "PlacementInfo/RingWorld_Body.json",
+                "PlacementInfo/DB_PioneerDimension_Body.json",
+                "PlacementInfo/FeldsparShip_Body.json",
+                "PlacementInfo/DarkBramble_Body.json",
+                "PlacementInfo/Sector_EscapePodBody.json",
+                "PlacementInfo/DB_VesselDimension_Body.json",
+                "PlacementInfo/BackerSatellite_Body.json"
             };
 
             placements = new List<PlacementData>();
 
             main = OuterRelics.Main;
-
-            seed = "";
 
             SinglePerGroup = false;
         }
@@ -81,7 +92,7 @@ namespace OuterRelics
             else
             {
                 main.LogInfo("No seed provided, using random seed");
-                seed = DateTime.Now.Ticks.ToString();
+                main.seed = DateTime.Now.Ticks.ToString();
             }
             Random.InitState(seed.GetHashCode());
             spoilerLog = $"Seed: {seed}\n";

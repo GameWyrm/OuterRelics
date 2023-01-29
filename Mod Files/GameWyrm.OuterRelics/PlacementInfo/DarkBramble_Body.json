@@ -1,0 +1,42 @@
+{
+  "system": "SolarSystem",
+  "body": "DarkBramble_Body",
+  "bodyName": "DarkBramble_Body RENAME THIS IN THE JSON FILE",
+  "locations": [
+    {
+      "locationName": "Frozen Jellyfish",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Top of the Vine",
+          "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_4",
+          "posX": -3.52452564,
+          "posY": -578.7435,
+          "posZ": -78.20613,
+          "rotX": 7.483868,
+          "rotY": 343.612946,
+          "rotZ": 177.50296
+        },
+        {
+          "spawnPointName": "Recording",
+          "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -7.6242156,
+          "posY": -556.473,
+          "posZ": -42.38598,
+          "rotX": 4.36286545,
+          "rotY": 32.3678474,
+          "rotZ": 181.668564
+        },
+        {
+          "spawnPointName": "Wise Words",
+          "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_6",
+          "posX": -9.565574,
+          "posY": -549.0461,
+          "posZ": -5.028543,
+          "rotX": 1.29806674,
+          "rotY": 76.4895554,
+          "rotZ": 180.277267
+        }
+      ]
+    }
+  ]
+}

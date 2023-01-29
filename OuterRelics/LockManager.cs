@@ -71,7 +71,7 @@ namespace OuterRelics
                 UnlockATP();
             }
 
-            //main.saveManager.SaveData(main.hasKey); //TODO fix
+            main.saveManager.SaveData(main.hasKey);
         }
 
         /// <summary>

@@ -4,6 +4,7 @@ using OWML.ModHelper;
 using OWML.ModHelper.Menus;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -67,6 +68,10 @@ namespace OuterRelics
         /// </summary>
         public bool debugMode = true;
         /// <summary>
+        /// Seed used for randomization
+        /// </summary>
+        public string seed;
+        /// <summary>
         /// Orange glowing material
         /// </summary>
         public Material collectedMat;
@@ -99,13 +104,10 @@ namespace OuterRelics
         /// </summary>
         public NomaiInterfaceOrb orbInterface;
 
-        //Objects for assisting with determining potential spawn points
-        List<GameObject> positionalIndicators;
         //Handles spawning items in the world
         ItemManager itemManager;
         //Handles placing indicators
         PlacerManager placer;
-        Menu OuterRelicsPauseMenu;
         PopupInputMenu groupSelector;
         //Menu Framework
         IMenuAPI menuAPI;
@@ -121,7 +123,6 @@ namespace OuterRelics
             // So you probably don't want to do anything here.
             // Use Start() instead.
             //Initialize objects independant of OWML
-            positionalIndicators = new List<GameObject>();
             itemManager = new ItemManager();
             placer = gameObject.AddComponent<PlacerManager>();
         }
@@ -146,13 +147,7 @@ namespace OuterRelics
                     LogSuccess("Loaded into solar system!");
                     StartCoroutine(LoadIn());
                     inGame = true;
-                }/*
-                else if (loadScene == OWScene.TitleScreen)
-                {
-                    LogSuccess("Loaded into main menu!");
-                    inGame = false;
-                    MainMenuButtons();
-                }*/
+                }
             };
 
             //Get materials
@@ -168,11 +163,11 @@ namespace OuterRelics
             //Gamepad detection debug
             if (Gamepad.all.Count > 0)
             {
-                LogInfo("Gamepad Detected");
+                //LogInfo("Gamepad Detected");
             }
             else
             {
-                LogWarning("Gamepad not found");
+                //LogWarning("Gamepad not found");
             }
 
             //DLC detection debug
@@ -225,6 +220,15 @@ namespace OuterRelics
         /// <returns></returns>
         IEnumerator LoadIn()
         {
+            if (saveManager == null)
+            {
+                saveManager = new SaveManager();
+            }
+
+            seed = saveManager.GetSeed();
+            hasKey = saveManager.GetKeyList();
+            keyCount = saveManager.GetKeyCount();
+
             GameObject atp = GameObject.Find("TimeLoopRing_Body").transform.Find("Interactibles_TimeLoopRing_Hidden/CoreContainmentInterface").gameObject;
             yield return new WaitUntil(() => atp.transform.childCount >= 5);
             LogInfo(atp == null ? "Could not find it yet" : "Located ATP: " + atp.name);
@@ -258,12 +262,14 @@ namespace OuterRelics
 
             if (debugMode)
             {
-                OuterRelicsPauseMenu = menuAPI.PauseMenu_MakePauseListMenu("OUTER RELICS");
-                menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS", OuterRelicsPauseMenu);
+                /*OuterRelicsPauseMenu = menuAPI.PauseMenu_MakePauseListMenu("OUTER RELICS");
+                menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS", OuterRelicsPauseMenu);*/
                 groupSelector = menuAPI.MakeInputFieldPopup("Select group of locations to place spawn points in within current body. If not found, will create a new group.", "User-Friendly name, i.e. \"Chert's Camp\".", "Change Group", "Cancel");
                 groupSelector.OnPopupConfirm += ConfirmGroup;
-                menuAPI.PauseMenu_MakeMenuOpenButton("SELECT GROUP", groupSelector, OuterRelicsPauseMenu);
+                menuAPI.PauseMenu_MakeMenuOpenButton("SELECT OUTER RELICS PLACEMENT GROUP", groupSelector);
             }
+
+            saveManager.SaveData();
         }
 
         private void ConfirmGroup()
@@ -332,7 +338,7 @@ namespace OuterRelics
             yield return new WaitForEndOfFrame();
 
             PopupInputMenu seedMenu = menuAPI.MakeInputFieldPopup("Input a seed to generate a new run!", "Leave blank for random seed", "Start new run", "Cancel");
-            menuAPI.TitleScreen_MakeMenuOpenButton("START NEW OUTER RELICS RUN", 3, seedMenu);
+            menuAPI.TitleScreen_MakeMenuOpenButton("NEW OUTER RELICS RUN", 1, seedMenu);
 
             seedMenu.CloseMenuOnOk(false);
 
@@ -341,8 +347,10 @@ namespace OuterRelics
             {
                 if (OWMath.ApproxEquals(Time.time, popupOpenTime)) return;
 
+                saveManager.ClearSaveData();
+
                 seedMenu.EnableMenu(false);
-                itemManager.seed = seedMenu.GetInputText();
+                seed = seedMenu.GetInputText();
                 PlayerData.SaveEyeCompletion();
                 if (PlayerData.LoadLoopCount() > 1)
                 {
@@ -360,8 +368,10 @@ namespace OuterRelics
         /// Logs an Info message to the OWML console. Will be blue.
         /// </summary>
         /// <param name="text">Text to print</param>
-        public void LogInfo(string text)
+        /// <param name="debug">Should text only get logged if in debug mode?</param>
+        public void LogInfo(string text, bool debug = true)
         {
+            if (!debug && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Info);
         }
 
@@ -369,8 +379,10 @@ namespace OuterRelics
         /// Logs a Warning message to the OWML console. Will be yellow.
         /// </summary>
         /// <param name="text">Text to print</param>
-        public void LogWarning(string text)
+        /// <param name="debug">Should text only get logged if in debug mode?</param>
+        public void LogWarning(string text, bool debug = false)
         {
+            if (!debug && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Warning);
         }
 
@@ -378,8 +390,10 @@ namespace OuterRelics
         /// Logs an Error message to the OWML console. Will be red.
         /// </summary>
         /// <param name="text">Text to print</param>
-        public void LogError(string text)
+        /// <param name="debug">Should text only get logged if in debug mode?</param>
+        public void LogError(string text, bool debug = false)
         {
+            if (!debug && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Error);
         }
 
@@ -387,8 +401,10 @@ namespace OuterRelics
         /// Logs a Success message to the OWML console. Will be green.
         /// </summary>
         /// <param name="text">Text to print</param>
-        public void LogSuccess(string text)
+        /// <param name="debug">Should text only get logged if in debug mode?</param>
+        public void LogSuccess(string text, bool debug = true)
         {
+            if (!debug && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Success);
         }
 
@@ -396,8 +412,10 @@ namespace OuterRelics
         /// Logs a message to the OWML console. Will be white.
         /// </summary>
         /// <param name="text">Text to print</param>
-        public void LogMessage(string text)
+        /// <param name="debug">Should text only get logged if in debug mode?</param>
+        public void LogMessage(string text, bool debug = true)
         {
+            if (!debug && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Message);
         }
         #endregion

@@ -1,0 +1,22 @@
+{
+  "system": "SolarSystem",
+  "body": "BackerSatellite_Body",
+  "bodyName": "Human-Made Object",
+  "locations": [
+    {
+      "locationName": "Satellite",
+      "spawnPoints": [
+        {
+          "spawnPointName": null,
+          "parent": "Sector_BackerSatellite/Geometry_BackerSatellite/Structure_Fig_Satellite_ConvexCollider/Fig_Satellite_Convex_04",
+          "posX": -7.47843647,
+          "posY": 1.11391068,
+          "posZ": 4.14019346,
+          "rotX": 12.7237368,
+          "rotY": 128.355408,
+          "rotZ": 33.4503441
+        }
+      ]
+    }
+  ]
+}

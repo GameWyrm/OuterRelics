@@ -18,6 +18,14 @@ namespace OuterRelics
         /// </summary>
         protected bool hasDLC;
         /// <summary>
+        /// Whether or not the item is in a Dream World location
+        /// </summary>
+        protected bool isDWLocation;
+        /// <summary>
+        /// Whether or not the item is in the Stranger
+        /// </summary>
+        protected bool isRingWorldLocation;
+        /// <summary>
         /// Parent of the key (to prevent issues with animations)
         /// </summary>
         protected GameObject holder;
@@ -62,39 +70,12 @@ namespace OuterRelics
             audio = GetComponent<AudioSource>();
             myRenderer = GetComponent<MeshRenderer>();
 
-            if (hasDLC) DLCRendererCheck();
-        }
-
-        protected virtual void Update()
-        {
-            //Hide item if attached object is invisible
-            if (hasDLC && siblingRenderer != null)
+            if (hasDLC)
             {
-                if (myRenderer.enabled != siblingRenderer.enabled)
-                {
-                    myRenderer.enabled = !myRenderer.enabled;
-                    transform.GetChild(0).gameObject.SetActive(myRenderer.enabled);
-                }
+                isDWLocation = OuterRelics.GetBody(gameObject).name == "DreamWorld_Body";
+                isRingWorldLocation = OuterRelics.GetBody(gameObject).name == "RingWorld_Body";
             }
 
-            
-        }
-
-        private void OnTriggerEnter(Collider collider)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                main.LogSuccess("A " + gameObject.name + " has been collected by the player");
-                NotificationManager.s_instance.PostNotification(itemGet);
-                Collect();
-            }
-        }
-
-        /// <summary>
-        /// Checks for DLC and adjusts renderer
-        /// </summary>
-        private void DLCRendererCheck()
-        {
             if (transform.parent.transform.parent.transform.parent == null)
             {
                 main.LogInfo("No higher parent found");
@@ -112,7 +93,41 @@ namespace OuterRelics
                 //main.LogMessage("A sibling was found for " + transform.parent.name);
                 return;
             }
+        }
 
+        protected virtual void Update()
+        {
+            if (isDWLocation)
+            {
+                myRenderer.enabled = PlayerState.InDreamWorld();
+            }
+            else if (isRingWorldLocation)
+            {
+                myRenderer.enabled = PlayerState.InCloakingField();
+            }
+            else
+            {
+                //Hide item if attached object is invisible
+                if (siblingRenderer != null)
+                {
+                    if (myRenderer.enabled != siblingRenderer.enabled)
+                    {
+                        myRenderer.enabled = !myRenderer.enabled;
+                    }
+                }
+            }
+            transform.GetChild(0).gameObject.SetActive(myRenderer.enabled);
+            
+        }
+
+        private void OnTriggerEnter(Collider collider)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                main.LogSuccess("A " + gameObject.name + " has been collected by the player");
+                NotificationManager.s_instance.PostNotification(itemGet);
+                Collect();
+            }
         }
 
         /// <summary>

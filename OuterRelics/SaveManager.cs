@@ -1,4 +1,6 @@
 ﻿using OWML.ModHelper;
+using System;
+using System.IO;
 
 namespace OuterRelics
 {
@@ -9,9 +11,15 @@ namespace OuterRelics
     {
         public class OuterRelicsSaveData
         {
+            public string seed = "";
             public bool[] savedKeysObtained = new bool[12];
             public int totalSavedKeys = 0;
         }
+
+        /// <summary>
+        /// Seed for randomization stored in the save file
+        /// </summary>
+        public string Seed;
 
         private OuterRelicsSaveData saveData;
         private OuterRelics main;
@@ -32,8 +40,15 @@ namespace OuterRelics
         /// Saves which items have been obtained
         /// </summary>
         /// <param name="keysObtained">List of keys obtained</param>
-        public void SaveData(bool[] keysObtained)
+        public void SaveData(bool[] keysObtained = null)
         {
+            if (keysObtained == null)
+            {
+                keysObtained = main.hasKey;
+            }
+
+            saveData.seed = main.seed;
+
             saveData.totalSavedKeys = 0;
             for (int i = 0; i < keysObtained.Length; i++)
             {
@@ -44,9 +59,9 @@ namespace OuterRelics
                 }
             }
 
-            main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, "SaveData/" + profile + "OuterRelicsSave.json");
+            main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
-            main.LogInfo("Saved Outer Relics data");
+            main.LogInfo($"Saved Outer Relics data for {profile}");
         }
 
         /// <summary>
@@ -57,6 +72,15 @@ namespace OuterRelics
         public bool GetHasKey(int keyID)
         {
             return saveData.savedKeysObtained[keyID] == true;
+        }
+
+        /// <summary>
+        /// Returns the string of the seed
+        /// </summary>
+        /// <returns>Seed in plain text</returns>
+        public string GetSeed()
+        {
+            return saveData.seed;
         }
 
         /// <summary>
@@ -78,13 +102,20 @@ namespace OuterRelics
         }
 
         /// <summary>
-        /// Resets all save data related to Scavenger Hunt
+        /// Resets all save data related to Outer Relics for the current profile
         /// </summary>
         public void ClearSaveData()
         {
-            OuterRelicsSaveData save = new OuterRelicsSaveData();
-            main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, "OuterRelicsSave.json");
-            main.LogInfo("Deleted Scavenger Hunt data");
+            try
+            {
+                File.Delete(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
+                saveData = new OuterRelicsSaveData();
+                main.LogInfo("Deleted Outer Relics data");
+            }
+            catch (Exception e)
+            {
+                main.LogError($"EXCEPTION: {e.Message}\nSave Data was not deleted");
+            }
         }
     }
 }

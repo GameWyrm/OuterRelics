@@ -1,10 +1,10 @@
 ManifestFileVersion: 0
-CRC: 637652501
+CRC: 1975406686
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: test
       Dependencies: {}
     Info_1:
-      Name: scavengerhuntassets
+      Name: outerrelicsassets
       Dependencies: {}

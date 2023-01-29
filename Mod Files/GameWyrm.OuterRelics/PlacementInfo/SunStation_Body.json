@@ -1,0 +1,72 @@
+{
+  "system": "SolarSystem",
+  "body": "SunStation_Body",
+  "bodyName": "Sun Station",
+  "locations": [
+    {
+      "locationName": "Station",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Entry",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_WarpModule_Geo/Structure_NOM_SunStation_Warp/Structure_NOM_SunStation_Warp_Collider",
+          "posX": -5.859229,
+          "posY": 34.18027,
+          "posZ": 0.0401068479,
+          "rotX": 88.40198,
+          "rotY": 180.000854,
+          "rotZ": 90.00083
+        },
+        {
+          "spawnPointName": "Main Building",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_ControlModule_Geo/Structure_NOM_SunStation_ControlINT/CONTROL_INT_COLLIDE",
+          "posX": 2.95721459,
+          "posY": 24.4611778,
+          "posZ": 0.447943181,
+          "rotX": 0.00157954125,
+          "rotY": 89.4789,
+          "rotZ": 0.173155352
+        },
+        {
+          "spawnPointName": "Statue",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_ControlModule_Geo/Structure_NOM_SunStation_ControlINT/CONTROL_INT_COLLIDE",
+          "posX": 9.848671,
+          "posY": 37.95218,
+          "posZ": 22.5668449,
+          "rotX": 3.25831652,
+          "rotY": 3.56491065,
+          "rotZ": 0.2028959
+        },
+        {
+          "spawnPointName": "Projection Pool",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_ControlModule_Geo/Structure_NOM_SunStation_ControlINT/CONTROL_INT_COLLIDE",
+          "posX": 5.92008448,
+          "posY": -22.40623,
+          "posZ": -0.240667477,
+          "rotX": 85.60297,
+          "rotY": 179.999451,
+          "rotZ": 89.99954
+        },
+        {
+          "spawnPointName": "Top",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_ControlModule_Geo/Structure_NOM_SunStation_ControlINT/CONTROL_INT_COLLIDE",
+          "posX": 10.184679,
+          "posY": 51.5411,
+          "posZ": 0.120204218,
+          "rotX": 359.988342,
+          "rotY": 93.86453,
+          "rotZ": 0.172730535
+        },
+        {
+          "spawnPointName": "Warp Building Top",
+          "parent": "Sector_SunStation/Geometry_SunStation/SunStation_WarpModule_Geo/Structure_NOM_SunStation_Warp/Structure_NOM_SunStation_Warp_Collider",
+          "posX": 11.153,
+          "posY": 61.238,
+          "posZ": 1.63274992,
+          "rotX": 354.810059,
+          "rotY": 239.7517,
+          "rotZ": 357.403717
+        }
+      ]
+    }
+  ]
+}

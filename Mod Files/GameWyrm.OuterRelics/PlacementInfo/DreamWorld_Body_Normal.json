@@ -1,0 +1,442 @@
+{
+  "system": "SolarSystem",
+  "body": "DreamWorld_Body",
+  "bodyName": "Dreamworld",
+  "locations": [
+    {
+      "locationName": "Shrouded Woodlands",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/DreamFireHouse_1/Geo_DreamFireHouse_1/Structure_IP_DreamFireHouse_Round/Mural_Room/MuralRoom/COL_MuralRoom",
+          "posX": -0.0599934757,
+          "posY": -0.00164145045,
+          "posZ": -0.2146376,
+          "rotX": 1.91947984E-05,
+          "rotY": 359.360931,
+          "rotZ": 0.0003071535
+        },
+        {
+          "spawnPointName": "Viewing Platform",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_B/Floor_DZ1_B_Island_A",
+          "posX": 63.7675552,
+          "posY": 6.642542,
+          "posZ": -22.31012,
+          "rotX": -2.333068E-06,
+          "rotY": 282.8897,
+          "rotZ": 5.145081E-06
+        },
+        {
+          "spawnPointName": "Exit Dock",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_B/Floor_DZ1_B_Island_A",
+          "posX": 91.8485,
+          "posY": 1.15063071,
+          "posZ": -55.66638,
+          "rotX": 1.38338537E-05,
+          "rotY": 144.442032,
+          "rotZ": -5.68084033E-06
+        },
+        {
+          "spawnPointName": "Entry Woods",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_B/Floor_DZ1_B_Island_B",
+          "posX": 102.388733,
+          "posY": 1.68202019,
+          "posZ": 83.15973,
+          "rotX": -2.09261816E-06,
+          "rotY": 27.1017876,
+          "rotZ": 8.06275E-06
+        },
+        {
+          "spawnPointName": "Bridge Controls",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_B/Floor_DZ1_B_Hill",
+          "posX": 67.67362,
+          "posY": 8.514226,
+          "posZ": 90.70325,
+          "rotX": -9.544569E-06,
+          "rotY": 61.4853363,
+          "rotZ": 7.769702E-06
+        },
+        {
+          "spawnPointName": "Bridge",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Interactibles_DreamZone_1/ProjectedBridge/CoveredBridge_Projection/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.0184209347,
+          "posY": 1.43051147E-06,
+          "posZ": -12.29954,
+          "rotX": 1.06494781E-05,
+          "rotY": 0.279214948,
+          "rotZ": -1.30307426E-05
+        },
+        {
+          "spawnPointName": "Transit Island",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_A/Floor_DZ1_A_Island_C",
+          "posX": 19.3640137,
+          "posY": 2.154621,
+          "posZ": -25.54248,
+          "rotX": -8.137476E-06,
+          "rotY": 169.265839,
+          "rotZ": -1.46437078E-05
+        },
+        {
+          "spawnPointName": "Far Dock",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/RaftDock/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.0268080235,
+          "posY": -0.539999843,
+          "posZ": 7.361581,
+          "rotX": 1.86432658E-06,
+          "rotY": 0.918803453,
+          "rotZ": 5.115995E-06
+        },
+        {
+          "spawnPointName": "Plaza",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_A/Floor_DZ1_A_Island_F",
+          "posX": -32.7651062,
+          "posY": 1.713628,
+          "posZ": -82.7428,
+          "rotX": 4.18037871E-06,
+          "rotY": 174.726929,
+          "rotZ": -1.20877912E-05
+        }
+      ]
+    },
+    {
+      "locationName": "Starlit Cove",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/DreamFireHouse_2/Geo_DreamFireHouse_2/Structure_IP_DreamFireHouse_Lighthouse/Mural_Room/MuralRoom/COL_MuralRoom",
+          "posX": 0.03033857,
+          "posY": -2.7495842,
+          "posZ": -0.02389759,
+          "rotX": 0.000165209625,
+          "rotY": 359.4512,
+          "rotZ": -0.00028898922
+        },
+        {
+          "spawnPointName": "Dock Controls",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Geo_DreamZone_2/Terrain_DreamZone2/Floor_DWZ2_TotemNook",
+          "posX": 53.7086449,
+          "posY": 13.7109022,
+          "posZ": 77.13127,
+          "rotX": -0.000198068825,
+          "rotY": 22.2576084,
+          "rotZ": 0.000486824836
+        },
+        {
+          "spawnPointName": "Clockwise Dead-End",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/City/ElevatorHouse/ArchitectureKit/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -17.15304,
+          "posY": 9.15000248,
+          "posZ": 24.2705936,
+          "rotX": 0.000383930572,
+          "rotY": 9.621075,
+          "rotZ": -0.000356806
+        },
+        {
+          "spawnPointName": "Dock",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/RaftDock_Projection/RaftDock_New/Floor_IP_DW (27)",
+          "posX": 0.09166696,
+          "posY": 0.0,
+          "posZ": -0.5255471,
+          "rotX": -0.000256437721,
+          "rotY": 267.396759,
+          "rotZ": -1.25515371E-05
+        },
+        {
+          "spawnPointName": "Nice Carpet",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/DreamFireHouse_2/Geo_DreamFireHouse_2/Structure_IP_DreamFireHouse_Lighthouse/Slide_Room/Slide_Room 1/COL_Slide_Room",
+          "posX": -0.17484042,
+          "posY": 19.822979,
+          "posZ": -0.0287784636,
+          "rotX": -0.000224994947,
+          "rotY": 265.235626,
+          "rotZ": -0.000108807028
+        },
+        {
+          "spawnPointName": "Top of the Tower",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/DreamFireHouse_2/Geo_DreamFireHouse_2/Structure_IP_DreamFireHouse_Lighthouse/Top/TopFloor/COL_TopFloor",
+          "posX": -0.035329,
+          "posY": 35.695,
+          "posZ": -0.0368408,
+          "rotX": -0.00012290747,
+          "rotY": 179.2389,
+          "rotZ": 0.000216062326
+        },
+        {
+          "spawnPointName": "Overlook",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Geo_DreamZone_2/Terrain_DreamZone2/Floor_DWZ2_Garden",
+          "posX": 38.7860451,
+          "posY": 15.2641649,
+          "posZ": -25.08603,
+          "rotX": -0.000241047412,
+          "rotY": 10.9119463,
+          "rotZ": -4.86987556E-05
+        },
+        {
+          "spawnPointName": "Platform",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/City/NoskHouse/ArchitectureKit (1)/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -1.18316317,
+          "posY": 1.90734863E-06,
+          "posZ": -4.906371,
+          "rotX": -0.000112716763,
+          "rotY": 2.23607254,
+          "rotZ": 0.000212020241
+        },
+        {
+          "spawnPointName": "Traitor's House",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/BurntBuilding/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 10.6275673,
+          "posY": 1.1920929E-07,
+          "posZ": 7.19603443,
+          "rotX": 0.0,
+          "rotY": 68.41053,
+          "rotZ": 0.0
+        },
+        {
+          "spawnPointName": "Cove Controls",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Geo_DreamZone_2/Terrain_DreamZone2/Wall_DWZ2_GrottoInner",
+          "posX": 78.1879,
+          "posY": 25.0738068,
+          "posZ": -74.89804,
+          "rotX": 0.0,
+          "rotY": 5.74275446,
+          "rotZ": 0.0
+        },
+        {
+          "spawnPointName": "Cove Bridge",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/WaterLevel/Bridges/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -47.78468,
+          "posY": 2.13004351,
+          "posZ": -22.3535461,
+          "rotX": 9.659402E-06,
+          "rotY": 284.963043,
+          "rotZ": 4.77426474E-05
+        }
+      ]
+    },
+    {
+      "locationName": "Endless Canyon",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Structures_DreamZone_3/DreamFireHouse_Zone_3/Geo_DreamFireHouse_Zone3/Structure_IP_DreamFireHouse_ZoneThree/Mural_Room/Mural_Room 1/COL_MuralRoom",
+          "posX": -0.0377995372,
+          "posY": -0.00163412094,
+          "posZ": -0.180380583,
+          "rotX": -9.334303E-05,
+          "rotY": 2.73860264,
+          "rotZ": 0.000293815363
+        },
+        {
+          "spawnPointName": "Light Controls",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Geo_DreamZone_3/Terrain_DreamZone3/Side_B/DZ3_B_Floor_MuralPath",
+          "posX": 34.1455345,
+          "posY": 0.8179779,
+          "posZ": 7.76900864,
+          "rotX": -1.79099675E-06,
+          "rotY": 82.3332062,
+          "rotZ": 6.80809137E-07
+        },
+        {
+          "spawnPointName": "Secret Bridge",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Structures_DreamZone_3/Invisible_Bridge_Shortcut",
+          "posX": 0.0854968354,
+          "posY": 0.50001806,
+          "posZ": 0.293609619,
+          "rotX": 346.639526,
+          "rotY": 88.13641,
+          "rotZ": 0.430774957
+        },
+        {
+          "spawnPointName": "Dock",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Interactibles_DreamZone_3/RaftDock (1)/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.471237183,
+          "posY": -7.748604E-07,
+          "posZ": -19.7835312,
+          "rotX": -2.99873051E-07,
+          "rotY": 180.755646,
+          "rotZ": 2.18534319E-06
+        },
+        {
+          "spawnPointName": "Stage",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Structures_DreamZone_3/BuildingKit_Stage/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 1.39930463,
+          "posY": 1.52587891E-05,
+          "posZ": 0.124064088,
+          "rotX": -6.678531E-05,
+          "rotY": 269.7216,
+          "rotZ": 5.15664869E-05
+        },
+        {
+          "spawnPointName": "Bottom Floor",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 15.8093433,
+          "posY": -26.9999924,
+          "posZ": -0.412214458,
+          "rotX": 3.95671668E-06,
+          "rotY": 92.62758,
+          "rotZ": 1.88371746E-06
+        },
+        {
+          "spawnPointName": "Garden",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Courtyard/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -9.239293,
+          "posY": 7.62939453E-06,
+          "posZ": 2.034274,
+          "rotX": -3.36117637E-06,
+          "rotY": 271.5657,
+          "rotZ": -5.76444563E-06
+        },
+        {
+          "spawnPointName": "Theater View",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Library/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.854189754,
+          "posY": 9.000008,
+          "posZ": -12.1850929,
+          "rotX": -2.5123536E-06,
+          "rotY": 7.16823244,
+          "rotZ": 6.827839E-05
+        },
+        {
+          "spawnPointName": "Balcony",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Cafeteria/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -12.0642328,
+          "posY": 1.52587891E-05,
+          "posZ": 4.12912,
+          "rotX": -6.565726E-05,
+          "rotY": 266.937,
+          "rotZ": 1.56157366E-05
+        },
+        {
+          "spawnPointName": "Interior Bridge Controls",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Cafeteria/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 6.010498,
+          "posY": 1.52587891E-05,
+          "posZ": -8.045332,
+          "rotX": 1.40253778E-05,
+          "rotY": 180.532028,
+          "rotZ": 6.623641E-05
+        },
+        {
+          "spawnPointName": "Interior Bridge",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Interactibles_Hotel/Lobby/Bridge_Projection/BuildingKit_HotelLobbyBridge/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.006010069,
+          "posY": 1.52587891E-05,
+          "posZ": 0.156050056,
+          "rotX": 3.04643572E-06,
+          "rotY": 2.7689867,
+          "rotZ": -2.471118E-06
+        },
+        {
+          "spawnPointName": "Elevator Side",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.0105295181,
+          "posY": -8.993668,
+          "posZ": -9.92099,
+          "rotX": -1.657712E-06,
+          "rotY": 271.338837,
+          "rotZ": 4.88027072E-05
+        }
+      ]
+    },
+    {
+      "locationName": "Sealed Vault",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Dock",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_4/Geo_DreamZone_4_Upper/Terrain_DreamZone4_UpperLevel/DockIsland/DZ4_DockIsland_Terrain",
+          "posX": 59.47909,
+          "posY": 1.03939819,
+          "posZ": 701.050659,
+          "rotX": -3.97023967E-07,
+          "rotY": 262.50946,
+          "rotZ": 1.7087516E-06
+        },
+        {
+          "spawnPointName": "Vault Platform",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_4/Structures_DreamZone_4_Upper/Structure_IP_PrisonScaffolding/COL_PrisonScaffolding",
+          "posX": 6.52373743,
+          "posY": 0.499475956,
+          "posZ": -0.124749914,
+          "rotX": -1.70857447E-06,
+          "rotY": 269.6818,
+          "rotZ": 8.81650863E-07
+        },
+        {
+          "spawnPointName": "Comet's Overlook",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_4/Geo_DreamZone_4_Upper/Terrain_DreamZone4_UpperLevel/DockIsland/DZ4_DockIsland_Terrain",
+          "posX": 91.82216,
+          "posY": 0.7387314,
+          "posZ": 719.150757,
+          "rotX": -6.166645E-05,
+          "rotY": 47.4147453,
+          "rotZ": -0.000275237224
+        },
+        {
+          "spawnPointName": "Interior",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_4/Structures_DreamZone_4_Upper/Prison/Geo_Prison/Structure_IP_Prison/Prison_Interior/Prison_Body_Interior/COL_Prison_Body_Interior",
+          "posX": 3.95034027,
+          "posY": -1.628231,
+          "posZ": -0.8621212,
+          "rotX": -3.582835E-06,
+          "rotY": 284.9504,
+          "rotZ": 2.23152961E-06
+        }
+      ]
+    },
+    {
+      "locationName": "Subterranean Lake",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Elevator",
+          "parent": "Sector_DreamWorld/Sector_Underground/Geo_Underground/Terrain_DreamZone4_LowerLevel/Floor_DZ4_LL_MainIsle",
+          "posX": 2.76812744,
+          "posY": 22.119873,
+          "posZ": -1.168396,
+          "rotX": 3.08803578E-06,
+          "rotY": 186.215073,
+          "rotZ": -4.50128437E-06
+        },
+        {
+          "spawnPointName": "Top of the Vault",
+          "parent": "Sector_DreamWorld/Sector_Underground/Interactibles_Underground/SarcophagusController/Prefab_IP_Sarcophagus/Geo_IP_Sarcophagus/Sarc_Piece_C",
+          "posX": 0.831147254,
+          "posY": 8.021484,
+          "posZ": -0.07681215,
+          "rotX": 5.082869E-07,
+          "rotY": 87.71263,
+          "rotZ": 1.10068378E-07
+        },
+        {
+          "spawnPointName": "First Seal",
+          "parent": "Sector_DreamWorld/Sector_Underground/Geo_Underground/Terrain_DreamZone4_LowerLevel/Floor_DZ4_LL_Island_A",
+          "posX": -6.473076,
+          "posY": 0.245544434,
+          "posZ": 6.428055,
+          "rotX": 9.31420232E-07,
+          "rotY": 311.994751,
+          "rotZ": -4.93471E-07
+        },
+        {
+          "spawnPointName": "Second Seal",
+          "parent": "Sector_DreamWorld/Sector_Underground/Geo_Underground/Terrain_DreamZone4_LowerLevel/Floor_DZ4_LL_Island_B",
+          "posX": 0.85867095,
+          "posY": -3.92751217,
+          "posZ": 23.41011,
+          "rotX": 3.972614E-06,
+          "rotY": 350.806946,
+          "rotZ": -1.86565217E-06
+        },
+        {
+          "spawnPointName": "Third Seal",
+          "parent": "Sector_DreamWorld/Sector_Underground/Geo_Underground/Terrain_DreamZone4_LowerLevel/Floor_DZ4_LL_Island_C",
+          "posX": -58.1302948,
+          "posY": 9.087524,
+          "posZ": -69.93286,
+          "rotX": 4.01033458E-06,
+          "rotY": 43.81603,
+          "rotZ": 4.242916E-06
+        }
+      ]
+    }
+  ]
+}

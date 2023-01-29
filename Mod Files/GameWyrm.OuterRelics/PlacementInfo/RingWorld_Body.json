@@ -1,0 +1,467 @@
+{
+  "system": "SolarSystem",
+  "body": "RingWorld_Body",
+  "bodyName": "The Stranger",
+  "locations": [
+    {
+      "locationName": "River Lowlands",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Rock Arch",
+          "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 113.154259,
+          "posY": -27.315094,
+          "posZ": -277.18927,
+          "rotX": 272.813,
+          "rotY": 67.87185,
+          "rotZ": 90.00024
+        },
+        {
+          "spawnPointName": "Dark Side Entrance",
+          "parent": "Sector_RingWorld/Sector_DarkSideArrival/Geo_DarkSideArrival/BuildingKit_RaftHouseArrival_DarkEntrance/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.28080225,
+          "posY": -0.00355052948,
+          "posZ": -4.06101274,
+          "rotX": 0.00407817727,
+          "rotY": 1.60129178,
+          "rotZ": 359.852875
+        },
+        {
+          "spawnPointName": "Slide Storage",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_ProjectionHouse_Zone1/Geo_ProjectionHouse_Zone1/MainBuilding_ProjectionHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 13.297595,
+          "posY": 5.99715233,
+          "posZ": 15.8020449,
+          "rotX": 359.2208,
+          "rotY": 95.32548,
+          "rotZ": 357.6189
+        },
+        {
+          "spawnPointName": "Theater Roof",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_ProjectionHouse_Zone1/Geo_ProjectionHouse_Zone1/MainBuilding_ProjectionHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 12.5475454,
+          "posY": 24.2214832,
+          "posZ": 5.96406555,
+          "rotX": 0.443912983,
+          "rotY": 270.6136,
+          "rotZ": 1.05485427
+        },
+        {
+          "spawnPointName": "Rafters",
+          "parent": "Sector_RingInterior/Sector_Zone1/Structures_Zone1/BrokenLanternHouse_Zone1/Geo_BrokenLanternHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 1.96276915,
+          "posY": 6.0141387,
+          "posZ": 5.963964,
+          "rotX": 0.5217484,
+          "rotY": 268.294159,
+          "rotZ": 2.01905
+        },
+        {
+          "spawnPointName": "Raised Island",
+          "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_1",
+          "posX": -110.239,
+          "posY": -12.6054573,
+          "posZ": -257.3264,
+          "rotX": 8.394847,
+          "rotY": 292.599579,
+          "rotZ": 269.999939
+        },
+        {
+          "spawnPointName": "Shrine Roof",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_DreamFireHouse_Zone1/Geo_DreamFireHouse_Zone1/Structure_IP_DreamFireHouse_Round (1)/ExteriorWalls/Exterior/COL_Exterior",
+          "posX": -0.04556988,
+          "posY": -0.292511,
+          "posZ": 6.89570427,
+          "rotX": 359.536774,
+          "rotY": 1.99045849,
+          "rotZ": 359.479
+        },
+        {
+          "spawnPointName": "Artifact Workshop",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_ArtifactHouse_Zone1/Geo_ArtifactHouse_Zone1/BuildingKit_ArtifactHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 2.72591257,
+          "posY": -0.00322580966,
+          "posZ": -3.15209484,
+          "rotX": 1.605938,
+          "rotY": 152.9951,
+          "rotZ": 0.7840988
+        },
+        {
+          "spawnPointName": "Workshop Roof",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_ArtifactHouse_Zone1/Geo_ArtifactHouse_Zone1/BuildingKit_ArtifactHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.00776247727,
+          "posY": 12.2412987,
+          "posZ": -1.44545186,
+          "rotX": 1.37211609,
+          "rotY": 184.89238,
+          "rotZ": 2.188394
+        },
+        {
+          "spawnPointName": "Rock in the Rapids",
+          "parent": "Sector_RingInterior/Sector_Zone_1to2/Geometry_Zone1to2/BakedTerrain_IP_RWZ1to2_Rocks_B",
+          "posX": -269.6652,
+          "posY": -3.25784874,
+          "posZ": -122.00119,
+          "rotX": 294.8175,
+          "rotY": 332.121246,
+          "rotZ": 269.999939
+        },
+        {
+          "spawnPointName": "Slide Burning Room",
+          "parent": "Sector_RingInterior/Sector_Zone1/Sector_SlideBurningRoom_Zone1/Geo_SlideBurningRoom_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -3.07778358,
+          "posY": -0.003908634,
+          "posZ": -2.639275,
+          "rotX": -0.00517372973,
+          "rotY": 176.0679,
+          "rotZ": 0.00108826009
+        },
+        {
+          "spawnPointName": "Bridge",
+          "parent": "Sector_RingInterior/Sector_Zone1/Structures_Zone1/CoveredBridge_Zone1/Geo_CoveredBridge_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.0405837074,
+          "posY": -0.003181696,
+          "posZ": -1.28523767,
+          "rotX": 0.146677926,
+          "rotY": 178.87326,
+          "rotZ": 359.313873
+        }
+      ]
+    },
+    {
+      "locationName": "Cinder Isles",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Top of the Tower",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Top/TopFloor/COL_TopFloor",
+          "posX": -0.00217437744,
+          "posY": 35.6949158,
+          "posZ": -0.0616912842,
+          "rotX": 0.09458839,
+          "rotY": 180.070541,
+          "rotZ": 359.7886
+        },
+        {
+          "spawnPointName": "Nice Rug",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Slide_Room/Slide_Room 1/COL_Slide_Room",
+          "posX": -0.143811226,
+          "posY": 19.8228016,
+          "posZ": -0.03653145,
+          "rotX": 0.5477455,
+          "rotY": 262.946472,
+          "rotZ": 0.167290255
+        },
+        {
+          "spawnPointName": "Combination Hoard",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Code_Room/COL_CodeFloor",
+          "posX": -0.00302962214,
+          "posY": -0.00210794038,
+          "posZ": -0.07522008,
+          "rotX": 0.6160628,
+          "rotY": 236.877747,
+          "rotZ": 359.90152
+        },
+        {
+          "spawnPointName": "Traitor's House",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_MapHouse_Zone2/Geo_MapHouse_Zone2/MapHouse/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -2.7100904,
+          "posY": 8.996355,
+          "posZ": 1.97601485,
+          "rotX": 0.7412287,
+          "rotY": 180.070053,
+          "rotZ": 0.5509356
+        },
+        {
+          "spawnPointName": "Theater Roof",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_ProjectionHouse_Zone2/Geo_ProjectionHouse_Zone2/BuildingKit_ProjectionHouse_Zone2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.709776163,
+          "posY": 12.2416821,
+          "posZ": 4.00772667,
+          "rotX": 359.7219,
+          "rotY": 271.069061,
+          "rotZ": 0.3454933
+        },
+        {
+          "spawnPointName": "Slide Storage",
+          "parent": "Sector_RingInterior/Sector_Zone2/Sector_ProjectionHouse_Zone2/Geo_ProjectionHouse_Zone2/BuildingKit_ProjectionHouse_Zone2/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 2.0098002,
+          "posY": -6.003774,
+          "posZ": 9.548249,
+          "rotX": 1.42502,
+          "rotY": 178.993179,
+          "rotZ": 1.06393361
+        },
+        {
+          "spawnPointName": "Eye Shrine",
+          "parent": "Sector_RingInterior/Sector_Zone2/Structures_Zone2/EyeTempleRuins_Zone2/Geo_EyeTempleRuins_Zone2/Prop_IP_EyeSymbol/COL_EyeSymbol",
+          "posX": 0.0101506356,
+          "posY": 0.464507282,
+          "posZ": -0.124260478,
+          "rotX": 30.0051613,
+          "rotY": 35.87269,
+          "rotZ": 359.128967
+        },
+        {
+          "spawnPointName": "Eye Shrine Roof",
+          "parent": "Sector_RingInterior/Sector_Zone2/Structures_Zone2/EyeTempleRuins_Zone2/Geo_EyeTempleRuins_Zone2/BuildingKit_EyeTempleRuins/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -6.39154768,
+          "posY": 24.0891228,
+          "posZ": 0.221116737,
+          "rotX": 0.7103627,
+          "rotY": 88.92421,
+          "rotZ": 0.892722547
+        }
+      ]
+    },
+    {
+      "locationName": "Hidden Gorge",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Broken Bridge",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_CanyonObvious/Structures_CanyonObvious/BrokenBridge_Zone3/Geo_BrokenBridge_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.53732264,
+          "posY": -1.07902861,
+          "posZ": 51.2135963,
+          "rotX": 2.28338861,
+          "rotY": 177.915512,
+          "rotZ": 354.981445
+        },
+        {
+          "spawnPointName": "Combination Lock",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_CanyonObvious/Structures_CanyonObvious/AbandonedTemple_Zone3/Interactables_AbandonedTemple_Zone3/SecretTempleDoor/Prefab_IP_CodeTotem/CodeDisplay/Props_IP_CodeTotem/codeTotem_col",
+          "posX": 0.00655865669,
+          "posY": 2.92767358,
+          "posZ": -0.02687502,
+          "rotX": 0.400749445,
+          "rotY": 178.741333,
+          "rotZ": 359.263977
+        },
+        {
+          "spawnPointName": "Ghost Matter Exit",
+          "parent": "Sector_RingInterior/Sector_Zone3/Geometry_Zone3/Terrain_Ringworld_Zone3/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 177.147186,
+          "posY": 6.34337234,
+          "posZ": 180.4466,
+          "rotX": 71.6723251,
+          "rotY": 134.330719,
+          "rotZ": 270.000061
+        },
+        {
+          "spawnPointName": "Ghost Matter",
+          "parent": "Sector_RingInterior/Sector_Zone3/Geometry_Zone3/Terrain_Ringworld_Zone3/BatchedGroup/BatchedMeshColliders_2",
+          "posX": 192.002853,
+          "posY": -22.8553333,
+          "posZ": 161.446579,
+          "rotX": 47.4154472,
+          "rotY": 320.497345,
+          "rotZ": 89.99994
+        },
+        {
+          "spawnPointName": "Locked House",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_C_Zone3/EntranceClueBuilding_Zone3/Geo_EntranceClueBuilding_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 2.92364478,
+          "posY": -0.00333722425,
+          "posZ": -0.180191457,
+          "rotX": 0.5224788,
+          "rotY": 181.018112,
+          "rotZ": 359.129761
+        },
+        {
+          "spawnPointName": "Breach Report",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_C_Zone3/EntranceClueBuilding_Zone3/Geo_EntranceClueBuilding_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -0.0507397279,
+          "posY": -9.003409,
+          "posZ": 0.804053366,
+          "rotX": 0.194668651,
+          "rotY": 178.085251,
+          "rotZ": 359.619537
+        },
+        {
+          "spawnPointName": "Slide Burning Room",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_B_Zone3/ElevatorTower_Zone3/Geo_ElevatorTower_Zone3/BuildingKit_ElevatorTower_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": -11.1988325,
+          "posY": -0.00330781937,
+          "posZ": 8.448986,
+          "rotX": 359.96875,
+          "rotY": 359.3978,
+          "rotZ": 357.540466
+        },
+        {
+          "spawnPointName": "Slide Reel Storage",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_A_Zone3/ProjectionHouse_Zone3/Geo_ProjectionHouse_Zone3/BuildingKit_ProjectionHouse_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.167152479,
+          "posY": -9.003328,
+          "posZ": 3.19774866,
+          "rotX": 0.519797564,
+          "rotY": 90.77639,
+          "rotZ": 0.007058863
+        },
+        {
+          "spawnPointName": "Shrine",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Sector_DreamFireHouse_Zone3/Geo_DreamFireHouse_Zone3/Structure_IP_DreamFireHouse_ZoneThree/Mural_Room/Mural_Room 1/COL_MuralRoom",
+          "posX": -0.0136324763,
+          "posY": -0.00171422958,
+          "posZ": -0.210608244,
+          "rotX": 0.5379368,
+          "rotY": 182.311142,
+          "rotZ": 359.5239
+        },
+        {
+          "spawnPointName": "Lab Observation",
+          "parent": "Sector_RingWorld/Sector_SecretEntrance/Structures_SecretEntrance/SecretEntrance_TowerInterior/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.891684353,
+          "posY": -12.0031977,
+          "posZ": -22.3298931,
+          "rotX": 359.993134,
+          "rotY": 182.445114,
+          "rotZ": 0.159797713
+        },
+        {
+          "spawnPointName": "First Artifact Chamber",
+          "parent": "Sector_RingWorld/Sector_SecretEntrance/Interactibles_SecretEntrance/Experiment_1/Props_IP_DreamFire/DreamFire_Sconce_col",
+          "posX": -0.0161419753,
+          "posY": 0.548869669,
+          "posZ": 0.3115536,
+          "rotX": -0.00484009041,
+          "rotY": 174.334,
+          "rotZ": 359.952454
+        },
+        {
+          "spawnPointName": "Third Artifact Chamber",
+          "parent": "Sector_RingWorld/Sector_SecretEntrance/Interactibles_SecretEntrance/Experiment_3/Props_IP_DreamFire/DreamFire_Sconce_col",
+          "posX": -0.001056843,
+          "posY": 0.5457844,
+          "posZ": 0.3447503,
+          "rotX": 0.00195684214,
+          "rotY": 182.523056,
+          "rotZ": 359.9523
+        }
+      ]
+    },
+    {
+      "locationName": "River's End",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Observation Deck",
+          "parent": "Sector_RingWorld/Sector_ObservationDeck/Geo_ObservationDeck/ObservationDeck/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 0.2091217,
+          "posY": -3.0028,
+          "posZ": -8.004822,
+          "rotX": 0.129782408,
+          "rotY": 85.2743,
+          "rotZ": 359.989227
+        },
+        {
+          "spawnPointName": "Supernova Tracker",
+          "parent": "Sector_RingWorld/Sector_ObservationDeck/Sector_Cockpit/Interactables_ObservationDeck/AutoProjectorRoot/Props_IP_ProjectionTable",
+          "posX": 0.124337927,
+          "posY": 1.8880856,
+          "posZ": -0.008923754,
+          "rotX": 359.332733,
+          "rotY": 92.04541,
+          "rotZ": 359.976166
+        },
+        {
+          "spawnPointName": "Lowlands Overlook",
+          "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 113.116577,
+          "posY": 79.58452,
+          "posZ": -181.030838,
+          "rotX": 60.1740646,
+          "rotY": 237.719421,
+          "rotZ": 270.000122
+        },
+        {
+          "spawnPointName": "Slide Storage",
+          "parent": "Sector_RingInterior/Sector_Zone4/Geometry_Zone4/Terrain_Ringworld_Zone4/BatchedGroup/BatchedMeshColliders_1",
+          "posX": 235.389526,
+          "posY": 117.2202,
+          "posZ": -104.580391,
+          "rotX": 358.551239,
+          "rotY": 24.7767,
+          "rotZ": 89.98532
+        },
+        {
+          "spawnPointName": "Signal Blocker Controls",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_BlightedShore/Sector_JammingControlRoom_Zone4/Geo_JammingControlRoom_Zone4/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 11.3109741,
+          "posY": -3.00317,
+          "posZ": -0.00373100652,
+          "rotX": -0.0003833077,
+          "rotY": 90.60502,
+          "rotZ": 0.04159746
+        },
+        {
+          "spawnPointName": "Vault Controls",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonControlRoom_Zone4/Geo_PrisonControlRoom/BuildingKit_PrisonControlRoom/BatchedGroup/BatchedMeshColliders_0",
+          "posX": 14.7573328,
+          "posY": 2.999545,
+          "posZ": 7.060097,
+          "rotX": 359.7812,
+          "rotY": 85.3214,
+          "rotZ": 357.970062
+        },
+        {
+          "spawnPointName": "Top of the Vault",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/prison_body_ext/body_ext_col",
+          "posX": 0.235605329,
+          "posY": 21.3456917,
+          "posZ": -3.93109322,
+          "rotX": -0.00350913312,
+          "rotY": 0.7059918,
+          "rotZ": 0.287144065
+        },
+        {
+          "spawnPointName": "Vault Interior",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/Prison_Interior/Prison_Body_Interior/COL_Prison_Body_Interior",
+          "posX": 3.42952061,
+          "posY": -1.62843132,
+          "posZ": 0.0476841927,
+          "rotX": 1.57396162,
+          "rotY": 270.1195,
+          "rotZ": 0.00329275313
+        },
+        {
+          "spawnPointName": "Vault Controls Roof",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonCrane_Zone4/Geo_PrisonCrane/Structure_IP_PrisonCrane/COL_PrisonCrane",
+          "posX": -28.5169964,
+          "posY": 74.37356,
+          "posZ": -61.9186668,
+          "rotX": 0.146126777,
+          "rotY": 1.03083372,
+          "rotZ": 351.93692
+        },
+        {
+          "spawnPointName": "Right Grate",
+          "parent": "Sector_RingInterior/Geometry_RingInterior/Dam_Root/Dam_Intact/Structure_IP_Dam/Grates_Col",
+          "posX": 52.91332,
+          "posY": -1.850563,
+          "posZ": 1.08812964,
+          "rotX": 2.36412024,
+          "rotY": 343.606262,
+          "rotZ": 359.304749
+        },
+        {
+          "spawnPointName": "Left Grate",
+          "parent": "Sector_RingInterior/Geometry_RingInterior/Dam_Root/Dam_Intact/Structure_IP_Dam/Grates_Col",
+          "posX": -52.5458,
+          "posY": -1.85049438,
+          "posZ": 1.87719345,
+          "rotX": 0.7638821,
+          "rotY": 53.67204,
+          "rotZ": 0.174563169
+        },
+        {
+          "spawnPointName": "Highest Point",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/chain_m_col",
+          "posX": 0.09831438,
+          "posY": 77.70838,
+          "posZ": -0.67556,
+          "rotX": 0.0281549543,
+          "rotY": 355.771545,
+          "rotZ": 0.380776078
+        }
+      ]
+    }
+  ]
+}
