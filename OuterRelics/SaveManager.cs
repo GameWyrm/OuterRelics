@@ -1,5 +1,6 @@
 ﻿using OWML.ModHelper;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace OuterRelics
@@ -12,6 +13,11 @@ namespace OuterRelics
         public class OuterRelicsSaveData
         {
             public string seed = "";
+            public string version = "";
+            public List<string> loadedFiles;
+            public bool singlePerGroup = true;
+            public HintDifficulty hints = HintDifficulty.Balanced;
+            public int uselessHintChance = 25;
             public bool[] savedKeysObtained = new bool[12];
             public int totalSavedKeys = 0;
         }
@@ -59,6 +65,12 @@ namespace OuterRelics
                 }
             }
 
+            saveData.version = main.ModHelper.Manifest.Version;
+            saveData.loadedFiles = main.itemManager.loadedFiles;
+            saveData.singlePerGroup = main.itemManager.SinglePerGroup;
+            saveData.hints = main.hintDifficulty;
+            saveData.uselessHintChance = main.uselessHints;
+
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
             main.LogInfo($"Saved Outer Relics data for {profile}");
@@ -75,12 +87,39 @@ namespace OuterRelics
         }
 
         /// <summary>
+        /// Returns whether only one major item can spawn per group
+        /// </summary>
+        /// <returns></returns>
+        public bool GetSinglePerGroup()
+        {
+            return saveData.singlePerGroup;
+        }
+
+        /// <summary>
         /// Returns the string of the seed
         /// </summary>
         /// <returns>Seed in plain text</returns>
         public string GetSeed()
         {
             return saveData.seed;
+        }
+
+        /// <summary>
+        /// Returns the version the save file was made in
+        /// </summary>
+        /// <returns></returns>
+        public string GetVersion()
+        {
+            return saveData.version;
+        }
+
+        /// <summary>
+        /// Returns list of files used for confirming placement
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetFiles()
+        {
+            return saveData.loadedFiles;
         }
 
         /// <summary>
@@ -102,6 +141,20 @@ namespace OuterRelics
         }
 
         /// <summary>
+        /// Returns chance of useless hints
+        /// </summary>
+        /// <returns></returns>
+        public int GetUselessHintChance()
+        {
+            return saveData.uselessHintChance;
+        }
+
+        public HintDifficulty GetHintDifficulty()
+        {
+            return saveData.hints;
+        }
+
+        /// <summary>
         /// Resets all save data related to Outer Relics for the current profile
         /// </summary>
         public void ClearSaveData()
@@ -116,6 +169,15 @@ namespace OuterRelics
             {
                 main.LogError($"EXCEPTION: {e.Message}\nSave Data was not deleted");
             }
+        }
+
+        /// <summary>
+        /// Checks if the save data currently exists
+        /// </summary>
+        /// <returns></returns>
+        public bool GetSaveDataExists()
+        {
+            return File.Exists(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
         }
     }
 }

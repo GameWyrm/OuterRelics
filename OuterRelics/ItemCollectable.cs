@@ -32,7 +32,7 @@ namespace OuterRelics
         /// <summary>
         /// Notification for item acquired
         /// </summary>
-        protected NotificationData itemGet;
+        protected string itemGet;
         /// <summary>
         /// Animator attached to the item
         /// </summary>
@@ -63,11 +63,10 @@ namespace OuterRelics
             main = OuterRelics.Main;
             hasDLC = OuterRelics.HasDLC;
 
-            itemGet = new NotificationData(itemName + " ACQUIRED");
+            itemGet = itemName + " ACQUIRED";
             holder = transform.parent.gameObject;
             holder.transform.position = holder.transform.position + holder.transform.TransformDirection(Vector3.up * 0.5f);
             //main.LogSuccess("Item " + gameObject.name + " has been created");
-            itemGet.minDuration = 5;
 
             animator = GetComponent<Animator>();
             audio = GetComponent<AudioSource>();
@@ -129,7 +128,7 @@ namespace OuterRelics
             if (collider.CompareTag("Player") && frameCounter >= 180)
             {
                 main.LogSuccess("A " + gameObject.name + " has been collected by the player");
-                NotificationManager.s_instance.PostNotification(itemGet);
+                main.notifManager.AddNotification(itemGet);
                 Collect();
             }
         }

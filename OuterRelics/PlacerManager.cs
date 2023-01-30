@@ -60,19 +60,17 @@ namespace OuterRelics
                 GrabObjectPosition();
             }
 
-            if (Keyboard.current[Key.Numpad8].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadLeft].wasPressedThisFrame))
+            if (main.debugMode && (Keyboard.current[Key.Numpad8].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadLeft].wasPressedThisFrame)))
             {
                 if (currentGroup == string.Empty)
                 {
-                    NotificationData notif = new NotificationData("FAILURE: NO GROUP SELECTED");
-                    NotificationManager.s_instance.PostNotification(notif);
+                    main.notifManager.AddNotification("FAILURE: NO GROUP SELECTED");
                     main.LogError("No Group selected, select a group before saving data");
                     return;
                 }
                 if (positionalIndicators.Count <= 0 || positionalIndicators[indicatorIndex] == null)
                 {
-                    NotificationData notif = new NotificationData("FAILURE: PLACE INDICATOR FIRST");
-                    NotificationManager.s_instance.PostNotification(notif);
+                    main.notifManager.AddNotification("FAILURE: PLACE INDICATOR FIRST");
                     main.LogError("No Indicators placed, place one first to determine spawn point");
                     return;
                 }
@@ -196,8 +194,7 @@ namespace OuterRelics
             AddSpawnpoint(GetLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
             indicator.GetComponent<MeshRenderer>().material = main.collectedMat;
 
-            NotificationData notif = new NotificationData("NEW LOCATION SAVED");
-            NotificationManager.s_instance.PostNotification(notif);
+            main.notifManager.AddNotification("NEW LOCATION SAVED");
             main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
         }
 

@@ -79,8 +79,7 @@ namespace OuterRelics
         /// </summary>
         public void UnlockATP()
         {
-            NotificationData data = new NotificationData("ALL KEYS OBTAINED, ASH TWIN PROJECT UNLOCKED");
-            NotificationManager.s_instance.PostNotification(data);
+            main.notifManager.AddNotification("ALL KEYS OBTAINED, ASH TWIN PROJECT UNLOCKED");
             main.orbLock.SetActive(false);
             main.orbInterface.RemoveLock();
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 namespace OuterRelics
@@ -42,39 +43,7 @@ namespace OuterRelics
 
         public ItemManager()
         {
-            loadedFiles = new List<string>
-            {
-                "PlacementInfo/TimberHearth_Body.json",
-                "PlacementInfo/MiningRig_Body.json",
-                "PlacementInfo/Satellite_Body.json",
-                "PlacementInfo/Moon_Body.json",
-                "PlacementInfo/BrambleIsland_Body.json",
-                "PlacementInfo/ConstructionYardIsland_Body.json",
-                "PlacementInfo/GabbroIsland_Body.json",
-                "PlacementInfo/GabbroShip_Body.json",
-                "PlacementInfo/GiantsDeep_Body.json",
-                "PlacementInfo/NomaiProbe_Body.json",
-                "PlacementInfo/OrbitalProbeCannon_Body.json",
-                "PlacementInfo/QuantumIsland_Body.json",
-                "PlacementInfo/QuantumMoon_Body.json",
-                "PlacementInfo/StatueIsland_Body.json",
-                "PlacementInfo/BrittleHollow_Body.json",
-                "PlacementInfo/CaveTwin_Body.json",
-                "PlacementInfo/TowerTwin_Body.json",
-                "PlacementInfo/VolcanicMoon_Body.json",
-                "PlacementInfo/Comet_Body.json",
-                "PlacementInfo/SunStation_Body.json",
-                "PlacementInfo/WhiteholeStation_Body.json",
-                "PlacementInfo/DreamWorld_Body_Normal.json",
-                "PlacementInfo/DreamWorld_Body_LightsOut.json",
-                "PlacementInfo/RingWorld_Body.json",
-                "PlacementInfo/DB_PioneerDimension_Body.json",
-                "PlacementInfo/FeldsparShip_Body.json",
-                "PlacementInfo/DarkBramble_Body.json",
-                "PlacementInfo/Sector_EscapePodBody.json",
-                "PlacementInfo/DB_VesselDimension_Body.json",
-                "PlacementInfo/BackerSatellite_Body.json"
-            };
+            loadedFiles = new List<string>();
 
             placements = new List<PlacementData>();
 
@@ -141,27 +110,28 @@ namespace OuterRelics
         /// <param name="spawn">Specific spawnpoint for the key</param>
         public void CreateKey(int keyID, PlacementData placement, Location loc, SpawnPoint spawn)
         {
-            if (main.hasKey[keyID]) return;
+            if (!OuterRelics.GetConfigBool("DryMode"))
+            {
+                if (main.hasKey[keyID]) return;
 
-            GameObject keyParent = new GameObject();
-            keyParent.transform.parent = GameObject.Find(placement.body).transform.Find(spawn.parent);
-            keyParent.transform.localPosition = new Vector3(spawn.posX, spawn.posY, spawn.posZ);
-            keyParent.transform.localEulerAngles = new Vector3(spawn.rotX, spawn.rotY, spawn.rotZ);
-            keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
-            keyParent.name = "NOMAI KEY " + (keyID + 1);
-            GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (keyID + 1)), keyParent.transform);
-            KeyCollectable kc = key.AddComponent<KeyCollectable>();
-            kc.itemName = "KEY OF " + OuterRelics.KeyNames[keyID];
-            kc.lockManager = main.lockManager;
-            kc.keyID = keyID;
+                if (SceneManager.GetActiveScene().name == placement.system)
+                {
+                    GameObject keyParent = new GameObject();
+                    keyParent.transform.parent = GameObject.Find(placement.body).transform.Find(spawn.parent);
+                    keyParent.transform.localPosition = new Vector3(spawn.posX, spawn.posY, spawn.posZ);
+                    keyParent.transform.localEulerAngles = new Vector3(spawn.rotX, spawn.rotY, spawn.rotZ);
+                    keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
+                    keyParent.name = "NOMAI KEY " + (keyID + 1);
+                    GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (keyID + 1)), keyParent.transform);
+                    KeyCollectable kc = key.AddComponent<KeyCollectable>();
+                    kc.itemName = "KEY OF " + OuterRelics.KeyNames[keyID];
+                    kc.lockManager = main.lockManager;
+                    kc.keyID = keyID;
 
-            main.LogMessage("Created key " + keyID + " on " + placement.body + " at " + loc.locationName + " " + (spawn.spawnPointName != null ? spawn.spawnPointName : ""));
-            spoilerLog += $"KEY OF {OuterRelics.KeyNames[keyID]} ({keyID}): {placement.body}, {loc.locationName}" + (spawn.spawnPointName != null ? (", " + spawn.spawnPointName) : "") + "\n";
-        }
-
-        private void LoadLocations()
-        {
-
+                    main.LogMessage("Created key " + keyID + " on " + placement.body + " at " + loc.locationName + " " + (spawn.spawnPointName != null ? spawn.spawnPointName : ""));
+                }
+            }
+            spoilerLog += $"KEY OF {OuterRelics.KeyNames[keyID]} ({keyID}): {placement.system}, {placement.body}, {loc.locationName}" + (spawn.spawnPointName != null ? (", " + spawn.spawnPointName) : "") + "\n";
         }
 
         private void LoadFiles()
@@ -174,6 +144,12 @@ namespace OuterRelics
                 {
                     main.LogError("File " + loadedFiles[i] + " not found!");
                 }
+                /*int spawnpoints = 0;
+                foreach (Location loc in placements[i].locations)
+                {
+                    spawnpoints += loc.spawnPoints.Count;
+                }
+                main.LogInfo($"{loadedFiles[i]}: Locations: {placements[i].locations.Count}, Spawnpoints: {spawnpoints}");*/
             }
             main.LogInfo("Loaded " + placements.Count + " placement files");
         }
