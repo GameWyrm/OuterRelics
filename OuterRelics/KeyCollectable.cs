@@ -34,6 +34,7 @@ namespace OuterRelics
         /// </summary>
         protected override void Collect()
         {
+            main.notifManager.AddNotification(itemGet);
             lockManager.CollectKey(keyID);
             GetComponent<Collider>().enabled = false;
             animator.SetTrigger("Collect");

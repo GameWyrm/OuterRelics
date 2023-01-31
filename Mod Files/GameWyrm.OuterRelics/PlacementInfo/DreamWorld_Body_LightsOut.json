@@ -152,16 +152,6 @@
           "rotZ": -0.000192871565
         },
         {
-          "spawnPointName": "Secret Slide Reel",
-          "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_3/Structures_Library_3/BuildingKit_Library_3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -41.80954,
-          "posY": 5.99996948,
-          "posZ": -5.85229874,
-          "rotX": -0.000228396253,
-          "rotY": 276.153473,
-          "rotZ": -4.75083561E-06
-        },
-        {
           "spawnPointName": "Wine Cellar",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
           "posX": 39.14695,
@@ -170,16 +160,6 @@
           "rotX": -0.000237907443,
           "rotY": 91.93134,
           "rotZ": 7.679104E-06
-        },
-        {
-          "spawnPointName": "DJ Owlks",
-          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Gallery/BuildingKit_Gallery/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -4.032269,
-          "posY": -5.999977,
-          "posZ": -17.0180531,
-          "rotX": -0.000234780746,
-          "rotY": 178.989655,
-          "rotZ": 1.69256346E-05
         }
       ]
     },

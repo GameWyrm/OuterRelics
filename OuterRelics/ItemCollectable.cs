@@ -128,7 +128,6 @@ namespace OuterRelics
             if (collider.CompareTag("Player") && frameCounter >= 180)
             {
                 main.LogSuccess("A " + gameObject.name + " has been collected by the player");
-                main.notifManager.AddNotification(itemGet);
                 Collect();
             }
         }

@@ -33,6 +33,14 @@ namespace OuterRelics
         /// List of placement info
         /// </summary>
         public List<PlacementData> placements;
+        /// <summary>
+        /// List of hint placement info
+        /// </summary>
+        public List<HintPlacement> hintPlacements;
+        /// <summary>
+        /// List of models available for hints
+        /// </summary>
+        public List<GameObject> hintModels;
 
         string seed => main.seed;
         string spoilerLog;
@@ -46,6 +54,7 @@ namespace OuterRelics
             loadedFiles = new List<string>();
 
             placements = new List<PlacementData>();
+            hintPlacements = new List<HintPlacement>();
 
             main = OuterRelics.Main;
 
@@ -98,6 +107,14 @@ namespace OuterRelics
                 }
             }
 
+            if (hintPlacements != null && hintPlacements.Count > 0)
+            {
+                foreach (HintPlacement hint in hintPlacements)
+                {
+                    CreateHint(UnityEngine.Random.Range((int)0, (int)2), hint);
+                }
+            }
+
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
         }
 
@@ -123,6 +140,7 @@ namespace OuterRelics
                     keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
                     keyParent.name = "NOMAI KEY " + (keyID + 1);
                     GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (keyID + 1)), keyParent.transform);
+                    keyParent.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                     KeyCollectable kc = key.AddComponent<KeyCollectable>();
                     kc.itemName = "KEY OF " + OuterRelics.KeyNames[keyID];
                     kc.lockManager = main.lockManager;
@@ -132,6 +150,28 @@ namespace OuterRelics
                 }
             }
             spoilerLog += $"KEY OF {OuterRelics.KeyNames[keyID]} ({keyID}): {placement.system}, {placement.body}, {loc.locationName}" + (spawn.spawnPointName != null ? (", " + spawn.spawnPointName) : "") + "\n";
+        }
+
+        /// <summary>
+        /// Creates a hint object with the given hint
+        /// </summary>
+        /// <param name="hintType"></param>
+        public void CreateHint(int hintType, HintPlacement placement)
+        {
+            GameObject hintParent = new GameObject();
+            hintParent.transform.parent = GameObject.Find(placement.bodyName).transform.Find(placement.parent);
+            hintParent.transform.localPosition = new Vector3(placement.posX, placement.posY, placement.posZ);
+            hintParent.transform.localEulerAngles = new Vector3(placement.rotX, placement.rotY, placement.rotZ);
+            hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
+
+            GameObject hintObject = GameObject.Instantiate(hintModels[hintType], hintParent.transform);
+            hintParent.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+
+            HintCollectable hint = hintObject.AddComponent<HintCollectable>();
+
+            main.LogMessage("Created a hint");
+
+            hint.hint = "This is a " + (hintType == 0 ? "Nomai Hint" : "Stranger Hint");
         }
 
         private void LoadFiles()
@@ -152,6 +192,18 @@ namespace OuterRelics
                 main.LogInfo($"{loadedFiles[i]}: Locations: {placements[i].locations.Count}, Spawnpoints: {spawnpoints}");*/
             }
             main.LogInfo("Loaded " + placements.Count + " placement files");
+
+            PlacerManager.HintPlacementData hintPlacementData = main.ModHelper.Storage.Load<PlacerManager.HintPlacementData>("PlacementInfo/HintPlacements.json");
+            if (hintPlacementData != null)
+            {
+                hintPlacements = new List<HintPlacement>();
+                foreach (HintPlacement hint in hintPlacementData.placements)
+                {
+                    hintPlacements.Add(hint);
+                }
+                main.LogInfo("Loaded Hint Data");
+            }
+            else main.LogWarning("Could not find Hint Data");
         }
 
         private PlacementData WeightedPlacement(List<PlacementData> unusedPlacements)
@@ -175,5 +227,7 @@ namespace OuterRelics
             main.LogError("Couldn't properly get a weight!");
             return null;
         }
+
+        
     }
 }

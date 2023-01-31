@@ -3,6 +3,9 @@
     <OutputPath>$(AppData)\OuterWildsModManager\OWML\Mods\GameWyrm.OuterRelics</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="HintCollectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="KeyCollectable.cs">
       <SubType>Code</SubType>
     </Compile>

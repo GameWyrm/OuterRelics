@@ -18,6 +18,10 @@ namespace OuterRelics
         /// </summary>
         public bool placerMode = true;
         /// <summary>
+        /// If true, placements will spawn hint locations instead of item locations
+        /// </summary>
+        public bool placeHints = false;
+        /// <summary>
         /// Name of the current body
         /// </summary>
         public string currentBody = "";
@@ -26,9 +30,14 @@ namespace OuterRelics
         /// </summary>
         public string currentGroup = "";
         /// <summary>
-        /// Currently json for editing
+        /// Current item json for editing
         /// </summary>
         public PlacementData placements;
+        /// <summary>
+        /// Current hint json for editing
+        /// </summary>
+        public HintPlacementData hintPlacements;
+        
 
         //Main mod singleton
         private OuterRelics main;
@@ -62,7 +71,7 @@ namespace OuterRelics
 
             if (main.debugMode && (Keyboard.current[Key.Numpad8].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadLeft].wasPressedThisFrame)))
             {
-                if (currentGroup == string.Empty)
+                if (currentGroup == string.Empty && !placeHints)
                 {
                     main.notifManager.AddNotification("FAILURE: NO GROUP SELECTED");
                     main.LogError("No Group selected, select a group before saving data");
@@ -75,7 +84,14 @@ namespace OuterRelics
                     return;
                 }
                 SaveSpawnLocation();
-                SaveBody();
+                if (!placeHints)
+                {
+                    SaveBody();
+                }
+                else
+                {
+                    SaveHints();
+                }
             }
         }
 
@@ -97,6 +113,22 @@ namespace OuterRelics
         public void SaveBody()
         {
             main.ModHelper.Storage.Save<PlacementData>(placements, "PlacementInfo/" + currentBody + ".json");
+        }
+
+        public void LoadHints()
+        {
+            hintPlacements = main.ModHelper.Storage.Load<HintPlacementData>("PlacementInfo/HintPlacements.json");
+            if (hintPlacements == null)
+            {
+                main.LogInfo("Unable to find hint placement data, creating new file");
+                hintPlacements = new HintPlacementData();
+                hintPlacements.placements = new List<HintPlacement>();
+            }
+        }
+
+        public void SaveHints()
+        {
+            main.ModHelper.Storage.Save<HintPlacementData>(hintPlacements, "PlacementInfo/HintPlacements.json");
         }
 
         public Location GetLocation(string name)
@@ -188,14 +220,34 @@ namespace OuterRelics
         /// </summary>
         private void SaveSpawnLocation()
         {
-            LoadBody(currentBody);
 
             GameObject indicator = positionalIndicators[indicatorIndex];
-            AddSpawnpoint(GetLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+            if (!placeHints)
+            {
+                LoadBody(currentBody);
+                AddSpawnpoint(GetLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+                main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
+                main.notifManager.AddNotification("NEW LOCATION SAVED");
+            }
+            else
+            {
+                LoadHints();
+                HintPlacement hint = new HintPlacement();
+                hint.systemName = SceneManager.GetActiveScene().name;
+                hint.bodyName = OuterRelics.GetBody(indicator).name;
+                hint.parent = OuterRelics.GetObjectPath(indicator);
+                hint.posX = indicator.transform.localPosition.x;
+                hint.posY = indicator.transform.localPosition.y;
+                hint.posZ = indicator.transform.localPosition.z;
+                hint.rotX = indicator.transform.localEulerAngles.x;
+                hint.rotY = indicator.transform.localEulerAngles.y;
+                hint.rotZ = indicator.transform.localEulerAngles.z;
+                hintPlacements.placements.Add(hint);
+                main.notifManager.AddNotification("NEW HINT LOCATION SAVED");
+            }
+
             indicator.GetComponent<MeshRenderer>().material = main.collectedMat;
 
-            main.notifManager.AddNotification("NEW LOCATION SAVED");
-            main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
         }
 
         private GameObject Indicator()
@@ -207,6 +259,11 @@ namespace OuterRelics
             indicator.transform.localScale = Vector3.one * 0.5f;
             indicator.AddComponent<MatchPlayerRotation>();
             return indicator;
+        }
+
+        public class HintPlacementData
+        {
+            public List<HintPlacement> placements = new List<HintPlacement>();
         }
     }
 }

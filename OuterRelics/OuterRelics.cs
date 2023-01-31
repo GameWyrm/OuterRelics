@@ -193,6 +193,13 @@ namespace OuterRelics
                     groupSelector = menuAPI.MakeInputFieldPopup("Select group of locations to place spawn points in within current body. If not found, will create a new group.", "User-Friendly name, i.e. \"Chert's Camp\".", "Change Group", "Cancel");
                     groupSelector.OnPopupConfirm += ConfirmGroup;
                     menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: SELECT PLACEMENT GROUP", groupSelector);
+                    PopupMenu confirmHintMode = menuAPI.MakeInfoPopup("Placement mode has been changed", "OK");
+                    confirmHintMode.OnPopupConfirm += () =>
+                    {
+                        placer.placeHints = !placer.placeHints;
+                        notifManager.AddNotification("PLACEMENT MODE SET TO " + (placer.placeHints ? "HINT MODE" : "INDICATOR MODE"));
+                    };
+                    menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
                 }
             };
 
@@ -215,6 +222,11 @@ namespace OuterRelics
             {
                 LogWarning("DLC not found. EOTE locations will not be available for item placement.");
             }
+
+            //Load key models
+            itemManager.hintModels = new List<GameObject>();
+            itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
+            itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
         }
 
         private void Update()
@@ -249,9 +261,8 @@ namespace OuterRelics
             {
                 saveManager = new SaveManager();
             }
-            LogInfo($"1: {saveManager.GetSaveDataExists()}, {newGame}");
+
             if (!saveManager.GetSaveDataExists() && !newGame) yield break;
-            LogInfo("2");
 
             if (newGame)
             {
@@ -334,6 +345,7 @@ namespace OuterRelics
             placer.currentGroup = groupSelector.GetInputText();
         }
 
+        //registers files for placement
         private void RegisterFiles()
         {
             if (registrationManager == null) registrationManager = new RegistrationManager();
