@@ -158,6 +158,7 @@ namespace OuterRelics
         /// <param name="hintType"></param>
         public void CreateHint(int hintType, HintPlacement placement)
         {
+            if (SceneManager.GetActiveScene().name != placement.systemName) return;
             GameObject hintParent = new GameObject();
             hintParent.transform.parent = GameObject.Find(placement.bodyName).transform.Find(placement.parent);
             hintParent.transform.localPosition = new Vector3(placement.posX, placement.posY, placement.posZ);
@@ -229,5 +230,6 @@ namespace OuterRelics
         }
 
         
+
     }
 }

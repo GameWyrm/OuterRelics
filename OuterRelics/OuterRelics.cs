@@ -5,6 +5,7 @@ using OWML.ModHelper.Menus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -227,6 +228,33 @@ namespace OuterRelics
             itemManager.hintModels = new List<GameObject>();
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
+
+            foreach (string file in Directory.GetFiles(ModHelper.Manifest.ModFolderPath + "PlacementInfo"))
+            {
+                LogInfo("Found file: " + file);
+                string fileName = "PlacementInfo/" + Path.GetFileNameWithoutExtension(file) + ".json";
+                LogInfo("Loaded file: " + fileName);
+                PlacementData placementData = ModHelper.Storage.Load<PlacementData>(fileName);
+
+                ItemSpawnList spawnData = new ItemSpawnList();
+                foreach (Location loc in placementData.locations)
+                {
+                    foreach (SpawnPoint spawn in loc.spawnPoints)
+                    {
+                        ItemSpawnPoint spawnPoint = new ItemSpawnPoint();
+                        spawnPoint.system = placementData.system;
+                        spawnPoint.body = placementData.body;
+                        spawnPoint.locationName = loc.locationName;
+                        spawnPoint.spawnPointName = spawn.spawnPointName;
+                        spawnPoint.parent = spawn.parent;
+                        spawnPoint.position = new SimpleVector3(spawn.posX, spawn.posY, spawn.posZ);
+                        spawnPoint.rotation = new SimpleVector3(spawn.rotX, spawn.rotY, spawn.rotZ);
+                        spawnData.SpawnPoints.Add(spawnPoint);
+                    }
+                }
+                LogInfo("Finished loading files, attempting to save");
+                ModHelper.Storage.Save<ItemSpawnList>(spawnData, $"NewPlacementInfo/{spawnData.SpawnPoints[0].body}.json");
+            }
         }
 
         private void Update()
@@ -371,9 +399,9 @@ namespace OuterRelics
             registrationManager.RegisterFile("Sector_EscapePodBody", GetConfigBool("DarkBramble"));
             registrationManager.RegisterFile("QuantumMoon_Body", GetConfigBool("QuantumMoon"));
             registrationManager.RegisterFile("Comet_Body", GetConfigBool("Interloper"));
-            registrationManager.RegisterFile("RingWorld_Body", GetConfigBool("Stranger"));
-            registrationManager.RegisterFile("DreamWorld_Body_Normal", GetConfigBool("DreamWorld"));
-            registrationManager.RegisterFile("DreamWorld_Body_LightsOut", GetConfigBool("DreamWorldStealth"));
+            registrationManager.RegisterFile("RingWorld_Body", GetConfigBool("Stranger") && HasDLC);
+            registrationManager.RegisterFile("DreamWorld_Body_Normal", GetConfigBool("DreamWorld") && HasDLC);
+            registrationManager.RegisterFile("DreamWorld_Body_LightsOut", GetConfigBool("DreamWorldStealth") && HasDLC);
             registrationManager.RegisterFile("NomaiProbe_Body", GetConfigBool("HardMode"));
             registrationManager.RegisterFile("BackerSatellite_Body", GetConfigBool("HardMode"));
             registrationManager.RegisterFile("VolcanicMoon_Body", GetConfigBool("HardMode") && GetConfigBool("BrittleHollow"));
