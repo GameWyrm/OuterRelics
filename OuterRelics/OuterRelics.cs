@@ -2,6 +2,7 @@
 using OWML.Common.Menus;
 using OWML.ModHelper;
 using OWML.ModHelper.Menus;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace OuterRelics
@@ -28,10 +30,11 @@ namespace OuterRelics
         {
             get 
             {
-                GameObject instance = GameObject.Find("GameWyrm.OuterRelics");
-                return instance.GetComponent<OuterRelics>(); 
+                if (main == null) main = FindObjectOfType<OuterRelics>();
+                return main; 
             }
         }
+        private static OuterRelics main;
 
         /// <summary>
         /// Names for every Nomai key
@@ -155,11 +158,6 @@ namespace OuterRelics
 
         private void Start()
         {
-            /*Font[] loadedFonts = Resources.FindObjectsOfTypeAll<Font>();
-            foreach (Font font in loadedFonts)
-            {
-                LogInfo($"Found font: " + font.name);
-            }*/
 
             //Load game assets
             assets = ModHelper.Assets.LoadBundle("Models/OuterRelicsassets");
@@ -204,16 +202,6 @@ namespace OuterRelics
                 }
             };
 
-            //Gamepad detection debug
-            if (Gamepad.all.Count > 0)
-            {
-                //LogInfo("Gamepad Detected");
-            }
-            else
-            {
-                //LogWarning("Gamepad not found");
-            }
-
             //DLC detection debug
             if (HasDLC)
             {
@@ -228,42 +216,12 @@ namespace OuterRelics
             itemManager.hintModels = new List<GameObject>();
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
-
-            foreach (string file in Directory.GetFiles(ModHelper.Manifest.ModFolderPath + "PlacementInfo"))
-            {
-                LogInfo("Found file: " + file);
-                string fileName = "PlacementInfo/" + Path.GetFileNameWithoutExtension(file) + ".json";
-                LogInfo("Loaded file: " + fileName);
-                PlacementData placementData = ModHelper.Storage.Load<PlacementData>(fileName);
-
-                ItemSpawnList spawnData = new ItemSpawnList();
-                foreach (Location loc in placementData.locations)
-                {
-                    foreach (SpawnPoint spawn in loc.spawnPoints)
-                    {
-                        ItemSpawnPoint spawnPoint = new ItemSpawnPoint();
-                        spawnPoint.system = placementData.system;
-                        spawnPoint.body = placementData.body;
-                        spawnPoint.locationName = loc.locationName;
-                        spawnPoint.spawnPointName = spawn.spawnPointName;
-                        spawnPoint.parent = spawn.parent;
-                        spawnPoint.position = new SimpleVector3(spawn.posX, spawn.posY, spawn.posZ);
-                        spawnPoint.rotation = new SimpleVector3(spawn.rotX, spawn.rotY, spawn.rotZ);
-                        spawnData.SpawnPoints.Add(spawnPoint);
-                    }
-                }
-                LogInfo("Finished loading files, attempting to save");
-                ModHelper.Storage.Save<ItemSpawnList>(spawnData, $"NewPlacementInfo/{spawnData.SpawnPoints[0].body}.json");
-            }
         }
 
         private void Update()
         {
-            //Code below this should only run if the player is in a playable solar system
-            if (!inGame) return;
-
             //Manually unlocks ATP
-            if (debugMode && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
+            if (debugMode && SceneManager.GetActiveScene().name == "SolarSystem" && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
             {
                 LogInfo("ATP Unlock was manually triggerred");
                 lockManager.UnlockATP();
@@ -303,11 +261,7 @@ namespace OuterRelics
             if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
-            if (saveManager.GetFiles() != null)
-            {
-                LogInfo("File info found");
-                itemManager.loadedFiles = saveManager.GetFiles();
-            }
+            
 
             GameObject atp = GameObject.Find("TimeLoopRing_Body").transform.Find("Interactibles_TimeLoopRing_Hidden/CoreContainmentInterface").gameObject;
             yield return new WaitUntil(() => atp.transform.childCount >= 5);
@@ -336,7 +290,7 @@ namespace OuterRelics
             mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
             lockManager = mask.AddComponent<LockManager>();
 
-            itemManager.Randomize();
+            itemManager.SpawnItems();
 
             newGame = false;
 
@@ -371,45 +325,6 @@ namespace OuterRelics
             LogInfo("Accessing group " + groupSelector.GetInputText() + " on body " + GetBody(collider.gameObject).name);
             placer.LoadBody(GetBody(collider.gameObject).name);
             placer.currentGroup = groupSelector.GetInputText();
-        }
-
-        //registers files for placement
-        private void RegisterFiles()
-        {
-            if (registrationManager == null) registrationManager = new RegistrationManager();
-            
-            registrationManager.RegisterFile("CaveTwin_Body", GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("TowerTwin_Body", GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("TimberHearth_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("MiningRig_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("Moon_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("BrittleHollow_Body", GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("WhiteholeStation_Body", GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("BrambleIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("ConstructionYardIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GabbroIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GabbroShip_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GiantsDeep_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("OrbitalProbeCannon_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("QuantumIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("StatueIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("DB_PioneerDimension_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("DB_VesselDimension_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("DarkBramble_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("Sector_EscapePodBody", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("QuantumMoon_Body", GetConfigBool("QuantumMoon"));
-            registrationManager.RegisterFile("Comet_Body", GetConfigBool("Interloper"));
-            registrationManager.RegisterFile("RingWorld_Body", GetConfigBool("Stranger") && HasDLC);
-            registrationManager.RegisterFile("DreamWorld_Body_Normal", GetConfigBool("DreamWorld") && HasDLC);
-            registrationManager.RegisterFile("DreamWorld_Body_LightsOut", GetConfigBool("DreamWorldStealth") && HasDLC);
-            registrationManager.RegisterFile("NomaiProbe_Body", GetConfigBool("HardMode"));
-            registrationManager.RegisterFile("BackerSatellite_Body", GetConfigBool("HardMode"));
-            registrationManager.RegisterFile("VolcanicMoon_Body", GetConfigBool("HardMode") && GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("SunStation_Body", GetConfigBool("HardMode") && GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("Satellite_Body", GetConfigBool("HardMode") && GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("DreamWorld_Body_Obscure", GetConfigBool("HardMode") && GetConfigBool("DreamWorldStealth") && HasDLC);
-
-            itemManager.loadedFiles = registrationManager.GetRegisteredFiles();
         }
 
 
@@ -505,11 +420,17 @@ namespace OuterRelics
                     return;
                 }
 
+                if (string.IsNullOrEmpty(seed))
+                {
+                    seed = DateTime.Now.Ticks.ToString();
+                }
+
                 LogInfo($"Seed:{seed}");
-                RegisterFiles();
                 if (!dryMode)
                 {
                     saveManager.ClearSaveData();
+                    saveManager.NewSave();
+                    saveManager.SaveData();
                     PlayerData.SaveEyeCompletion();
                     if (PlayerData.LoadLoopCount() > 1)
                     {

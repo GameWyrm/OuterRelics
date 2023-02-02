@@ -30,13 +30,14 @@ namespace OuterRelics
         /// </summary>
         public string currentGroup = "";
         /// <summary>
-        /// Current item json for editing
+        /// List of locations that can spawn items
         /// </summary>
-        public PlacementData placements;
+        public ItemSpawnList spawnList;
         /// <summary>
-        /// Current hint json for editing
+        /// List of locations that a hint can spawn in
         /// </summary>
-        public HintPlacementData hintPlacements;
+        public ItemSpawnList hintSpawns;
+        
         
 
         //Main mod singleton
@@ -84,77 +85,76 @@ namespace OuterRelics
                     return;
                 }
                 SaveSpawnLocation();
-                if (!placeHints)
-                {
-                    SaveBody();
-                }
-                else
-                {
-                    SaveHints();
-                }
+                SaveBody();
             }
         }
 
         public void LoadBody(string bodyName)
         {
-            placements = main.ModHelper.Storage.Load<PlacementData>("PlacementInfo/" + bodyName + ".json");
-            if (placements == null)
+            spawnList = main.ModHelper.Storage.Load<ItemSpawnList>($"PlacementInfo/{bodyName}.json");
+            if (spawnList == null)
             {
-                main.LogInfo("Unable to find placement info for " + bodyName + ", creating new file");
-                placements = new PlacementData();
-                placements.system = SceneManager.GetActiveScene().name;
-                placements.body = bodyName;
-                placements.bodyName = bodyName + " RENAME THIS IN THE JSON FILE";
-                placements.locations = new List<Location>();
+                main.LogInfo($"Unable to find placement info for {bodyName}, creating new file");
+                spawnList = new ItemSpawnList();
+                spawnList.spawnLocations = new List<ItemSpawnLocation>();
             }
+
             currentBody = bodyName;
         }
 
         public void SaveBody()
         {
-            main.ModHelper.Storage.Save<PlacementData>(placements, "PlacementInfo/" + currentBody + ".json");
+            if (!placeHints)
+            {
+                main.ModHelper.Storage.Save<ItemSpawnList>(spawnList, "PlacementInfo/" + currentBody + ".json");
+            }
+            else
+            {
+                main.ModHelper.Storage.Save<ItemSpawnList>(hintSpawns, "Hints/HintPlacements.json");
+            }
         }
 
         public void LoadHints()
         {
-            hintPlacements = main.ModHelper.Storage.Load<HintPlacementData>("PlacementInfo/HintPlacements.json");
-            if (hintPlacements == null)
+            hintSpawns = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
+            if (hintSpawns == null)
             {
-                main.LogInfo("Unable to find hint placement data, creating new file");
-                hintPlacements = new HintPlacementData();
-                hintPlacements.placements = new List<HintPlacement>();
+                main.LogInfo("Unable to locate hint placement data, creating new file");
+                hintSpawns = new ItemSpawnList();
+                hintSpawns.spawnLocations = new List<ItemSpawnLocation>();
             }
         }
 
-        public void SaveHints()
+        public ItemSpawnLocation GetSpawnLocation(string name)
         {
-            main.ModHelper.Storage.Save<HintPlacementData>(hintPlacements, "PlacementInfo/HintPlacements.json");
-        }
-
-        public Location GetLocation(string name)
-        {
-            Location location = placements.locations.SingleOrDefault(loc => loc.locationName == name);
-            if (location.locationName == null)
+            if (placeHints)
             {
-                main.LogInfo("Created new location group");
-                location = new Location(name, currentBody, new List<SpawnPoint>());
-                placements.locations.Add(location);
+                if (PlayerState.InDreamWorld() || PlayerState.InCloakingField())
+                {
+                    name = "DLCHints";
+                }
+                else
+                {
+                    name = "NormalHints";
+                }
             }
-            return location;
+            ItemSpawnLocation spawnLocation = spawnList.spawnLocations.SingleOrDefault(loc => loc.locationName == name);
+            if (spawnLocation.locationName == null)
+            {
+                main.LogInfo($"Created new location group {name}");
+                spawnLocation = new ItemSpawnLocation(SceneManager.GetActiveScene().name, currentBody, name, new List<ItemSpawnPoint>());
+                spawnList.spawnLocations.Add(spawnLocation);
+            }
+            return spawnLocation;
         }
 
-        public void AddSpawnpoint(Location location, string parent, Vector3 position, Vector3 rotation)
+        public void AddSpawnpoint(ItemSpawnLocation location, string parent, Vector3 position, Vector3 rotation)
         {
-            SpawnPoint spawn = new SpawnPoint();
-            spawn.parent = parent;
-            spawn.posX = position.x;
-            spawn.posY = position.y;
-            spawn.posZ = position.z;
-            spawn.rotX = rotation.x;
-            spawn.rotY = rotation.y;
-            spawn.rotZ = rotation.z;
-            main.LogInfo("Attempting to create a spawnpoint");
-            location.spawnPoints.Add(spawn);
+            SimpleVector3 pos = new SimpleVector3(position.x, position.y, position.z);
+            SimpleVector3 rot = new SimpleVector3(rotation.x, rotation.y, rotation.z);
+            ItemSpawnPoint spawnPoint = new ItemSpawnPoint("", parent, pos, rot, new List<LogicConditions>());
+            main.LogInfo($"Attampting to create a spawnpoint in {location.locationName}");
+            location.spawnPoints.Add(spawnPoint);
         }
 
         /// <summary>
@@ -222,29 +222,11 @@ namespace OuterRelics
         {
 
             GameObject indicator = positionalIndicators[indicatorIndex];
-            if (!placeHints)
-            {
-                LoadBody(currentBody);
-                AddSpawnpoint(GetLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
-                main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
-                main.notifManager.AddNotification("NEW LOCATION SAVED");
-            }
-            else
-            {
-                LoadHints();
-                HintPlacement hint = new HintPlacement();
-                hint.systemName = SceneManager.GetActiveScene().name;
-                hint.bodyName = OuterRelics.GetBody(indicator).name;
-                hint.parent = OuterRelics.GetObjectPath(indicator);
-                hint.posX = indicator.transform.localPosition.x;
-                hint.posY = indicator.transform.localPosition.y;
-                hint.posZ = indicator.transform.localPosition.z;
-                hint.rotX = indicator.transform.localEulerAngles.x;
-                hint.rotY = indicator.transform.localEulerAngles.y;
-                hint.rotZ = indicator.transform.localEulerAngles.z;
-                hintPlacements.placements.Add(hint);
-                main.notifManager.AddNotification("NEW HINT LOCATION SAVED");
-            }
+            LoadBody(currentBody);
+            AddSpawnpoint(GetSpawnLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+            main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
+            main.notifManager.AddNotification("NEW " + (placeHints ? "HINT " : "") + "LOCATION SAVED");
+            
 
             indicator.GetComponent<MeshRenderer>().material = main.collectedMat;
 
@@ -259,11 +241,6 @@ namespace OuterRelics
             indicator.transform.localScale = Vector3.one * 0.5f;
             indicator.AddComponent<MatchPlayerRotation>();
             return indicator;
-        }
-
-        public class HintPlacementData
-        {
-            public List<HintPlacement> placements = new List<HintPlacement>();
         }
     }
 }

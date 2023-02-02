@@ -1,6 +1,7 @@
 ﻿using OWML.ModHelper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,29 +15,25 @@ namespace OuterRelics
     public class ItemManager
     {
         /// <summary>
-        /// The seed for randomization. Two runs with the same seed and settings will be identical.
-        /// </summary>
-        //public string seed;
-        /// <summary>
         /// If true, only one spawn will be used per location. If false, any spawnpoint can be used.
         /// </summary>
         public bool SinglePerGroup;
+        ///<summary>
+        ///List of locations that an item has been placed in
+        ///</summary>
+        public List<RandomizedPlacement> itemPlacements;
         /// <summary>
-        /// List of JSON files that should be loaded for locations
+        /// List of locations that a hint has been placed in
         /// </summary>
-        public List<string> loadedFiles;
+        public List<RandomizedPlacement> hintPlacements;
         /// <summary>
-        /// List of locations that can spawn items
+        /// Lists of all locations that can spawn items
         /// </summary>
-        public List<Location> locations;
-        /// <summary>
-        /// List of placement info
-        /// </summary>
-        public List<PlacementData> placements;
+        public List<ItemSpawnList> spawnLists;
         /// <summary>
         /// List of hint placement info
         /// </summary>
-        public List<HintPlacement> hintPlacements;
+        public ItemSpawnList hintList;
         /// <summary>
         /// List of models available for hints
         /// </summary>
@@ -51,10 +48,10 @@ namespace OuterRelics
 
         public ItemManager()
         {
-            loadedFiles = new List<string>();
+            itemPlacements = new List<RandomizedPlacement>();
 
-            placements = new List<PlacementData>();
-            hintPlacements = new List<HintPlacement>();
+            spawnLists = new List<ItemSpawnList>();
+            hintList = new ItemSpawnList();
 
             main = OuterRelics.Main;
 
@@ -79,91 +76,162 @@ namespace OuterRelics
 
             LoadFiles();
 
-            List<PlacementData> unusedPlacements = new List<PlacementData>(placements);
+            List<ItemSpawnLocation> allAvailableLocations = new();
 
-            main.LogMessage("Starting Randomization and Placement");
-            for (int i = 0; i < 12; i++)
+            foreach (ItemSpawnList list in spawnLists)
             {
-                PlacementData currentPlacement = WeightedPlacement(unusedPlacements);
-                
-                int locIndex = rnd.Next(0, currentPlacement.locations.Count - 1);
-                //main.LogInfo("Location Index picked: " + locIndex + "(" + currentPlacement.locations[locIndex].locationName + "), Location Count: " + currentPlacement.locations.Count);
-
-                SpawnPoint spawn;
-                int spawnIndex = rnd.Next(0, currentPlacement.locations[locIndex].spawnPoints.Count - 1);
-                //main.LogInfo("Spawn point index picked: " + spawnIndex + "(" + currentPlacement.locations[locIndex].spawnPoints[spawnIndex].spawnPointName + "), Spawn Count: " + currentPlacement.locations[locIndex].spawnPoints.Count);
-                spawn = currentPlacement.locations[locIndex].spawnPoints[spawnIndex];
-
-                CreateKey(i, currentPlacement, currentPlacement.locations[locIndex], spawn);
-
-                currentPlacement.locations[locIndex].spawnPoints.RemoveAt(spawnIndex);
-                if (currentPlacement.locations[locIndex].spawnPoints.Count <= 0 || SinglePerGroup)
+                foreach (ItemSpawnLocation location in list.spawnLocations)
                 {
-                    currentPlacement.locations.RemoveAt(locIndex);
-                }
-                if (currentPlacement.locations.Count <= 0)
-                {
-                    unusedPlacements.Remove(currentPlacement);
+                    allAvailableLocations.Add(location);
                 }
             }
 
-            if (hintPlacements != null && hintPlacements.Count > 0)
+            List<ItemSpawnLocation> availableLocations = new();
+
+            for (int i = 0; i < allAvailableLocations.Count; i++)
             {
-                foreach (HintPlacement hint in hintPlacements)
+                ItemSpawnLocation thisLoc = allAvailableLocations[i];
+                availableLocations.Add(new ItemSpawnLocation(thisLoc.system, thisLoc.body, thisLoc.locationName, new List<ItemSpawnPoint>()));
+                for (int j = 0; j < allAvailableLocations[i].spawnPoints.Count; j++)
                 {
-                    CreateHint(UnityEngine.Random.Range((int)0, (int)2), hint);
+                    ItemSpawnPoint itemSpawnPoint = allAvailableLocations[i].spawnPoints[j];
+                    if (LogicTokenizer.TestConditions(itemSpawnPoint.logic))
+                    {
+                        availableLocations[i].spawnPoints.Add(itemSpawnPoint);
+                    }
                 }
+            }
+            allAvailableLocations = availableLocations;
+
+            for (int i = allAvailableLocations.Count - 1; i >= 0; i--)
+            {
+                if (allAvailableLocations[i].spawnPoints.Count == 0)
+                {
+                    availableLocations.Remove(allAvailableLocations[i]);
+                }
+            }
+
+            itemPlacements = new();
+            for (int i = 0; i < 12; i++)
+            {
+                ItemSpawnLocation location = availableLocations[rnd.Next(0, availableLocations.Count - 1)];
+                ItemSpawnPoint spawnPoint = location.spawnPoints[rnd.Next(0, location.spawnPoints.Count - 1)];
+
+                itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
+                spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
+
+                int filledLoc = availableLocations.IndexOf(location);
+                availableLocations[filledLoc].spawnPoints.Remove(spawnPoint);
+                if (availableLocations[filledLoc].spawnPoints.Count == 0) availableLocations.RemoveAt(filledLoc);
             }
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
         }
 
+        public void GenerateHints()
+        {
+            rnd = new Random(seed.GetHashCode());
+
+            hintPlacements = new();
+
+            int index = 0;
+            foreach (ItemSpawnLocation location in hintList.spawnLocations)
+            {
+                foreach (ItemSpawnPoint spawnPoint in location.spawnPoints)
+                {
+                    hintPlacements.Add(new RandomizedPlacement(ItemType.Key, index, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
+                    index++;
+                }
+            }
+        }
+
+        public void SpawnItems()
+        {
+            foreach (RandomizedPlacement placement in itemPlacements)
+            {
+                switch (placement.type)
+                {
+                    case ItemType.Key:
+                        CreateKey(placement);
+                        break;
+                    case ItemType.Hint:
+                        CreateHint(placement);
+                        break;
+                    case ItemType.JetpackBooster:
+                        throw new NotImplementedException();
+                        break;
+                    case ItemType.JetpackTank:
+                        throw new NotImplementedException();
+                        break;
+                    case ItemType.HeartContainer:
+                        throw new NotImplementedException();
+                        break;
+                    case ItemType.ShipBoost:
+                        throw new NotImplementedException();
+                        break;
+                    case ItemType.JumpBoost:
+                        throw new NotImplementedException();
+                        break;
+                    case ItemType.SpeedBoost:
+                        throw new NotImplementedException();
+                        break;
+                    default:
+                        main.LogError("Did not find a valid item type");
+                        break;
+                }
+            }
+        }
+
         /// <summary>
         /// Spawn key
         /// </summary>
-        /// <param name="keyID">ID of the key. Should be unique.</param>
-        /// <param name="placement">Placement Data file that contains information for spawn points</param>
-        /// <param name="loc">Location group that contains spawn points</param>
-        /// <param name="spawn">Specific spawnpoint for the key</param>
-        public void CreateKey(int keyID, PlacementData placement, Location loc, SpawnPoint spawn)
+        /// <param name="placement">Randomized data</param>
+        public void CreateKey(RandomizedPlacement placement)
         {
-            if (!OuterRelics.GetConfigBool("DryMode"))
+            
+            if (main.hasKey[placement.id]) return;
+
+            if (SceneManager.GetActiveScene().name == placement.system)
             {
-                if (main.hasKey[keyID]) return;
+                GameObject keyParent = new GameObject();
+                keyParent.transform.parent = GameObject.Find(placement.body).transform.Find(placement.parent);
+                keyParent.transform.localPosition = placement.position;
+                keyParent.transform.localEulerAngles = placement.rotation;
+                keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
+                keyParent.name = "NOMAI KEY " + (placement.id + 1);
+                GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (placement.id + 1)), keyParent.transform);
+                keyParent.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                KeyCollectable kc = key.AddComponent<KeyCollectable>();
+                kc.itemName = "KEY OF " + OuterRelics.KeyNames[placement.id];
+                kc.lockManager = main.lockManager;
+                kc.keyID = placement.id;
 
-                if (SceneManager.GetActiveScene().name == placement.system)
-                {
-                    GameObject keyParent = new GameObject();
-                    keyParent.transform.parent = GameObject.Find(placement.body).transform.Find(spawn.parent);
-                    keyParent.transform.localPosition = new Vector3(spawn.posX, spawn.posY, spawn.posZ);
-                    keyParent.transform.localEulerAngles = new Vector3(spawn.rotX, spawn.rotY, spawn.rotZ);
-                    keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
-                    keyParent.name = "NOMAI KEY " + (keyID + 1);
-                    GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (keyID + 1)), keyParent.transform);
-                    keyParent.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                    KeyCollectable kc = key.AddComponent<KeyCollectable>();
-                    kc.itemName = "KEY OF " + OuterRelics.KeyNames[keyID];
-                    kc.lockManager = main.lockManager;
-                    kc.keyID = keyID;
-
-                    main.LogMessage("Created key " + keyID + " on " + placement.body + " at " + loc.locationName + " " + (spawn.spawnPointName != null ? spawn.spawnPointName : ""));
-                }
+                main.LogMessage("Created key " + placement.id + " on " + placement.body + " at " + placement.locationName + " " + (placement.spawnPointName != null ? placement.spawnPointName : ""));
             }
-            spoilerLog += $"KEY OF {OuterRelics.KeyNames[keyID]} ({keyID}): {placement.system}, {placement.body}, {loc.locationName}" + (spawn.spawnPointName != null ? (", " + spawn.spawnPointName) : "") + "\n";
         }
 
         /// <summary>
         /// Creates a hint object with the given hint
         /// </summary>
         /// <param name="hintType"></param>
-        public void CreateHint(int hintType, HintPlacement placement)
+        public void CreateHint(RandomizedPlacement placement)
         {
-            if (SceneManager.GetActiveScene().name != placement.systemName) return;
+            if (SceneManager.GetActiveScene().name != placement.system) return;
             GameObject hintParent = new GameObject();
-            hintParent.transform.parent = GameObject.Find(placement.bodyName).transform.Find(placement.parent);
-            hintParent.transform.localPosition = new Vector3(placement.posX, placement.posY, placement.posZ);
-            hintParent.transform.localEulerAngles = new Vector3(placement.rotX, placement.rotY, placement.rotZ);
+            hintParent.transform.parent = GameObject.Find(placement.body).transform.Find(placement.parent);
+            hintParent.transform.localPosition = placement.position;
+            hintParent.transform.localEulerAngles = placement.rotation;
             hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
+
+            int hintType;
+            if (placement.body == "RingWorld_Body" || placement.body == "DreamWorld_Body")
+            {
+                hintType = 1;
+            }
+            else
+            {
+                hintType = 0;
+            }
 
             GameObject hintObject = GameObject.Instantiate(hintModels[hintType], hintParent.transform);
             hintParent.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
@@ -177,56 +245,29 @@ namespace OuterRelics
 
         private void LoadFiles()
         {
-            placements = new List<PlacementData>();
-            for (int i = 0; i < loadedFiles.Count; i++)
+            foreach (string file in Directory.GetFiles(main.ModHelper.Manifest.ModFolderPath + "PlacementInfo"))
             {
-                placements.Add(main.ModHelper.Storage.Load<PlacementData>(loadedFiles[i]));
-                if (placements[i] == null)
+                ItemSpawnList listToAdd = main.ModHelper.Storage.Load<ItemSpawnList>("PlacementInfo/" + Path.GetFileName(file));
+                if (listToAdd != null)
                 {
-                    main.LogError("File " + loadedFiles[i] + " not found!");
+                    spawnLists.Add(listToAdd);
                 }
-                /*int spawnpoints = 0;
-                foreach (Location loc in placements[i].locations)
+                else
                 {
-                    spawnpoints += loc.spawnPoints.Count;
+                    main.LogError("Could not parse file " + file);
+                    continue;
                 }
-                main.LogInfo($"{loadedFiles[i]}: Locations: {placements[i].locations.Count}, Spawnpoints: {spawnpoints}");*/
+                //TODO add addon support
             }
-            main.LogInfo("Loaded " + placements.Count + " placement files");
 
-            PlacerManager.HintPlacementData hintPlacementData = main.ModHelper.Storage.Load<PlacerManager.HintPlacementData>("PlacementInfo/HintPlacements.json");
-            if (hintPlacementData != null)
+            main.LogInfo("Loaded " + spawnLists.Count + " placement files");
+
+            hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
+            if (hintList != null)
             {
-                hintPlacements = new List<HintPlacement>();
-                foreach (HintPlacement hint in hintPlacementData.placements)
-                {
-                    hintPlacements.Add(hint);
-                }
                 main.LogInfo("Loaded Hint Data");
             }
             else main.LogWarning("Could not find Hint Data");
-        }
-
-        private PlacementData WeightedPlacement(List<PlacementData> unusedPlacements)
-        {
-            List<int> weights = new List<int>();
-            //main.LogMessage("Unused Placements: " + unusedPlacements.Count);
-            for (int i = 0; i < unusedPlacements.Count; i++)
-            {
-                weights.Add(unusedPlacements[i].locations.Count);
-                if (i > 0) weights[i] += weights[i - 1];
-            }
-            //main.LogMessage("Established weights");
-            int placementIndex = rnd.Next(0, weights[weights.Count - 1]);
-            for (int i = 0; i < weights.Count; i++)
-            {
-                if (placementIndex < weights[i])
-                {
-                    return unusedPlacements[i];
-                }
-            }
-            main.LogError("Couldn't properly get a weight!");
-            return null;
         }
 
         

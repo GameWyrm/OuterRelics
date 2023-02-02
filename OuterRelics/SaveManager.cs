@@ -1,4 +1,5 @@
-﻿using OWML.ModHelper;
+﻿using Epic.OnlineServices;
+using OWML.ModHelper;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ namespace OuterRelics
         {
             public string seed = "";
             public string version = "";
-            public List<string> loadedFiles;
+            public bool[] enabledPools = new bool[12];
             public bool singlePerGroup = true;
             public HintDifficulty hints = HintDifficulty.Balanced;
             public int uselessHintChance = 25;
@@ -26,6 +27,21 @@ namespace OuterRelics
         /// Seed for randomization stored in the save file
         /// </summary>
         public string Seed;
+        public List<string> Pools = new List<string>
+        {
+            "HourglassTwins",
+            "TimberHearth",
+            "BrittleHollow",
+            "GiantsDeep",
+            "DarkBramble",
+            "QuantumMoon",
+            "Interloper",
+            "Stranger",
+            "DreamWorld",
+            "DreamWorldStealth",
+            "HardMode",
+            "Addons"
+        };
 
         private OuterRelicsSaveData saveData;
         private OuterRelics main;
@@ -66,7 +82,6 @@ namespace OuterRelics
             }
 
             saveData.version = main.ModHelper.Manifest.Version;
-            saveData.loadedFiles = main.itemManager.loadedFiles;
             saveData.singlePerGroup = main.itemManager.SinglePerGroup;
             saveData.hints = main.hintDifficulty;
             saveData.uselessHintChance = main.uselessHints;
@@ -74,6 +89,30 @@ namespace OuterRelics
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
             main.LogInfo($"Saved Outer Relics data for {profile}");
+        }
+
+        public void NewSave()
+        {
+            saveData = new OuterRelicsSaveData();
+            saveData.seed = main.seed;
+            saveData.version = main.ModHelper.Manifest.Version;
+            for (int i = 0; i < saveData.enabledPools.Length; i++)
+            {
+                saveData.enabledPools[i] = OuterRelics.GetConfigBool(Pools[i]);
+            }
+            saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
+            if (Enum.TryParse(OuterRelics.GetConfigString("Hints"), true, out HintDifficulty hintDifficulty))
+            { 
+                saveData.hints = hintDifficulty; 
+            }
+            else
+            {
+                main.LogWarning("Invalid hint difficulty found, returning Balanced");
+                saveData.hints = HintDifficulty.Balanced;
+            }
+            saveData.uselessHintChance = OuterRelics.GetConfigInt("Useless Hint Chance");
+            saveData.savedKeysObtained = new bool[12];
+            saveData.totalSavedKeys = 0;
         }
 
         /// <summary>
@@ -114,12 +153,12 @@ namespace OuterRelics
         }
 
         /// <summary>
-        /// Returns list of files used for confirming placement
+        /// Returns list of pools used for confirming placement
         /// </summary>
         /// <returns></returns>
-        public List<string> GetFiles()
+        public bool[] GetPools()
         {
-            return saveData.loadedFiles;
+            return saveData.enabledPools;
         }
 
         /// <summary>
@@ -179,5 +218,7 @@ namespace OuterRelics
         {
             return File.Exists(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
         }
+
+        
     }
 }
