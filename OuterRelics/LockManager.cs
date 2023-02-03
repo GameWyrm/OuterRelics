@@ -2,6 +2,7 @@
 using OWML.ModHelper;
 using OuterRelics;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace OuterRelics
 {
@@ -23,6 +24,7 @@ namespace OuterRelics
         OuterRelics main;
         //List of key objects
         GameObject[] keys;
+        NomaiInterfaceOrb orbInterface;
         Material uncollectedMat;
         Material collectedMat;
 
@@ -30,26 +32,7 @@ namespace OuterRelics
         {
             main = OuterRelics.Main;
 
-            hasKey = new bool[12];
-            keyCount = main.keyCount;
-            transform.position = transform.position + transform.TransformDirection(Vector3.up * 0.5f);
-
-            uncollectedMat = main.assets.LoadAsset<Material>("Uncollected");
-            collectedMat = main.assets.LoadAsset<Material>("Collected");
-
-            //create keys
-            keys = new GameObject[12];
-
-            for (int i = 0; i < keys.Length; i++)
-            {
-                GameObject go = Instantiate(main.assets.LoadAsset<GameObject>("NK P" + (i + 1)), transform);
-                keys[i] = go;
-                go.transform.position = transform.position;
-                go.transform.rotation = transform.rotation;
-                if (!main.hasKey[i]) go.GetComponent<MeshRenderer>().material = uncollectedMat;
-
-                hasKey[i] = main.hasKey[i];
-            }
+            
         }
 
         /// <summary>
@@ -82,6 +65,60 @@ namespace OuterRelics
             main.notifManager.AddNotification("ALL KEYS OBTAINED, ASH TWIN PROJECT UNLOCKED");
             main.orbLock.SetActive(false);
             main.orbInterface.RemoveLock();
+        }
+
+        public void LockATP()
+        {
+            if (main.keyCount < 12)
+            {
+                GameObject atp = GameObject.Find("TimeLoopRing_Body").transform.Find("Interactibles_TimeLoopRing_Hidden/CoreContainmentInterface").gameObject;
+                main.LogInfo(atp == null ? "Could not find it yet" : "Located ATP: " + atp.name);
+
+                GameObject orb = atp.transform.Find("Prefab_NOM_InterfaceOrb").gameObject;
+                if (orb == null)
+                {
+                    main.LogWarning("Could not find the orb!");
+                }
+                else
+                {
+                    main.LogInfo("Found the orb! " + orb.name);
+                }
+                orbInterface = orb.GetComponent<NomaiInterfaceOrb>();
+                orbInterface.AddLock();
+                GameObject orbLock = Instantiate(main.assets.LoadAsset<GameObject>("Orb Lock"), orb.transform);
+                orbLock.transform.position = orb.transform.position;
+                orbLock.transform.localScale = Vector3.one * 0.55f;
+                main.LogSuccess("Locked the orb!");
+
+                
+
+                GameObject mask = new GameObject();
+                atp = GameObject.Find("TimeLoopRing_Body");
+                mask.transform.parent = atp.transform.Find("Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0");
+                mask.transform.localPosition = new Vector3(-23.4f, 11.4f, 0f);
+                mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
+                
+                hasKey = new bool[12];
+                keyCount = main.keyCount;
+                transform.position = transform.position + transform.TransformDirection(Vector3.up * 0.5f);
+
+                uncollectedMat = main.assets.LoadAsset<Material>("Uncollected");
+                collectedMat = main.assets.LoadAsset<Material>("Collected");
+
+                //create key displays
+                keys = new GameObject[12];
+
+                for (int i = 0; i < keys.Length; i++)
+                {
+                    GameObject go = Instantiate(main.assets.LoadAsset<GameObject>("NK P" + (i + 1)), mask.transform);
+                    keys[i] = go;
+                    go.transform.position = mask.transform.position;
+                    go.transform.rotation = mask.transform.rotation;
+                    if (!main.hasKey[i]) go.GetComponent<MeshRenderer>().material = uncollectedMat;
+
+                    hasKey[i] = main.hasKey[i];
+                }
+            }
         }
     }
 }

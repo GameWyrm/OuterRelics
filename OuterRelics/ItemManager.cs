@@ -18,6 +18,10 @@ namespace OuterRelics
         /// If true, only one spawn will be used per location. If false, any spawnpoint can be used.
         /// </summary>
         public bool SinglePerGroup;
+        /// <summary>
+        /// List of hints
+        /// </summary>
+        public List<string> hints;
         ///<summary>
         ///List of locations that an item has been placed in
         ///</summary>
@@ -125,6 +129,8 @@ namespace OuterRelics
                 if (availableLocations[filledLoc].spawnPoints.Count == 0) availableLocations.RemoveAt(filledLoc);
             }
 
+            GenerateHints();
+
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
         }
 
@@ -135,14 +141,21 @@ namespace OuterRelics
             hintPlacements = new();
 
             int index = 0;
+            if (hintList == null || hintList.spawnLocations.Count == 0) return;
             foreach (ItemSpawnLocation location in hintList.spawnLocations)
             {
+                if (location.locationName == "DLCHints" && !OuterRelics.HasDLC) break;
+                //main.LogInfo($"Creating hint placement for {location.body}");
                 foreach (ItemSpawnPoint spawnPoint in location.spawnPoints)
                 {
                     hintPlacements.Add(new RandomizedPlacement(ItemType.Key, index, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
+                    //main.LogInfo($"Registered new hint at {spawnPoint.parent}");
                     index++;
                 }
             }
+
+            HintManager hintManager = new();
+            hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements);
         }
 
         public void SpawnItems()
@@ -154,31 +167,27 @@ namespace OuterRelics
                     case ItemType.Key:
                         CreateKey(placement);
                         break;
-                    case ItemType.Hint:
-                        CreateHint(placement);
-                        break;
                     case ItemType.JetpackBooster:
-                        throw new NotImplementedException();
                         break;
                     case ItemType.JetpackTank:
-                        throw new NotImplementedException();
                         break;
                     case ItemType.HeartContainer:
-                        throw new NotImplementedException();
                         break;
                     case ItemType.ShipBoost:
-                        throw new NotImplementedException();
                         break;
                     case ItemType.JumpBoost:
-                        throw new NotImplementedException();
                         break;
                     case ItemType.SpeedBoost:
-                        throw new NotImplementedException();
                         break;
                     default:
                         main.LogError("Did not find a valid item type");
                         break;
                 }
+            }
+            main.LogSuccess("Finished creating major items! Generating hints...");
+            foreach (RandomizedPlacement hintSpawn in hintPlacements)
+            {
+                CreateHint(hintSpawn);
             }
         }
 
@@ -216,9 +225,10 @@ namespace OuterRelics
         /// <param name="hintType"></param>
         public void CreateHint(RandomizedPlacement placement)
         {
-            if (SceneManager.GetActiveScene().name != placement.system) return;
+            //if (OuterRelics.GetSystemName() != placement.system) return;
             GameObject hintParent = new GameObject();
             hintParent.transform.parent = GameObject.Find(placement.body).transform.Find(placement.parent);
+            if (hintParent.transform.parent == null) main.LogError($"Unable to find {placement.body}/{placement.parent}");
             hintParent.transform.localPosition = placement.position;
             hintParent.transform.localEulerAngles = placement.rotation;
             hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
@@ -238,9 +248,9 @@ namespace OuterRelics
 
             HintCollectable hint = hintObject.AddComponent<HintCollectable>();
 
-            main.LogMessage("Created a hint");
+            hint.hint = hints[placement.id];
 
-            hint.hint = "This is a " + (hintType == 0 ? "Nomai Hint" : "Stranger Hint");
+            main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
         }
 
         private void LoadFiles()
@@ -265,7 +275,7 @@ namespace OuterRelics
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
             if (hintList != null)
             {
-                main.LogInfo("Loaded Hint Data");
+                main.LogSuccess($"Loaded Hint Data with {hintList.spawnLocations.Count} possible locations");
             }
             else main.LogWarning("Could not find Hint Data");
         }

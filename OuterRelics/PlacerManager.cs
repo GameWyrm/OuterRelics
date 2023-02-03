@@ -137,13 +137,30 @@ namespace OuterRelics
                 {
                     name = "NormalHints";
                 }
+                currentGroup = name;
             }
-            ItemSpawnLocation spawnLocation = spawnList.spawnLocations.SingleOrDefault(loc => loc.locationName == name);
+            ItemSpawnLocation spawnLocation;
+            if (!placeHints)
+            {
+                spawnLocation = spawnList.spawnLocations.SingleOrDefault(loc => loc.locationName == name);
+            }
+            else
+            {
+                spawnLocation = hintSpawns.spawnLocations.SingleOrDefault(loc => loc.locationName == name);
+            }
+
             if (spawnLocation.locationName == null)
             {
                 main.LogInfo($"Created new location group {name}");
                 spawnLocation = new ItemSpawnLocation(SceneManager.GetActiveScene().name, currentBody, name, new List<ItemSpawnPoint>());
-                spawnList.spawnLocations.Add(spawnLocation);
+                if (!placeHints)
+                {
+                    spawnList.spawnLocations.Add(spawnLocation);
+                }
+                else
+                {
+                    hintSpawns.spawnLocations.Add(spawnLocation);
+                }
             }
             return spawnLocation;
         }
@@ -222,9 +239,17 @@ namespace OuterRelics
         {
 
             GameObject indicator = positionalIndicators[indicatorIndex];
-            LoadBody(currentBody);
+            if (!placeHints)
+            {
+                LoadBody(OuterRelics.GetBody(indicator).name);
+            }
+            else
+            {
+                LoadHints();
+            }
+            currentBody = OuterRelics.GetBody(indicator).name;
             AddSpawnpoint(GetSpawnLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
-            main.LogSuccess("Saved new spawn location for " + currentBody + " on " + currentGroup);
+            main.LogSuccess("Saved new spawn location for " + currentGroup + " on " + currentBody);
             main.notifManager.AddNotification("NEW " + (placeHints ? "HINT " : "") + "LOCATION SAVED");
             
 

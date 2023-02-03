@@ -25,6 +25,7 @@ namespace OuterRelics
                 }
             }
             myText.text = "";
+            main.LogInfo("Custom Notification system created");
         }
         
         private void Update()

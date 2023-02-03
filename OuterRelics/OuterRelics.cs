@@ -1,20 +1,12 @@
 ﻿using OWML.Common;
-using OWML.Common.Menus;
 using OWML.ModHelper;
-using OWML.ModHelper.Menus;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace OuterRelics
 {
@@ -138,8 +130,8 @@ namespace OuterRelics
         PopupInputMenu groupSelector;
         //Menu Framework
         IMenuAPI menuAPI;
-        //Is the player in a playable solar system?
-        bool inGame;
+        //New Horizons API
+        INewHorizons nhAPI;
         //Is the player starting a new Outer Relics file?
         bool newGame = false;
         //Time that the popup was opened
@@ -171,10 +163,21 @@ namespace OuterRelics
                 if (loadScene == OWScene.SolarSystem)
                 {
                     LogSuccess("Loaded into solar system!");
-                    StartCoroutine(LoadIn());
-                    inGame = true;
+                    StartCoroutine(LoadIn(GetSystemName()));
+                }
+                if (loadScene == OWScene.TitleScreen)
+                {
+                    if (itemManager != null)
+                    {
+                        itemManager.itemPlacements = null;
+                        itemManager.hintPlacements = null;
+                    }
                 }
             };
+            if (nhAPI != null)
+            {
+                nhAPI.GetStarSystemLoadedEvent().AddListener(dumbRequiredString);
+            }
 
             //Get materials
             collectedMat = assets.LoadAsset<Material>("Collected");
@@ -201,6 +204,10 @@ namespace OuterRelics
                     menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
                 }
             };
+
+            //Get New Horizons API if possible
+            nhAPI = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
+            LogInfo("New Horizons API: " + (nhAPI == null ? "NULL" : "FOUND"));
 
             //DLC detection debug
             if (HasDLC)
@@ -235,13 +242,17 @@ namespace OuterRelics
             base.Configure(config);
         }
 
-
+        private void dumbRequiredString(string sceneName)
+        {
+            StartCoroutine(LoadIn(sceneName));
+            return;
+        }
 
         /// <summary>
         /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system
         /// </summary>
         /// <returns></returns>
-        IEnumerator LoadIn()
+        IEnumerator LoadIn(string sceneName)
         {
             if (saveManager == null)
             {
@@ -261,34 +272,23 @@ namespace OuterRelics
             if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
-            
+            int frameCount = Time.frameCount;
 
-            GameObject atp = GameObject.Find("TimeLoopRing_Body").transform.Find("Interactibles_TimeLoopRing_Hidden/CoreContainmentInterface").gameObject;
-            yield return new WaitUntil(() => atp.transform.childCount >= 5);
-            LogInfo(atp == null ? "Could not find it yet" : "Located ATP: " + atp.name);
+            yield return new WaitUntil(() => Time.frameCount >= frameCount + 5);
 
-            orb = atp.transform.Find("Prefab_NOM_InterfaceOrb").gameObject;
-            if (orb == null)
+            GameObject notifObject = Instantiate(assets.LoadAsset<GameObject>("FallbackCanvas"));
+            notifManager = notifObject.transform.GetChild(0).gameObject.AddComponent<FallBackNotificationManager>();
+
+            if (lockManager == null) lockManager = gameObject.AddComponent<LockManager>();
+            if (sceneName == "SolarSystem")
             {
-                LogWarning("Could not find the orb!");
+                lockManager.LockATP();
             }
-            else
-            {
-                LogInfo("Found the orb! " + orb.name);
-            }
-            orbInterface = orb.GetComponent<NomaiInterfaceOrb>();
-            orbInterface.AddLock();
-            orbLock = Instantiate(assets.LoadAsset<GameObject>("Orb Lock"), orb.transform);
-            orbLock.transform.position = orb.transform.position;
-            orbLock.transform.localScale = Vector3.one * 0.55f;
-            LogSuccess("Locked the orb!");
 
-            GameObject mask = new GameObject();
-            atp = GameObject.Find("TimeLoopRing_Body");
-            mask.transform.parent = atp.transform.Find("Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0");
-            mask.transform.localPosition = new Vector3(-23.4f, 11.4f, 0f);
-            mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
-            lockManager = mask.AddComponent<LockManager>();
+            if (itemManager.itemPlacements == null || itemManager.itemPlacements.Count <= 0)
+            {
+                itemManager.Randomize();
+            }
 
             itemManager.SpawnItems();
 
@@ -296,8 +296,6 @@ namespace OuterRelics
 
             saveManager.SaveData();
 
-            GameObject notifObject = Instantiate(assets.LoadAsset<GameObject>("FallbackCanvas"));
-            notifManager = notifObject.transform.GetChild(0).gameObject.AddComponent<FallBackNotificationManager>();
         }
 
         private void ConfirmGroup()
@@ -446,9 +444,23 @@ namespace OuterRelics
                 else
                 {
                     itemManager.Randomize();
+                    itemManager.itemPlacements = null;
+                    itemManager.hintPlacements = null;
                     ModHelper.Menus.PopupManager.CreateMessagePopup($"Generated Dry Run with seed {seed}, check your Spoiler Log folder");
                 }
             };
+        }
+
+        public static string GetSystemName()
+        {
+            if (main.nhAPI == null)
+            {
+                return SceneManager.GetActiveScene().name;
+            }
+            else
+            {
+                return main.nhAPI.GetCurrentStarSystem();
+            }
         }
 
         #region Logging
