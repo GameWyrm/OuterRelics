@@ -1,70 +1,135 @@
 {
-  "system": "SolarSystem",
-  "body": "ConstructionYardIsland_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "ConstructionYardIsland_Body",
       "locationName": "Construction Island",
       "spawnPoints": [
         {
           "spawnPointName": "Scroll Wall",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 1.09186161,
-          "posY": 8.970958,
-          "posZ": 32.8800049,
-          "rotX": 355.704346,
-          "rotY": 176.3241,
-          "rotZ": 0.3609637
+          "position": {
+            "x": 1.09186161,
+            "y": 8.970958,
+            "z": 32.8800049
+          },
+          "rotation": {
+            "x": 355.704346,
+            "y": 176.3241,
+            "z": 0.3609637
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -33.2066,
-          "posY": 2.48624778,
-          "posZ": -41.5330925,
-          "rotX": 3.9594624,
-          "rotY": 263.401825,
-          "rotZ": 4.29595137
+          "position": {
+            "x": -33.2066,
+            "y": 2.48624778,
+            "z": -41.5330925
+          },
+          "rotation": {
+            "x": 3.9594624,
+            "y": 263.401825,
+            "z": 4.29595137
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Underwater",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -13.897109,
-          "posY": -13.9185734,
-          "posZ": -56.9964828,
-          "rotX": 35.2908859,
-          "rotY": 91.42475,
-          "rotZ": 0.8192548
+          "position": {
+            "x": -13.897109,
+            "y": -13.9185734,
+            "z": -56.9964828
+          },
+          "rotation": {
+            "x": 35.2908859,
+            "y": 91.42475,
+            "z": 0.8192548
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Storage",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 34.2814751,
-          "posY": 2.56196427,
-          "posZ": -15.1555834,
-          "rotX": 0.9939709,
-          "rotY": 41.6831131,
-          "rotZ": 355.918121
+          "position": {
+            "x": 34.2814751,
+            "y": 2.56196427,
+            "z": -15.1555834
+          },
+          "rotation": {
+            "x": 0.9939709,
+            "y": 41.6831131,
+            "z": 355.918121
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Upside-Down",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 2.808811,
-          "posY": 34.91126,
-          "posZ": -31.2690315,
-          "rotX": 359.673981,
-          "rotY": 182.30925,
-          "rotZ": 188.014938
+          "position": {
+            "x": 2.808811,
+            "y": 34.91126,
+            "z": -31.2690315
+          },
+          "rotation": {
+            "x": 359.673981,
+            "y": 182.30925,
+            "z": 188.014938
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Other side of the breach",
           "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 23.838892,
-          "posY": 8.831014,
-          "posZ": 10.8177767,
-          "rotX": 358.94458,
-          "rotY": 331.4411,
-          "rotZ": 90.5572052
+          "position": {
+            "x": 23.838892,
+            "y": 8.831014,
+            "z": 10.8177767
+          },
+          "rotation": {
+            "x": 358.94458,
+            "y": 331.4411,
+            "z": 90.5572052
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

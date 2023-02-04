@@ -124,14 +124,19 @@ namespace OuterRelics
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
                 spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
 
-                int filledLoc = availableLocations.IndexOf(location);
-                availableLocations[filledLoc].spawnPoints.Remove(spawnPoint);
-                if (availableLocations[filledLoc].spawnPoints.Count == 0) availableLocations.RemoveAt(filledLoc);
+                availableLocations = RemoveSpawn(availableLocations, location, spawnPoint);
             }
 
             GenerateHints();
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
+        }
+
+        private List<ItemSpawnLocation> RemoveSpawn(List<ItemSpawnLocation> availableLocations, ItemSpawnLocation location, ItemSpawnPoint spawnPoint)
+        {
+            location.spawnPoints.Remove(spawnPoint);
+            if (location.spawnPoints.Count <= 0) availableLocations.Remove(location);
+            return availableLocations;
         }
 
         public void GenerateHints()

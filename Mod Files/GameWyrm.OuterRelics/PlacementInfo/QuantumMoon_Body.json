@@ -1,215 +1,422 @@
 {
-  "system": "SolarSystem",
-  "body": "QuantumMoon_Body",
-  "bodyName": "Quantum Moon",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "q3wXnGiant'sA5dkaDeepEl2O",
       "spawnPoints": [
         {
           "spawnPointName": "Entry",
           "parent": "Sector_QuantumMoon/State_GD/Geometry_GDState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -2.4215045,
-          "posY": -70.90563,
-          "posZ": -5.01333761,
-          "rotX": 7.406858,
-          "rotY": 31.4378815,
-          "rotZ": 180.469177
+          "position": {
+            "x": -2.4215045,
+            "y": -70.90563,
+            "z": -5.01333761
+          },
+          "rotation": {
+            "x": 7.406858,
+            "y": 31.4378815,
+            "z": 180.469177
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Small Island",
           "parent": "Sector_QuantumMoon/State_GD/Interactables_GDState/GDState_Quantum_Objects/Quantum_TreeClump_1/Rock_Tree/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.69488436,
-          "posY": 0.825108767,
-          "posZ": 1.97958112,
-          "rotX": 356.791962,
-          "rotY": 258.016541,
-          "rotZ": 358.547272
+          "position": {
+            "x": 0.69488436,
+            "y": 0.825108767,
+            "z": 1.97958112
+          },
+          "rotation": {
+            "x": 356.791962,
+            "y": 258.016541,
+            "z": 358.547272
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "North Pole",
           "parent": "Sector_QuantumMoon/State_GD/Geometry_GDState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 9.678262,
-          "posY": 69.01875,
-          "posZ": -6.117212,
-          "rotX": 6.035125,
-          "rotY": 102.588959,
-          "rotZ": 356.931274
+          "position": {
+            "x": 9.678262,
+            "y": 69.01875,
+            "z": -6.117212
+          },
+          "rotation": {
+            "x": 6.035125,
+            "y": 102.588959,
+            "z": 356.931274
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "ak6eSixthcg'SOLt5Location8eANUMt",
       "spawnPoints": [
         {
           "spawnPointName": "North Pole",
           "parent": "Sector_QuantumMoon/State_EYE/Geometry_EYEState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -5.493269,
-          "posY": 69.4687042,
-          "posZ": -12.5190277,
-          "rotX": 7.328441,
-          "rotY": 183.058121,
-          "rotZ": 356.085876
+          "position": {
+            "x": -5.493269,
+            "y": 69.4687042,
+            "z": -12.5190277
+          },
+          "rotation": {
+            "x": 7.328441,
+            "y": 183.058121,
+            "z": 356.085876
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Gap In The Arch",
           "parent": "Sector_QuantumMoon/State_EYE/Geometry_EYEState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 6.70472336,
-          "posY": -37.2068558,
-          "posZ": 80.275444,
-          "rotX": 61.82825,
-          "rotY": 218.191574,
-          "rotZ": 210.002136
+          "position": {
+            "x": 6.70472336,
+            "y": -37.2068558,
+            "z": 80.275444
+          },
+          "rotation": {
+            "x": 61.82825,
+            "y": 218.191574,
+            "z": 210.002136
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Successfully found Nomai, designation: SOLANUM",
           "parent": "Sector_QuantumMoon/State_EYE/Geometry_EYEState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -6.102768,
-          "posY": -68.4426041,
-          "posZ": 6.65181732,
-          "rotX": 6.67574549,
-          "rotY": 183.53389,
-          "rotZ": 185.405411
+          "position": {
+            "x": -6.102768,
+            "y": -68.4426041,
+            "z": 6.65181732
+          },
+          "rotation": {
+            "x": 6.67574549,
+            "y": 183.53389,
+            "z": 185.405411
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "bc9uDarkh4j8BrambleWer80",
       "spawnPoints": [
         {
           "spawnPointName": "North Pole",
           "parent": "Sector_QuantumMoon/State_DB/Geometry_DBState/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 3.98539162,
-          "posY": 67.85724,
-          "posZ": -12.8535233,
-          "rotX": 7.60856342,
-          "rotY": 177.831161,
-          "rotZ": 2.901234
+          "position": {
+            "x": 3.98539162,
+            "y": 67.85724,
+            "z": -12.8535233
+          },
+          "rotation": {
+            "x": 7.60856342,
+            "y": 177.831161,
+            "z": 2.901234
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Entry",
           "parent": "Sector_QuantumMoon/State_DB/Geometry_DBState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 5.282194,
-          "posY": -68.58657,
-          "posZ": -5.993969,
-          "rotX": 356.9104,
-          "rotY": 167.9697,
-          "rotZ": 176.745041
+          "position": {
+            "x": 5.282194,
+            "y": -68.58657,
+            "z": -5.993969
+          },
+          "rotation": {
+            "x": 356.9104,
+            "y": 167.9697,
+            "z": 176.745041
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "ct[Brittle6vcJHollow3efx",
       "spawnPoints": [
         {
           "spawnPointName": "Structure",
           "parent": "Sector_QuantumMoon/State_BH/Interactables_BHState/BHState_Quantum_Objects/BH_State_Crater_1/BH_Q_Pillar_Medium/Q_Pillar_Medium/Rocks/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2.5795846,
-          "posY": 9.8216,
-          "posZ": 2.42101479,
-          "rotX": 356.943,
-          "rotY": 219.404236,
-          "rotZ": 0.327340066
+          "position": {
+            "x": 2.5795846,
+            "y": 9.8216,
+            "z": 2.42101479
+          },
+          "rotation": {
+            "x": 356.943,
+            "y": 219.404236,
+            "z": 0.327340066
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Entry",
           "parent": "Sector_QuantumMoon/State_BH/Geometry_BHState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -20.0388012,
-          "posY": -62.6869,
-          "posZ": 17.0499172,
-          "rotX": 340.698669,
-          "rotY": 320.238647,
-          "rotZ": 176.199478
+          "position": {
+            "x": -20.0388012,
+            "y": -62.6869,
+            "z": 17.0499172
+          },
+          "rotation": {
+            "x": 340.698669,
+            "y": 320.238647,
+            "z": 176.199478
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "North Pole",
           "parent": "Sector_QuantumMoon/State_BH/Geometry_BHState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -9.144746,
-          "posY": 68.533226,
-          "posZ": -19.3758068,
-          "rotX": 14.9430571,
-          "rotY": 199.339127,
-          "rotZ": 358.2328
+          "position": {
+            "x": -9.144746,
+            "y": 68.533226,
+            "z": -19.3758068
+          },
+          "rotation": {
+            "x": 14.9430571,
+            "y": 199.339127,
+            "z": 358.2328
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "vcyeHourglass3ytxTwins4nx[",
       "spawnPoints": [
         {
           "spawnPointName": "North Pole",
           "parent": "Sector_QuantumMoon/State_HT/Geometry_HTState/SandSphere",
-          "posX": -0.359589845,
-          "posY": 0.8482154,
-          "posZ": -0.388880759,
-          "rotX": 326.3523,
-          "rotY": 51.8725052,
-          "rotZ": 355.18457
+          "position": {
+            "x": -0.359589845,
+            "y": 0.8482154,
+            "z": -0.388880759
+          },
+          "rotation": {
+            "x": 326.3523,
+            "y": 51.8725052,
+            "z": 355.18457
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Plateau",
           "parent": "Sector_QuantumMoon/State_HT/Interactables_HTState/Interactables_CTState/CTState_Q_Objects/CTState_QBigPlatform/Q_BigPlatform /Terrain_CT_Platform_Big",
-          "posX": 0.260392129,
-          "posY": 12.6525726,
-          "posZ": -0.986401558,
-          "rotX": 357.596344,
-          "rotY": 23.4172039,
-          "rotZ": 359.5521
+          "position": {
+            "x": 0.260392129,
+            "y": 12.6525726,
+            "z": -0.986401558
+          },
+          "rotation": {
+            "x": 357.596344,
+            "y": 23.4172039,
+            "z": 359.5521
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top of the Arch",
           "parent": "Sector_QuantumMoon/State_HT/Interactables_HTState/Interactables_CTState/CTState_Q_Objects/CTState_QBridge/Q_Bridge_Complete/Terrain_QM_CTArch",
-          "posX": 2.814063,
-          "posY": 25.3435535,
-          "posZ": -52.9559479,
-          "rotX": 348.27536,
-          "rotY": 330.65506,
-          "rotZ": 356.6525
+          "position": {
+            "x": 2.814063,
+            "y": 25.3435535,
+            "z": -52.9559479
+          },
+          "rotation": {
+            "x": 348.27536,
+            "y": 330.65506,
+            "z": 356.6525
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Cactus Plateau",
           "parent": "Sector_QuantumMoon/State_HT/Interactables_HTState/Interactables_TTState/TTState_Q_Objects/TTState_QRock_Formation/TT_Q_RockFormation/Rocks/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 23.11861,
-          "posY": 77.61141,
-          "posZ": -18.9773331,
-          "rotX": 17.3986359,
-          "rotY": 169.6935,
-          "rotZ": 13.13014
+          "position": {
+            "x": 23.11861,
+            "y": 77.61141,
+            "z": -18.9773331
+          },
+          "rotation": {
+            "x": 17.3986359,
+            "y": 169.6935,
+            "z": 13.13014
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "QuantumMoon_Body",
       "locationName": "&cnrTimber31tHearth2,W",
       "spawnPoints": [
         {
           "spawnPointName": "Entry",
           "parent": "Sector_QuantumMoon/State_TH/Geometry_THState/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 14.6951828,
-          "posY": -68.17488,
-          "posZ": 4.57311249,
-          "rotX": 350.014282,
-          "rotY": 67.0738754,
-          "rotZ": 181.241318
+          "position": {
+            "x": 14.6951828,
+            "y": -68.17488,
+            "z": 4.57311249
+          },
+          "rotation": {
+            "x": 350.014282,
+            "y": 67.0738754,
+            "z": 181.241318
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Lonely Geyser",
           "parent": "Sector_QuantumMoon/State_TH/Interactables_THState/Crater_2/Crater_2_Geysers/QuantumGeyser_Small/Terrain_TH_SurfaceGeyser_Small",
-          "posX": 1.25590718,
-          "posY": 4.12179565,
-          "posZ": 1.25868356,
-          "rotX": 356.449249,
-          "rotY": 242.055176,
-          "rotZ": 359.574951
+          "position": {
+            "x": 1.25590718,
+            "y": 4.12179565,
+            "z": 1.25868356
+          },
+          "rotation": {
+            "x": 356.449249,
+            "y": 242.055176,
+            "z": 359.574951
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Northmost Peninsula",
           "parent": "Sector_QuantumMoon/State_TH/Geometry_THState/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -22.4402046,
-          "posY": 65.96489,
-          "posZ": 9.438456,
-          "rotX": 355.961853,
-          "rotY": 27.6409245,
-          "rotZ": 20.1958771
+          "position": {
+            "x": -22.4402046,
+            "y": 65.96489,
+            "z": 9.438456
+          },
+          "rotation": {
+            "x": 355.961853,
+            "y": 27.6409245,
+            "z": 20.1958771
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoQuantumMoon"
+              ]
+            }
+          ]
         }
       ]
     }

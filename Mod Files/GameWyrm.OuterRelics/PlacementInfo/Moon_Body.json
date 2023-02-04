@@ -1,105 +1,198 @@
 {
-  "system": "SolarSystem",
-  "body": "Moon_Body",
-  "bodyName": "Attelrock",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "Moon_Body",
       "locationName": "Esker's Outpost",
       "spawnPoints": [
         {
           "spawnPointName": "Roof",
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -34.0403824,
-          "posY": 34.75296,
-          "posZ": -69.59514,
-          "rotX": 64.47473,
-          "rotY": 209.611237,
-          "rotZ": 3.18383265
+          "position": {
+            "x": -34.0403824,
+            "y": 34.75296,
+            "z": -69.59514
+          },
+          "rotation": {
+            "x": 64.47473,
+            "y": 209.611237,
+            "z": 3.18383265
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Esker",
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -23.759552,
-          "posY": 38.2394562,
-          "posZ": -51.027195,
-          "rotX": 32.9484673,
-          "rotY": 144.4251,
-          "rotZ": 313.8557
+          "position": {
+            "x": -23.759552,
+            "y": 38.2394562,
+            "z": -51.027195
+          },
+          "rotation": {
+            "x": 32.9484673,
+            "y": 144.4251,
+            "z": 313.8557
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Signalscope Lookout",
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -10.5775537,
-          "posY": 76.94377,
-          "posZ": 0.190809682,
-          "rotX": 350.3635,
-          "rotY": 87.20437,
-          "rotZ": 0.531033337
+          "position": {
+            "x": -10.5775537,
+            "y": 76.94377,
+            "z": 0.190809682
+          },
+          "rotation": {
+            "x": 350.3635,
+            "y": 87.20437,
+            "z": 0.531033337
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "Moon_Body",
       "locationName": "Dark Side Crater",
       "spawnPoints": [
         {
           "spawnPointName": null,
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -24.1827164,
-          "posY": 10.8704071,
-          "posZ": 22.7265186,
-          "rotX": 344.988861,
-          "rotY": 222.059158,
-          "rotZ": 287.848572
+          "position": {
+            "x": -24.1827164,
+            "y": 10.8704071,
+            "z": 22.7265186
+          },
+          "rotation": {
+            "x": 344.988861,
+            "y": 222.059158,
+            "z": 287.848572
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "Moon_Body",
       "locationName": "First Landing",
       "spawnPoints": [
         {
           "spawnPointName": "Spaceship Alpha",
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 46.76803,
-          "posY": -11.9919128,
-          "posZ": -55.6125259,
-          "rotX": 78.7724,
-          "rotY": 6.94109535,
-          "rotZ": 226.16861
+          "position": {
+            "x": 46.76803,
+            "y": -11.9919128,
+            "z": -55.6125259
+          },
+          "rotation": {
+            "x": 78.7724,
+            "y": 6.94109535,
+            "z": 226.16861
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Claim",
           "parent": "Sector_THM/Props_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 43.4295425,
-          "posY": 34.8101959,
-          "posZ": -56.556057,
-          "rotX": 295.275269,
-          "rotY": 310.130737,
-          "rotZ": 11.0396214
+          "position": {
+            "x": 43.4295425,
+            "y": 34.8101959,
+            "z": -56.556057
+          },
+          "rotation": {
+            "x": 295.275269,
+            "y": 310.130737,
+            "z": 11.0396214
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "Moon_Body",
       "locationName": "Quantum Moon Locator",
       "spawnPoints": [
         {
           "spawnPointName": "Platform",
           "parent": "Sector_THM/Interactables_THM/Interactibles_SignalDish/SignalDish_Interface/TrackCover/topSwitch_collider (1)",
-          "posX": 1.18649459,
-          "posY": -0.2339783,
-          "posZ": 1.70070744,
-          "rotX": 2.01846552,
-          "rotY": 180.742386,
-          "rotZ": 180.0178
+          "position": {
+            "x": 1.18649459,
+            "y": -0.2339783,
+            "z": 1.70070744
+          },
+          "rotation": {
+            "x": 2.01846552,
+            "y": 180.742386,
+            "z": 180.0178
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Inside",
           "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -4.244374,
-          "posY": -67.37743,
-          "posZ": 9.281867,
-          "rotX": 354.2514,
-          "rotY": 327.0008,
-          "rotZ": 181.264755
+          "position": {
+            "x": -4.244374,
+            "y": -67.37743,
+            "z": 9.281867
+          },
+          "rotation": {
+            "x": 354.2514,
+            "y": 327.0008,
+            "z": 181.264755
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     }

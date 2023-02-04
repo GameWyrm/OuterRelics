@@ -1,23 +1,32 @@
 {
-    "system": "SolarSystem",
-    "body": "FeldsparShip_Body",
-    "bodyName": "Dark Bramble",
-    "Locations": [
+  "spawnLocations": [
+    {
+      "system": "SolarSystem",
+      "body": "FeldsparShip_Body",
+      "locationName": "Anglerfish Skeleton",
+      "spawnPoints": [
         {
-            "locationName": "Anglerfish Skeleton",
-            "spawnPoints": [
-                
-        {
-            "spawnPointName": "Feldspar's Ship",
-            "parent": "Prefab_HEA_FeldsparShip/Structure_HEA_PlayerShip_v4/Geo_Cockpit/Cockpit_Colliders/ExteriorOnly 1/Cockpit_Collision_Exterior",
-            "posX": 0.0182455555,
-            "posY": 4.259731,
-            "posZ": 6.634803,
-            "rotX": 28.8521919,
-            "rotY": 271.884644,
-            "rotZ": 270.961182
-          }
-        ]
+          "spawnPointName": "Feldspar's Ship",
+          "parent": "Prefab_HEA_FeldsparShip/Structure_HEA_PlayerShip_v4/Geo_Cockpit/Cockpit_Colliders/ExteriorOnly 1/Cockpit_Collision_Exterior",
+          "position": {
+            "x": 0.0182455555,
+            "y": 4.259731,
+            "z": 6.634803
+          },
+          "rotation": {
+            "x": 28.8521919,
+            "y": 271.884644,
+            "z": 270.961182
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,0 +1,50 @@
+{
+    "preciseHints" : [
+        "%ITEM% can be found in %SPAWN% at %LOCATION% on %BODY%"
+    ],
+    "vagueHints" : [
+        "%ITEM% can be found on %BODY%",
+        "Check %LOCATION% for %ITEM%",
+        "Find %SPAWN% on %BODY% for %ITEM%",
+        "%LOCATION% is on the path to enlightenment"
+    ],
+    "vagueHintNothingLocation" : "%LOCATION% is a waste of time",
+    "vagueHintNothingSpecific" : "%SPAWN% at %LOCATION is a foolish choice",
+    "uselessHints" : [
+        "Hypothesis: You have just wasted your time",
+        "Thank goodness, someone has finally come! Listen, kid, I've got to warn you, the sun, it's about to explode!",
+        "Rumor has it that a mysterious satellite from a foreign system is hidden within our own",
+        "I dare you to set the pre-flight checklist to never pause",
+        "Ernesto says hi :D",
+        "To get the most out of your jetpack, start boosting slightly after starting a jump",
+        "Skyward Sword is a fantastic Zelda game",
+        "Try Islets!",
+        "Try Hollow Knight!",
+        "Try Ittle Dew!",
+        "Try Ittle Dew 2! And once you're done, try the Extra 2 Dew mod!",
+        "Try Evoland 1 and 2!",
+        "Try Yoku's Island Express!",
+        "Outer Wilds is basically Myst 6",
+        "Outer Wilds is Game of the Year, every year",
+        "Dark Souls 2 is Best Souls",
+        "I could give you a hint, but I don't wanna.",
+        "If you run into the Interloper at a high enough speed and eject right at the moment of impact, you might clip through it",
+        "You can sling around the black hole in Brittle Hollow and enter the Tower of Quantum Knowledge early",
+        "Narp. No hint for you.",
+        "Must be nice being programmed by someone who actually knows what they're doing. Don't mind me."
+    ],
+    "uselessHintsStranger" : [
+        "A DJ lives in the wine cellar. To find him, uncork his favorite brew.",
+        "Get off my lawn!",
+        "A mysterious prize awaits on top of the hotel",
+        "Aim your lantern at the darkness outside the Sealed Vault and light a hidden candle",
+        "Honestly, the party house music is pretty good from close up",
+        "You can land on the elevator going to the Endless Canyon archives, and find a secret slide",
+        "Have you tried using the second version of the artifact?",
+        "Echoes of the Eye? But you can't hear anything in space.",
+        "All instances of Stranger text use the same texture",
+        "Have you seen the cool new picture placed in the prisoner's old house?",
+        "Can you raft around the Stranger in 90 seconds?",
+        "The Stranger's inhabitants missed a few slides to burn, can you help them?"
+    ]
+}

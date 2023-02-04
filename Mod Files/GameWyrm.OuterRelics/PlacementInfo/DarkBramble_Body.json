@@ -1,40 +1,72 @@
 {
-  "system": "SolarSystem",
-  "body": "DarkBramble_Body",
-  "bodyName": "DarkBramble_Body RENAME THIS IN THE JSON FILE",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "DarkBramble_Body",
       "locationName": "Frozen Jellyfish",
       "spawnPoints": [
         {
           "spawnPointName": "Top of the Vine",
           "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_4",
-          "posX": -3.52452564,
-          "posY": -578.7435,
-          "posZ": -78.20613,
-          "rotX": 7.483868,
-          "rotY": 343.612946,
-          "rotZ": 177.50296
+          "position": {
+            "x": -3.52452564,
+            "y": -578.7435,
+            "z": -78.20613
+          },
+          "rotation": {
+            "x": 7.483868,
+            "y": 343.612946,
+            "z": 177.50296
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Recording",
           "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -7.6242156,
-          "posY": -556.473,
-          "posZ": -42.38598,
-          "rotX": 4.36286545,
-          "rotY": 32.3678474,
-          "rotZ": 181.668564
+          "position": {
+            "x": -7.6242156,
+            "y": -556.473,
+            "z": -42.38598
+          },
+          "rotation": {
+            "x": 4.36286545,
+            "y": 32.3678474,
+            "z": 181.668564
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Wise Words",
           "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_6",
-          "posX": -9.565574,
-          "posY": -549.0461,
-          "posZ": -5.028543,
-          "rotX": 1.29806674,
-          "rotY": 76.4895554,
-          "rotZ": 180.277267
+          "position": {
+            "x": -9.565574,
+            "y": -549.0461,
+            "z": -5.028543
+          },
+          "rotation": {
+            "x": 1.29806674,
+            "y": 76.4895554,
+            "z": 180.277267
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         }
       ]
     }

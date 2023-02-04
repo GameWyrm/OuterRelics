@@ -1,30 +1,51 @@
 {
-  "system": "SolarSystem",
-  "body": "DB_PioneerDimension_Body",
-  "bodyName": "Dark Bramble",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "DB_PioneerDimension_Body",
       "locationName": "Anglerfish Skeleton",
       "spawnPoints": [
         {
           "spawnPointName": "Feldspar's Camp",
           "parent": "Sector_PioneerDimension/Geometry_PioneerDimension/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 11.9620008,
-          "posY": -18.2205067,
-          "posZ": -1.73717678,
-          "rotX": 13.2134991,
-          "rotY": 288.48877,
-          "rotZ": 7.79398775
+          "position": {
+            "x": 11.9620008,
+            "y": -18.2205067,
+            "z": -1.73717678
+          },
+          "rotation": {
+            "x": 13.2134991,
+            "y": 288.48877,
+            "z": 7.79398775
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Lure",
           "parent": "Sector_PioneerDimension/Geometry_PioneerDimension/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 32.2347221,
-          "posY": 25.1565723,
-          "posZ": -13.4976454,
-          "rotX": 335.4998,
-          "rotY": 355.178925,
-          "rotZ": 175.6674
+          "position": {
+            "x": 32.2347221,
+            "y": 25.1565723,
+            "z": -13.4976454
+          },
+          "rotation": {
+            "x": 335.4998,
+            "y": 355.178925,
+            "z": 175.6674
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         }
       ]
     }

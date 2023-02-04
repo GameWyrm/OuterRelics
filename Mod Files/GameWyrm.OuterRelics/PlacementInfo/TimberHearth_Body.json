@@ -1,365 +1,730 @@
 {
-  "system": "SolarSystem",
-  "body": "TimberHearth_Body",
-  "bodyName": "Timber Hearth",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Village",
       "spawnPoints": [
         {
           "spawnPointName": "Campsite",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_5",
-          "posX": 51.37283,
-          "posY": 3.96417618,
-          "posZ": -12.4716482,
-          "rotX": 5.34762955,
-          "rotY": 38.59647,
-          "rotZ": 345.5195
+          "position": {
+            "x": 51.37283,
+            "y": 3.96417618,
+            "z": -12.4716482
+          },
+          "rotation": {
+            "x": 5.34762955,
+            "y": 38.59647,
+            "z": 345.5195
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Mica's Overlook",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_3",
-          "posX": 16.12356,
-          "posY": 19.43372,
-          "posZ": -23.5926132,
-          "rotX": 351.525055,
-          "rotY": 352.093231,
-          "rotZ": 356.403717
+          "position": {
+            "x": 16.12356,
+            "y": 19.43372,
+            "z": -23.5926132
+          },
+          "rotation": {
+            "x": 351.525055,
+            "y": 352.093231,
+            "z": 356.403717
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Central Geyser",
           "parent": "Sector_TH/Sector_Village/Sector_LowerVillage/Geometry_LowerVillage/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 7.2798543,
-          "posY": 9.324141,
-          "posZ": 5.72133446,
-          "rotX": 0.6072897,
-          "rotY": 353.068878,
-          "rotZ": 357.6588
+          "position": {
+            "x": 7.2798543,
+            "y": 9.324141,
+            "z": 5.72133446
+          },
+          "rotation": {
+            "x": 0.6072897,
+            "y": 353.068878,
+            "z": 357.6588
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Scout Launcher Tower",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -41.18392,
-          "posY": 58.857502,
-          "posZ": -12.883316,
-          "rotX": 1.49147475,
-          "rotY": 174.324081,
-          "rotZ": 349.928375
+          "position": {
+            "x": -41.18392,
+            "y": 58.857502,
+            "z": -12.883316
+          },
+          "rotation": {
+            "x": 1.49147475,
+            "y": 174.324081,
+            "z": 349.928375
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Museum",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 15.3357544,
-          "posY": 30.9915428,
-          "posZ": 75.61491,
-          "rotX": 16.7035484,
-          "rotY": 40.1230927,
-          "rotZ": 9.372367
+          "position": {
+            "x": 15.3357544,
+            "y": 30.9915428,
+            "z": 75.61491
+          },
+          "rotation": {
+            "x": 16.7035484,
+            "y": 40.1230927,
+            "z": 9.372367
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Graveyard",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 103.27655,
-          "posY": -10.40696,
-          "posZ": 34.6771164,
-          "rotX": 31.1594563,
-          "rotY": 84.7767,
-          "rotZ": 6.95695734
+          "position": {
+            "x": 103.27655,
+            "y": -10.40696,
+            "z": 34.6771164
+          },
+          "rotation": {
+            "x": 31.1594563,
+            "y": 84.7767,
+            "z": 6.95695734
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Launch Pad",
           "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 65.08317,
-          "posY": 41.3599625,
-          "posZ": 17.3805428,
-          "rotX": 16.1768551,
-          "rotY": 87.1143341,
-          "rotZ": 3.28829956
+          "position": {
+            "x": 65.08317,
+            "y": 41.3599625,
+            "z": 17.3805428
+          },
+          "rotation": {
+            "x": 16.1768551,
+            "y": 87.1143341,
+            "z": 3.28829956
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Zero-G Cave",
       "spawnPoints": [
         {
           "spawnPointName": "Entrance",
           "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -7.628886,
-          "posY": 26.7875519,
-          "posZ": 83.86869,
-          "rotX": 52.7102661,
-          "rotY": 55.1433067,
-          "rotZ": 55.9932
+          "position": {
+            "x": -7.628886,
+            "y": 26.7875519,
+            "z": 83.86869
+          },
+          "rotation": {
+            "x": 52.7102661,
+            "y": 55.1433067,
+            "z": 55.9932
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tuff",
           "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 6.569749,
-          "posY": -0.199035645,
-          "posZ": 94.4823456,
-          "rotX": 7.748386,
-          "rotY": 91.99326,
-          "rotZ": 89.85989
+          "position": {
+            "x": 6.569749,
+            "y": -0.199035645,
+            "z": 94.4823456
+          },
+          "rotation": {
+            "x": 7.748386,
+            "y": 91.99326,
+            "z": 89.85989
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hidden Platform",
           "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -4.0223484,
-          "posY": -9.711079,
-          "posZ": 74.53849,
-          "rotX": 300.060242,
-          "rotY": 280.979858,
-          "rotZ": 254.138428
+          "position": {
+            "x": -4.0223484,
+            "y": -9.711079,
+            "z": 74.53849
+          },
+          "rotation": {
+            "x": 300.060242,
+            "y": 280.979858,
+            "z": 254.138428
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Quantum Crater",
       "spawnPoints": [
         {
           "spawnPointName": "Chert's Tower",
           "parent": "Sector_TH/Sector_QuantumGroveEntrance/Geometry_QuantumGroveEntrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 77.53568,
-          "posY": -247.542709,
-          "posZ": -32.7704849,
-          "rotX": 17.9711266,
-          "rotY": 273.143127,
-          "rotZ": 173.745651
+          "position": {
+            "x": 77.53568,
+            "y": -247.542709,
+            "z": -32.7704849
+          },
+          "rotation": {
+            "x": 17.9711266,
+            "y": 273.143127,
+            "z": 173.745651
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "In the Cave",
           "parent": "Sector_TH/Sector_QuantumGroveEntrance/Geometry_QuantumGroveEntrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 35.9858856,
-          "posY": -204.9162,
-          "posZ": -29.1951561,
-          "rotX": 11.0769138,
-          "rotY": 341.963684,
-          "rotZ": 186.8815
+          "position": {
+            "x": 35.9858856,
+            "y": -204.9162,
+            "z": -29.1951561
+          },
+          "rotation": {
+            "x": 11.0769138,
+            "y": 341.963684,
+            "z": 186.8815
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Quantum Shard",
           "parent": "Sector_TH/Sector_QuantumGrove/Interactables_QuantumGrove/QuantumShard/Rock_TH_Grove_QRock/Collider_TH_GROVE_QRock",
-          "posX": 0.104590178,
-          "posY": 7.60828733,
-          "posZ": -0.1684115,
-          "rotX": 359.283661,
-          "rotY": 255.784851,
-          "rotZ": 0.0506651029
+          "position": {
+            "x": 0.104590178,
+            "y": 7.60828733,
+            "z": -0.1684115
+          },
+          "rotation": {
+            "x": 359.283661,
+            "y": 255.784851,
+            "z": 0.0506651029
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Underground Waterways",
       "spawnPoints": [
         {
           "spawnPointName": "Below Quantum Grove",
           "parent": "Sector_TH/Sector_WaterWays/Geometry_WaterWays/Terrain_TH_UnderwaterCaves/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -21.6110554,
-          "posY": -123.248787,
-          "posZ": -5.221646,
-          "rotX": 9.961715,
-          "rotY": 40.7932777,
-          "rotZ": 174.060974
+          "position": {
+            "x": -21.6110554,
+            "y": -123.248787,
+            "z": -5.221646
+          },
+          "rotation": {
+            "x": 9.961715,
+            "y": 40.7932777,
+            "z": 174.060974
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Below Mining Site 2b",
           "parent": "Sector_TH/Sector_WaterWays/Interactables_WaterWays/Arc_TH_Mine_FindingHearthianLife",
-          "posX": -0.702414036,
-          "posY": 0.49438,
-          "posZ": 0.250085622,
-          "rotX": 44.0778122,
-          "rotY": 272.11615,
-          "rotZ": 271.851044
+          "position": {
+            "x": -0.702414036,
+            "y": 0.49438,
+            "z": 0.250085622
+          },
+          "rotation": {
+            "x": 44.0778122,
+            "y": 272.11615,
+            "z": 271.851044
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Junk Pit",
           "parent": "Sector_TH/Sector_WaterWays/Geometry_WaterWays/Terrain_TH_UnderwaterCaves/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 27.9978027,
-          "posY": 24.7738075,
-          "posZ": 95.27461,
-          "rotX": 289.725464,
-          "rotY": 145.7386,
-          "rotZ": 48.6263237
+          "position": {
+            "x": 27.9978027,
+            "y": 24.7738075,
+            "z": 95.27461
+          },
+          "rotation": {
+            "x": 289.725464,
+            "y": 145.7386,
+            "z": 48.6263237
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Dark Bramble Seed",
       "spawnPoints": [
         {
           "spawnPointName": "On Ice",
           "parent": "Sector_TH/Sector_ImpactCrater/Geo_ImpactCrater/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 89.995575,
-          "posY": 174.281143,
-          "posZ": -75.5262146,
-          "rotX": 337.626373,
-          "rotY": 4.079783,
-          "rotZ": 333.0835
+          "position": {
+            "x": 89.995575,
+            "y": 174.281143,
+            "z": -75.5262146
+          },
+          "rotation": {
+            "x": 337.626373,
+            "y": 4.079783,
+            "z": 333.0835
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tektite",
           "parent": "Sector_TH/Sector_ImpactCrater/Geo_ImpactCrater/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 75.7466049,
-          "posY": 160.427444,
-          "posZ": -53.3985062,
-          "rotX": 28.4886932,
-          "rotY": 135.6274,
-          "rotZ": 5.202209
+          "position": {
+            "x": 75.7466049,
+            "y": 160.427444,
+            "z": -53.3985062
+          },
+          "rotation": {
+            "x": 28.4886932,
+            "y": 135.6274,
+            "z": 5.202209
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Nomai Ruins",
       "spawnPoints": [
         {
           "spawnPointName": "Arrival",
           "parent": "Sector_TH/Geometry_TH/ControlledByProxy_Base/AudioColliders_TH_Surface",
-          "posX": -240.934708,
-          "posY": -42.0189934,
-          "posZ": -50.75948,
-          "rotX": 348.651154,
-          "rotY": 345.4902,
-          "rotZ": 100.009956
+          "position": {
+            "x": -240.934708,
+            "y": -42.0189934,
+            "z": -50.75948
+          },
+          "rotation": {
+            "x": 348.651154,
+            "y": 345.4902,
+            "z": 100.009956
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bridge Center",
           "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_7",
-          "posX": -149.335251,
-          "posY": -67.74527,
-          "posZ": -151.476578,
-          "rotX": 18.764883,
-          "rotY": 129.478485,
-          "rotZ": 251.656616
+          "position": {
+            "x": -149.335251,
+            "y": -67.74527,
+            "z": -151.476578
+          },
+          "rotation": {
+            "x": 18.764883,
+            "y": 129.478485,
+            "z": 251.656616
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Exterior Alcove",
           "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_11",
-          "posX": -92.63299,
-          "posY": -149.500366,
-          "posZ": -148.240051,
-          "rotX": 14.8290987,
-          "rotY": 109.695534,
-          "rotZ": 227.947357
+          "position": {
+            "x": -92.63299,
+            "y": -149.500366,
+            "z": -148.240051
+          },
+          "rotation": {
+            "x": 14.8290987,
+            "y": 109.695534,
+            "z": 227.947357
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Log Ramp",
           "parent": "Sector_TH/Sector_NomaiCrater/Props_NomaiCrater/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -88.52925,
-          "posY": -35.7386,
-          "posZ": -156.695755,
-          "rotX": 313.222473,
-          "rotY": 286.121277,
-          "rotZ": 107.365623
+          "position": {
+            "x": -88.52925,
+            "y": -35.7386,
+            "z": -156.695755
+          },
+          "rotation": {
+            "x": 313.222473,
+            "y": 286.121277,
+            "z": 107.365623
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Log Top",
           "parent": "Sector_TH/Sector_NomaiCrater/Props_NomaiCrater/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -122.593964,
-          "posY": -77.90779,
-          "posZ": -110.81572,
-          "rotX": 51.6214027,
-          "rotY": 352.172943,
-          "rotZ": 131.617676
+          "position": {
+            "x": -122.593964,
+            "y": -77.90779,
+            "z": -110.81572
+          },
+          "rotation": {
+            "x": 51.6214027,
+            "y": 352.172943,
+            "z": 131.617676
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Cave",
           "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_10",
-          "posX": -87.9191,
-          "posY": -110.61731,
-          "posZ": -172.547424,
-          "rotX": 44.3836555,
-          "rotY": 85.1506348,
-          "rotZ": 227.5315
+          "position": {
+            "x": -87.9191,
+            "y": -110.61731,
+            "z": -172.547424
+          },
+          "rotation": {
+            "x": 44.3836555,
+            "y": 85.1506348,
+            "z": 227.5315
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Mining Site Entry",
           "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_6",
-          "posX": -64.95658,
-          "posY": -86.32852,
-          "posZ": -183.972488,
-          "rotX": 295.438568,
-          "rotY": 183.355438,
-          "rotZ": 194.6935
+          "position": {
+            "x": -64.95658,
+            "y": -86.32852,
+            "z": -183.972488
+          },
+          "rotation": {
+            "x": 295.438568,
+            "y": 183.355438,
+            "z": 194.6935
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Mining Site 2b",
       "spawnPoints": [
         {
           "spawnPointName": "Middle Platform",
           "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 63.79104,
-          "posY": 166.65123,
-          "posZ": 42.78621,
-          "rotX": 18.2379723,
-          "rotY": 14.7143145,
-          "rotZ": 343.9077
+          "position": {
+            "x": 63.79104,
+            "y": 166.65123,
+            "z": 42.78621
+          },
+          "rotation": {
+            "x": 18.2379723,
+            "y": 14.7143145,
+            "z": 343.9077
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Active Mining Strip",
           "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 83.7286758,
-          "posY": 137.392349,
-          "posZ": 22.7434,
-          "rotX": 30.8504448,
-          "rotY": 72.9148,
-          "rotZ": 358.985748
+          "position": {
+            "x": 83.7286758,
+            "y": 137.392349,
+            "z": 22.7434
+          },
+          "rotation": {
+            "x": 30.8504448,
+            "y": 72.9148,
+            "z": 358.985748
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Between Geysers",
           "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 38.9527969,
-          "posY": 134.076691,
-          "posZ": 12.7422409,
-          "rotX": 14.5679369,
-          "rotY": 56.7674522,
-          "rotZ": 355.618774
+          "position": {
+            "x": 38.9527969,
+            "y": 134.076691,
+            "z": 12.7422409
+          },
+          "rotation": {
+            "x": 14.5679369,
+            "y": 56.7674522,
+            "z": 355.618774
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 67.451416,
-          "posY": 204.018158,
-          "posZ": -22.3816681,
-          "rotX": 15.6254568,
-          "rotY": 76.37742,
-          "rotZ": 349.9616
+          "position": {
+            "x": 67.451416,
+            "y": 204.018158,
+            "z": -22.3816681
+          },
+          "rotation": {
+            "x": 15.6254568,
+            "y": 76.37742,
+            "z": 349.9616
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
       "locationName": "Radio Tower",
       "spawnPoints": [
         {
           "spawnPointName": "Roof",
           "parent": "Sector_TH/Sector_RadioTower/RadioTower_DLC/Geo_RadioTower/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -6.390209,
-          "posY": 8.329665,
-          "posZ": -36.1850739,
-          "rotX": 351.8674,
-          "rotY": 29.0735722,
-          "rotZ": 357.363983
+          "position": {
+            "x": -6.390209,
+            "y": 8.329665,
+            "z": -36.1850739
+          },
+          "rotation": {
+            "x": 351.8674,
+            "y": 29.0735722,
+            "z": 357.363983
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tower",
           "parent": "Sector_TH/Sector_RadioTower/RadioTower_DLC/Geo_RadioTower/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 4.50470734,
-          "posY": 30.8370972,
-          "posZ": -41.71421,
-          "rotX": 7.7983036,
-          "rotY": 181.289276,
-          "rotZ": 1.1112746
+          "position": {
+            "x": 4.50470734,
+            "y": 30.8370972,
+            "z": -41.71421
+          },
+          "rotation": {
+            "x": 7.7983036,
+            "y": 181.289276,
+            "z": 1.1112746
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Campsite",
           "parent": "Sector_TH/Geometry_TH/ControlledByProxy_Base/Terrain_TH_Surface_v2/TH_Surface",
-          "posX": -163.536377,
-          "posY": 157.025467,
-          "posZ": 105.399216,
-          "rotX": 48.47804,
-          "rotY": 323.8047,
-          "rotZ": 16.1889877
+          "position": {
+            "x": -163.536377,
+            "y": 157.025467,
+            "z": 105.399216
+          },
+          "rotation": {
+            "x": 48.47804,
+            "y": 323.8047,
+            "z": 16.1889877
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
         }
       ]
     }

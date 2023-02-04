@@ -1,50 +1,93 @@
 {
-  "system": "SolarSystem",
-  "body": "GabbroIsland_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "GabbroIsland_Body",
       "locationName": "Gabbro's Island",
       "spawnPoints": [
         {
           "spawnPointName": "Launch Zone",
           "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 10.7338791,
-          "posY": 4.90415955,
-          "posZ": -11.1473732,
-          "rotX": 358.5418,
-          "rotY": 2.83454061,
-          "rotZ": 358.7214
+          "position": {
+            "x": 10.7338791,
+            "y": 4.90415955,
+            "z": -11.1473732
+          },
+          "rotation": {
+            "x": 358.5418,
+            "y": 2.83454061,
+            "z": 358.7214
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ghost Matter",
           "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 20.1822567,
-          "posY": 1.40204668,
-          "posZ": 15.2253809,
-          "rotX": 358.39325,
-          "rotY": 136.919876,
-          "rotZ": 2.87232137
+          "position": {
+            "x": 20.1822567,
+            "y": 1.40204668,
+            "z": 15.2253809
+          },
+          "rotation": {
+            "x": 358.39325,
+            "y": 136.919876,
+            "z": 2.87232137
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Gabbro",
           "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -9.765476,
-          "posY": -1.11304057,
-          "posZ": 46.2090225,
-          "rotX": 4.908522,
-          "rotY": 1.36409414,
-          "rotZ": 1.242461
+          "position": {
+            "x": -9.765476,
+            "y": -1.11304057,
+            "z": 46.2090225
+          },
+          "rotation": {
+            "x": 4.908522,
+            "y": 1.36409414,
+            "z": 1.242461
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Campsite",
           "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 37.4669952,
-          "posY": 18.6002979,
-          "posZ": 6.73768425,
-          "rotX": 358.962036,
-          "rotY": 180.599045,
-          "rotZ": 4.12416
+          "position": {
+            "x": 37.4669952,
+            "y": 18.6002979,
+            "z": 6.73768425
+          },
+          "rotation": {
+            "x": 358.962036,
+            "y": 180.599045,
+            "z": 4.12416
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

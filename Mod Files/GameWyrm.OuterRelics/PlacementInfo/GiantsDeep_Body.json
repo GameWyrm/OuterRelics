@@ -1,40 +1,72 @@
 {
-  "system": "SolarSystem",
-      "body": "GiantsDeep_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "GiantsDeep_Body",
       "locationName": "Probe Tracking Module",
       "spawnPoints": [
         {
           "spawnPointName": "Interior",
           "parent": "Sector_GD/Sector_GDInterior/Sector_GDCore/Sector_Module_Sunken/Geo_GDCore/OrbitalProbeCannon_Module_Intact_Sunken/OrbitalProbeCannon_Module_Intact_Collider",
-          "posX": -4.271223,
-          "posY": 12.1406584,
-          "posZ": -8.732389,
-          "rotX": 348.99942,
-          "rotY": 269.999939,
-          "rotZ": 269.999969
+          "position": {
+            "x": -4.271223,
+            "y": 12.1406584,
+            "z": -8.732389
+          },
+          "rotation": {
+            "x": 348.99942,
+            "y": 269.999939,
+            "z": 269.999969
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Goop",
           "parent": "Sector_GD/Sector_GDInterior/Sector_GDCore/Sector_Module_Sunken/Interactables_Module_Sunken/Effects_NOM_Hologram_Collider",
-          "posX": 0.124878883,
-          "posY": -0.457967758,
-          "posZ": -12.7602139,
-          "rotX": 19.5748634,
-          "rotY": 89.9994659,
-          "rotZ": 89.99994
+          "position": {
+            "x": 0.124878883,
+            "y": -0.457967758,
+            "z": -12.7602139
+          },
+          "rotation": {
+            "x": 19.5748634,
+            "y": 89.9994659,
+            "z": 89.99994
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_GD/Sector_GDInterior/Sector_GDCore/Sector_Module_Sunken/Geo_GDCore/OrbitalProbeCannon_Module_Intact_Sunken/OrbitalProbeCannon_Module_Intact_Collider",
-          "posX": 7.13191652,
-          "posY": 0.226419449,
-          "posZ": 8.73847,
-          "rotX": 357.316223,
-          "rotY": 89.9995346,
-          "rotZ": 270.000336
+          "position": {
+            "x": 7.13191652,
+            "y": 0.226419449,
+            "z": 8.73847
+          },
+          "rotation": {
+            "x": 357.316223,
+            "y": 89.9995346,
+            "z": 270.000336
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

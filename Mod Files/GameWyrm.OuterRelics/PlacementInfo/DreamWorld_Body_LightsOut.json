@@ -1,255 +1,513 @@
 {
-  "system": "SolarSystem",
-  "body": "DreamWorld_Body",
-  "bodyName": "Dreamworld",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "DreamWorld_Body",
       "locationName": "Starlit Cove",
       "spawnPoints": [
         {
           "spawnPointName": "Memorial Bridge",
           "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/WaterLevel/Bridges/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 1.00465441,
-          "posY": 0.513543844,
-          "posZ": -0.467338622,
-          "rotX": 2.2081052E-07,
-          "rotY": 140.287384,
-          "rotZ": 1.31403783E-06
+          "position": {
+            "x": 1.00465441,
+            "y": 0.513543844,
+            "z": -0.467338622
+          },
+          "rotation": {
+            "x": 2.2081052E-07,
+            "y": 140.287384,
+            "z": 1.31403783E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Memorial Main Room",
           "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/Undercity/BuildingKit_Underground (1)/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -20.5884285,
-          "posY": -6.00000763,
-          "posZ": 3.12386322,
-          "rotX": -3.157571E-06,
-          "rotY": 270.922119,
-          "rotZ": 3.27521639E-06
+          "position": {
+            "x": -20.5884285,
+            "y": -6.00000763,
+            "z": 3.12386322
+          },
+          "rotation": {
+            "x": -3.157571E-06,
+            "y": 270.922119,
+            "z": 3.27521639E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Memorial Elevator",
           "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/Undercity/BuildingKit_Underground (1)/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -1.60949707,
-          "posY": -6.00000763,
-          "posZ": 42.00583,
-          "rotX": 1.69292628E-06,
-          "rotY": 87.99126,
-          "rotZ": -4.621631E-06
+          "position": {
+            "x": -1.60949707,
+            "y": -6.00000763,
+            "z": 42.00583
+          },
+          "rotation": {
+            "x": 1.69292628E-06,
+            "y": 87.99126,
+            "z": -4.621631E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Memorial Pit",
           "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/Undercity/BuildingKit_Underground (1)/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -53.18007,
-          "posY": -18.0000153,
-          "posZ": 4.26253128,
-          "rotX": 2.70588553E-05,
-          "rotY": 269.7704,
-          "rotZ": 1.24930129E-05
+          "position": {
+            "x": -53.18007,
+            "y": -18.0000153,
+            "z": 4.26253128
+          },
+          "rotation": {
+            "x": 2.70588553E-05,
+            "y": 269.7704,
+            "z": 1.24930129E-05
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forbidden Archives",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_2/Structures_Library_2/BuildingKit_Library_2/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -10.1694956,
-          "posY": -3.05175781E-05,
-          "posZ": -0.208764076,
-          "rotX": 1.80487E-05,
-          "rotY": 271.407166,
-          "rotZ": -2.35668776E-05
+          "position": {
+            "x": -10.1694956,
+            "y": -3.05175781E-05,
+            "z": -0.208764076
+          },
+          "rotation": {
+            "x": 1.80487E-05,
+            "y": 271.407166,
+            "z": -2.35668776E-05
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "DreamWorld_Body",
       "locationName": "Endless Canyon",
       "spawnPoints": [
         {
           "spawnPointName": "Main Balcony",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -2.65646553,
-          "posY": 18.0000076,
-          "posZ": -1.01902759,
-          "rotX": -9.043645E-07,
-          "rotY": 94.86863,
-          "rotZ": -1.74409365E-06
+          "position": {
+            "x": -2.65646553,
+            "y": 18.0000076,
+            "z": -1.01902759
+          },
+          "rotation": {
+            "x": -9.043645E-07,
+            "y": 94.86863,
+            "z": -1.74409365E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Korok",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -5.681692,
-          "posY": 30.2461929,
-          "posZ": 0.00617966242,
-          "rotX": 4.13904263E-06,
-          "rotY": 270.839844,
-          "rotZ": 3.80106485E-06
+          "position": {
+            "x": -5.681692,
+            "y": 30.2461929,
+            "z": 0.00617966242
+          },
+          "rotation": {
+            "x": 4.13904263E-06,
+            "y": 270.839844,
+            "z": 3.80106485E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Main Building Storage",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_SideRoom/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.0627827644,
-          "posY": -2.999977,
-          "posZ": -5.441555,
-          "rotX": -6.595505E-06,
-          "rotY": 75.55503,
-          "rotZ": -1.15644207E-05
+          "position": {
+            "x": -0.0627827644,
+            "y": -2.999977,
+            "z": -5.441555
+          },
+          "rotation": {
+            "x": -6.595505E-06,
+            "y": 75.55503,
+            "z": -1.15644207E-05
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Stage Storage",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 13.008812,
-          "posY": 9.000023,
-          "posZ": 14.362505,
-          "rotX": -7.41223062E-07,
-          "rotY": 201.277679,
-          "rotZ": -2.79426846E-08
+          "position": {
+            "x": 13.008812,
+            "y": 9.000023,
+            "z": 14.362505
+          },
+          "rotation": {
+            "x": -7.41223062E-07,
+            "y": 201.277679,
+            "z": -2.79426846E-08
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Garden Side Room",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_SideBedroom/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 65.8813858,
-          "posY": -20.9999924,
-          "posZ": 52.48864,
-          "rotX": -8.53478E-05,
-          "rotY": 99.16146,
-          "rotZ": -5.586856E-05
+          "position": {
+            "x": 65.8813858,
+            "y": -20.9999924,
+            "z": 52.48864
+          },
+          "rotation": {
+            "x": -8.53478E-05,
+            "y": 99.16146,
+            "z": -5.586856E-05
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Theater",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Library/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 7.80556774,
-          "posY": 3.00000763,
-          "posZ": -8.755069,
-          "rotX": 5.23276722E-05,
-          "rotY": 6.251687,
-          "rotZ": -8.83301254E-05
+          "position": {
+            "x": 7.80556774,
+            "y": 3.00000763,
+            "z": -8.755069
+          },
+          "rotation": {
+            "x": 5.23276722E-05,
+            "y": 6.251687,
+            "z": -8.83301254E-05
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Spin the Bottle",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_UpperBedroom/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 1.62186074,
-          "posY": 9.000008,
-          "posZ": 32.9444351,
-          "rotX": 0.0003017082,
-          "rotY": 12.6439342,
-          "rotZ": -0.0002830248
+          "position": {
+            "x": 1.62186074,
+            "y": 9.000008,
+            "z": 32.9444351
+          },
+          "rotation": {
+            "x": 0.0003017082,
+            "y": 12.6439342,
+            "z": -0.0002830248
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forbidden Archives",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_3/Structures_Library_3/BuildingKit_Library_3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -16.162611,
-          "posY": -3.05175781E-05,
-          "posZ": 9.527571,
-          "rotX": -2.517495E-06,
-          "rotY": 0.801955938,
-          "rotZ": -3.80267852E-06
+          "position": {
+            "x": -16.162611,
+            "y": -3.05175781E-05,
+            "z": 9.527571
+          },
+          "rotation": {
+            "x": -2.517495E-06,
+            "y": 0.801955938,
+            "z": -3.80267852E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Below Secret Platform",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_3/Geo_Library_3/SealPath/Rocks_IP_FlatTop_B",
-          "posX": -4.95730639,
-          "posY": 0.212554,
-          "posZ": -1.06848085,
-          "rotX": 0.000126516592,
-          "rotY": 229.569031,
-          "rotZ": -0.000192871565
+          "position": {
+            "x": -4.95730639,
+            "y": 0.212554,
+            "z": -1.06848085
+          },
+          "rotation": {
+            "x": 0.000126516592,
+            "y": 229.569031,
+            "z": -0.000192871565
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Wine Cellar",
           "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 39.14695,
-          "posY": -26.9999924,
-          "posZ": -0.07426076,
-          "rotX": -0.000237907443,
-          "rotY": 91.93134,
-          "rotZ": 7.679104E-06
+          "position": {
+            "x": 39.14695,
+            "y": -26.9999924,
+            "z": -0.07426076
+          },
+          "rotation": {
+            "x": -0.000237907443,
+            "y": 91.93134,
+            "z": 7.679104E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "DreamWorld_Body",
       "locationName": "Shrouded Woodlands",
       "spawnPoints": [
         {
           "spawnPointName": "Right House",
           "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/Generic_House_B/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.2822041,
-          "posY": 9.536743E-07,
-          "posZ": -2.49963617,
-          "rotX": -0.00029953,
-          "rotY": 187.776352,
-          "rotZ": 0.0004258405
+          "position": {
+            "x": -0.2822041,
+            "y": 9.536743E-07,
+            "z": -2.49963617
+          },
+          "rotation": {
+            "x": -0.00029953,
+            "y": 187.776352,
+            "z": 0.0004258405
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Left House",
           "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/Generic_House_A/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.161382318,
-          "posY": 6.000002,
-          "posZ": -1.84503567,
-          "rotX": -0.0004997738,
-          "rotY": 181.217834,
-          "rotZ": -0.000153054323
+          "position": {
+            "x": -0.161382318,
+            "y": 6.000002,
+            "z": -1.84503567
+          },
+          "rotation": {
+            "x": -0.0004997738,
+            "y": 181.217834,
+            "z": -0.000153054323
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Party House Outside",
           "parent": "Sector_DreamWorld/Sector_DreamZone_1/Geo_DreamZone_1/Terrain_DreamZone1/Side_A/Floor_DZ1_A_Island_G",
-          "posX": -60.72438,
-          "posY": 1.83779061,
-          "posZ": 73.956665,
-          "rotX": -0.000374695752,
-          "rotY": 44.80779,
-          "rotZ": 0.0003652588
+          "position": {
+            "x": -60.72438,
+            "y": 1.83779061,
+            "z": 73.956665
+          },
+          "rotation": {
+            "x": -0.000374695752,
+            "y": 44.80779,
+            "z": 0.0003652588
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Party House",
           "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/Party_House/BuildingKit_PartyHouse/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -6.2112,
-          "posY": 3.00000238,
-          "posZ": -1.33499861,
-          "rotX": 0.000243461924,
-          "rotY": 182.179123,
-          "rotZ": 0.000461060758
+          "position": {
+            "x": -6.2112,
+            "y": 3.00000238,
+            "z": -1.33499861
+          },
+          "rotation": {
+            "x": 0.000243461924,
+            "y": 182.179123,
+            "z": 0.000461060758
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Party House Second Floor",
           "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/Party_House/BuildingKit_PartyHouse/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -5.88598728,
-          "posY": 9.000004,
-          "posZ": 14.0645237,
-          "rotX": -0.000238406181,
-          "rotY": 2.68457651,
-          "rotZ": -0.000462484575
+          "position": {
+            "x": -5.88598728,
+            "y": 9.000004,
+            "z": 14.0645237
+          },
+          "rotation": {
+            "x": -0.000238406181,
+            "y": 2.68457651,
+            "z": -0.000462484575
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forbidden Archives",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_1/Geo_Library_1/Rocks_SecretLibrary_1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -13.4283962,
-          "posY": 0.0587463379,
-          "posZ": -3.57510185,
-          "rotX": -2.09469775E-07,
-          "rotY": 265.6286,
-          "rotZ": 9.7751105E-08
+          "position": {
+            "x": -13.4283962,
+            "y": 0.0587463379,
+            "z": -3.57510185
+          },
+          "rotation": {
+            "x": -2.09469775E-07,
+            "y": 265.6286,
+            "z": 9.7751105E-08
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forbidden Archives Secret Entrance",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_1/Geo_Library_1/Terrain_DreamZone4_LowerLevel_Library/Floor_LowerLevel_Library_Z1",
-          "posX": 85.6443939,
-          "posY": 9.293915,
-          "posZ": -198.956421,
-          "rotX": -2.58484E-06,
-          "rotY": 97.6151047,
-          "rotZ": -3.49611332E-06
+          "position": {
+            "x": 85.6443939,
+            "y": 9.293915,
+            "z": -198.956421
+          },
+          "rotation": {
+            "x": -2.58484E-06,
+            "y": 97.6151047,
+            "z": -3.49611332E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "DreamWorld_Body",
       "locationName": "Subterranean Lake",
       "spawnPoints": [
         {
           "spawnPointName": "Prisoner's Vault",
           "parent": "Sector_DreamWorld/Sector_Underground/Sector_PrisonCell/Geo_PrisonCell/Structure_IP_DreamZone_4_PrisonInterior/UpperLevel/COL_UpperLevel",
-          "posX": -0.0219773054,
-          "posY": -9.553835,
-          "posZ": 0.567711353,
-          "rotX": 1.22019273E-05,
-          "rotY": 3.50687981,
-          "rotZ": -1.872353E-06
+          "position": {
+            "x": -0.0219773054,
+            "y": -9.553835,
+            "z": 0.567711353
+          },
+          "rotation": {
+            "x": 1.22019273E-05,
+            "y": 3.50687981,
+            "z": -1.872353E-06
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDreamWorldStealth"
+              ]
+            }
+          ]
         }
       ]
     }
