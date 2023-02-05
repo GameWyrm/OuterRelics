@@ -21,6 +21,9 @@ namespace OuterRelics
             public int uselessHintChance = 25;
             public bool[] savedKeysObtained = new bool[12];
             public int totalSavedKeys = 0;
+            public float timer = 0f;
+            public int startLoop = 1;
+            public List<int> hintIDsObtained;
         }
 
         /// <summary>
@@ -85,6 +88,8 @@ namespace OuterRelics
             saveData.singlePerGroup = main.itemManager.SinglePerGroup;
             saveData.hints = main.hintDifficulty;
             saveData.uselessHintChance = main.uselessHints;
+            saveData.timer = main.statManager.timer;
+            saveData.hintIDsObtained = main.statManager.hintIDsObtained;
 
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
@@ -113,6 +118,9 @@ namespace OuterRelics
             saveData.uselessHintChance = OuterRelics.GetConfigInt("Useless Hint Chance");
             saveData.savedKeysObtained = new bool[12];
             saveData.totalSavedKeys = 0;
+            saveData.timer = 0;
+            saveData.startLoop = PlayerData.LoadLoopCount();
+            saveData.hintIDsObtained = new List<int>();
         }
 
         /// <summary>
@@ -191,6 +199,42 @@ namespace OuterRelics
         public HintDifficulty GetHintDifficulty()
         {
             return saveData.hints;
+        }
+
+        /// <summary>
+        /// Returns the total amount of time the run has gone on for
+        /// </summary>
+        /// <returns></returns>
+        public float GetTimer()
+        {
+            return saveData.timer;
+        }
+
+        /// <summary>
+        /// Returns the number of the loop that the run started on
+        /// </summary>
+        /// <returns></returns>
+        public int GetStartLoop()
+        {
+            return saveData.startLoop;
+        }
+
+        /// <summary>
+        /// Returns the number of unique hints found
+        /// </summary>
+        /// <returns></returns>
+        public int GetHintCount()
+        {
+            return saveData.hintIDsObtained.Count;
+        }
+
+        /// <summary>
+        /// Returns the list of hints found
+        /// </summary>
+        /// <returns></returns>
+        public List<int> GetHintIDs()
+        {
+            return saveData.hintIDsObtained;
         }
 
         /// <summary>

@@ -6,10 +6,16 @@
     <Compile Update="HintCollectable.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ItemDisplayManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="KeyCollectable.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MatchPlayerRotation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StatManager.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

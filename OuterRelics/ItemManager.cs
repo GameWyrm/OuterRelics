@@ -118,25 +118,21 @@ namespace OuterRelics
             itemPlacements = new();
             for (int i = 0; i < 12; i++)
             {
-                ItemSpawnLocation location = availableLocations[rnd.Next(0, availableLocations.Count - 1)];
-                ItemSpawnPoint spawnPoint = location.spawnPoints[rnd.Next(0, location.spawnPoints.Count - 1)];
+                int itemIndex = rnd.Next(0, availableLocations.Count - 1);
+                ItemSpawnLocation location = availableLocations[itemIndex];
+                int spawnIndex = rnd.Next(0, location.spawnPoints.Count - 1);
+                ItemSpawnPoint spawnPoint = location.spawnPoints[spawnIndex];
 
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
                 spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
 
-                availableLocations = RemoveSpawn(availableLocations, location, spawnPoint);
+                availableLocations[itemIndex].spawnPoints.RemoveAt(spawnIndex);
+                if (availableLocations[itemIndex].spawnPoints.Count <= 0) availableLocations.RemoveAt(itemIndex);
             }
 
             GenerateHints();
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
-        }
-
-        private List<ItemSpawnLocation> RemoveSpawn(List<ItemSpawnLocation> availableLocations, ItemSpawnLocation location, ItemSpawnPoint spawnPoint)
-        {
-            location.spawnPoints.Remove(spawnPoint);
-            if (location.spawnPoints.Count <= 0) availableLocations.Remove(location);
-            return availableLocations;
         }
 
         public void GenerateHints()
@@ -254,6 +250,7 @@ namespace OuterRelics
             HintCollectable hint = hintObject.AddComponent<HintCollectable>();
 
             hint.hint = hints[placement.id];
+            hint.id = placement.id;
 
             main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
         }

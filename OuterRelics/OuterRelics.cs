@@ -101,17 +101,9 @@ namespace OuterRelics
         /// </summary>
         public SaveManager saveManager;
         /// <summary>
-        /// The orb that restricts access to the ATP Warp Core
+        /// Handles showing what you do and don't have in the pause menu
         /// </summary>
-        public GameObject orb;
-        /// <summary>
-        /// The visuals of the lock around the ATP orb
-        /// </summary>
-        public GameObject orbLock;
-        /// <summary>
-        /// Code responsible for locking and unlocking the ATP orb
-        /// </summary>
-        public NomaiInterfaceOrb orbInterface;
+        public ItemDisplayManager itemDisplayManager;
         /// <summary>
         /// Handles placing items in the world
         /// </summary>
@@ -124,6 +116,10 @@ namespace OuterRelics
         /// Handles sending notifications, works when not in suit
         /// </summary>
         public FallBackNotificationManager notifManager;
+        /// <summary>
+        /// Handles stats
+        /// </summary>
+        public StatManager statManager;
 
         //Handles placing indicators
         PlacerManager placer;
@@ -157,6 +153,9 @@ namespace OuterRelics
             debugMode = GetConfigBool("Debug");
             LogInfo($"Debug Mode: {debugMode}");
 
+            //Initialize stat manager
+            statManager = gameObject.AddComponent<StatManager>();
+
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
@@ -164,14 +163,16 @@ namespace OuterRelics
                 {
                     LogSuccess("Loaded into solar system!");
                     StartCoroutine(LoadIn(GetSystemName()));
+                    statManager.runTimer = true;
                 }
-                if (loadScene == OWScene.TitleScreen)
+                else
                 {
                     if (itemManager != null)
                     {
                         itemManager.itemPlacements = null;
                         itemManager.hintPlacements = null;
                     }
+                    statManager.runTimer = false;
                 }
             };
             if (nhAPI != null)
@@ -203,6 +204,9 @@ namespace OuterRelics
                     };
                     menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
                 }
+
+                GameObject itemList = Instantiate(assets.LoadAsset<GameObject>("ItemListCanvas"));
+                itemDisplayManager = itemList.AddComponent<ItemDisplayManager>();
             };
 
             //Get New Horizons API if possible
@@ -272,6 +276,7 @@ namespace OuterRelics
             if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
+
             int frameCount = Time.frameCount;
 
             yield return new WaitUntil(() => Time.frameCount >= frameCount + 5);
@@ -296,6 +301,7 @@ namespace OuterRelics
 
             saveManager.SaveData();
 
+            statManager.LoadStats();
         }
 
         private void ConfirmGroup()

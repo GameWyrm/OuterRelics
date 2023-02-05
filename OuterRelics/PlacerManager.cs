@@ -65,7 +65,7 @@ namespace OuterRelics
         {
             bool hasGamepad = Gamepad.all.Count > 0;
 
-            if (Keyboard.current[Key.Numpad7].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadRight].wasPressedThisFrame))
+            if (main.debugMode && (Keyboard.current[Key.Numpad7].wasPressedThisFrame || (hasGamepad && Gamepad.current[GamepadButton.DpadRight].wasPressedThisFrame)))
             {
                 GrabObjectPosition();
             }
