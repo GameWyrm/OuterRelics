@@ -1,75 +1,142 @@
 {
-  "system": "SolarSystem",
-  "body": "WhiteholeStation_Body",
-  "bodyName": "WhiteholeStation_Body RENAME THIS IN THE JSON FILE",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "WhiteholeStation_Body",
       "locationName": "Exterior",
       "spawnPoints": [
         {
           "spawnPointName": "Platform",
           "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
-          "posX": 13.3835917,
-          "posY": 0.190650225,
-          "posZ": -19.9168129,
-          "rotX": 359.913147,
-          "rotY": 180.001328,
-          "rotZ": 89.203186
+          "position": {
+            "x": 13.3835917,
+            "y": 0.190650225,
+            "z": -19.9168129
+          },
+          "rotation": {
+            "x": 359.913147,
+            "y": 180.001328,
+            "z": 89.203186
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Lens",
           "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
-          "posX": 1.3888644,
-          "posY": 0.0351572037,
-          "posZ": 7.10909557,
-          "rotX": 277.406616,
-          "rotY": 233.876266,
-          "rotZ": 308.1782
+          "position": {
+            "x": 1.3888644,
+            "y": 0.0351572037,
+            "z": 7.10909557
+          },
+          "rotation": {
+            "x": 277.406616,
+            "y": 233.876266,
+            "z": 308.1782
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ice Ring",
           "parent": "Geometry_WhiteholeStationSuperstructure/ControlledByProxy_Superstructure/Terrain_WH_StationIce",
-          "posX": 9.484077,
-          "posY": 49.4684219,
-          "posZ": 4.51078129,
-          "rotX": 338.483856,
-          "rotY": 171.856873,
-          "rotZ": 1.13914585
+          "position": {
+            "x": 9.484077,
+            "y": 49.4684219,
+            "z": 4.51078129
+          },
+          "rotation": {
+            "x": 338.483856,
+            "y": 171.856873,
+            "z": 1.13914585
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "WhiteholeStation_Body",
       "locationName": "Interior",
       "spawnPoints": [
         {
           "spawnPointName": "Lens",
           "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
-          "posX": 0.345969,
-          "posY": 0.9977577,
-          "posZ": 6.61461,
-          "rotX": 359.320557,
-          "rotY": 264.514435,
-          "rotZ": 88.77076
+          "position": {
+            "x": 0.345969,
+            "y": 0.9977577,
+            "z": 6.61461
+          },
+          "rotation": {
+            "x": 359.320557,
+            "y": 264.514435,
+            "z": 88.77076
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Warp Platform",
           "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
-          "posX": -0.0406194068,
-          "posY": -4.35221958,
-          "posZ": -15.4927959,
-          "rotX": 88.68344,
-          "rotY": 90.001564,
-          "rotZ": 90.00149
+          "position": {
+            "x": -0.0406194068,
+            "y": -4.35221958,
+            "z": -15.4927959
+          },
+          "rotation": {
+            "x": 88.68344,
+            "y": 90.001564,
+            "z": 90.00149
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Controls",
           "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
-          "posX": 0.0274009127,
-          "posY": -0.00719356537,
-          "posZ": -24.47217,
-          "rotX": 88.8422546,
-          "rotY": 270.145325,
-          "rotZ": 270.000519
+          "position": {
+            "x": 0.0274009127,
+            "y": -0.00719356537,
+            "z": -24.47217
+          },
+          "rotation": {
+            "x": 88.8422546,
+            "y": 270.145325,
+            "z": 270.000519
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     }

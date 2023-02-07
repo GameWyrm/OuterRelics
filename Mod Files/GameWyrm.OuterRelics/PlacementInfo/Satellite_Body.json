@@ -1,22 +1,33 @@
 {
-    "system": "SolarSystem",
-    "body": "Satellite_Body",
-    "bodyName": "Timber Hearth",
-    "Locations": [
+  "spawnLocations": [
     {
-        "locationName": "Postcards From Space Satellite",
-        "spawnPoints": [
-          {
-            "spawnPointName": null,
-            "parent": "Collider",
-            "posX": 0,
-            "posY": 0.5,
-            "posZ": 0,
-            "rotX": 0,
-            "rotY": 0,
-            "rotZ": 0
-          }
-        ]
-      }
-    ]
+      "system": "SolarSystem",
+      "body": "Satellite_Body",
+      "locationName": "Postcards From Space Satellite",
+      "spawnPoints": [
+        {
+          "spawnPointName": null,
+          "parent": "Collider",
+          "position": {
+            "x": 0.0,
+            "y": 0.5,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHardMode",
+                "CanDoTimberHearth"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

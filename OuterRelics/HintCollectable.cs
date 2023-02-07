@@ -6,6 +6,7 @@ namespace OuterRelics
     public class HintCollectable : ItemCollectable
     {
         public string hint;
+        public int id;
 
         private float cooldown;
 
@@ -20,6 +21,8 @@ namespace OuterRelics
             if (cooldown <= 0)
             {
                 main.notifManager.AddNotification(hint);
+                main.statManager.AddHint(id);
+                main.saveManager.SaveData();
             }
         }
     }

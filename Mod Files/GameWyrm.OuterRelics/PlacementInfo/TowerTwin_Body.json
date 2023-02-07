@@ -1,210 +1,422 @@
 {
-  "system": "SolarSystem",
-  "body": "TowerTwin_Body",
-  "bodyName": "Ash Twin",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "TowerTwin_Body",
       "locationName": "Towers",
       "spawnPoints": [
         {
           "spawnPointName": "Timber Hearth Tower Interior",
           "parent": "Sector_TowerTwin/Sector_Tower_TH/Geometry_Tower_TH/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 9.312908,
-          "posY": 98.3049,
-          "posZ": 5.8666873,
-          "rotX": 3.03995514,
-          "rotY": 57.0088463,
-          "rotZ": 359.8567
+          "position": {
+            "x": 9.312908,
+            "y": 98.3049,
+            "z": 5.8666873
+          },
+          "rotation": {
+            "x": 3.03995514,
+            "y": 57.0088463,
+            "z": 359.8567
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Timber Heart Tower Top",
           "parent": "Sector_TowerTwin/Sector_Tower_TH/Geometry_Tower_TH/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.8779259,
-          "posY": 129.873871,
-          "posZ": 0.09850502,
-          "rotX": 357.16217,
-          "rotY": 89.5667953,
-          "rotZ": 359.979065
+          "position": {
+            "x": -0.8779259,
+            "y": 129.873871,
+            "z": 0.09850502
+          },
+          "rotation": {
+            "x": 357.16217,
+            "y": 89.5667953,
+            "z": 359.979065
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ash Twin Tower",
           "parent": "Sector_TowerTwin/Sector_Tower_HGT/Geometry_Tower_HGT/ControlledByProxy_Arch/Structure_HT_TT_Tower_TT/Towers/Structure_HT_TT_Tower_HT/TowerTwin_TowerTwin_Collider",
-          "posX": -0.0105376244,
-          "posY": -14.0576935,
-          "posZ": 18.7397,
-          "rotX": 0.0008133519,
-          "rotY": 0.697974,
-          "rotZ": 359.9332
+          "position": {
+            "x": -0.0105376244,
+            "y": -14.0576935,
+            "z": 18.7397
+          },
+          "rotation": {
+            "x": 0.0008133519,
+            "y": 0.697974,
+            "z": 359.9332
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ember Twin Tower",
           "parent": "Sector_TowerTwin/Sector_Tower_HGT/Geometry_Tower_HGT/ControlledByProxy_Arch/Structure_HT_TT_Tower_TT/Towers/Structure_HT_TT_Tower_HT/TowerTwin_TowerTwin_Collider",
-          "posX": 0.117744923,
-          "posY": 9.06279,
-          "posZ": -11.44352,
-          "rotX": -0.003992969,
-          "rotY": 356.5306,
-          "rotZ": 359.933258
+          "position": {
+            "x": 0.117744923,
+            "y": 9.06279,
+            "z": -11.44352
+          },
+          "rotation": {
+            "x": -0.003992969,
+            "y": 356.5306,
+            "z": 359.933258
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Sun Tower Bottom Floor",
           "parent": "Sector_TowerTwin/Sector_Tower_SS/Geometry_Tower_SS/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.308627248,
-          "posY": -100.295441,
-          "posZ": -92.01781,
-          "rotX": 43.3141747,
-          "rotY": 3.24758935,
-          "rotZ": 182.062531
+          "position": {
+            "x": -0.308627248,
+            "y": -100.295441,
+            "z": -92.01781
+          },
+          "rotation": {
+            "x": 43.3141747,
+            "y": 3.24758935,
+            "z": 182.062531
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Sun Tower Top Floor",
           "parent": "Sector_TowerTwin/Sector_Tower_SS/Geometry_Tower_SS/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -1.13660657,
-          "posY": -111.128845,
-          "posZ": -95.1967239,
-          "rotX": 41.68576,
-          "rotY": 354.5355,
-          "rotZ": 176.008041
+          "position": {
+            "x": -1.13660657,
+            "y": -111.128845,
+            "z": -95.1967239
+          },
+          "rotation": {
+            "x": 41.68576,
+            "y": 354.5355,
+            "z": 176.008041
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Giant's Deep Tower Bottom",
           "parent": "Sector_TowerTwin/Sector_Tower_GD/Geometry_Tower_GD/ControlledByProxy_Arch/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD_collider",
-          "posX": -4.4674654,
-          "posY": -12.7208862,
-          "posZ": -9.464315,
-          "rotX": 358.865723,
-          "rotY": 312.595856,
-          "rotZ": 1.88486814
+          "position": {
+            "x": -4.4674654,
+            "y": -12.7208862,
+            "z": -9.464315
+          },
+          "rotation": {
+            "x": 358.865723,
+            "y": 312.595856,
+            "z": 1.88486814
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Giant's Deep Tower Top",
           "parent": "Sector_TowerTwin/Sector_Tower_GD/Geometry_Tower_GD/ControlledByProxy_Arch/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD_collider",
-          "posX": -6.58035564,
-          "posY": 6.866455E-05,
-          "posZ": -10.8280964,
-          "rotX": 1.62868845,
-          "rotY": 275.028748,
-          "rotZ": 0.9505378
+          "position": {
+            "x": -6.58035564,
+            "y": 6.866455E-05,
+            "z": -10.8280964
+          },
+          "rotation": {
+            "x": 1.62868845,
+            "y": 275.028748,
+            "z": 0.9505378
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Brittle Hollow Tower",
           "parent": "Sector_TowerTwin/Sector_Tower_BH/Geometry_Tower_BH/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.19821167,
-          "posY": 93.4700851,
-          "posZ": 0.1650505,
-          "rotX": -2.970532E-05,
-          "rotY": 269.974426,
-          "rotZ": 180.067062
+          "position": {
+            "x": 0.19821167,
+            "y": 93.4700851,
+            "z": 0.1650505
+          },
+          "rotation": {
+            "x": -2.970532E-05,
+            "y": 269.974426,
+            "z": 180.067062
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": null,
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -25.7196,
-          "posY": 0.5779069,
-          "posZ": 57.2447853,
-          "rotX": 29.4939518,
-          "rotY": 60.4438972,
-          "rotZ": 86.92818
+          "position": {
+            "x": -25.7196,
+            "y": 0.5779069,
+            "z": 57.2447853
+          },
+          "rotation": {
+            "x": 29.4939518,
+            "y": 60.4438972,
+            "z": 86.92818
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TowerTwin_Body",
       "locationName": "South Pole",
       "spawnPoints": [
         {
           "spawnPointName": "Bottom",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -3.52839661,
-          "posY": -39.6120834,
-          "posZ": 6.346681,
-          "rotX": 11.42433,
-          "rotY": 150.264542,
-          "rotZ": 179.895447
+          "position": {
+            "x": -3.52839661,
+            "y": -39.6120834,
+            "z": 6.346681
+          },
+          "rotation": {
+            "x": 11.42433,
+            "y": 150.264542,
+            "z": 179.895447
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top Ledge",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 4.599396,
-          "posY": -122.541862,
-          "posZ": 7.861659,
-          "rotX": 357.132538,
-          "rotY": 22.3864269,
-          "rotZ": 180.582977
+          "position": {
+            "x": 4.599396,
+            "y": -122.541862,
+            "z": 7.861659
+          },
+          "rotation": {
+            "x": 357.132538,
+            "y": 22.3864269,
+            "z": 180.582977
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bottom Ledge",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -3.17863417,
-          "posY": -95.3847351,
-          "posZ": -6.8155117,
-          "rotX": 356.917145,
-          "rotY": 208.67067,
-          "rotZ": 179.709091
+          "position": {
+            "x": -3.17863417,
+            "y": -95.3847351,
+            "z": -6.8155117
+          },
+          "rotation": {
+            "x": 356.917145,
+            "y": 208.67067,
+            "z": 179.709091
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -0.111169785,
-          "posY": -171.813324,
-          "posZ": -5.83330727,
-          "rotX": 358.874756,
-          "rotY": 182.047989,
-          "rotZ": 179.966736
+          "position": {
+            "x": -0.111169785,
+            "y": -171.813324,
+            "z": -5.83330727
+          },
+          "rotation": {
+            "x": 358.874756,
+            "y": 182.047989,
+            "z": 179.966736
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "TowerTwin_Body",
       "locationName": "North Pole",
       "spawnPoints": [
         {
           "spawnPointName": "Bottom",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 3.47949958,
-          "posY": 39.66438,
-          "posZ": -6.28438044,
-          "rotX": 348.513184,
-          "rotY": 334.965027,
-          "rotZ": 359.287
+          "position": {
+            "x": 3.47949958,
+            "y": 39.66438,
+            "z": -6.28438044
+          },
+          "rotation": {
+            "x": 348.513184,
+            "y": 334.965027,
+            "z": 359.287
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bottom Ledge",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 3.69030428,
-          "posY": 95.38467,
-          "posZ": -7.00149441,
-          "rotX": 3.21314168,
-          "rotY": 152.488724,
-          "rotZ": 0.02631294
+          "position": {
+            "x": 3.69030428,
+            "y": 95.38467,
+            "z": -7.00149441
+          },
+          "rotation": {
+            "x": 3.21314168,
+            "y": 152.488724,
+            "z": 0.02631294
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top Ledge",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -4.641977,
-          "posY": 122.548515,
-          "posZ": 8.50358,
-          "rotX": 3.22688246,
-          "rotY": 329.239777,
-          "rotZ": 359.8364
+          "position": {
+            "x": -4.641977,
+            "y": 122.548515,
+            "z": 8.50358
+          },
+          "rotation": {
+            "x": 3.22688246,
+            "y": 329.239777,
+            "z": 359.8364
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 0.238345087,
-          "posY": 171.8134,
-          "posZ": 5.96059752,
-          "rotX": 1.10211945,
-          "rotY": 14.096014,
-          "rotZ": 0.40861094
+          "position": {
+            "x": 0.238345087,
+            "y": 171.8134,
+            "z": 5.96059752
+          },
+          "rotation": {
+            "x": 1.10211945,
+            "y": 14.096014,
+            "z": 0.40861094
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Panel",
           "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -55.52758,
-          "posY": 148.634155,
-          "posZ": -0.197473481,
-          "rotX": 20.00538,
-          "rotY": 277.1437,
-          "rotZ": 2.58811283
+          "position": {
+            "x": -55.52758,
+            "y": 148.634155,
+            "z": -0.197473481
+          },
+          "rotation": {
+            "x": 20.00538,
+            "y": 277.1437,
+            "z": 2.58811283
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHourglassTwins"
+              ]
+            }
+          ]
         }
       ]
     }

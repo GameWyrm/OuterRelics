@@ -1,20 +1,30 @@
 {
-  "system": "SolarSystem",
-  "body": "NomaiProbe_Body",
-  "bodyName": "Eye Locator Probe",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "NomaiProbe_Body",
       "locationName": "Eye Decal",
       "spawnPoints": [
         {
           "spawnPointName": null,
           "parent": "Structure_NOM_Probe_Renderer",
-          "posX": -3.18967628,
-          "posY": 4.58035135,
-          "posZ": 3.26477647,
-          "rotX": 278.3122,
-          "rotY": 254.53299,
-          "rotZ": 241.280243
+          "position": {
+            "x": -3.18967628,
+            "y": 4.58035135,
+            "z": 3.26477647
+          },
+          "rotation": {
+            "x": 278.3122,
+            "y": 254.53299,
+            "z": 241.280243
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHardMode"
+              ]
+            }
+          ]
         }
       ]
     }

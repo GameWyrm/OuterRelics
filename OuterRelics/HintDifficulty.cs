@@ -12,22 +12,22 @@
         /// <summary>
         /// All hints are vague
         /// </summary>
-        Vague,
+        Vague = 100,
         /// <summary>
         /// 75% vague, 25% precise
         /// </summary>
-        MostlyVague,
+        MostlyVague = 75,
         /// <summary>
         /// 50% vague, 50% precise
         /// </summary>
-        Balanced,
+        Balanced = 50,
         /// <summary>
         /// 25% vague, 75% precise
         /// </summary>
-        MostlyPrecise,
+        MostlyPrecise = 25,
         /// <summary>
         /// All hints are precise
         /// </summary>
-        Precise
+        Precise = 0
     }
 }

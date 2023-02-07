@@ -1,20 +1,30 @@
 {
-  "system": "SolarSystem",
-  "body": "BackerSatellite_Body",
-  "bodyName": "Human-Made Object",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "BackerSatellite_Body",
       "locationName": "Satellite",
       "spawnPoints": [
         {
           "spawnPointName": null,
           "parent": "Sector_BackerSatellite/Geometry_BackerSatellite/Structure_Fig_Satellite_ConvexCollider/Fig_Satellite_Convex_04",
-          "posX": -7.47843647,
-          "posY": 1.11391068,
-          "posZ": 4.14019346,
-          "rotX": 12.7237368,
-          "rotY": 128.355408,
-          "rotZ": 33.4503441
+          "position": {
+            "x": -7.47843647,
+            "y": 1.11391068,
+            "z": 4.14019346
+          },
+          "rotation": {
+            "x": 12.7237368,
+            "y": 128.355408,
+            "z": 33.4503441
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoHardMode"
+              ]
+            }
+          ]
         }
       ]
     }

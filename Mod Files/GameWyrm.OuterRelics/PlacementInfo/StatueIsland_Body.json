@@ -1,80 +1,156 @@
 {
-  "system": "SolarSystem",
-  "body": "StatueIsland_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "StatueIsland_Body",
       "locationName": "Statue Island",
       "spawnPoints": [
         {
           "spawnPointName": "Launch Pad",
           "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_3",
-          "posX": -29.3587818,
-          "posY": -12.1786232,
-          "posZ": -119.901695,
-          "rotX": 352.0545,
-          "rotY": 69.20173,
-          "rotZ": 349.358276
+          "position": {
+            "x": -29.3587818,
+            "y": -12.1786232,
+            "z": -119.901695
+          },
+          "rotation": {
+            "x": 352.0545,
+            "y": 69.20173,
+            "z": 349.358276
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bridge",
           "parent": "Sector_StatueIsland/Props_StatueIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2.38066673,
-          "posY": 3.78916216,
-          "posZ": -69.2724152,
-          "rotX": 352.977051,
-          "rotY": 355.009247,
-          "rotZ": 0.0440836065
+          "position": {
+            "x": 2.38066673,
+            "y": 3.78916216,
+            "z": -69.2724152
+          },
+          "rotation": {
+            "x": 352.977051,
+            "y": 355.009247,
+            "z": 0.0440836065
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "House",
           "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 5.72577143,
-          "posY": 34.7171936,
-          "posZ": 14.73803,
-          "rotX": 2.13019276,
-          "rotY": 347.367157,
-          "rotZ": 358.582916
+          "position": {
+            "x": 5.72577143,
+            "y": 34.7171936,
+            "z": 14.73803
+          },
+          "rotation": {
+            "x": 2.13019276,
+            "y": 347.367157,
+            "z": 358.582916
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Warp Arrival",
           "parent": "Sector_StatueIsland/Interactables_StatueIsland/StatueIsland_VisibleFromGD/WarpReceiver/Prefab_NOM_WarpReceiver/Structure_NOM_WarpReceiver_GiantsDeep/Structure_NOM_WarpReceiver_GiantsDeep_Collider",
-          "posX": -10.5936222,
-          "posY": -1.67826343,
-          "posZ": 6.18655443,
-          "rotX": 359.666168,
-          "rotY": 268.377075,
-          "rotZ": 359.1733
+          "position": {
+            "x": -10.5936222,
+            "y": -1.67826343,
+            "z": 6.18655443
+          },
+          "rotation": {
+            "x": 359.666168,
+            "y": 268.377075,
+            "z": 359.1733
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Workshop Upper",
           "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_3",
-          "posX": 19.21457,
-          "posY": 13.6636486,
-          "posZ": 4.138052,
-          "rotX": 2.551793,
-          "rotY": 70.383934,
-          "rotZ": 0.7186678
+          "position": {
+            "x": 19.21457,
+            "y": 13.6636486,
+            "z": 4.138052
+          },
+          "rotation": {
+            "x": 2.551793,
+            "y": 70.383934,
+            "z": 0.7186678
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Daz's Statue",
           "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_3",
-          "posX": -6.26638126,
-          "posY": 0.9507847,
-          "posZ": 29.54224,
-          "rotX": 355.136444,
-          "rotY": 177.231979,
-          "rotZ": 359.779
+          "position": {
+            "x": -6.26638126,
+            "y": 0.9507847,
+            "z": 29.54224
+          },
+          "rotation": {
+            "x": 355.136444,
+            "y": 177.231979,
+            "z": 359.779
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -18.3331127,
-          "posY": 8.430934,
-          "posZ": -2.33529,
-          "rotX": 357.899017,
-          "rotY": 83.91504,
-          "rotZ": 1.0217979
+          "position": {
+            "x": -18.3331127,
+            "y": 8.430934,
+            "z": -2.33529
+          },
+          "rotation": {
+            "x": 357.899017,
+            "y": 83.91504,
+            "z": 1.0217979
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

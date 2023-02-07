@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2189922998
+CRC: 2613049008
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: bbc40298c7622439b77608d8e5150bc3
+    Hash: e2a84816516eead670ccb341d74198de
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 54fe1c45a8a660b06d39452ea89fcc79
+    Hash: d0a910d6360d2bcd00311842119f936e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,6 +38,8 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
@@ -54,6 +56,8 @@ ClassTypes:
 - Class: 198
   Script: {instanceID: 0}
 - Class: 199
+  Script: {instanceID: 0}
+- Class: 213
   Script: {instanceID: 0}
 - Class: 222
   Script: {instanceID: 0}
@@ -94,6 +98,7 @@ Assets:
 - Assets/Nomai Keys/CityLights_Off_01.ogg
 - Assets/Nomai Keys/Prefabs/NK12.prefab
 - Assets/Nomai Keys/Prefabs/NK P8.prefab
+- Assets/Custom UI/ItemListCanvas.prefab
 - Assets/Nomai Keys/Prefabs/NK2.prefab
 - Assets/Nomai Keys/Prefabs/NK P5.prefab
 - Assets/Nomai Keys/NomaiHintPlay.ogg

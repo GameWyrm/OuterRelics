@@ -1,40 +1,72 @@
 {
-  "system": "SolarSystem",
-  "body": "VolcanicMoon_Body",
-  "bodyName": "Hollow's Lantern",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "VolcanicMoon_Body",
       "locationName": "Nomai Test Volcano",
       "spawnPoints": [
         {
           "spawnPointName": "Landing",
           "parent": "Sector_VM/Geometry_VM/Terrain_VM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -11.1704073,
-          "posY": 100.702133,
-          "posZ": 7.40132236,
-          "rotX": 5.38146,
-          "rotY": 310.321167,
-          "rotZ": 0.9947925
+          "position": {
+            "x": -11.1704073,
+            "y": 100.702133,
+            "z": 7.40132236
+          },
+          "rotation": {
+            "x": 5.38146,
+            "y": 310.321167,
+            "z": 0.9947925
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_VM/Geometry_VM/Terrain_VM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 23.6075783,
-          "posY": 91.83556,
-          "posZ": 39.7532959,
-          "rotX": 347.734619,
-          "rotY": 277.120422,
-          "rotZ": 335.646973
+          "position": {
+            "x": 23.6075783,
+            "y": 91.83556,
+            "z": 39.7532959
+          },
+          "rotation": {
+            "x": 347.734619,
+            "y": 277.120422,
+            "z": 335.646973
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Arnold's Overlook",
           "parent": "Sector_VM/Geometry_VM/Terrain_VM/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 77.3978653,
-          "posY": 45.9098,
-          "posZ": -20.1685028,
-          "rotX": 57.90868,
-          "rotY": 87.17377,
-          "rotZ": 345.0589
+          "position": {
+            "x": 77.3978653,
+            "y": 45.9098,
+            "z": -20.1685028
+          },
+          "rotation": {
+            "x": 57.90868,
+            "y": 87.17377,
+            "z": 345.0589
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     }

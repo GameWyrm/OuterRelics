@@ -1,0 +1,1485 @@
+{
+  "spawnLocations": [
+    {
+      "system": "SolarSystem",
+      "body": "TimberHearth_Body",
+      "locationName": "NormalHints",
+      "spawnPoints": [
+        {
+          "spawnPointName": "Start",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_4",
+          "position": {
+            "x": 56.652916,
+            "y": 5.68635559,
+            "z": -7.26954937
+          },
+          "rotation": {
+            "x": 9.080988,
+            "y": 42.03019,
+            "z": 345.825958
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "Observatory",
+          "parent": "Sector_TH/Sector_Village/Sector_Observatory/Geometry_Observatory/Structure_HEA_Observatory_v3/ObservatoryPivot/Observatory_Collider",
+          "position": {
+            "x": -61.44185,
+            "y": 247.286224,
+            "z": 7.53645325
+          },
+          "rotation": {
+            "x": 358.20517,
+            "y": 12.352355,
+            "z": 13.9820414
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "Dark Bramble Seed",
+          "parent": "Sector_TH/Sector_ImpactCrater/Props_ImpactCrater/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 53.32571,
+            "y": 218.6803,
+            "z": 17.74557
+          },
+          "rotation": {
+            "x": 347.189362,
+            "y": 218.55188,
+            "z": 7.805484
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Geometry_TH/ControlledByProxy_Base/Terrain_TH_Surface_v2/TH_Surface",
+          "position": {
+            "x": -161.67865,
+            "y": 162.825836,
+            "z": 99.1853943
+          },
+          "rotation": {
+            "x": 24.7581749,
+            "y": 6.789669,
+            "z": 43.5645981
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_NomaiCrater/Geometry_NomaiCrater/BatchedGroup/BatchedMeshColliders_8",
+          "position": {
+            "x": -210.09285,
+            "y": -57.1939926,
+            "z": -105.48645
+          },
+          "rotation": {
+            "x": 8.202724,
+            "y": 152.404388,
+            "z": 256.335358
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_NomaiMines/Geometry_NomaiMines/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 26.8414688,
+            "y": 214.871765,
+            "z": -1.59298706
+          },
+          "rotation": {
+            "x": 5.06259727,
+            "y": 69.0624847,
+            "z": 357.062256
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_QuantumGroveEntrance/Geometry_QuantumGroveEntrance/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 75.9265442,
+            "y": -249.206253,
+            "z": -30.1392441
+          },
+          "rotation": {
+            "x": 17.7916336,
+            "y": 306.8421,
+            "z": 184.678986
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_WaterWays/Geometry_WaterWays/Terrain_TH_UnderwaterCaves/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 23.3993549,
+            "y": -22.76869,
+            "z": 112.115051
+          },
+          "rotation": {
+            "x": 79.35073,
+            "y": 227.683548,
+            "z": 215.139664
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_Village/Geometry_Village/BatchedGroup/BatchedMeshColliders_4",
+          "position": {
+            "x": -32.1372528,
+            "y": 53.1001244,
+            "z": -40.9092865
+          },
+          "rotation": {
+            "x": 4.82613659,
+            "y": 281.1402,
+            "z": 11.4178247
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_TH/Sector_ZeroGCave/Geometry_ZeroGCave/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -9.393958,
+            "y": 9.282188,
+            "z": 86.02527
+          },
+          "rotation": {
+            "x": 52.6443138,
+            "y": 72.67745,
+            "z": 77.480896
+          },
+          "logic": []
+        }
+      ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "Comet_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+                "spawnPointName": "",
+                "parent": "Sector_CO/Sector_CometInterior/Geometry_CometInterior/Terrain_CO_Interior_NotIce/BatchedGroup/BatchedMeshColliders_0",
+                "position": {
+                  "x": -24.6801,
+                  "y": -50.015686,
+                  "z": 22.4144783
+                },
+                "rotation": {
+                  "x": 329.398773,
+                  "y": 313.115173,
+                  "z": 179.48851
+                },
+                "logic": []
+              },
+              {
+                "spawnPointName": "",
+                "parent": "Sector_CO/Geometry_CO/General_Batched/BatchedGroup/BatchedMeshColliders_0",
+                "position": {
+                  "x": 77.7927,
+                  "y": 15.2230005,
+                  "z": -10.0158234
+                },
+                "rotation": {
+                  "x": 300.579071,
+                  "y": 201.932663,
+                  "z": 71.92166
+                },
+                "logic": []
+              }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body": "Moon_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+                "spawnPointName": "",
+                "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+                "position": {
+                  "x": -33.3657455,
+                  "y": 29.552433,
+                  "z": -65.08157
+                },
+                "rotation": {
+                  "x": 66.78883,
+                  "y": 217.108154,
+                  "z": 9.179766
+                },
+                "logic": []
+              },
+              {
+                "spawnPointName": "",
+                "parent": "Sector_THM/Geo_THM/BatchedGroup/BatchedMeshColliders_0",
+                "position": {
+                  "x": -0.0361296833,
+                  "y": 70.23232,
+                  "z": -0.7270383
+                },
+                "rotation": {
+                  "x": 357.054,
+                  "y": 81.03307,
+                  "z": 359.420929
+                },
+                "logic": []
+              },
+              {
+                "spawnPointName": "",
+                "parent": "Sector_THM/Interactables_THM/Interactibles_SignalDish/SignalDish_Interface/TrackCover/topSwitch_collider (1)",
+                "position": {
+                  "x": -4.360716,
+                  "y": 0.009368825,
+                  "z": 1.81876338
+                },
+                "rotation": {
+                  "x": 357.008881,
+                  "y": 265.905823,
+                  "z": 180.789215
+                },
+                "logic": []
+              },
+              {
+                "spawnPointName": "",
+                "parent": "Sector_THM/Props_THM/BatchedGroup/BatchedMeshColliders_0",
+                "position": {
+                  "x": 10.9512806,
+                  "y": -5.57921028,
+                  "z": 41.48134
+                },
+                "rotation": {
+                  "x": 49.1017952,
+                  "y": 107.320786,
+                  "z": 96.7144241
+                },
+                "logic": []
+              }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body":"QuantumMoon_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_TH/Geometry_THState/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 12.2637711,
+                "y": -66.8340149,
+                "z": 16.2546
+              },
+              "rotation": {
+                "x": 10.4837761,
+                "y": 285.167725,
+                "z": 195.724243
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_BH/Geometry_BHState/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 68.72134,
+                "y": -12.0321207,
+                "z": -3.253747
+              },
+              "rotation": {
+                "x": 327.354523,
+                "y": 172.999084,
+                "z": 103.58712
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/QuantumShuttle/Prefab_NOM_Shuttle/Sector_Shuttle/Geo_NomaiShuttle/Structure_NOM_Shuttle/Structure_NOM_Shuttle_Collider_Grp/Structure_NOM_Shuttle_Body07_Collider",
+              "position": {
+                "x": 0.159407616,
+                "y": 16.396637,
+                "z": -2.22393465
+              },
+              "rotation": {
+                "x": 271.0548,
+                "y": 89.99921,
+                "z": 90.00128
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_GD/Interactables_GDState/GDState_Quantum_Objects/Quantum_TreeClump_1/Rock_Tree/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 1.04870081,
+                "y": 0.7137699,
+                "z": -6.830015
+              },
+              "rotation": {
+                "x": 340.311066,
+                "y": 324.282532,
+                "z": 2.61839414
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_DB/Geometry_DBState/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": 56.28466,
+                "y": 52.90857,
+                "z": 22.9897079
+              },
+              "rotation": {
+                "x": 309.642761,
+                "y": 253.181,
+                "z": 355.928253
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_EYE/Geometry_EYEState/BatchedGroup/BatchedMeshColliders_6",
+              "position": {
+                "x": -20.55919,
+                "y": 48.2066231,
+                "z": 57.11666
+              },
+              "rotation": {
+                "x": 10.5875263,
+                "y": 260.5909,
+                "z": 309.600372
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumMoon/State_HT/Geometry_HTState/State_CT/BatchedGroup/BatchedMeshColliders_2",
+              "position": {
+                "x": 62.590107,
+                "y": -39.8898964,
+                "z": -2.95920467
+              },
+              "rotation": {
+                "x": 305.633118,
+                "y": 72.12248,
+                "z": 197.257217
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "CaveTwin_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+              "position": {
+                "x": 3.47968841,
+                "y": 116.503662,
+                "z": -30.95787
+              },
+              "rotation": {
+                "x": 12.9771166,
+                "y": 170.829086,
+                "z": 359.298279
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_LakebedCaves/Geometry_LakebedCaves/BakedTerrain_CT_SandSlideRocks",
+              "position": {
+                "x": -70.38066,
+                "y": 59.218853,
+                "z": -17.0890961
+              },
+              "rotation": {
+                "x": 49.7572632,
+                "y": 261.2407,
+                "z": 3.81989
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_LakebedQuantum/Interactables_LakebedQuantum/LakebedQuantum_Objects/Objects/QuantumNomaiChair_Root/Prefab_NOM_SimpleChair_NoSkeleton",
+              "position": {
+                "x": 0.0182546675,
+                "y": 0.649559855,
+                "z": -0.018193841
+              },
+              "rotation": {
+                "x": 359.1266,
+                "y": 1.44496775,
+                "z": 359.971069
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_SealedCavern/Geometry_SealedCavern/Rocks_SealedCavern/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 36.3968964,
+                "y": 75.9465942,
+                "z": -113.416718
+              },
+              "rotation": {
+                "x": 303.585968,
+                "y": 320.868073,
+                "z": 17.8299541
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_BridgePath/Geo_BridgePath/BakedTerrain_CT_bridgePathQuantum_RocksandPillars",
+              "position": {
+                "x": 96.066185,
+                "y": 70.27632,
+                "z": -30.3588257
+              },
+              "rotation": {
+                "x": 305.3401,
+                "y": 267.457123,
+                "z": 16.3210926
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthUnderground/Sector_PodPathQuantum/Geometry_PodPath/BakedTerrain_CT_PodPathQuantum_Rocks",
+              "position": {
+                "x": -75.8654556,
+                "y": 62.4487953,
+                "z": 111.857483
+              },
+              "rotation": {
+                "x": 336.5942,
+                "y": 66.6924438,
+                "z": 63.0597649
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/Geometry_TimeLoopExperiment/Underground/Structure_BelowTLE/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 71.4466858,
+                "y": 43.46005,
+                "z": 61.3347855
+              },
+              "rotation": {
+                "x": 294.4633,
+                "y": 206.142654,
+                "z": 20.9388618
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/Geometry_TimeLoopExperiment/ControlledByProxy_Arch/Structure_NOM_TimeLoopExperiment/TLE_Collider/TLE_interiorCollider",
+              "position": {
+                "x": -0.358953536,
+                "y": 9.081147,
+                "z": 16.70562
+              },
+              "rotation": {
+                "x": 0.0410195254,
+                "y": 272.256,
+                "z": 0.0156289749
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_4",
+              "position": {
+                "x": 3.59997177,
+                "y": -70.75626,
+                "z": -78.49565
+              },
+              "rotation": {
+                "x": 49.0282974,
+                "y": 18.7715664,
+                "z": 195.789
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_CannonPath/Geometry_CannonPath/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 27.9763222,
+                "y": -120.28933,
+                "z": -47.725174
+              },
+              "rotation": {
+                "x": 336.214569,
+                "y": 150.669342,
+                "z": 179.54274
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Geometry_City/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 13.1560459,
+                "y": -107.132965,
+                "z": 45.8508835
+              },
+              "rotation": {
+                "x": 337.137817,
+                "y": 12.7048025,
+                "z": 181.325333
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_City/Sector_EyeDistrict/Geometry_EyeDistrict/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": 32.14161,
+                "y": -108.634819,
+                "z": -26.2816925
+              },
+              "rotation": {
+                "x": 340.888733,
+                "y": 134.046661,
+                "z": 178.280716
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthUnderground/Sector_FossilPath/Geometry_FossilPath/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": -19.2246971,
+                "y": -56.1003036,
+                "z": -51.4412041
+              },
+              "rotation": {
+                "x": 317.221619,
+                "y": 192.7966,
+                "z": 185.34343
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -32.8438759,
+                "y": -83.8454056,
+                "z": 1.798748
+              },
+              "rotation": {
+                "x": 22.7253532,
+                "y": 75.7517853,
+                "z": 173.751526
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Geometry_CaveTwin/BatchedGroup/BatchedMeshColliders_16",
+              "position": {
+                "x": -80.85698,
+                "y": -104.647484,
+                "z": 38.65559
+              },
+              "rotation": {
+                "x": 34.81409,
+                "y": 152.671951,
+                "z": 203.142242
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthSurface/Sector_SouthPole/Interactables_SouthPole/SouthPole_VisibleFromFar/Structure_NOM_StargazingPlatform/Ring_0/StargazeMarker/StargazeMarker_Collider",
+              "position": {
+                "x": -0.0246377029,
+                "y": 1.26116872,
+                "z": -0.210990429
+              },
+              "rotation": {
+                "x": 1.197358,
+                "y": 3.799255,
+                "z": 0.168903828
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "TowerTwin_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_4",
+              "position": {
+                "x": 79.65157,
+                "y": -28.1047516,
+                "z": -34.7713623
+              },
+              "rotation": {
+                "x": 354.794739,
+                "y": 35.3609619,
+                "z": 250.780731
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_TowerTwin/Sector_Tower_TH/Geometry_Tower_TH/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 17.8393974,
+                "y": 109.86068,
+                "z": 2.53654146
+              },
+              "rotation": {
+                "x": 0.253870845,
+                "y": 160.4211,
+                "z": 9.063993
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_TowerTwin/Sector_Tower_GD/Geometry_Tower_GD/ControlledByProxy_Arch/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD/Structure_HT_TT_Tower_GD_collider",
+              "position": {
+                "x": -11.1345224,
+                "y": -20.7804642,
+                "z": -6.990247
+              },
+              "rotation": {
+                "x": 358.94516,
+                "y": 4.66943,
+                "z": 8.767086
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_TowerTwin/Geometry_TowerTwin/BatchedGroup/BatchedMeshColliders_3",
+              "position": {
+                "x": -8.429119,
+                "y": -4.465027,
+                "z": 62.1966171
+              },
+              "rotation": {
+                "x": 341.419952,
+                "y": 76.24977,
+                "z": 95.772
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body":"TimeLoopRing_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 26.3109226,
+                "y": 2.25301743,
+                "z": -5.85884857
+              },
+              "rotation": {
+                "x": 348.309479,
+                "y": 180.138214,
+                "z": 269.317871
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 26.3113918,
+                "y": -5.25380659,
+                "z": -4.414498
+              },
+              "rotation": {
+                "x": 58.82879,
+                "y": 178.895874,
+                "z": 268.709564
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 26.3103123,
+                "y": 1.53693616,
+                "z": 6.286569
+              },
+              "rotation": {
+                "x": 332.778381,
+                "y": 359.6561,
+                "z": 90.75173
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "BrittleHollow_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 20.09219,
+                "y": 298.942474,
+                "z": -31.3195915
+              },
+              "rotation": {
+                "x": 354.314148,
+                "y": 264.7254,
+                "z": 6.2991333
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_GravityCannonRocks/Terrain_GravityCannon/BakedTerrain_GravityCannonRocks",
+              "position": {
+                "x": -16.55234,
+                "y": 283.50116,
+                "z": -27.6698723
+              },
+              "rotation": {
+                "x": 352.903076,
+                "y": 30.0450935,
+                "z": 0.08574145
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 5/Core_OldSettlement 5/Geometry_Core_OldSettlement 5/ControlledByProxy_OldSettlement5/Terrain_Core_OldSettlement 5/BakedTerrain_OldSettlement_5_B_Core",
+              "position": {
+                "x": 0.0795891657,
+                "y": 245.534561,
+                "z": 9.739629
+              },
+              "rotation": {
+                "x": 0.533546031,
+                "y": 41.2318878,
+                "z": 1.498887
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -12.67687,
+                "y": 262.423645,
+                "z": 14.1318617
+              },
+              "rotation": {
+                "x": 2.33354354,
+                "y": 314.9485,
+                "z": 359.78244
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -14.1089973,
+                "y": 155.896515,
+                "z": 6.09065247
+              },
+              "rotation": {
+                "x": 1.09688,
+                "y": 359.345551,
+                "z": 5.14006042
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector Cannon Path/Fragment CannonPath_5/Core_CannonPath_5/Geometry_Core_CannonPath_5/BakedTerrain_Fragment CannonPath_5_Core",
+              "position": {
+                "x": -146.648483,
+                "y": 9.706654,
+                "z": 201.255478
+              },
+              "rotation": {
+                "x": 352.9145,
+                "y": 234.412842,
+                "z": 272.152222
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": -6.46885967,
+                "y": -292.0861,
+                "z": -22.5562115
+              },
+              "rotation": {
+                "x": -2.34725439E-06,
+                "y": 193.564575,
+                "z": 180.0
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Props_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -38.2948875,
+                "y": 181.041641,
+                "z": 1.68913651
+              },
+              "rotation": {
+                "x": 10.0530119,
+                "y": 300.598724,
+                "z": 5.597595
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 10.20029,
+                "y": -9.58118248,
+                "z": 26.2228241
+              },
+              "rotation": {
+                "x": 354.06076,
+                "y": 275.0553,
+                "z": 344.989258
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 7977.33252,
+                "y": 20416.1777,
+                "z": 1279.65857
+              },
+              "rotation": {
+                "x": 354.7081,
+                "y": 180.9519,
+                "z": 21.2452068
+              },
+              "logic": []
+            },
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Interactables_HangingCity_District4/Structure_NOM_BH_WarpPathUpside/Structure_BH_WarpPathUpside_Collider",
+              "position": {
+                "x": -3.41856432,
+                "y": 2.13009644,
+                "z": -13.2577
+              },
+              "rotation": {
+                "x": 359.251068,
+                "y": 310.24,
+                "z": 180.009521
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body":"VolcanicMoon_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_VM/Geometry_VM/Terrain_VM/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -9.768963,
+                "y": 100.427437,
+                "z": 13.6002989
+              },
+              "rotation": {
+                "x": 7.61250639,
+                "y": 326.7739,
+                "z": 0.5343987
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body":"WhiteholeStation_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_WhiteholeStation/Geometry_WhiteholeStation/OtherComponentsGroup/Structure_NOM_WhiteHoleStation/WhiteHoleStation_Collider",
+              "position": {
+                "x": -0.0176572427,
+                "y": -4.67653036,
+                "z": -24.4726276
+              },
+              "rotation": {
+                "x": 88.0572052,
+                "y": 90.00242,
+                "z": 90.00242
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "StatueIsland_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_StatueIsland/Geometry_StatueIsland/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": -20.50551,
+                "y": 32.3134155,
+                "z": -10.7920532
+              },
+              "rotation": {
+                "x": 1.33009958,
+                "y": 250.23645,
+                "z": 359.428
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "BrambleIsland_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 7.236598,
+                "y": 18.5589542,
+                "z": -48.8106575
+              },
+              "rotation": {
+                "x": 359.013916,
+                "y": 265.098877,
+                "z": 5.44402647
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "ConstructionYardIsland_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_ConstructionYard/Geometry_ConstructionYard/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": -18.7542953,
+                "y": -10.178607,
+                "z": -42.216114
+              },
+              "rotation": {
+                "x": 0.09334981,
+                "y": 180.077347,
+                "z": 42.88395
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "GabbroIsland_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_GabbroIsland/Geo_GabbroIsland/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": -16.017765,
+                "y": 0.990762353,
+                "z": 30.2988682
+              },
+              "rotation": {
+                "x": 3.30499,
+                "y": 345.01297,
+                "z": 0.871404469
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "QuantumIsland_Body",
+        "locationName": "NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_QuantumIsland/Geometry_QuantumTower/QuantumTower_Exterior/Structure_NOM_GD_QuantumTower/Structure_GD_QuantumTower_colliders/ext_body_collide",
+              "position": {
+                "x": -6.796942,
+                "y": 154.099823,
+                "z": 5.270645
+              },
+              "rotation": {
+                "x": 359.20993,
+                "y": 86.90887,
+                "z": 359.805359
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "GiantsDeep_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_GD/Sector_GDInterior/Sector_GDCore/Sector_Module_Sunken/Geo_GDCore/OrbitalProbeCannon_Module_Intact_Sunken/OrbitalProbeCannon_Module_Intact_Collider",
+              "position": {
+                "x": -8.744317,
+                "y": -4.040956,
+                "z": 8.738474
+              },
+              "rotation": {
+                "x": 30.864048,
+                "y": 270.0,
+                "z": 89.99957
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body": "OrbitalProbeCannon_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_OrbitalProbeCannon/Geo_OrbitalProbeCannon/ControlledByProxy_OrbitalProbeCannon/Structure_NOM_OrbitalProbeCannon/OPC_Hub_Collider",
+              "position": {
+                "x": 0.8047854,
+                "y": -7.6153965,
+                "z": -18.1142731
+              },
+              "rotation": {
+                "x": 33.5431557,
+                "y": 178.18248,
+                "z": 198.798721
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body":"DarkBramble_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_DB/Geometry_DB/BatchedGroup/BatchedMeshColliders_1",
+              "position": {
+                "x": -3.1934135,
+                "y": -559.3206,
+                "z": -44.2486229
+              },
+              "rotation": {
+                "x": 0.211834535,
+                "y": 96.18901,
+                "z": 184.53183
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body": "DB_PioneerDimension_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_PioneerDimension/Props_PioneerDimension/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 12.3387051,
+                "y": -17.1724854,
+                "z": 0.989740133
+              },
+              "rotation": {
+                "x": 5.64966536,
+                "y": 326.3846,
+                "z": 14.248683
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body": "DB_VesselDimension_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_VesselDimension/Geometry_VesselDimension/BatchedGroup/BatchedMeshColliders_0",
+              "position": {
+                "x": 54.00609,
+                "y": -0.939668655,
+                "z": -6.902631
+              },
+              "rotation": {
+                "x": 348.69104,
+                "y": 194.9021,
+                "z": 352.648438
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+        "system":"SolarSystem",
+        "body": "SunStation_Body",
+        "locationName":"NormalHints",
+        "spawnPoints":[
+            {
+              "spawnPointName": "",
+              "parent": "Sector_SunStation/Geometry_SunStation/SunStation_ControlModule_Geo/Structure_NOM_SunStation_ControlINT/CONTROL_INT_COLLIDE",
+              "position": {
+                "x": 18.7841721,
+                "y": 24.4611855,
+                "z": -0.1536582
+              },
+              "rotation": {
+                "x": 0.000163144141,
+                "y": 89.9396439,
+                "z": 0.1736251
+              },
+              "logic": []
+            }
+        ]
+    },
+    {
+      "system": "SolarSystem",
+      "body": "RingWorld_Body",
+      "locationName": "DLCHints",
+      "spawnPoints": [
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_1",
+          "position": {
+            "x": 99.6811142,
+            "y": -78.17242,
+            "z": -281.3015
+          },
+          "rotation": {
+            "x": 289.1272,
+            "y": 70.8138,
+            "z": 89.99998
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_1",
+          "position": {
+            "x": -80.46753,
+            "y": -29.9055519,
+            "z": -280.9463
+          },
+          "rotation": {
+            "x": 327.87915,
+            "y": 285.359131,
+            "z": 270.0
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingInterior/Sector_Zone2/Geometry_Zone2/Terrain_Ringworld_Zone2/BatchedGroup/BatchedMeshColliders_1",
+          "position": {
+            "x": -261.258423,
+            "y": 75.06999,
+            "z": 139.318146
+          },
+          "rotation": {
+            "x": 5.64911556,
+            "y": 209.177567,
+            "z": 90.0
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_B_Zone3/ElevatorShaft_Zone3/Geo_ElevatorShaft_Zone3/BuildingKit_ElevatorShaft_Zone3/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 0.07996217,
+            "y": 40.2349129,
+            "z": 1.9953047
+          },
+          "rotation": {
+            "x": 0.0015508536,
+            "y": 181.339355,
+            "z": 359.924683
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingInterior/Sector_Zone4/Sector_BlightedShore/Sector_JammingControlRoom_Zone4/Geo_JammingControlRoom_Zone4/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -6.31941271,
+            "y": -6.00323725,
+            "z": -15.5599966
+          },
+          "rotation": {
+            "x": 4.21488333,
+            "y": 338.1756,
+            "z": 358.314117
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingWorld/Sector_ObservationDeck/Geo_ObservationDeck/ObservationDeck/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 0.767380238,
+            "y": -3.00232315,
+            "z": 6.577759
+          },
+          "rotation": {
+            "x": 359.9873,
+            "y": 177.715637,
+            "z": 359.683167
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_RingWorld/Sector_SecretEntrance/Structures_SecretEntrance/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 9.197111,
+            "y": -0.00364027172,
+            "z": -3.31762528
+          },
+          "rotation": {
+            "x": 359.955536,
+            "y": 111.3575,
+            "z": 359.982635
+          },
+          "logic": []
+        }
+      ]
+    },
+    {
+        "system": "SolarSystem",
+        "body": "DreamWorld_Body",
+        "locationName":"DLCHints",
+        "spawnPoints":[
+            {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/BuildingKit_HotelLobby/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -6.037442,
+            "y": 9.0,
+            "z": -11.8041992
+          },
+          "rotation": {
+            "x": -0.000234821317,
+            "y": 179.022522,
+            "z": 1.979212E-06
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_Courtyard/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -19.7297363,
+            "y": -7.62939453E-05,
+            "z": -9.928393
+          },
+          "rotation": {
+            "x": 4.517035E-06,
+            "y": 178.058258,
+            "z": 2.56257158E-06
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_3/Sector_Hotel/Geo_Hotel/Depths/BuildingKit_SideBedroom/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 69.59054,
+            "y": -21.0000763,
+            "z": 43.2408829
+          },
+          "rotation": {
+            "x": -0.000305761583,
+            "y": 114.866394,
+            "z": -0.0004003163
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_4/Structures_DreamZone_4_Upper/Structure_IP_PrisonScaffolding/COL_PrisonScaffolding",
+          "position": {
+            "x": 6.64083767,
+            "y": 0.498372644,
+            "z": 0.0121187447
+          },
+          "rotation": {
+            "x": -4.12267536E-06,
+            "y": 274.279846,
+            "z": -8.518417E-07
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_1/Structures_DreamZone_1/Bridge_4_Patch13/Floor_IP_DW",
+          "position": {
+            "x": -0.346557736,
+            "y": -1.43051147E-06,
+            "z": 0.7869172
+          },
+          "rotation": {
+            "x": 5.02531338E-06,
+            "y": 359.5977,
+            "z": 2.56320641E-06
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/BurntBuilding/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 3.58019948,
+            "y": 3.09944153E-06,
+            "z": 13.204566
+          },
+          "rotation": {
+            "x": -0.000243414179,
+            "y": 299.860016,
+            "z": -0.000432947651
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_1/Structures_Library_1/BuildingKit_Library_1/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -0.214162156,
+            "y": -6.000038,
+            "z": 14.5193968
+          },
+          "rotation": {
+            "x": 0.0004869476,
+            "y": 287.2018,
+            "z": 0.000108487446
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_2/Structures_Library_2/BuildingKit_Library_2/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -2.02777028,
+            "y": -3.05175781E-05,
+            "z": -7.91951466
+          },
+          "rotation": {
+            "x": -2.9230855E-06,
+            "y": 183.295624,
+            "z": 0.000134686532
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_3/Structures_Library_3/BuildingKit_Library_3/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": 10.1581526,
+            "y": 5.99996948,
+            "z": 0.0289325714
+          },
+          "rotation": {
+            "x": 1.47195721E-07,
+            "y": 89.02286,
+            "z": 1.00349655E-06
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_Underground/Sector_SecretLibrary_3/Structures_Library_3/BuildingKit_Library_3/BatchedGroup/BatchedMeshColliders_0",
+          "position": {
+            "x": -16.908947,
+            "y": -3.05175781E-05,
+            "z": -0.12745285
+          },
+          "rotation": {
+            "x": 0.000178364513,
+            "y": 267.8755,
+            "z": -1.25959887E-05
+          },
+          "logic": []
+        },
+        {
+          "spawnPointName": "",
+          "parent": "Sector_DreamWorld/Sector_Underground/Geo_Underground/Terrain_DreamZone4_LowerLevel/Floor_DZ4_LL_MainIsle",
+          "position": {
+            "x": -8.240326,
+            "y": 9.052216,
+            "z": -28.9827271
+          },
+          "rotation": {
+            "x": -0.000372705923,
+            "y": 183.11702,
+            "z": -2.75875973E-05
+          },
+          "logic": []
+        }
+        ]
+    }
+  ]
+}

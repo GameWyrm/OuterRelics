@@ -1,7 +1,9 @@
-﻿using OWML.ModHelper;
+﻿using Epic.OnlineServices;
+using OWML.ModHelper;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 namespace OuterRelics
 {
@@ -14,18 +16,36 @@ namespace OuterRelics
         {
             public string seed = "";
             public string version = "";
-            public List<string> loadedFiles;
+            public bool[] enabledPools = new bool[12];
             public bool singlePerGroup = true;
             public HintDifficulty hints = HintDifficulty.Balanced;
             public int uselessHintChance = 25;
             public bool[] savedKeysObtained = new bool[12];
             public int totalSavedKeys = 0;
+            public float timer = 0f;
+            public int startLoop = 1;
+            public List<int> hintIDsObtained;
         }
 
         /// <summary>
         /// Seed for randomization stored in the save file
         /// </summary>
         public string Seed;
+        public List<string> Pools = new List<string>
+        {
+            "HourglassTwins",
+            "TimberHearth",
+            "BrittleHollow",
+            "GiantsDeep",
+            "DarkBramble",
+            "QuantumMoon",
+            "Interloper",
+            "Stranger",
+            "DreamWorld",
+            "DreamWorldStealth",
+            "HardMode",
+            "Addons"
+        };
 
         private OuterRelicsSaveData saveData;
         private OuterRelics main;
@@ -34,20 +54,32 @@ namespace OuterRelics
         public SaveManager()
         {
             main = OuterRelics.Main;
+            LoadData();
+        }
+
+        public void LoadData()
+        {
             saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + profile + "OuterRelicsSave.json");
             if (saveData == null)
             {
                 saveData = new OuterRelicsSaveData();
                 main.LogInfo("Save file did not exist, creating new save info");
             }
+            else main.LogSuccess("Loaded save data for " + profile);
+            main.LogInfo("TIMER FROM SAVE: " + saveData.timer);
         }
 
         /// <summary>
         /// Saves which items have been obtained
         /// </summary>
         /// <param name="keysObtained">List of keys obtained</param>
-        public void SaveData(bool[] keysObtained = null)
+        public void SaveData(bool[] keysObtained = null, bool? singleMode = null)
         {
+            if (SceneManager.GetActiveScene().name != "SolarSystem")
+            {
+                main.LogInfo("Cannot save outside of the standard solar system scene, aborting save");
+                return;
+            }
             if (keysObtained == null)
             {
                 keysObtained = main.hasKey;
@@ -66,14 +98,42 @@ namespace OuterRelics
             }
 
             saveData.version = main.ModHelper.Manifest.Version;
-            saveData.loadedFiles = main.itemManager.loadedFiles;
-            saveData.singlePerGroup = main.itemManager.SinglePerGroup;
+            if (singleMode != null) saveData.singlePerGroup = (bool)singleMode;
             saveData.hints = main.hintDifficulty;
             saveData.uselessHintChance = main.uselessHints;
+            saveData.timer = main.statManager.timer;
+            saveData.hintIDsObtained = main.statManager.hintIDsObtained;
 
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
             main.LogInfo($"Saved Outer Relics data for {profile}");
+        }
+
+        public void NewSave()
+        {
+            saveData = new OuterRelicsSaveData();
+            saveData.seed = main.seed;
+            saveData.version = main.ModHelper.Manifest.Version;
+            for (int i = 0; i < saveData.enabledPools.Length; i++)
+            {
+                saveData.enabledPools[i] = OuterRelics.GetConfigBool(Pools[i]);
+            }
+            saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
+            if (Enum.TryParse(OuterRelics.GetConfigString("Hints"), true, out HintDifficulty hintDifficulty))
+            { 
+                saveData.hints = hintDifficulty; 
+            }
+            else
+            {
+                main.LogWarning("Invalid hint difficulty found, returning Balanced");
+                saveData.hints = HintDifficulty.Balanced;
+            }
+            saveData.uselessHintChance = OuterRelics.GetConfigInt("Useless Hint Chance");
+            saveData.savedKeysObtained = new bool[12];
+            saveData.totalSavedKeys = 0;
+            saveData.timer = 0;
+            saveData.startLoop = PlayerData.LoadLoopCount();
+            saveData.hintIDsObtained = new List<int>();
         }
 
         /// <summary>
@@ -114,12 +174,12 @@ namespace OuterRelics
         }
 
         /// <summary>
-        /// Returns list of files used for confirming placement
+        /// Returns list of pools used for confirming placement
         /// </summary>
         /// <returns></returns>
-        public List<string> GetFiles()
+        public bool[] GetPools()
         {
-            return saveData.loadedFiles;
+            return saveData.enabledPools;
         }
 
         /// <summary>
@@ -155,6 +215,42 @@ namespace OuterRelics
         }
 
         /// <summary>
+        /// Returns the total amount of time the run has gone on for
+        /// </summary>
+        /// <returns></returns>
+        public float GetTimer()
+        {
+            return saveData.timer;
+        }
+
+        /// <summary>
+        /// Returns the number of the loop that the run started on
+        /// </summary>
+        /// <returns></returns>
+        public int GetStartLoop()
+        {
+            return saveData.startLoop;
+        }
+
+        /// <summary>
+        /// Returns the number of unique hints found
+        /// </summary>
+        /// <returns></returns>
+        public int GetHintCount()
+        {
+            return saveData.hintIDsObtained.Count;
+        }
+
+        /// <summary>
+        /// Returns the list of hints found
+        /// </summary>
+        /// <returns></returns>
+        public List<int> GetHintIDs()
+        {
+            return saveData.hintIDsObtained;
+        }
+
+        /// <summary>
         /// Resets all save data related to Outer Relics for the current profile
         /// </summary>
         public void ClearSaveData()
@@ -179,5 +275,7 @@ namespace OuterRelics
         {
             return File.Exists(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
         }
+
+        
     }
 }

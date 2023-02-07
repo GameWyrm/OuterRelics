@@ -1,17 +1,12 @@
 ﻿using OWML.Common;
-using OWML.Common.Menus;
 using OWML.ModHelper;
-using OWML.ModHelper.Menus;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace OuterRelics
 {
@@ -27,10 +22,11 @@ namespace OuterRelics
         {
             get 
             {
-                GameObject instance = GameObject.Find("GameWyrm.OuterRelics");
-                return instance.GetComponent<OuterRelics>(); 
+                if (main == null) main = FindObjectOfType<OuterRelics>();
+                return main; 
             }
         }
+        private static OuterRelics main;
 
         /// <summary>
         /// Names for every Nomai key
@@ -105,17 +101,9 @@ namespace OuterRelics
         /// </summary>
         public SaveManager saveManager;
         /// <summary>
-        /// The orb that restricts access to the ATP Warp Core
+        /// Handles showing what you do and don't have in the pause menu
         /// </summary>
-        public GameObject orb;
-        /// <summary>
-        /// The visuals of the lock around the ATP orb
-        /// </summary>
-        public GameObject orbLock;
-        /// <summary>
-        /// Code responsible for locking and unlocking the ATP orb
-        /// </summary>
-        public NomaiInterfaceOrb orbInterface;
+        public ItemDisplayManager itemDisplayManager;
         /// <summary>
         /// Handles placing items in the world
         /// </summary>
@@ -128,14 +116,18 @@ namespace OuterRelics
         /// Handles sending notifications, works when not in suit
         /// </summary>
         public FallBackNotificationManager notifManager;
+        /// <summary>
+        /// Handles stats
+        /// </summary>
+        public StatManager statManager;
 
         //Handles placing indicators
         PlacerManager placer;
         PopupInputMenu groupSelector;
         //Menu Framework
         IMenuAPI menuAPI;
-        //Is the player in a playable solar system?
-        bool inGame;
+        //New Horizons API
+        INewHorizons nhAPI;
         //Is the player starting a new Outer Relics file?
         bool newGame = false;
         //Time that the popup was opened
@@ -154,11 +146,6 @@ namespace OuterRelics
 
         private void Start()
         {
-            /*Font[] loadedFonts = Resources.FindObjectsOfTypeAll<Font>();
-            foreach (Font font in loadedFonts)
-            {
-                LogInfo($"Found font: " + font.name);
-            }*/
 
             //Load game assets
             assets = ModHelper.Assets.LoadBundle("Models/OuterRelicsassets");
@@ -166,16 +153,52 @@ namespace OuterRelics
             debugMode = GetConfigBool("Debug");
             LogInfo($"Debug Mode: {debugMode}");
 
+            //Initialize stat manager
+            statManager = gameObject.AddComponent<StatManager>();
+
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
+                if (loadScene != OWScene.TitleScreen)
+                {
+                    if (saveManager == null) saveManager = new SaveManager();
+                    if (saveManager.GetSaveDataExists()) saveManager.LoadData();
+                    statManager.LoadStats();
+                }
                 if (loadScene == OWScene.SolarSystem)
                 {
                     LogSuccess("Loaded into solar system!");
-                    StartCoroutine(LoadIn());
-                    inGame = true;
+                    StartCoroutine(LoadIn(GetSystemName()));
+                    statManager.runTimer = true;
+                }
+                else
+                {
+                    if (itemManager != null)
+                    {
+                        itemManager.itemPlacements = null;
+                        itemManager.hintPlacements = null;
+                    }
+                    statManager.runTimer = false;
+                }
+
+                if (loadScene == OWScene.EyeOfTheUniverse)
+                {
+                    Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
+
+                    GameObject statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
+                    statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
+                    statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+
+                    statsDisplay.AddComponent<EndingSceneStats>();
                 }
             };
+            if (nhAPI != null)
+            {
+                nhAPI.GetStarSystemLoadedEvent().AddListener(dumbRequiredString);
+            }
+
+            //Quit event, no cheating
+            Application.quitting += () => { if (saveManager != null && SceneManager.GetActiveScene().name == "SolarSystem") saveManager.SaveData(); };
 
             //Get materials
             collectedMat = assets.LoadAsset<Material>("Collected");
@@ -201,17 +224,14 @@ namespace OuterRelics
                     };
                     menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
                 }
+
+                GameObject itemList = Instantiate(assets.LoadAsset<GameObject>("ItemListCanvas"));
+                itemDisplayManager = itemList.AddComponent<ItemDisplayManager>();
             };
 
-            //Gamepad detection debug
-            if (Gamepad.all.Count > 0)
-            {
-                //LogInfo("Gamepad Detected");
-            }
-            else
-            {
-                //LogWarning("Gamepad not found");
-            }
+            //Get New Horizons API if possible
+            nhAPI = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
+            LogInfo("New Horizons API: " + (nhAPI == null ? "NULL" : "FOUND"));
 
             //DLC detection debug
             if (HasDLC)
@@ -227,15 +247,25 @@ namespace OuterRelics
             itemManager.hintModels = new List<GameObject>();
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
+
+            foreach (Material mat in Resources.FindObjectsOfTypeAll<Material>())
+            {
+                if (mat.name.Contains("Adobe"))
+                {
+                    LogInfo(mat.name);
+                }
+            }
+        }
+
+        private void Application_quitting()
+        {
+            throw new NotImplementedException();
         }
 
         private void Update()
         {
-            //Code below this should only run if the player is in a playable solar system
-            if (!inGame) return;
-
             //Manually unlocks ATP
-            if (debugMode && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
+            if (debugMode && GetSystemName() == "SolarSystem" && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
             {
                 LogInfo("ATP Unlock was manually triggerred");
                 lockManager.UnlockATP();
@@ -249,73 +279,57 @@ namespace OuterRelics
             base.Configure(config);
         }
 
-
+        private void dumbRequiredString(string sceneName)
+        {
+            StartCoroutine(LoadIn(sceneName));
+            return;
+        }
 
         /// <summary>
         /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system
         /// </summary>
         /// <returns></returns>
-        IEnumerator LoadIn()
+        IEnumerator LoadIn(string sceneName)
         {
-            if (saveManager == null)
-            {
-                saveManager = new SaveManager();
-            }
-
+            if (saveManager == null) saveManager = new SaveManager();
             if (!saveManager.GetSaveDataExists() && !newGame) yield break;
 
-            if (newGame)
-            {
-                itemManager.SinglePerGroup = GetConfigBool("SingleMode");
-            }
-            else
-            {
-                itemManager.SinglePerGroup = saveManager.GetSinglePerGroup();
-            }
+            saveManager.LoadData();
+
             if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
-            if (saveManager.GetFiles() != null)
-            {
-                LogInfo("File info found");
-                itemManager.loadedFiles = saveManager.GetFiles();
-            }
 
-            GameObject atp = GameObject.Find("TimeLoopRing_Body").transform.Find("Interactibles_TimeLoopRing_Hidden/CoreContainmentInterface").gameObject;
-            yield return new WaitUntil(() => atp.transform.childCount >= 5);
-            LogInfo(atp == null ? "Could not find it yet" : "Located ATP: " + atp.name);
+            int frameCount = Time.frameCount;
 
-            orb = atp.transform.Find("Prefab_NOM_InterfaceOrb").gameObject;
-            if (orb == null)
-            {
-                LogWarning("Could not find the orb!");
-            }
-            else
-            {
-                LogInfo("Found the orb! " + orb.name);
-            }
-            orbInterface = orb.GetComponent<NomaiInterfaceOrb>();
-            orbInterface.AddLock();
-            orbLock = Instantiate(assets.LoadAsset<GameObject>("Orb Lock"), orb.transform);
-            orbLock.transform.position = orb.transform.position;
-            orbLock.transform.localScale = Vector3.one * 0.55f;
-            LogSuccess("Locked the orb!");
-
-            GameObject mask = new GameObject();
-            atp = GameObject.Find("TimeLoopRing_Body");
-            mask.transform.parent = atp.transform.Find("Geo_TimeLoopRing/BatchedGroup/BatchedMeshColliders_0");
-            mask.transform.localPosition = new Vector3(-23.4f, 11.4f, 0f);
-            mask.transform.localEulerAngles = new Vector3(64f, 270f, 180f);
-            lockManager = mask.AddComponent<LockManager>();
-
-            itemManager.Randomize();
-
-            newGame = false;
-
-            saveManager.SaveData();
+            yield return new WaitUntil(() => Time.frameCount >= frameCount + 5);
 
             GameObject notifObject = Instantiate(assets.LoadAsset<GameObject>("FallbackCanvas"));
             notifManager = notifObject.transform.GetChild(0).gameObject.AddComponent<FallBackNotificationManager>();
+
+            if (lockManager == null) lockManager = gameObject.AddComponent<LockManager>();
+            if (GetSystemName() == "SolarSystem")
+            {
+                lockManager.LockATP();
+            }
+
+            if (itemManager.itemPlacements == null || itemManager.itemPlacements.Count <= 0)
+            {
+                itemManager.Randomize(saveManager.GetSinglePerGroup(), out bool succeeded);
+                if (!succeeded)
+                {
+                    LogError("Failed to randomize, ran out of spawn points! Have the placement files been edited?");
+                }
+            }
+
+            itemManager.SpawnItems();
+
+            newGame = false;
+
+            statManager.LoadStats();
+
+            saveManager.SaveData();
+
         }
 
         private void ConfirmGroup()
@@ -343,45 +357,6 @@ namespace OuterRelics
             LogInfo("Accessing group " + groupSelector.GetInputText() + " on body " + GetBody(collider.gameObject).name);
             placer.LoadBody(GetBody(collider.gameObject).name);
             placer.currentGroup = groupSelector.GetInputText();
-        }
-
-        //registers files for placement
-        private void RegisterFiles()
-        {
-            if (registrationManager == null) registrationManager = new RegistrationManager();
-            
-            registrationManager.RegisterFile("CaveTwin_Body", GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("TowerTwin_Body", GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("TimberHearth_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("MiningRig_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("Moon_Body", GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("BrittleHollow_Body", GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("WhiteholeStation_Body", GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("BrambleIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("ConstructionYardIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GabbroIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GabbroShip_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("GiantsDeep_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("OrbitalProbeCannon_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("QuantumIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("StatueIsland_Body", GetConfigBool("GiantsDeep"));
-            registrationManager.RegisterFile("DB_PioneerDimension_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("DB_VesselDimension_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("DarkBramble_Body", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("Sector_EscapePodBody", GetConfigBool("DarkBramble"));
-            registrationManager.RegisterFile("QuantumMoon_Body", GetConfigBool("QuantumMoon"));
-            registrationManager.RegisterFile("Comet_Body", GetConfigBool("Interloper"));
-            registrationManager.RegisterFile("RingWorld_Body", GetConfigBool("Stranger"));
-            registrationManager.RegisterFile("DreamWorld_Body_Normal", GetConfigBool("DreamWorld"));
-            registrationManager.RegisterFile("DreamWorld_Body_LightsOut", GetConfigBool("DreamWorldStealth"));
-            registrationManager.RegisterFile("NomaiProbe_Body", GetConfigBool("HardMode"));
-            registrationManager.RegisterFile("BackerSatellite_Body", GetConfigBool("HardMode"));
-            registrationManager.RegisterFile("VolcanicMoon_Body", GetConfigBool("HardMode") && GetConfigBool("BrittleHollow"));
-            registrationManager.RegisterFile("SunStation_Body", GetConfigBool("HardMode") && GetConfigBool("HourglassTwins"));
-            registrationManager.RegisterFile("Satellite_Body", GetConfigBool("HardMode") && GetConfigBool("TimberHearth"));
-            registrationManager.RegisterFile("DreamWorld_Body_Obscure", GetConfigBool("HardMode") && GetConfigBool("DreamWorldStealth") && HasDLC);
-
-            itemManager.loadedFiles = registrationManager.GetRegisteredFiles();
         }
 
 
@@ -477,11 +452,26 @@ namespace OuterRelics
                     return;
                 }
 
+                if (string.IsNullOrEmpty(seed))
+                {
+                    seed = DateTime.Now.Ticks.ToString();
+                }
+
                 LogInfo($"Seed:{seed}");
-                RegisterFiles();
+                
+                itemManager.Randomize(GetConfigBool("SingleMode"), out bool succeeded);
+                if (!succeeded)
+                {
+                    ModHelper.Menus.PopupManager.CreateMessagePopup("RANDOMIZATION FAILED: Not enough spawn points available for placement! Enable more pools in the mod config");
+                    return;
+                }
+
                 if (!dryMode)
                 {
+                    if (saveManager == null) saveManager = new SaveManager();
                     saveManager.ClearSaveData();
+                    saveManager.NewSave();
+                    saveManager.SaveData(singleMode: GetConfigBool("SingleMode"));
                     PlayerData.SaveEyeCompletion();
                     if (PlayerData.LoadLoopCount() > 1)
                     {
@@ -496,10 +486,23 @@ namespace OuterRelics
                 }
                 else
                 {
-                    itemManager.Randomize();
+                    itemManager.itemPlacements = null;
+                    itemManager.hintPlacements = null;
                     ModHelper.Menus.PopupManager.CreateMessagePopup($"Generated Dry Run with seed {seed}, check your Spoiler Log folder");
                 }
             };
+        }
+
+        public static string GetSystemName()
+        {
+            if (main.nhAPI == null)
+            {
+                return SceneManager.GetActiveScene().name;
+            }
+            else
+            {
+                return main.nhAPI.GetCurrentStarSystem();
+            }
         }
 
         #region Logging

@@ -1,30 +1,51 @@
 {
-  "system": "SolarSystem",
-  "body": "Sector_EscapePodBody",
-  "bodyName": "Dark Bramble",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "Sector_EscapePodBody",
       "locationName": "Escape Pod",
       "spawnPoints": [
         {
           "spawnPointName": "Distress Beacon",
           "parent": "Interactables_EscapePodBody/DistressBeaconTransmitter/Props_NOM_Transponder/Prop_NOM_Transponder_Collider",
-          "posX": -0.06639147,
-          "posY": 2.958826,
-          "posZ": -0.0388858058,
-          "rotX": 338.538574,
-          "rotY": 30.8571415,
-          "rotZ": 354.271576
+          "position": {
+            "x": -0.06639147,
+            "y": 2.958826,
+            "z": -0.0388858058
+          },
+          "rotation": {
+            "x": 338.538574,
+            "y": 30.8571415,
+            "z": 354.271576
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Diagnosis",
           "parent": "Geometry_EscapePodBody/Structure_NOM_EscapePod_DB/interior/int_collider",
-          "posX": 3.68321133,
-          "posY": -1.74091315,
-          "posZ": -12.4281788,
-          "rotX": 350.0343,
-          "rotY": 102.742729,
-          "rotZ": 355.824615
+          "position": {
+            "x": 3.68321133,
+            "y": -1.74091315,
+            "z": -12.4281788
+          },
+          "rotation": {
+            "x": 350.0343,
+            "y": 102.742729,
+            "z": 355.824615
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoDarkBramble"
+              ]
+            }
+          ]
         }
       ]
     }

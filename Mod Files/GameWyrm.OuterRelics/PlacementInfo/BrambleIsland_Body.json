@@ -1,50 +1,93 @@
 {
-  "system": "SolarSystem",
-  "body": "BrambleIsland_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "BrambleIsland_Body",
       "locationName": "Bramble Island",
       "spawnPoints": [
         {
           "spawnPointName": "Landing Zone",
           "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 54.16656,
-          "posY": 10.3779736,
-          "posZ": -6.807945,
-          "rotX": 356.1275,
-          "rotY": 219.718246,
-          "rotZ": 5.16274
+          "position": {
+            "x": 54.16656,
+            "y": 10.3779736,
+            "z": -6.807945
+          },
+          "rotation": {
+            "x": 356.1275,
+            "y": 219.718246,
+            "z": 5.16274
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Vine Tunnel",
           "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 4.129056,
-          "posY": 7.797633,
-          "posZ": -46.2088928,
-          "rotX": 0.6218783,
-          "rotY": 252.480515,
-          "rotZ": 5.11560535
+          "position": {
+            "x": 4.129056,
+            "y": 7.797633,
+            "z": -46.2088928
+          },
+          "rotation": {
+            "x": 0.6218783,
+            "y": 252.480515,
+            "z": 5.11560535
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Campsite",
           "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -53.5587,
-          "posY": 20.4009686,
-          "posZ": 21.5880737,
-          "rotX": 353.61322,
-          "rotY": 96.18895,
-          "rotZ": 1.72319925
+          "position": {
+            "x": -53.5587,
+            "y": 20.4009686,
+            "z": 21.5880737
+          },
+          "rotation": {
+            "x": 353.61322,
+            "y": 96.18895,
+            "z": 1.72319925
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top",
           "parent": "Sector_BrambleIsland/Geo_BrambleIsland/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -54.4556046,
-          "posY": 76.83401,
-          "posZ": 6.035727,
-          "rotX": 5.132676,
-          "rotY": 268.471771,
-          "rotZ": 359.255341
+          "position": {
+            "x": -54.4556046,
+            "y": 76.83401,
+            "z": 6.035727
+          },
+          "rotation": {
+            "x": 5.132676,
+            "y": 268.471771,
+            "z": 359.255341
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

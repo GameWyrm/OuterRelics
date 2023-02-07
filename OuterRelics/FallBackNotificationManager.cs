@@ -25,6 +25,7 @@ namespace OuterRelics
                 }
             }
             myText.text = "";
+            main.LogInfo("Custom Notification system created");
         }
         
         private void Update()
@@ -40,7 +41,7 @@ namespace OuterRelics
         {
             if (!main.useQSB)
             {
-                NotificationData notif = new NotificationData(notification);
+                NotificationData notif = new NotificationData(notification.ToUpper());
                 NotificationManager.s_instance.PostNotification(notif);
                 if (!main.useQSB)
                 {

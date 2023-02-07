@@ -1,465 +1,954 @@
 {
-  "system": "SolarSystem",
-  "body": "RingWorld_Body",
-  "bodyName": "The Stranger",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "RingWorld_Body",
       "locationName": "River Lowlands",
       "spawnPoints": [
         {
           "spawnPointName": "Rock Arch",
           "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 113.154259,
-          "posY": -27.315094,
-          "posZ": -277.18927,
-          "rotX": 272.813,
-          "rotY": 67.87185,
-          "rotZ": 90.00024
+          "position": {
+            "x": 113.154259,
+            "y": -27.315094,
+            "z": -277.18927
+          },
+          "rotation": {
+            "x": 272.813,
+            "y": 67.87185,
+            "z": 90.00024
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Dark Side Entrance",
           "parent": "Sector_RingWorld/Sector_DarkSideArrival/Geo_DarkSideArrival/BuildingKit_RaftHouseArrival_DarkEntrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.28080225,
-          "posY": -0.00355052948,
-          "posZ": -4.06101274,
-          "rotX": 0.00407817727,
-          "rotY": 1.60129178,
-          "rotZ": 359.852875
+          "position": {
+            "x": -0.28080225,
+            "y": -0.00355052948,
+            "z": -4.06101274
+          },
+          "rotation": {
+            "x": 0.00407817727,
+            "y": 1.60129178,
+            "z": 359.852875
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Storage",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_ProjectionHouse_Zone1/Geo_ProjectionHouse_Zone1/MainBuilding_ProjectionHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 13.297595,
-          "posY": 5.99715233,
-          "posZ": 15.8020449,
-          "rotX": 359.2208,
-          "rotY": 95.32548,
-          "rotZ": 357.6189
+          "position": {
+            "x": 13.297595,
+            "y": 5.99715233,
+            "z": 15.8020449
+          },
+          "rotation": {
+            "x": 359.2208,
+            "y": 95.32548,
+            "z": 357.6189
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Theater Roof",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_ProjectionHouse_Zone1/Geo_ProjectionHouse_Zone1/MainBuilding_ProjectionHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 12.5475454,
-          "posY": 24.2214832,
-          "posZ": 5.96406555,
-          "rotX": 0.443912983,
-          "rotY": 270.6136,
-          "rotZ": 1.05485427
+          "position": {
+            "x": 12.5475454,
+            "y": 24.2214832,
+            "z": 5.96406555
+          },
+          "rotation": {
+            "x": 0.443912983,
+            "y": 270.6136,
+            "z": 1.05485427
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Rafters",
           "parent": "Sector_RingInterior/Sector_Zone1/Structures_Zone1/BrokenLanternHouse_Zone1/Geo_BrokenLanternHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 1.96276915,
-          "posY": 6.0141387,
-          "posZ": 5.963964,
-          "rotX": 0.5217484,
-          "rotY": 268.294159,
-          "rotZ": 2.01905
+          "position": {
+            "x": 1.96276915,
+            "y": 6.0141387,
+            "z": 5.963964
+          },
+          "rotation": {
+            "x": 0.5217484,
+            "y": 268.294159,
+            "z": 2.01905
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Raised Island",
           "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -110.239,
-          "posY": -12.6054573,
-          "posZ": -257.3264,
-          "rotX": 8.394847,
-          "rotY": 292.599579,
-          "rotZ": 269.999939
+          "position": {
+            "x": -110.239,
+            "y": -12.6054573,
+            "z": -257.3264
+          },
+          "rotation": {
+            "x": 8.394847,
+            "y": 292.599579,
+            "z": 269.999939
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Shrine Roof",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_DreamFireHouse_Zone1/Geo_DreamFireHouse_Zone1/Structure_IP_DreamFireHouse_Round (1)/ExteriorWalls/Exterior/COL_Exterior",
-          "posX": -0.04556988,
-          "posY": -0.292511,
-          "posZ": 6.89570427,
-          "rotX": 359.536774,
-          "rotY": 1.99045849,
-          "rotZ": 359.479
+          "position": {
+            "x": -0.04556988,
+            "y": -0.292511,
+            "z": 6.89570427
+          },
+          "rotation": {
+            "x": 359.536774,
+            "y": 1.99045849,
+            "z": 359.479
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Artifact Workshop",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_ArtifactHouse_Zone1/Geo_ArtifactHouse_Zone1/BuildingKit_ArtifactHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2.72591257,
-          "posY": -0.00322580966,
-          "posZ": -3.15209484,
-          "rotX": 1.605938,
-          "rotY": 152.9951,
-          "rotZ": 0.7840988
+          "position": {
+            "x": 2.72591257,
+            "y": -0.00322580966,
+            "z": -3.15209484
+          },
+          "rotation": {
+            "x": 1.605938,
+            "y": 152.9951,
+            "z": 0.7840988
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Workshop Roof",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_ArtifactHouse_Zone1/Geo_ArtifactHouse_Zone1/BuildingKit_ArtifactHouse_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.00776247727,
-          "posY": 12.2412987,
-          "posZ": -1.44545186,
-          "rotX": 1.37211609,
-          "rotY": 184.89238,
-          "rotZ": 2.188394
+          "position": {
+            "x": 0.00776247727,
+            "y": 12.2412987,
+            "z": -1.44545186
+          },
+          "rotation": {
+            "x": 1.37211609,
+            "y": 184.89238,
+            "z": 2.188394
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Rock in the Rapids",
           "parent": "Sector_RingInterior/Sector_Zone_1to2/Geometry_Zone1to2/BakedTerrain_IP_RWZ1to2_Rocks_B",
-          "posX": -269.6652,
-          "posY": -3.25784874,
-          "posZ": -122.00119,
-          "rotX": 294.8175,
-          "rotY": 332.121246,
-          "rotZ": 269.999939
+          "position": {
+            "x": -269.6652,
+            "y": -3.25784874,
+            "z": -122.00119
+          },
+          "rotation": {
+            "x": 294.8175,
+            "y": 332.121246,
+            "z": 269.999939
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Burning Room",
           "parent": "Sector_RingInterior/Sector_Zone1/Sector_SlideBurningRoom_Zone1/Geo_SlideBurningRoom_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -3.07778358,
-          "posY": -0.003908634,
-          "posZ": -2.639275,
-          "rotX": -0.00517372973,
-          "rotY": 176.0679,
-          "rotZ": 0.00108826009
+          "position": {
+            "x": -3.07778358,
+            "y": -0.003908634,
+            "z": -2.639275
+          },
+          "rotation": {
+            "x": -0.00517372973,
+            "y": 176.0679,
+            "z": 0.00108826009
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bridge",
           "parent": "Sector_RingInterior/Sector_Zone1/Structures_Zone1/CoveredBridge_Zone1/Geo_CoveredBridge_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.0405837074,
-          "posY": -0.003181696,
-          "posZ": -1.28523767,
-          "rotX": 0.146677926,
-          "rotY": 178.87326,
-          "rotZ": 359.313873
+          "position": {
+            "x": 0.0405837074,
+            "y": -0.003181696,
+            "z": -1.28523767
+          },
+          "rotation": {
+            "x": 0.146677926,
+            "y": 178.87326,
+            "z": 359.313873
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "RingWorld_Body",
       "locationName": "Cinder Isles",
       "spawnPoints": [
         {
           "spawnPointName": "Top of the Tower",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Top/TopFloor/COL_TopFloor",
-          "posX": -0.00217437744,
-          "posY": 35.6949158,
-          "posZ": -0.0616912842,
-          "rotX": 0.09458839,
-          "rotY": 180.070541,
-          "rotZ": 359.7886
+          "position": {
+            "x": -0.00217437744,
+            "y": 35.6949158,
+            "z": -0.0616912842
+          },
+          "rotation": {
+            "x": 0.09458839,
+            "y": 180.070541,
+            "z": 359.7886
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Nice Rug",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Slide_Room/Slide_Room 1/COL_Slide_Room",
-          "posX": -0.143811226,
-          "posY": 19.8228016,
-          "posZ": -0.03653145,
-          "rotX": 0.5477455,
-          "rotY": 262.946472,
-          "rotZ": 0.167290255
+          "position": {
+            "x": -0.143811226,
+            "y": 19.8228016,
+            "z": -0.03653145
+          },
+          "rotation": {
+            "x": 0.5477455,
+            "y": 262.946472,
+            "z": 0.167290255
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Combination Hoard",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_DreamFireLighthouse_Zone2_AnimRoot/Geo_Lighthouse_Exterior_Zone2/Structure_IP_DreamFireHouse_Lighthouse/Code_Room/COL_CodeFloor",
-          "posX": -0.00302962214,
-          "posY": -0.00210794038,
-          "posZ": -0.07522008,
-          "rotX": 0.6160628,
-          "rotY": 236.877747,
-          "rotZ": 359.90152
+          "position": {
+            "x": -0.00302962214,
+            "y": -0.00210794038,
+            "z": -0.07522008
+          },
+          "rotation": {
+            "x": 0.6160628,
+            "y": 236.877747,
+            "z": 359.90152
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Traitor's House",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_MapHouse_Zone2/Geo_MapHouse_Zone2/MapHouse/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -2.7100904,
-          "posY": 8.996355,
-          "posZ": 1.97601485,
-          "rotX": 0.7412287,
-          "rotY": 180.070053,
-          "rotZ": 0.5509356
+          "position": {
+            "x": -2.7100904,
+            "y": 8.996355,
+            "z": 1.97601485
+          },
+          "rotation": {
+            "x": 0.7412287,
+            "y": 180.070053,
+            "z": 0.5509356
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Theater Roof",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_ProjectionHouse_Zone2/Geo_ProjectionHouse_Zone2/BuildingKit_ProjectionHouse_Zone2/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.709776163,
-          "posY": 12.2416821,
-          "posZ": 4.00772667,
-          "rotX": 359.7219,
-          "rotY": 271.069061,
-          "rotZ": 0.3454933
+          "position": {
+            "x": -0.709776163,
+            "y": 12.2416821,
+            "z": 4.00772667
+          },
+          "rotation": {
+            "x": 359.7219,
+            "y": 271.069061,
+            "z": 0.3454933
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Storage",
           "parent": "Sector_RingInterior/Sector_Zone2/Sector_ProjectionHouse_Zone2/Geo_ProjectionHouse_Zone2/BuildingKit_ProjectionHouse_Zone2/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2.0098002,
-          "posY": -6.003774,
-          "posZ": 9.548249,
-          "rotX": 1.42502,
-          "rotY": 178.993179,
-          "rotZ": 1.06393361
+          "position": {
+            "x": 2.0098002,
+            "y": -6.003774,
+            "z": 9.548249
+          },
+          "rotation": {
+            "x": 1.42502,
+            "y": 178.993179,
+            "z": 1.06393361
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Eye Shrine",
           "parent": "Sector_RingInterior/Sector_Zone2/Structures_Zone2/EyeTempleRuins_Zone2/Geo_EyeTempleRuins_Zone2/Prop_IP_EyeSymbol/COL_EyeSymbol",
-          "posX": 0.0101506356,
-          "posY": 0.464507282,
-          "posZ": -0.124260478,
-          "rotX": 30.0051613,
-          "rotY": 35.87269,
-          "rotZ": 359.128967
+          "position": {
+            "x": 0.0101506356,
+            "y": 0.464507282,
+            "z": -0.124260478
+          },
+          "rotation": {
+            "x": 30.0051613,
+            "y": 35.87269,
+            "z": 359.128967
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Eye Shrine Roof",
           "parent": "Sector_RingInterior/Sector_Zone2/Structures_Zone2/EyeTempleRuins_Zone2/Geo_EyeTempleRuins_Zone2/BuildingKit_EyeTempleRuins/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -6.39154768,
-          "posY": 24.0891228,
-          "posZ": 0.221116737,
-          "rotX": 0.7103627,
-          "rotY": 88.92421,
-          "rotZ": 0.892722547
+          "position": {
+            "x": -6.39154768,
+            "y": 24.0891228,
+            "z": 0.221116737
+          },
+          "rotation": {
+            "x": 0.7103627,
+            "y": 88.92421,
+            "z": 0.892722547
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "RingWorld_Body",
       "locationName": "Hidden Gorge",
       "spawnPoints": [
         {
           "spawnPointName": "Broken Bridge",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_CanyonObvious/Structures_CanyonObvious/BrokenBridge_Zone3/Geo_BrokenBridge_Zone3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.53732264,
-          "posY": -1.07902861,
-          "posZ": 51.2135963,
-          "rotX": 2.28338861,
-          "rotY": 177.915512,
-          "rotZ": 354.981445
+          "position": {
+            "x": -0.53732264,
+            "y": -1.07902861,
+            "z": 51.2135963
+          },
+          "rotation": {
+            "x": 2.28338861,
+            "y": 177.915512,
+            "z": 354.981445
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Combination Lock",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_CanyonObvious/Structures_CanyonObvious/AbandonedTemple_Zone3/Interactables_AbandonedTemple_Zone3/SecretTempleDoor/Prefab_IP_CodeTotem/CodeDisplay/Props_IP_CodeTotem/codeTotem_col",
-          "posX": 0.00655865669,
-          "posY": 2.92767358,
-          "posZ": -0.02687502,
-          "rotX": 0.400749445,
-          "rotY": 178.741333,
-          "rotZ": 359.263977
+          "position": {
+            "x": 0.00655865669,
+            "y": 2.92767358,
+            "z": -0.02687502
+          },
+          "rotation": {
+            "x": 0.400749445,
+            "y": 178.741333,
+            "z": 359.263977
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ghost Matter Exit",
           "parent": "Sector_RingInterior/Sector_Zone3/Geometry_Zone3/Terrain_Ringworld_Zone3/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 177.147186,
-          "posY": 6.34337234,
-          "posZ": 180.4466,
-          "rotX": 71.6723251,
-          "rotY": 134.330719,
-          "rotZ": 270.000061
+          "position": {
+            "x": 177.147186,
+            "y": 6.34337234,
+            "z": 180.4466
+          },
+          "rotation": {
+            "x": 71.6723251,
+            "y": 134.330719,
+            "z": 270.000061
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ghost Matter",
           "parent": "Sector_RingInterior/Sector_Zone3/Geometry_Zone3/Terrain_Ringworld_Zone3/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 192.002853,
-          "posY": -22.8553333,
-          "posZ": 161.446579,
-          "rotX": 47.4154472,
-          "rotY": 320.497345,
-          "rotZ": 89.99994
+          "position": {
+            "x": 192.002853,
+            "y": -22.8553333,
+            "z": 161.446579
+          },
+          "rotation": {
+            "x": 47.4154472,
+            "y": 320.497345,
+            "z": 89.99994
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Locked House",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_C_Zone3/EntranceClueBuilding_Zone3/Geo_EntranceClueBuilding_Zone3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2.92364478,
-          "posY": -0.00333722425,
-          "posZ": -0.180191457,
-          "rotX": 0.5224788,
-          "rotY": 181.018112,
-          "rotZ": 359.129761
+          "position": {
+            "x": 2.92364478,
+            "y": -0.00333722425,
+            "z": -0.180191457
+          },
+          "rotation": {
+            "x": 0.5224788,
+            "y": 181.018112,
+            "z": 359.129761
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Breach Report",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_C_Zone3/EntranceClueBuilding_Zone3/Geo_EntranceClueBuilding_Zone3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.0507397279,
-          "posY": -9.003409,
-          "posZ": 0.804053366,
-          "rotX": 0.194668651,
-          "rotY": 178.085251,
-          "rotZ": 359.619537
+          "position": {
+            "x": -0.0507397279,
+            "y": -9.003409,
+            "z": 0.804053366
+          },
+          "rotation": {
+            "x": 0.194668651,
+            "y": 178.085251,
+            "z": 359.619537
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Burning Room",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_B_Zone3/ElevatorTower_Zone3/Geo_ElevatorTower_Zone3/BuildingKit_ElevatorTower_Zone3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -11.1988325,
-          "posY": -0.00330781937,
-          "posZ": 8.448986,
-          "rotX": 359.96875,
-          "rotY": 359.3978,
-          "rotZ": 357.540466
+          "position": {
+            "x": -11.1988325,
+            "y": -0.00330781937,
+            "z": 8.448986
+          },
+          "rotation": {
+            "x": 359.96875,
+            "y": 359.3978,
+            "z": 357.540466
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Reel Storage",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Structures_HiddenGorge/MainAxis_A_Zone3/ProjectionHouse_Zone3/Geo_ProjectionHouse_Zone3/BuildingKit_ProjectionHouse_Zone3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.167152479,
-          "posY": -9.003328,
-          "posZ": 3.19774866,
-          "rotX": 0.519797564,
-          "rotY": 90.77639,
-          "rotZ": 0.007058863
+          "position": {
+            "x": 0.167152479,
+            "y": -9.003328,
+            "z": 3.19774866
+          },
+          "rotation": {
+            "x": 0.519797564,
+            "y": 90.77639,
+            "z": 0.007058863
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Shrine",
           "parent": "Sector_RingInterior/Sector_Zone3/Sector_HiddenGorge/Sector_DreamFireHouse_Zone3/Geo_DreamFireHouse_Zone3/Structure_IP_DreamFireHouse_ZoneThree/Mural_Room/Mural_Room 1/COL_MuralRoom",
-          "posX": -0.0136324763,
-          "posY": -0.00171422958,
-          "posZ": -0.210608244,
-          "rotX": 0.5379368,
-          "rotY": 182.311142,
-          "rotZ": 359.5239
+          "position": {
+            "x": -0.0136324763,
+            "y": -0.00171422958,
+            "z": -0.210608244
+          },
+          "rotation": {
+            "x": 0.5379368,
+            "y": 182.311142,
+            "z": 359.5239
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Lab Observation",
           "parent": "Sector_RingWorld/Sector_SecretEntrance/Structures_SecretEntrance/SecretEntrance_TowerInterior/BuildingKit/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.891684353,
-          "posY": -12.0031977,
-          "posZ": -22.3298931,
-          "rotX": 359.993134,
-          "rotY": 182.445114,
-          "rotZ": 0.159797713
+          "position": {
+            "x": 0.891684353,
+            "y": -12.0031977,
+            "z": -22.3298931
+          },
+          "rotation": {
+            "x": 359.993134,
+            "y": 182.445114,
+            "z": 0.159797713
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "First Artifact Chamber",
           "parent": "Sector_RingWorld/Sector_SecretEntrance/Interactibles_SecretEntrance/Experiment_1/Props_IP_DreamFire/DreamFire_Sconce_col",
-          "posX": -0.0161419753,
-          "posY": 0.548869669,
-          "posZ": 0.3115536,
-          "rotX": -0.00484009041,
-          "rotY": 174.334,
-          "rotZ": 359.952454
+          "position": {
+            "x": -0.0161419753,
+            "y": 0.548869669,
+            "z": 0.3115536
+          },
+          "rotation": {
+            "x": -0.00484009041,
+            "y": 174.334,
+            "z": 359.952454
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Third Artifact Chamber",
           "parent": "Sector_RingWorld/Sector_SecretEntrance/Interactibles_SecretEntrance/Experiment_3/Props_IP_DreamFire/DreamFire_Sconce_col",
-          "posX": -0.001056843,
-          "posY": 0.5457844,
-          "posZ": 0.3447503,
-          "rotX": 0.00195684214,
-          "rotY": 182.523056,
-          "rotZ": 359.9523
+          "position": {
+            "x": -0.001056843,
+            "y": 0.5457844,
+            "z": 0.3447503
+          },
+          "rotation": {
+            "x": 0.00195684214,
+            "y": 182.523056,
+            "z": 359.9523
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "RingWorld_Body",
       "locationName": "River's End",
       "spawnPoints": [
         {
           "spawnPointName": "Observation Deck",
           "parent": "Sector_RingWorld/Sector_ObservationDeck/Geo_ObservationDeck/ObservationDeck/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.2091217,
-          "posY": -3.0028,
-          "posZ": -8.004822,
-          "rotX": 0.129782408,
-          "rotY": 85.2743,
-          "rotZ": 359.989227
+          "position": {
+            "x": 0.2091217,
+            "y": -3.0028,
+            "z": -8.004822
+          },
+          "rotation": {
+            "x": 0.129782408,
+            "y": 85.2743,
+            "z": 359.989227
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Supernova Tracker",
           "parent": "Sector_RingWorld/Sector_ObservationDeck/Sector_Cockpit/Interactables_ObservationDeck/AutoProjectorRoot/Props_IP_ProjectionTable",
-          "posX": 0.124337927,
-          "posY": 1.8880856,
-          "posZ": -0.008923754,
-          "rotX": 359.332733,
-          "rotY": 92.04541,
-          "rotZ": 359.976166
+          "position": {
+            "x": 0.124337927,
+            "y": 1.8880856,
+            "z": -0.008923754
+          },
+          "rotation": {
+            "x": 359.332733,
+            "y": 92.04541,
+            "z": 359.976166
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Lowlands Overlook",
           "parent": "Sector_RingInterior/Sector_Zone1/Geometry_Zone1/Terrain_Ringworld_Zone1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 113.116577,
-          "posY": 79.58452,
-          "posZ": -181.030838,
-          "rotX": 60.1740646,
-          "rotY": 237.719421,
-          "rotZ": 270.000122
+          "position": {
+            "x": 113.116577,
+            "y": 79.58452,
+            "z": -181.030838
+          },
+          "rotation": {
+            "x": 60.1740646,
+            "y": 237.719421,
+            "z": 270.000122
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Slide Storage",
           "parent": "Sector_RingInterior/Sector_Zone4/Geometry_Zone4/Terrain_Ringworld_Zone4/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 235.389526,
-          "posY": 117.2202,
-          "posZ": -104.580391,
-          "rotX": 358.551239,
-          "rotY": 24.7767,
-          "rotZ": 89.98532
+          "position": {
+            "x": 235.389526,
+            "y": 117.2202,
+            "z": -104.580391
+          },
+          "rotation": {
+            "x": 358.551239,
+            "y": 24.7767,
+            "z": 89.98532
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Signal Blocker Controls",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_BlightedShore/Sector_JammingControlRoom_Zone4/Geo_JammingControlRoom_Zone4/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 11.3109741,
-          "posY": -3.00317,
-          "posZ": -0.00373100652,
-          "rotX": -0.0003833077,
-          "rotY": 90.60502,
-          "rotZ": 0.04159746
+          "position": {
+            "x": 11.3109741,
+            "y": -3.00317,
+            "z": -0.00373100652
+          },
+          "rotation": {
+            "x": -0.0003833077,
+            "y": 90.60502,
+            "z": 0.04159746
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Vault Controls",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonControlRoom_Zone4/Geo_PrisonControlRoom/BuildingKit_PrisonControlRoom/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 14.7573328,
-          "posY": 2.999545,
-          "posZ": 7.060097,
-          "rotX": 359.7812,
-          "rotY": 85.3214,
-          "rotZ": 357.970062
+          "position": {
+            "x": 14.7573328,
+            "y": 2.999545,
+            "z": 7.060097
+          },
+          "rotation": {
+            "x": 359.7812,
+            "y": 85.3214,
+            "z": 357.970062
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top of the Vault",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/prison_body_ext/body_ext_col",
-          "posX": 0.235605329,
-          "posY": 21.3456917,
-          "posZ": -3.93109322,
-          "rotX": -0.00350913312,
-          "rotY": 0.7059918,
-          "rotZ": 0.287144065
+          "position": {
+            "x": 0.235605329,
+            "y": 21.3456917,
+            "z": -3.93109322
+          },
+          "rotation": {
+            "x": -0.00350913312,
+            "y": 0.7059918,
+            "z": 0.287144065
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Vault Interior",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/Prison_Interior/Prison_Body_Interior/COL_Prison_Body_Interior",
-          "posX": 3.42952061,
-          "posY": -1.62843132,
-          "posZ": 0.0476841927,
-          "rotX": 1.57396162,
-          "rotY": 270.1195,
-          "rotZ": 0.00329275313
+          "position": {
+            "x": 3.42952061,
+            "y": -1.62843132,
+            "z": 0.0476841927
+          },
+          "rotation": {
+            "x": 1.57396162,
+            "y": 270.1195,
+            "z": 0.00329275313
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Vault Controls Roof",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonCrane_Zone4/Geo_PrisonCrane/Structure_IP_PrisonCrane/COL_PrisonCrane",
-          "posX": -28.5169964,
-          "posY": 74.37356,
-          "posZ": -61.9186668,
-          "rotX": 0.146126777,
-          "rotY": 1.03083372,
-          "rotZ": 351.93692
+          "position": {
+            "x": -28.5169964,
+            "y": 74.37356,
+            "z": -61.9186668
+          },
+          "rotation": {
+            "x": 0.146126777,
+            "y": 1.03083372,
+            "z": 351.93692
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Right Grate",
           "parent": "Sector_RingInterior/Geometry_RingInterior/Dam_Root/Dam_Intact/Structure_IP_Dam/Grates_Col",
-          "posX": 52.91332,
-          "posY": -1.850563,
-          "posZ": 1.08812964,
-          "rotX": 2.36412024,
-          "rotY": 343.606262,
-          "rotZ": 359.304749
+          "position": {
+            "x": 52.91332,
+            "y": -1.850563,
+            "z": 1.08812964
+          },
+          "rotation": {
+            "x": 2.36412024,
+            "y": 343.606262,
+            "z": 359.304749
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Left Grate",
           "parent": "Sector_RingInterior/Geometry_RingInterior/Dam_Root/Dam_Intact/Structure_IP_Dam/Grates_Col",
-          "posX": -52.5458,
-          "posY": -1.85049438,
-          "posZ": 1.87719345,
-          "rotX": 0.7638821,
-          "rotY": 53.67204,
-          "rotZ": 0.174563169
+          "position": {
+            "x": -52.5458,
+            "y": -1.85049438,
+            "z": 1.87719345
+          },
+          "rotation": {
+            "x": 0.7638821,
+            "y": 53.67204,
+            "z": 0.174563169
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Highest Point",
           "parent": "Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/Prison_Zone4/Geo_Prison/Structure_IP_Prison/chain_m_col",
-          "posX": 0.09831438,
-          "posY": 77.70838,
-          "posZ": -0.67556,
-          "rotX": 0.0281549543,
-          "rotY": 355.771545,
-          "rotZ": 0.380776078
+          "position": {
+            "x": 0.09831438,
+            "y": 77.70838,
+            "z": -0.67556
+          },
+          "rotation": {
+            "x": 0.0281549543,
+            "y": 355.771545,
+            "z": 0.380776078
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoStranger"
+              ]
+            }
+          ]
         }
       ]
     }

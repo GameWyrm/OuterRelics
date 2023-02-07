@@ -1,100 +1,198 @@
 {
-  "system": "SolarSystem",
-  "body": "QuantumIsland_Body",
-  "bodyName": "Giant's Deep",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "QuantumIsland_Body",
       "locationName": "Tower of Quantum Trials",
       "spawnPoints": [
         {
           "spawnPointName": "Entrance",
           "parent": "Sector_QuantumIsland/Geometry_QuantumTower/Terrain_QuantumTower/QuantumTower_Terrain",
-          "posX": 66.2888641,
-          "posY": 495.15744,
-          "posZ": -40.0887032,
-          "rotX": 350.728882,
-          "rotY": 304.1635,
-          "rotZ": 359.5379
+          "position": {
+            "x": 66.2888641,
+            "y": 495.15744,
+            "z": -40.0887032
+          },
+          "rotation": {
+            "x": 350.728882,
+            "y": 304.1635,
+            "z": 359.5379
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Pool",
           "parent": "Sector_QuantumIsland/Geometry_QuantumTower/QuantumTower_Exterior/Structure_NOM_GD_QuantumTower/Structure_NOM_GD_QuantumTower_Pool",
-          "posX": 1.96772659,
-          "posY": -34.0297241,
-          "posZ": -1.13119245,
-          "rotX": 359.44986,
-          "rotY": 292.44455,
-          "rotZ": 0.0375141166
+          "position": {
+            "x": 1.96772659,
+            "y": -34.0297241,
+            "z": -1.13119245
+          },
+          "rotation": {
+            "x": 359.44986,
+            "y": 292.44455,
+            "z": 0.0375141166
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top Floor",
           "parent": "Sector_QuantumIsland/Geometry_QuantumTower/QuantumTower_Exterior/Structure_NOM_GD_QuantumTower/Structure_GD_QuantumTower_colliders/ext_body_collide",
-          "posX": -0.0940165445,
-          "posY": 108.931053,
-          "posZ": 13.6860065,
-          "rotX": 359.2388,
-          "rotY": 181.944656,
-          "rotZ": 359.990417
+          "position": {
+            "x": -0.0940165445,
+            "y": 108.931053,
+            "z": 13.6860065
+          },
+          "rotation": {
+            "x": 359.2388,
+            "y": 181.944656,
+            "z": 359.990417
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "First Trial",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Sector_QuantumTowerPuzzleRoom1/Interactables_PuzzleRoom1/PuzzleRoom_1/Prefab_QuantumTrailmarker/Prefab_NOM_Trailmarker (2)/Props_NOM_Trailmarker (1)/Props_NOM_Trailmarker_Geo",
-          "posX": -0.00308335945,
-          "posY": 1.63919282,
-          "posZ": -0.148977041,
-          "rotX": 0.338246673,
-          "rotY": 181.683121,
-          "rotZ": 0.0403479822
+          "position": {
+            "x": -0.00308335945,
+            "y": 1.63919282,
+            "z": -0.148977041
+          },
+          "rotation": {
+            "x": 0.338246673,
+            "y": 181.683121,
+            "z": 0.0403479822
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Quantum Tree",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Sector_QuantumTowerInterRoom1/Interactables_InterRoom1/InterRoom_1/Q_NomaiTree_Var3/Prefab_NOM_NomaiTree_Var_3/GEO_NomaiTree_3_Trunk",
-          "posX": 0.06993707,
-          "posY": 2.00482941,
-          "posZ": -0.431827128,
-          "rotX": 359.750854,
-          "rotY": 332.675385,
-          "rotZ": 0.001240218
+          "position": {
+            "x": 0.06993707,
+            "y": 2.00482941,
+            "z": -0.431827128
+          },
+          "rotation": {
+            "x": 359.750854,
+            "y": 332.675385,
+            "z": 0.001240218
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Second Trial",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Sector_QuantumTowerPuzzleRoom2/Interactables_PuzzleRoom2/PuzzleRoom_2/Prefab_QuantumTrailmarker/Prefab_NOM_Trailmarker (2)/Props_NOM_Trailmarker (1)/Props_NOM_Trailmarker_Geo",
-          "posX": -0.0240224749,
-          "posY": 1.632285,
-          "posZ": -0.139166251,
-          "rotX": 0.286307663,
-          "rotY": 183.71637,
-          "rotZ": 0.0393682048
+          "position": {
+            "x": -0.0240224749,
+            "y": 1.632285,
+            "z": -0.139166251
+          },
+          "rotation": {
+            "x": 0.286307663,
+            "y": 183.71637,
+            "z": 0.0393682048
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Third Trial",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Interactables_QuantumTowerInterior/Structure_NOM_QuantumTower_tunnelCaps/cap_L",
-          "posX": 16.2845764,
-          "posY": -2.28881836E-05,
-          "posZ": -16.55994,
-          "rotX": 1.88785839,
-          "rotY": 135.466537,
-          "rotZ": -0.000239346584
+          "position": {
+            "x": 16.2845764,
+            "y": -2.28881836E-05,
+            "z": -16.55994
+          },
+          "rotation": {
+            "x": 1.88785839,
+            "y": 135.466537,
+            "z": -0.000239346584
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Final Trial",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Geometry_QuantumTowerInterior/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 27.1040783,
-          "posY": 68.15275,
-          "posZ": 0.06403494,
-          "rotX": 2.21419668,
-          "rotY": 91.1411057,
-          "rotZ": 0.0612697527
+          "position": {
+            "x": 27.1040783,
+            "y": 68.15275,
+            "z": 0.06403494
+          },
+          "rotation": {
+            "x": 2.21419668,
+            "y": 91.1411057,
+            "z": 0.0612697527
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Final Floor",
           "parent": "Sector_QuantumIsland/Sector_QuantumTowerInterior/Geometry_QuantumTowerInterior/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -17.7622128,
-          "posY": 30.8813782,
-          "posZ": 0.157186627,
-          "rotX": 357.773163,
-          "rotY": 91.6459656,
-          "rotZ": 359.9624
+          "position": {
+            "x": -17.7622128,
+            "y": 30.8813782,
+            "z": 0.157186627
+          },
+          "rotation": {
+            "x": 357.773163,
+            "y": 91.6459656,
+            "z": 359.9624
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoGiantsDeep"
+              ]
+            }
+          ]
         }
       ]
     }

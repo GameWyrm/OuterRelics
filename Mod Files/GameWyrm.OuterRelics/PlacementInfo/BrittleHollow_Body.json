@@ -1,940 +1,1927 @@
 {
-  "system": "SolarSystem",
-  "body": "BrittleHollow_Body",
-  "bodyName": "Brittle Hollow",
-  "locations": [
+  "spawnLocations": [
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "North Pole",
       "spawnPoints": [
         {
           "spawnPointName": "Tower",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -31.4047165,
-          "posY": 323.199768,
-          "posZ": -31.3988,
-          "rotX": 7.209741,
-          "rotY": 226.308823,
-          "rotZ": 0.17983076
+          "position": {
+            "x": -31.4047165,
+            "y": 323.199768,
+            "z": -31.3988
+          },
+          "rotation": {
+            "x": 7.209741,
+            "y": 226.308823,
+            "z": 0.17983076
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Warp Arrival",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -26.06143,
-          "posY": 277.455261,
-          "posZ": 110.611359,
-          "rotX": 20.4214859,
-          "rotY": 7.1975646,
-          "rotZ": 7.61878824
+          "position": {
+            "x": -26.06143,
+            "y": 277.455261,
+            "z": 110.611359
+          },
+          "rotation": {
+            "x": 20.4214859,
+            "y": 7.1975646,
+            "z": 7.61878824
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_NorthPoleSurface/Interactables_NorthPoleSurface/LowBuilding/Prefab_NOM_RemoteViewer/Structure_NOM_RemoteViewer/Structure_NOM_RemoteViewer_Collider",
-          "posX": -0.4356658,
-          "posY": -0.09819326,
-          "posZ": 0.423173726,
-          "rotX": 357.6566,
-          "rotY": 324.9935,
-          "rotZ": 1.49215162
+          "position": {
+            "x": -0.4356658,
+            "y": -0.09819326,
+            "z": 0.423173726
+          },
+          "rotation": {
+            "x": 357.6566,
+            "y": 324.9935,
+            "z": 1.49215162
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Above City Secret Entrance",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -105.55262,
-          "posY": 276.16156,
-          "posZ": -14.3445511,
-          "rotX": 340.06955,
-          "rotY": 59.82377,
-          "rotZ": 7.88849735
+          "position": {
+            "x": -105.55262,
+            "y": 276.16156,
+            "z": -14.3445511
+          },
+          "rotation": {
+            "x": 340.06955,
+            "y": 59.82377,
+            "z": 7.88849735
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "City Secret Entrance",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Geometry_NorthPole/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -83.05865,
-          "posY": 261.075,
-          "posZ": -8.087166,
-          "rotX": 347.045654,
-          "rotY": 130.741119,
-          "rotZ": 347.278564
+          "position": {
+            "x": -83.05865,
+            "y": 261.075,
+            "z": -8.087166
+          },
+          "rotation": {
+            "x": 347.045654,
+            "y": 130.741119,
+            "z": 347.278564
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Hanging City Meltwater District",
       "spawnPoints": [
         {
           "spawnPointName": "Black Hole Forge Controls",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Interactables_HangingCity_District2/VisibleFrom_HangingCity/Interactables Forge Control Room/Structure_BH_ForgeControlRoom/Structure_BH_ForgeControlRoom_Col",
-          "posX": -31.0729961,
-          "posY": 169.178528,
-          "posZ": -13.2146454,
-          "rotX": 2.5940876,
-          "rotY": 139.158417,
-          "rotZ": 348.330475
+          "position": {
+            "x": -31.0729961,
+            "y": 169.178528,
+            "z": -13.2146454
+          },
+          "rotation": {
+            "x": 2.5940876,
+            "y": 139.158417,
+            "z": 348.330475
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bridge",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 5.00147057,
-          "posY": 175.702362,
-          "posZ": 39.5250244,
-          "rotX": 11.7941017,
-          "rotY": 0.378490418,
-          "rotZ": 358.496063
+          "position": {
+            "x": 5.00147057,
+            "y": 175.702362,
+            "z": 39.5250244
+          },
+          "rotation": {
+            "x": 11.7941017,
+            "y": 0.378490418,
+            "z": 358.496063
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bottom of the Waterfall",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Geometry_HangingCity/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -62.82495,
-          "posY": 168.042419,
-          "posZ": -0.734184265,
-          "rotX": 20.285,
-          "rotY": 268.994171,
-          "rotZ": 359.8889
+          "position": {
+            "x": -62.82495,
+            "y": 168.042419,
+            "z": -0.734184265
+          },
+          "rotation": {
+            "x": 20.285,
+            "y": 268.994171,
+            "z": 359.8889
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Scroll House",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -30.95816,
-          "posY": 180.76828,
-          "posZ": 3.91496563,
-          "rotX": 356.966339,
-          "rotY": 20.6756439,
-          "rotZ": 9.5218935
+          "position": {
+            "x": -30.95816,
+            "y": 180.76828,
+            "z": 3.91496563
+          },
+          "rotation": {
+            "x": 356.966339,
+            "y": 20.6756439,
+            "z": 9.5218935
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Poke's House",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District2/Geometry_HangingCity_District2/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -37.9471169,
-          "posY": 191.502365,
-          "posZ": -10.0460148,
-          "rotX": 352.5793,
-          "rotY": 20.7885628,
-          "rotZ": 9.393138
+          "position": {
+            "x": -37.9471169,
+            "y": 191.502365,
+            "z": -10.0460148
+          },
+          "rotation": {
+            "x": 352.5793,
+            "y": 20.7885628,
+            "z": 9.393138
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Hanging City Eye Shrine",
       "spawnPoints": [
         {
           "spawnPointName": "Between Entries",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 6.001899,
-          "posY": 210.3048,
-          "posZ": 49.5706139,
-          "rotX": 12.1215191,
-          "rotY": 359.8479,
-          "rotZ": 358.3777
+          "position": {
+            "x": 6.001899,
+            "y": 210.3048,
+            "z": 49.5706139
+          },
+          "rotation": {
+            "x": 12.1215191,
+            "y": 359.8479,
+            "z": 358.3777
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "First Building",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 2740.4624,
-          "posY": 22464.6,
-          "posZ": 3443.33643,
-          "rotX": 351.875061,
-          "rotY": 262.677734,
-          "rotZ": 352.300232
+          "position": {
+            "x": 2740.4624,
+            "y": 22464.6,
+            "z": 3443.33643
+          },
+          "rotation": {
+            "x": 351.875061,
+            "y": 262.677734,
+            "z": 352.300232
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Second Building",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 3763.87744,
-          "posY": 22926.9551,
-          "posZ": 1397.24756,
-          "rotX": 358.2695,
-          "rotY": 166.4409,
-          "rotZ": 9.861776
+          "position": {
+            "x": 3763.87744,
+            "y": 22926.9551,
+            "z": 1397.24756
+          },
+          "rotation": {
+            "x": 358.2695,
+            "y": 166.4409,
+            "z": 9.861776
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Shrine Overlook",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 6060.71338,
-          "posY": 22391.2422,
-          "posZ": 1783.01965,
-          "rotX": 344.586121,
-          "rotY": 271.8782,
-          "rotZ": 355.111
+          "position": {
+            "x": 6060.71338,
+            "y": 22391.2422,
+            "z": 1783.01965
+          },
+          "rotation": {
+            "x": 344.586121,
+            "y": 271.8782,
+            "z": 355.111
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Shrine",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 8009.075,
-          "posY": 20319.209,
-          "posZ": 2753.03418,
-          "rotX": 21.3353653,
-          "rotY": 84.93311,
-          "rotZ": 5.31134462
+          "position": {
+            "x": 8009.075,
+            "y": 20319.209,
+            "z": 2753.03418
+          },
+          "rotation": {
+            "x": 21.3353653,
+            "y": 84.93311,
+            "z": 5.31134462
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hidden Overlook",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 6318.607,
-          "posY": 21281.6445,
-          "posZ": 4085.12354,
-          "rotX": 2.96908045,
-          "rotY": 335.8976,
-          "rotZ": 340.767059
+          "position": {
+            "x": 6318.607,
+            "y": 21281.6445,
+            "z": 4085.12354
+          },
+          "rotation": {
+            "x": 2.96908045,
+            "y": 335.8976,
+            "z": 340.767059
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Solanum's Overlook",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 5484.882,
-          "posY": 22859.5,
-          "posZ": 3487.58838,
-          "rotX": 353.863525,
-          "rotY": 166.772873,
-          "rotZ": 14.9653206
+          "position": {
+            "x": 5484.882,
+            "y": 22859.5,
+            "z": 3487.58838
+          },
+          "rotation": {
+            "x": 353.863525,
+            "y": 166.772873,
+            "z": 14.9653206
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Above First Building",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Props_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 36.572403,
-          "posY": 234.098358,
-          "posZ": 23.1047554,
-          "rotX": 349.052277,
-          "rotY": 249.748169,
-          "rotZ": 357.825531
+          "position": {
+            "x": 36.572403,
+            "y": 234.098358,
+            "z": 23.1047554
+          },
+          "rotation": {
+            "x": 349.052277,
+            "y": 249.748169,
+            "z": 357.825531
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Cassava's Log",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Interactables_HangingCity_District3/Prefab_NOM_Recorder/Props_NOM_Recorder/Props_NOM_Recorder_Col",
-          "posX": -0.1841988,
-          "posY": 0.5485788,
-          "posZ": 0.181254953,
-          "rotX": 2.756543,
-          "rotY": 149.537216,
-          "rotZ": 358.355255
+          "position": {
+            "x": -0.1841988,
+            "y": 0.5485788,
+            "z": 0.181254953
+          },
+          "rotation": {
+            "x": 2.756543,
+            "y": 149.537216,
+            "z": 358.355255
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Elevator Bottom",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District3/Geometry_HangingCity_District3/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 5968.646,
-          "posY": 20758.8418,
-          "posZ": 1694.13354,
-          "rotX": 4.804153,
-          "rotY": 2.51135087,
-          "rotZ": 344.22998
+          "position": {
+            "x": 5968.646,
+            "y": 20758.8418,
+            "z": 1694.13354
+          },
+          "rotation": {
+            "x": 4.804153,
+            "y": 2.51135087,
+            "z": 344.22998
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Hanging City School District",
       "spawnPoints": [
         {
           "spawnPointName": "Entry",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 3.09376049,
-          "posY": 142.240646,
-          "posZ": 24.2670479,
-          "rotX": 349.067383,
-          "rotY": 180.256378,
-          "rotZ": 1.18176162
+          "position": {
+            "x": 3.09376049,
+            "y": 142.240646,
+            "z": 24.2670479
+          },
+          "rotation": {
+            "x": 349.067383,
+            "y": 180.256378,
+            "z": 1.18176162
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hidden Behind Glacier",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Geometry_HangingCity/BatchedGroup/BatchedMeshColliders_2",
-          "posX": -37.68927,
-          "posY": 146.220657,
-          "posZ": 26.11523,
-          "rotX": 6.270328,
-          "rotY": 236.3081,
-          "rotZ": 343.847443
+          "position": {
+            "x": -37.68927,
+            "y": 146.220657,
+            "z": 26.11523
+          },
+          "rotation": {
+            "x": 6.270328,
+            "y": 236.3081,
+            "z": 343.847443
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Dining Area",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 34.51006,
-          "posY": -7.67860031,
-          "posZ": 12.4515533,
-          "rotX": 357.41272,
-          "rotY": 154.534744,
-          "rotZ": 17.2434368
+          "position": {
+            "x": 34.51006,
+            "y": -7.67860031,
+            "z": 12.4515533
+          },
+          "rotation": {
+            "x": 357.41272,
+            "y": 154.534744,
+            "z": 17.2434368
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Overlook",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 24.5606575,
-          "posY": 3.16638184,
-          "posZ": 44.4103622,
-          "rotX": 340.0148,
-          "rotY": 177.1696,
-          "rotZ": 10.6324224
+          "position": {
+            "x": 24.5606575,
+            "y": 3.16638184,
+            "z": 44.4103622
+          },
+          "rotation": {
+            "x": 340.0148,
+            "y": 177.1696,
+            "z": 10.6324224
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ghostly Dining Area",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 23.52052,
-          "posY": -21.78569,
-          "posZ": 41.4857,
-          "rotX": 334.704559,
-          "rotY": 223.558655,
-          "rotZ": 353.086823
+          "position": {
+            "x": 23.52052,
+            "y": -21.78569,
+            "z": 41.4857
+          },
+          "rotation": {
+            "x": 334.704559,
+            "y": 223.558655,
+            "z": 353.086823
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tree",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 10.2667513,
-          "posY": 3.99998,
-          "posZ": 17.3913574,
-          "rotX": 353.9404,
-          "rotY": 141.107178,
-          "rotZ": 9.968188
+          "position": {
+            "x": 10.2667513,
+            "y": 3.99998,
+            "z": 17.3913574
+          },
+          "rotation": {
+            "x": 353.9404,
+            "y": 141.107178,
+            "z": 9.968188
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Classroom",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 22.717329,
-          "posY": 14.7055969,
-          "posZ": 20.81559,
-          "rotX": 353.832855,
-          "rotY": 149.9778,
-          "rotZ": 12.8684578
+          "position": {
+            "x": 22.717329,
+            "y": 14.7055969,
+            "z": 20.81559
+          },
+          "rotation": {
+            "x": 353.832855,
+            "y": 149.9778,
+            "z": 12.8684578
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Low Room",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 12.7792177,
-          "posY": -13.9235182,
-          "posZ": 25.3248386,
-          "rotX": 351.028076,
-          "rotY": 141.02916,
-          "rotZ": 14.1669855
+          "position": {
+            "x": 12.7792177,
+            "y": -13.9235182,
+            "z": 25.3248386
+          },
+          "rotation": {
+            "x": 351.028076,
+            "y": 141.02916,
+            "z": 14.1669855
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bottom Room",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District1/Geometry_HangingCity_District1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 11.2579222,
-          "posY": -22.3057423,
-          "posZ": 25.65285,
-          "rotX": 348.695862,
-          "rotY": 148.003342,
-          "rotZ": 13.482872
+          "position": {
+            "x": 11.2579222,
+            "y": -22.3057423,
+            "z": 25.65285
+          },
+          "rotation": {
+            "x": 348.695862,
+            "y": 148.003342,
+            "z": 13.482872
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Hanging City Black Hole Forge",
       "spawnPoints": [
         {
           "spawnPointName": "Entry",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Geometry_HangingCity_District4/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 8.008627,
-          "posY": 268.183777,
-          "posZ": 64.72605,
-          "rotX": 12.7170677,
-          "rotY": 359.795227,
-          "rotZ": 358.2932
+          "position": {
+            "x": 8.008627,
+            "y": 268.183777,
+            "z": 64.72605
+          },
+          "rotation": {
+            "x": 12.7170677,
+            "y": 359.795227,
+            "z": 358.2932
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Warp Arrival",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Interactables_HangingCity_District4/Structure_NOM_BH_WarpPathUpside/Structure_BH_WarpPathUpside_Collider",
-          "posX": 6.15635967,
-          "posY": 1.16235352,
-          "posZ": 21.3456726,
-          "rotX": 3.88463688,
-          "rotY": 355.880829,
-          "rotZ": 179.707382
+          "position": {
+            "x": 6.15635967,
+            "y": 1.16235352,
+            "z": 21.3456726
+          },
+          "rotation": {
+            "x": 3.88463688,
+            "y": 355.880829,
+            "z": 179.707382
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_District4/Interactables_HangingCity_District4/Structure_NOM_BH_WarpPathUpside/Structure_BH_WarpPathUpside_Collider",
-          "posX": -19.6433372,
-          "posY": -0.4225464,
-          "posZ": -37.75485,
-          "rotX": -2.92577965E-06,
-          "rotY": 355.9358,
-          "rotZ": 180.0
+          "position": {
+            "x": -19.6433372,
+            "y": -0.4225464,
+            "z": -37.75485
+          },
+          "rotation": {
+            "x": -2.92577965E-06,
+            "y": 355.9358,
+            "z": 180.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forge Interior",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_BlackHoleForge/BlackHoleForgePivot/Geometry_BlackHoleForge/BlackHoleForge_Interior/bhf_floors",
-          "posX": 0.0430649854,
-          "posY": 71.2529144,
-          "posZ": -1.92113686,
-          "rotX": 88.5627747,
-          "rotY": 270.137146,
-          "rotZ": 270.156219
+          "position": {
+            "x": 0.0430649854,
+            "y": 71.2529144,
+            "z": -1.92113686
+          },
+          "rotation": {
+            "x": 88.5627747,
+            "y": 270.137146,
+            "z": 270.156219
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Entry Path Exterior",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_Entrance/Geometry_HangingCity_Entrance/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -1.50845718,
-          "posY": 236.496643,
-          "posZ": 60.7408257,
-          "rotX": 4.07143164,
-          "rotY": 69.90934,
-          "rotZ": 13.6780224
+          "position": {
+            "x": -1.50845718,
+            "y": 236.496643,
+            "z": 60.7408257
+          },
+          "rotation": {
+            "x": 4.07143164,
+            "y": 69.90934,
+            "z": 13.6780224
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Forge Top",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector_NorthPole/Sector_HangingCity/Sector_HangingCity_BlackHoleForge/BlackHoleForgePivot/Interactables_BlackHoleForge/BlackHoleForge_EntrancePivot/Geometry_BlackHoleForge_Entrance/BlackHoleForge_Door_Collider",
-          "posX": 0.314550877,
-          "posY": 8.104713,
-          "posZ": 1.27650738,
-          "rotX": 359.37677,
-          "rotY": 270.128662,
-          "rotZ": 352.577118
+          "position": {
+            "x": 0.314550877,
+            "y": 8.104713,
+            "z": 1.27650738
+          },
+          "rotation": {
+            "x": 359.37677,
+            "y": 270.128662,
+            "z": 352.577118
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Escape Pod",
       "spawnPoints": [
         {
           "spawnPointName": "Distress Beacon",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_SurfaceRocks",
-          "posX": -25.90076,
-          "posY": 347.7008,
-          "posZ": 28.7382813,
-          "rotX": 4.99593353,
-          "rotY": 349.199127,
-          "rotZ": 3.30057573
+          "position": {
+            "x": -25.90076,
+            "y": 347.7008,
+            "z": 28.7382813
+          },
+          "rotation": {
+            "x": 4.99593353,
+            "y": 349.199127,
+            "z": 3.30057573
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top of the Pod",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/EscapePod_Socket/Geometry_EscapePod/Structure_NOM_EscapePod_HT/escape_pod_ext/ext_collider_brokenBack",
-          "posX": -2.49789238,
-          "posY": 29.4367332,
-          "posZ": -17.7804012,
-          "rotX": 0.13255617,
-          "rotY": 79.2630539,
-          "rotZ": 337.668762
+          "position": {
+            "x": -2.49789238,
+            "y": 29.4367332,
+            "z": -17.7804012
+          },
+          "rotation": {
+            "x": 0.13255617,
+            "y": 79.2630539,
+            "z": 337.668762
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Pod Diagnosis",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/EscapePod_Socket/Geometry_EscapePod/Structure_NOM_EscapePod_HT/interior/int_collider",
-          "posX": 3.01490712,
-          "posY": -1.74220276,
-          "posZ": -11.9103737,
-          "rotX": 9.776434,
-          "rotY": 100.254486,
-          "rotZ": 339.185
+          "position": {
+            "x": 3.01490712,
+            "y": -1.74220276,
+            "z": -11.9103737
+          },
+          "rotation": {
+            "x": 9.776434,
+            "y": 100.254486,
+            "z": 339.185
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Settlement",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_NorthFragment/Geometry_NorthFragment/BakedTerrain_NorthFragment",
-          "posX": -32.100605,
-          "posY": 296.7616,
-          "posZ": -49.55121,
-          "rotX": 10.9019547,
-          "rotY": 218.3644,
-          "rotZ": 1.03942406
+          "position": {
+            "x": -32.100605,
+            "y": 296.7616,
+            "z": -49.55121
+          },
+          "rotation": {
+            "x": 10.9019547,
+            "y": 218.3644,
+            "z": 1.03942406
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Old Settlement",
       "spawnPoints": [
         {
           "spawnPointName": "Entry",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_UnderRocks",
-          "posX": -15.4146061,
-          "posY": 271.0298,
-          "posZ": 19.1843872,
-          "rotX": 4.248995,
-          "rotY": 310.4612,
-          "rotZ": 359.035583
+          "position": {
+            "x": -15.4146061,
+            "y": 271.0298,
+            "z": 19.1843872
+          },
+          "rotation": {
+            "x": 4.248995,
+            "y": 310.4612,
+            "z": 359.035583
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Exit to Hanging City",
           "parent": "Sector_BH/Sector_EscapePodCrashSite/Sector_CrashFragment/Geometry_CrashFragment/BakedTerrain_CrashFragment_UnderRocks",
-          "posX": -64.28408,
-          "posY": 264.303619,
-          "posZ": 8.85791,
-          "rotX": 357.1198,
-          "rotY": 179.054062,
-          "rotZ": 346.353882
+          "position": {
+            "x": -64.28408,
+            "y": 264.303619,
+            "z": 8.85791
+          },
+          "rotation": {
+            "x": 357.1198,
+            "y": 179.054062,
+            "z": 346.353882
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Eye Record",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 0/Core_OldSettlement0/Interactables_Core_OldSettlement0/probeWindow (1)",
-          "posX": -0.147843331,
-          "posY": 0.0501592979,
-          "posZ": 0.357291,
-          "rotX": 359.7865,
-          "rotY": 8.192693,
-          "rotZ": 359.984741
+          "position": {
+            "x": -0.147843331,
+            "y": 0.0501592979,
+            "z": 0.357291
+          },
+          "rotation": {
+            "x": 359.7865,
+            "y": 8.192693,
+            "z": 359.984741
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ilex's Space",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 5/Core_OldSettlement 5/Geometry_Core_OldSettlement 5/ControlledByProxy_OldSettlement5/Terrain_Core_OldSettlement 5/BakedTerrain_OldSettlement_5_B_Core",
-          "posX": 0.177819028,
-          "posY": 261.100983,
-          "posZ": -8.306893,
-          "rotX": 1.38365519,
-          "rotY": 168.93364,
-          "rotZ": 359.687836
+          "position": {
+            "x": 0.177819028,
+            "y": 261.100983,
+            "z": -8.306893
+          },
+          "rotation": {
+            "x": 1.38365519,
+            "y": 168.93364,
+            "z": 359.687836
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tree",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 5/Core_OldSettlement 5/Geometry_Core_OldSettlement 5/ControlledByProxy_OldSettlement5/Terrain_Core_OldSettlement 5/BakedTerrain_OldSettlement_5_B_Core",
-          "posX": -0.8455915,
-          "posY": 247.971741,
-          "posZ": -3.07322526,
-          "rotX": 0.2101385,
-          "rotY": 184.991241,
-          "rotZ": 359.8611
+          "position": {
+            "x": -0.8455915,
+            "y": 247.971741,
+            "z": -3.07322526
+          },
+          "rotation": {
+            "x": 0.2101385,
+            "y": 184.991241,
+            "z": 359.8611
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Vessel Record",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 0/Core_OldSettlement0/Geometry_Core_OS0/ControlledByProxy_OldSettlement0/Terrain_Core_OS0/BakedTerrain_OldSettlement_0_Bottom_Core",
-          "posX": 3.49752116,
-          "posY": 239.90358,
-          "posZ": 0.0389397,
-          "rotX": 0.09146786,
-          "rotY": 91.4313,
-          "rotZ": 0.0493727252
+          "position": {
+            "x": 3.49752116,
+            "y": 239.90358,
+            "z": 0.0389397
+          },
+          "rotation": {
+            "x": 0.09146786,
+            "y": 91.4313,
+            "z": 0.0493727252
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Plume's Overlook",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 3/Core_OldSettlement 3/Geometry_Core_OldSettlement 3/ControlledByProxy_OldSettlement3/Terrain_Core_OldSettlement 3/BakedTerrain_Fragment_OldSettlement_3_Core",
-          "posX": 5.4320035,
-          "posY": 258.045227,
-          "posZ": 10.1036434,
-          "rotX": 1.76975977,
-          "rotY": 18.9909458,
-          "rotZ": 359.5973
+          "position": {
+            "x": 5.4320035,
+            "y": 258.045227,
+            "z": 10.1036434
+          },
+          "rotation": {
+            "x": 1.76975977,
+            "y": 18.9909458,
+            "z": 359.5973
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hanging City Overlook",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 1/Core_OldSettlement 1/Geometry_Core_OldSettlement 1/ControlledByProxy_OldSettlement1/Terrain_OldSettlement 1/BakedTerrain_OldSettlement_1_Core",
-          "posX": -8.379418,
-          "posY": 254.444611,
-          "posZ": 5.078896,
-          "rotX": 0.8855296,
-          "rotY": 255.0658,
-          "rotZ": 358.391144
+          "position": {
+            "x": -8.379418,
+            "y": 254.444611,
+            "z": 5.078896
+          },
+          "rotation": {
+            "x": 0.8855296,
+            "y": 255.0658,
+            "z": 358.391144
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Kousa's Room",
           "parent": "Sector_BH/Sector_OldSettlement/Fragment OldSettlement 1/Core_OldSettlement 1/Geometry_Core_OldSettlement 1/Architecture_OldSettlement 1/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -1.55112541,
-          "posY": 252.1667,
-          "posZ": -4.964354,
-          "rotX": 0.179876909,
-          "rotY": 207.2086,
-          "rotZ": 0.1923522
+          "position": {
+            "x": -1.55112541,
+            "y": 252.1667,
+            "z": -4.964354
+          },
+          "rotation": {
+            "x": 0.179876909,
+            "y": 207.2086,
+            "z": 0.1923522
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Hanging City",
           "parent": "Sector_BH/Sector_NorthHemisphere/Sector Migration Path/Fragment MigrationPath 3/Geometry_MP3/BakedTerrain_MigrationPath 3",
-          "posX": 17.0951881,
-          "posY": 283.8433,
-          "posZ": 5.372513,
-          "rotX": 0.7634612,
-          "rotY": 6.829841,
-          "rotZ": 180.082123
+          "position": {
+            "x": 17.0951881,
+            "y": 283.8433,
+            "z": 5.372513
+          },
+          "rotation": {
+            "x": 0.7634612,
+            "y": 6.829841,
+            "z": 180.082123
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Gravity Cannon",
       "spawnPoints": [
         {
           "spawnPointName": "Surface Garden",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_GravityCannonRocks/Terrain_GravityCannon/BakedTerrain_GravityCannonRocks",
-          "posX": 70.9236145,
-          "posY": 286.586273,
-          "posZ": -24.87871,
-          "rotX": 13.9189873,
-          "rotY": 117.049049,
-          "rotZ": 1.93616652
+          "position": {
+            "x": 70.9236145,
+            "y": 286.586273,
+            "z": -24.87871
+          },
+          "rotation": {
+            "x": 13.9189873,
+            "y": 117.049049,
+            "z": 1.93616652
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -276.7331,
-          "posY": 54.3993225,
-          "posZ": 83.48736,
-          "rotX": 74.20456,
-          "rotY": 331.4535,
-          "rotZ": 43.71911
+          "position": {
+            "x": -276.7331,
+            "y": 54.3993225,
+            "z": 83.48736
+          },
+          "rotation": {
+            "x": 74.20456,
+            "y": 331.4535,
+            "z": 43.71911
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Cannon Overlook",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -278.322266,
-          "posY": 31.1726685,
-          "posZ": 74.93737,
-          "rotX": 70.0237045,
-          "rotY": 214.478058,
-          "rotZ": 290.337677
+          "position": {
+            "x": -278.322266,
+            "y": 31.1726685,
+            "z": 74.93737
+          },
+          "rotation": {
+            "x": 70.0237045,
+            "y": 214.478058,
+            "z": 290.337677
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Elevator Near Top",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -265.368835,
-          "posY": 34.63864,
-          "posZ": 74.26349,
-          "rotX": 54.0252838,
-          "rotY": 4.84374046,
-          "rotZ": 77.0949249
+          "position": {
+            "x": -265.368835,
+            "y": 34.63864,
+            "z": 74.26349
+          },
+          "rotation": {
+            "x": 54.0252838,
+            "y": 4.84374046,
+            "z": 77.0949249
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Crossroads (East)",
           "parent": "Sector_BH/Sector Cannon Path/Fragment CannonPath_3/Core_CannonPath_3/Geometry_Core_CannonPath_3/BakedTerrain_Fragment CannonPath_3_Core",
-          "posX": -229.075821,
-          "posY": 38.3115845,
-          "posZ": 103.049286,
-          "rotX": 343.779938,
-          "rotY": 25.9737453,
-          "rotZ": 81.18001
+          "position": {
+            "x": -229.075821,
+            "y": 38.3115845,
+            "z": 103.049286
+          },
+          "rotation": {
+            "x": 343.779938,
+            "y": 25.9737453,
+            "z": 81.18001
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hidden House",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPCBuilding/Architecture_GravityCannon/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -239.124222,
-          "posY": 30.283783,
-          "posZ": 65.4768448,
-          "rotX": 283.928284,
-          "rotY": 41.5158539,
-          "rotZ": 62.9409
+          "position": {
+            "x": -239.124222,
+            "y": 30.283783,
+            "z": 65.4768448
+          },
+          "rotation": {
+            "x": 283.928284,
+            "y": 41.5158539,
+            "z": 62.9409
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Observatory",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_GravityCannonRocks/Terrain_GravityCannon/BakedTerrain_GravityCannonRocks",
-          "posX": 0.335525066,
-          "posY": 251.108521,
-          "posZ": -50.97009,
-          "rotX": 10.6098366,
-          "rotY": 181.091553,
-          "rotZ": 0.292544544
+          "position": {
+            "x": 0.335525066,
+            "y": 251.108521,
+            "z": -50.97009
+          },
+          "rotation": {
+            "x": 10.6098366,
+            "y": 181.091553,
+            "z": 0.292544544
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Launch Platform",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPC/Structure_NOM_GravityCannon_BH/Structure_NOM_GravityCannon_LaunchuingPlatform_Collider",
-          "posX": 0.0,
-          "posY": 17.871851,
-          "posZ": 0.0,
-          "rotX": 359.433655,
-          "rotY": 180.43573,
-          "rotZ": 359.990784
+          "position": {
+            "x": 0.0,
+            "y": 17.871851,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 359.433655,
+            "y": 180.43573,
+            "z": 359.990784
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Crossroads (West)",
           "parent": "Sector_BH/Sector Cannon Path/Fragment CannonPath_1/Core_CannonPath_1/Geometry_Core_CannonPath_1/BakedTerrain_Fragment CannonPath_1_Core",
-          "posX": -229.6921,
-          "posY": -49.9191742,
-          "posZ": 84.42423,
-          "rotX": 31.8657875,
-          "rotY": 26.06921,
-          "rotZ": 102.887077
+          "position": {
+            "x": -229.6921,
+            "y": -49.9191742,
+            "z": 84.42423
+          },
+          "rotation": {
+            "x": 31.8657875,
+            "y": 26.06921,
+            "z": 102.887077
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Shuttle Controls",
           "parent": "Sector_BH/Sector_GravityCannon/Geometry_GravityCannon/ControlledByProxy_OPC/Structure_BH_GravityCannonPath/ramp_col",
-          "posX": 0.5916879,
-          "posY": -0.9863739,
-          "posZ": 31.5874424,
-          "rotX": 351.7313,
-          "rotY": 181.368469,
-          "rotZ": 359.9619
+          "position": {
+            "x": 0.5916879,
+            "y": -0.9863739,
+            "z": 31.5874424
+          },
+          "rotation": {
+            "x": 351.7313,
+            "y": 181.368469,
+            "z": 359.9619
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Crossroads",
       "spawnPoints": [
         {
           "spawnPointName": "Riebeck's Camp",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -13.8727474,
-          "posY": 156.162155,
-          "posZ": -0.2627716,
-          "rotX": 4.234924,
-          "rotY": 273.229584,
-          "rotZ": 0.362407029
+          "position": {
+            "x": -13.8727474,
+            "y": 156.162155,
+            "z": -0.2627716
+          },
+          "rotation": {
+            "x": 4.234924,
+            "y": 273.229584,
+            "z": 0.362407029
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Map",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -1.28589642,
-          "posY": 198.447662,
-          "posZ": -5.44308472,
-          "rotX": 1.01110947,
-          "rotY": 183.34816,
-          "rotZ": 359.722473
+          "position": {
+            "x": -1.28589642,
+            "y": 198.447662,
+            "z": -5.44308472
+          },
+          "rotation": {
+            "x": 1.01110947,
+            "y": 183.34816,
+            "z": 359.722473
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Ledge",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -5.91596651,
-          "posY": 263.086121,
-          "posZ": 2.61752319,
-          "rotX": 358.3292,
-          "rotY": 121.683235,
-          "rotZ": 359.825775
+          "position": {
+            "x": -5.91596651,
+            "y": 263.086121,
+            "z": 2.61752319
+          },
+          "rotation": {
+            "x": 358.3292,
+            "y": 121.683235,
+            "z": 359.825775
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Entry Roof",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -8.022774,
-          "posY": 285.4309,
-          "posZ": -12.6692505,
-          "rotX": 2.05410838,
-          "rotY": 184.341309,
-          "rotZ": 358.589325
+          "position": {
+            "x": -8.022774,
+            "y": 285.4309,
+            "z": -12.6692505
+          },
+          "rotation": {
+            "x": 2.05410838,
+            "y": 184.341309,
+            "z": 358.589325
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Campsite",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 5.823194,
-          "posY": 287.31076,
-          "posZ": 31.8226624,
-          "rotX": 359.250732,
-          "rotY": 103.946953,
-          "rotZ": 6.43102455
+          "position": {
+            "x": 5.823194,
+            "y": 287.31076,
+            "z": 31.8226624
+          },
+          "rotation": {
+            "x": 359.250732,
+            "y": 103.946953,
+            "z": 6.43102455
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Gravity Crystal Workshop",
           "parent": "Sector_BH/Sector_Crossroads/Geo_Crossroads/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 16.01461,
-          "posY": 288.3623,
-          "posZ": 7.99084473,
-          "rotX": 3.09666252,
-          "rotY": 46.65823,
-          "rotZ": 358.9849
+          "position": {
+            "x": 16.01461,
+            "y": 288.3623,
+            "z": 7.99084473
+          },
+          "rotation": {
+            "x": 3.09666252,
+            "y": 46.65823,
+            "z": 358.9849
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Tower of Quantum Knowledge",
       "spawnPoints": [
         {
           "spawnPointName": "Quantum Rock",
           "parent": "Sector_BH/Sector_QuantumFragment/Interactables_QuantumFragment/Surface_QRock_Shard/QuantumShard/Structure_BH_QuantumShard/Rock_BH_Quantum_Rock/COL_BH_Quantum",
-          "posX": 1.335707,
-          "posY": 22.2667313,
-          "posZ": 0.00372366444,
-          "rotX": 359.27124,
-          "rotY": 297.072571,
-          "rotZ": 359.715942
+          "position": {
+            "x": 1.335707,
+            "y": 22.2667313,
+            "z": 0.00372366444
+          },
+          "rotation": {
+            "x": 359.27124,
+            "y": 297.072571,
+            "z": 359.715942
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Arch",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 17.482317,
-          "posY": 270.869873,
-          "posZ": 2.63105559,
-          "rotX": 3.52862668,
-          "rotY": 74.26871,
-          "rotZ": 359.541962
+          "position": {
+            "x": 17.482317,
+            "y": 270.869873,
+            "z": 2.63105559
+          },
+          "rotation": {
+            "x": 3.52862668,
+            "y": 74.26871,
+            "z": 359.541962
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Path to Observatory",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_FragmentRocks",
-          "posX": 44.0022774,
-          "posY": 197.082733,
-          "posZ": 5.10860062,
-          "rotX": 7.100623,
-          "rotY": 31.3141747,
-          "rotZ": 350.0561
+          "position": {
+            "x": 44.0022774,
+            "y": 197.082733,
+            "z": 5.10860062
+          },
+          "rotation": {
+            "x": 7.100623,
+            "y": 31.3141747,
+            "z": 350.0561
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Below the Stairs",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -4.897694,
-          "posY": 223.128235,
-          "posZ": -22.4386368,
-          "rotX": 0.3087822,
-          "rotY": 124.171463,
-          "rotZ": 354.536652
+          "position": {
+            "x": -4.897694,
+            "y": 223.128235,
+            "z": -22.4386368
+          },
+          "rotation": {
+            "x": 0.3087822,
+            "y": 124.171463,
+            "z": 354.536652
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Elevator Ledge",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_Elevator_Rocks",
-          "posX": -0.638095856,
-          "posY": 151.06192,
-          "posZ": 29.1147652,
-          "rotX": 355.4491,
-          "rotY": 248.428314,
-          "rotZ": 349.764374
+          "position": {
+            "x": -0.638095856,
+            "y": 151.06192,
+            "z": 29.1147652
+          },
+          "rotation": {
+            "x": 355.4491,
+            "y": 248.428314,
+            "z": 349.764374
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Bottom Center",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Rock/Terrain_Quantum_Fragment/BakedTerrain_Quantum_Elevator_Rocks",
-          "posX": 0.03687668,
-          "posY": 126.40506,
-          "posZ": 0.991811752,
-          "rotX": 358.930725,
-          "rotY": 231.963577,
-          "rotZ": 359.642151
+          "position": {
+            "x": 0.03687668,
+            "y": 126.40506,
+            "z": 0.991811752
+          },
+          "rotation": {
+            "x": 358.930725,
+            "y": 231.963577,
+            "z": 359.642151
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.488792479,
-          "posY": 185.164886,
-          "posZ": 11.7641125,
-          "rotX": 0.301531941,
-          "rotY": 303.145782,
-          "rotZ": 356.880249
+          "position": {
+            "x": 0.488792479,
+            "y": 185.164886,
+            "z": 11.7641125
+          },
+          "rotation": {
+            "x": 0.301531941,
+            "y": 303.145782,
+            "z": 356.880249
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Reading Room",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -9.695291,
-          "posY": 206.986847,
-          "posZ": 10.1212959,
-          "rotX": 3.21843863,
-          "rotY": 321.4278,
-          "rotZ": 0.362575263
+          "position": {
+            "x": -9.695291,
+            "y": 206.986847,
+            "z": 10.1212959
+          },
+          "rotation": {
+            "x": 3.21843863,
+            "y": 321.4278,
+            "z": 0.362575263
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Quantum Moon Locator",
           "parent": "Sector_BH/Sector_QuantumFragment/Geometry_QuantumFragment/ControlledByProxy_Architecture/Architecture_Quantum_Fragment/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -8.435594,
-          "posY": 228.751587,
-          "posZ": 9.753259,
-          "rotX": 2.67270422,
-          "rotY": 324.248169,
-          "rotZ": 0.299618065
+          "position": {
+            "x": -8.435594,
+            "y": 228.751587,
+            "z": 9.753259
+          },
+          "rotation": {
+            "x": 2.67270422,
+            "y": 324.248169,
+            "z": 0.299618065
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     },
     {
+      "system": "SolarSystem",
+      "body": "BrittleHollow_Body",
       "locationName": "Observatory",
       "spawnPoints": [
         {
           "spawnPointName": "Ghost Matter Safety",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_3",
-          "posX": 32.66638,
-          "posY": -205.673,
-          "posZ": -34.1735573,
-          "rotX": 12.1518049,
-          "rotY": 346.171478,
-          "rotZ": 186.412308
+          "position": {
+            "x": 32.66638,
+            "y": -205.673,
+            "z": -34.1735573
+          },
+          "rotation": {
+            "x": 12.1518049,
+            "y": 346.171478,
+            "z": 186.412308
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tree Root",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Props_SouthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 23.6869354,
-          "posY": -225.123047,
-          "posZ": 10.0740814,
-          "rotX": 358.0524,
-          "rotY": 2.7952826,
-          "rotZ": 185.868454
+          "position": {
+            "x": 23.6869354,
+            "y": -225.123047,
+            "z": 10.0740814
+          },
+          "rotation": {
+            "x": 358.0524,
+            "y": 2.7952826,
+            "z": 185.868454
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Broken Bridge",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_2",
-          "posX": 4.81601238,
-          "posY": -245.3027,
-          "posZ": 12.2350454,
-          "rotX": 357.8071,
-          "rotY": 354.014679,
-          "rotZ": 181.414169
+          "position": {
+            "x": 4.81601238,
+            "y": -245.3027,
+            "z": 12.2350454
+          },
+          "rotation": {
+            "x": 357.8071,
+            "y": 354.014679,
+            "z": 181.414169
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Leap of Faith",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -19.697773,
-          "posY": -233.213913,
-          "posZ": 50.44092,
-          "rotX": 86.26849,
-          "rotY": 109.748909,
-          "rotZ": 201.1017
+          "position": {
+            "x": -19.697773,
+            "y": -233.213913,
+            "z": 50.44092
+          },
+          "rotation": {
+            "x": 86.26849,
+            "y": 109.748909,
+            "z": 201.1017
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Entry from Gravity Cannon",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_4",
-          "posX": -35.8360252,
-          "posY": -208.2427,
-          "posZ": 14.4038086,
-          "rotX": 9.764832,
-          "rotY": 78.44143,
-          "rotZ": 174.23262
+          "position": {
+            "x": -35.8360252,
+            "y": -208.2427,
+            "z": 14.4038086
+          },
+          "rotation": {
+            "x": 9.764832,
+            "y": 78.44143,
+            "z": 174.23262
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Hidden Room",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_1",
-          "posX": 12.9497643,
-          "posY": -255.0,
-          "posZ": 36.6288872,
-          "rotX": 354.891785,
-          "rotY": 66.00525,
-          "rotZ": 173.732086
+          "position": {
+            "x": 12.9497643,
+            "y": -255.0,
+            "z": 36.6288872
+          },
+          "rotation": {
+            "x": 354.891785,
+            "y": 66.00525,
+            "z": 173.732086
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Surface Entrance",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 1.00860214,
-          "posY": -291.9751,
-          "posZ": 64.56733,
-          "rotX": 348.3172,
-          "rotY": 359.106659,
-          "rotZ": 180.3823
+          "position": {
+            "x": 1.00860214,
+            "y": -291.9751,
+            "z": 64.56733
+          },
+          "rotation": {
+            "x": 348.3172,
+            "y": 359.106659,
+            "z": 180.3823
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Riebeck's Ship",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.433200836,
-          "posY": -284.5968,
-          "posZ": 105.835419,
-          "rotX": 4.08029747,
-          "rotY": 98.61139,
-          "rotZ": 159.853516
+          "position": {
+            "x": -0.433200836,
+            "y": -284.5968,
+            "z": 105.835419
+          },
+          "rotation": {
+            "x": 4.08029747,
+            "y": 98.61139,
+            "z": 159.853516
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top of the Observatory",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -0.008726537,
-          "posY": -343.655121,
-          "posZ": 0.391582668,
-          "rotX": 0.248443648,
-          "rotY": 180.656052,
-          "rotZ": 180.002777
+          "position": {
+            "x": -0.008726537,
+            "y": -343.655121,
+            "z": 0.391582668
+          },
+          "rotation": {
+            "x": 0.248443648,
+            "y": 180.656052,
+            "z": 180.002777
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Goop",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Interactables_Observatory/HologramProjector/Effects_NOM_Hologram_Collider",
-          "posX": 0.267219365,
-          "posY": -0.9288492,
-          "posZ": -12.751956,
-          "rotX": 270.052338,
-          "rotY": 180.057144,
-          "rotZ": 0.0
+          "position": {
+            "x": 0.267219365,
+            "y": -0.9288492,
+            "z": -12.751956
+          },
+          "rotation": {
+            "x": 270.052338,
+            "y": 180.057144,
+            "z": 0.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Projection Pool",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Geometry_SouthPole/BatchedGroup/BatchedMeshColliders_1",
-          "posX": -26.31097,
-          "posY": -292.103149,
-          "posZ": 14.0441189,
-          "rotX": 4.765058E-06,
-          "rotY": 313.3958,
-          "rotZ": 180.0
+          "position": {
+            "x": -26.31097,
+            "y": -292.103149,
+            "z": 14.0441189
+          },
+          "rotation": {
+            "x": 4.765058E-06,
+            "y": 313.3958,
+            "z": 180.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Tornado",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -18.27368,
-          "posY": -293.43512,
-          "posZ": -29.45384,
-          "rotX": 7.28439727E-06,
-          "rotY": 28.2189751,
-          "rotZ": 180.0
+          "position": {
+            "x": -18.27368,
+            "y": -293.43512,
+            "z": -29.45384
+          },
+          "rotation": {
+            "x": 7.28439727E-06,
+            "y": 28.2189751,
+            "z": 180.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Retrograde Tornado",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
-          "posX": 0.8091116,
-          "posY": -293.435059,
-          "posZ": -34.8362656,
-          "rotX": 3.24756365E-06,
-          "rotY": 14.7104282,
-          "rotZ": 180.0
+          "position": {
+            "x": 0.8091116,
+            "y": -293.435059,
+            "z": -34.8362656
+          },
+          "rotation": {
+            "x": 3.24756365E-06,
+            "y": 14.7104282,
+            "z": 180.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         },
         {
           "spawnPointName": "Top Deck",
           "parent": "Sector_BH/Sector_SouthHemisphere/Sector_SouthPole/Sector_Observatory/Geometry_Observatory/BatchedGroup/BatchedMeshColliders_0",
-          "posX": -17.2364082,
-          "posY": -312.966766,
-          "posZ": -22.8895664,
-          "rotX": -6.04528577E-06,
-          "rotY": 223.735138,
-          "rotZ": 180.0
+          "position": {
+            "x": -17.2364082,
+            "y": -312.966766,
+            "z": -22.8895664
+          },
+          "rotation": {
+            "x": -6.04528577E-06,
+            "y": 223.735138,
+            "z": 180.0
+          },
+          "logic": [
+            {
+              "condition": [
+                "CanDoBrittleHollow"
+              ]
+            }
+          ]
         }
       ]
     }
