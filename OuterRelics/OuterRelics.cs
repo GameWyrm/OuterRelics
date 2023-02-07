@@ -159,6 +159,12 @@ namespace OuterRelics
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
+                if (loadScene != OWScene.TitleScreen)
+                {
+                    if (saveManager == null) saveManager = new SaveManager();
+                    if (saveManager.GetSaveDataExists()) saveManager.LoadData();
+                    statManager.LoadStats();
+                }
                 if (loadScene == OWScene.SolarSystem)
                 {
                     LogSuccess("Loaded into solar system!");
@@ -174,11 +180,25 @@ namespace OuterRelics
                     }
                     statManager.runTimer = false;
                 }
+
+                if (loadScene == OWScene.EyeOfTheUniverse)
+                {
+                    Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
+
+                    GameObject statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
+                    statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
+                    statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+
+                    statsDisplay.AddComponent<EndingSceneStats>();
+                }
             };
             if (nhAPI != null)
             {
                 nhAPI.GetStarSystemLoadedEvent().AddListener(dumbRequiredString);
             }
+
+            //Quit event, no cheating
+            Application.quitting += () => { if (saveManager != null && SceneManager.GetActiveScene().name == "SolarSystem") saveManager.SaveData(); };
 
             //Get materials
             collectedMat = assets.LoadAsset<Material>("Collected");
@@ -227,12 +247,25 @@ namespace OuterRelics
             itemManager.hintModels = new List<GameObject>();
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
             itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
+
+            foreach (Material mat in Resources.FindObjectsOfTypeAll<Material>())
+            {
+                if (mat.name.Contains("Adobe"))
+                {
+                    LogInfo(mat.name);
+                }
+            }
+        }
+
+        private void Application_quitting()
+        {
+            throw new NotImplementedException();
         }
 
         private void Update()
         {
             //Manually unlocks ATP
-            if (debugMode && SceneManager.GetActiveScene().name == "SolarSystem" && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
+            if (debugMode && GetSystemName() == "SolarSystem" && Keyboard.current[Key.Numpad9].wasPressedThisFrame)
             {
                 LogInfo("ATP Unlock was manually triggerred");
                 lockManager.UnlockATP();
@@ -258,21 +291,11 @@ namespace OuterRelics
         /// <returns></returns>
         IEnumerator LoadIn(string sceneName)
         {
-            if (saveManager == null)
-            {
-                saveManager = new SaveManager();
-            }
-
+            if (saveManager == null) saveManager = new SaveManager();
             if (!saveManager.GetSaveDataExists() && !newGame) yield break;
 
-            if (newGame)
-            {
-                itemManager.SinglePerGroup = GetConfigBool("SingleMode");
-            }
-            else
-            {
-                itemManager.SinglePerGroup = saveManager.GetSinglePerGroup();
-            }
+            saveManager.LoadData();
+
             if (seed == null || seed == "") seed = saveManager.GetSeed();
             hasKey = saveManager.GetKeyList();
             keyCount = saveManager.GetKeyCount();
@@ -285,23 +308,28 @@ namespace OuterRelics
             notifManager = notifObject.transform.GetChild(0).gameObject.AddComponent<FallBackNotificationManager>();
 
             if (lockManager == null) lockManager = gameObject.AddComponent<LockManager>();
-            if (sceneName == "SolarSystem")
+            if (GetSystemName() == "SolarSystem")
             {
                 lockManager.LockATP();
             }
 
             if (itemManager.itemPlacements == null || itemManager.itemPlacements.Count <= 0)
             {
-                itemManager.Randomize();
+                itemManager.Randomize(saveManager.GetSinglePerGroup(), out bool succeeded);
+                if (!succeeded)
+                {
+                    LogError("Failed to randomize, ran out of spawn points! Have the placement files been edited?");
+                }
             }
 
             itemManager.SpawnItems();
 
             newGame = false;
 
+            statManager.LoadStats();
+
             saveManager.SaveData();
 
-            statManager.LoadStats();
         }
 
         private void ConfirmGroup()
@@ -430,11 +458,20 @@ namespace OuterRelics
                 }
 
                 LogInfo($"Seed:{seed}");
+                
+                itemManager.Randomize(GetConfigBool("SingleMode"), out bool succeeded);
+                if (!succeeded)
+                {
+                    ModHelper.Menus.PopupManager.CreateMessagePopup("RANDOMIZATION FAILED: Not enough spawn points available for placement! Enable more pools in the mod config");
+                    return;
+                }
+
                 if (!dryMode)
                 {
+                    if (saveManager == null) saveManager = new SaveManager();
                     saveManager.ClearSaveData();
                     saveManager.NewSave();
-                    saveManager.SaveData();
+                    saveManager.SaveData(singleMode: GetConfigBool("SingleMode"));
                     PlayerData.SaveEyeCompletion();
                     if (PlayerData.LoadLoopCount() > 1)
                     {
@@ -449,7 +486,6 @@ namespace OuterRelics
                 }
                 else
                 {
-                    itemManager.Randomize();
                     itemManager.itemPlacements = null;
                     itemManager.hintPlacements = null;
                     ModHelper.Menus.PopupManager.CreateMessagePopup($"Generated Dry Run with seed {seed}, check your Spoiler Log folder");

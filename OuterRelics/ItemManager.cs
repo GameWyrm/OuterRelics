@@ -15,10 +15,6 @@ namespace OuterRelics
     public class ItemManager
     {
         /// <summary>
-        /// If true, only one spawn will be used per location. If false, any spawnpoint can be used.
-        /// </summary>
-        public bool SinglePerGroup;
-        /// <summary>
         /// List of hints
         /// </summary>
         public List<string> hints;
@@ -59,12 +55,10 @@ namespace OuterRelics
 
             main = OuterRelics.Main;
 
-            SinglePerGroup = false;
-
             rnd = new Random();
         }
 
-        public void Randomize()
+        public void Randomize(bool SingleMode, out bool success)
         {
             if (seed != null && seed != "")
             {
@@ -116,8 +110,14 @@ namespace OuterRelics
             }
 
             itemPlacements = new();
+
             for (int i = 0; i < 12; i++)
             {
+                if (availableLocations.Count == 0)
+                {
+                    success = false;
+                    return;
+                }
                 int itemIndex = rnd.Next(0, availableLocations.Count - 1);
                 ItemSpawnLocation location = availableLocations[itemIndex];
                 int spawnIndex = rnd.Next(0, location.spawnPoints.Count - 1);
@@ -126,13 +126,22 @@ namespace OuterRelics
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
                 spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
 
-                availableLocations[itemIndex].spawnPoints.RemoveAt(spawnIndex);
-                if (availableLocations[itemIndex].spawnPoints.Count <= 0) availableLocations.RemoveAt(itemIndex);
+                if (SingleMode)
+                {
+                    availableLocations.RemoveAt(itemIndex);
+                }
+                else
+                {
+                    availableLocations[itemIndex].spawnPoints.RemoveAt(spawnIndex);
+                    if (availableLocations[itemIndex].spawnPoints.Count <= 0) availableLocations.RemoveAt(itemIndex);
+                }
             }
 
             GenerateHints();
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
+
+            success = true;
         }
 
         public void GenerateHints()

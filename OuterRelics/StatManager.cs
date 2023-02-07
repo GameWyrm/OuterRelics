@@ -39,6 +39,8 @@ namespace OuterRelics
             timer = save.GetTimer();
             startingLoop = save.GetStartLoop();
             hintIDsObtained = save.GetHintIDs();
+
+            OuterRelics.Main.LogInfo("TIMER: " + timer);
         }
 
         public void AddHint(int id)
@@ -51,7 +53,7 @@ namespace OuterRelics
 
         public int TotalLoops()
         {
-            return PlayerData.LoadLoopCount() - startingLoop;
+            return (PlayerData.LoadLoopCount() - startingLoop) + 1;
         }
 
         public string TimerToStandardFormat()

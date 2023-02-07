@@ -3,6 +3,7 @@ using OWML.ModHelper;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 namespace OuterRelics
 {
@@ -53,20 +54,32 @@ namespace OuterRelics
         public SaveManager()
         {
             main = OuterRelics.Main;
+            LoadData();
+        }
+
+        public void LoadData()
+        {
             saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + profile + "OuterRelicsSave.json");
             if (saveData == null)
             {
                 saveData = new OuterRelicsSaveData();
                 main.LogInfo("Save file did not exist, creating new save info");
             }
+            else main.LogSuccess("Loaded save data for " + profile);
+            main.LogInfo("TIMER FROM SAVE: " + saveData.timer);
         }
 
         /// <summary>
         /// Saves which items have been obtained
         /// </summary>
         /// <param name="keysObtained">List of keys obtained</param>
-        public void SaveData(bool[] keysObtained = null)
+        public void SaveData(bool[] keysObtained = null, bool? singleMode = null)
         {
+            if (SceneManager.GetActiveScene().name != "SolarSystem")
+            {
+                main.LogInfo("Cannot save outside of the standard solar system scene, aborting save");
+                return;
+            }
             if (keysObtained == null)
             {
                 keysObtained = main.hasKey;
@@ -85,7 +98,7 @@ namespace OuterRelics
             }
 
             saveData.version = main.ModHelper.Manifest.Version;
-            saveData.singlePerGroup = main.itemManager.SinglePerGroup;
+            if (singleMode != null) saveData.singlePerGroup = (bool)singleMode;
             saveData.hints = main.hintDifficulty;
             saveData.uselessHintChance = main.uselessHints;
             saveData.timer = main.statManager.timer;
