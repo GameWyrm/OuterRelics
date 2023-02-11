@@ -17,6 +17,8 @@ namespace OuterRelics
             public string seed = "";
             public string version = "";
             public bool[] enabledPools = new bool[12];
+            public Dictionary<string, List<string>> addonFilesLoaded;
+            public Dictionary<string, List<string>> addonHintsLoaded;
             public bool singlePerGroup = true;
             public HintDifficulty hints = HintDifficulty.Balanced;
             public int uselessHintChance = 25;
@@ -103,6 +105,8 @@ namespace OuterRelics
             saveData.uselessHintChance = main.uselessHints;
             saveData.timer = main.statManager.timer;
             saveData.hintIDsObtained = main.statManager.hintIDsObtained;
+            saveData.addonHintsLoaded = main.addonManager.addonHintNames;
+            saveData.addonFilesLoaded = main.addonManager.addonFileNames;
 
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
@@ -248,6 +252,44 @@ namespace OuterRelics
         public List<int> GetHintIDs()
         {
             return saveData.hintIDsObtained;
+        }
+
+        /// <summary>
+        /// Gets a list of placement files provided by addons that were loaded by the save file
+        /// </summary>
+        /// <param name="modName">Unique name of the mod</param>
+        /// <returns></returns>
+        public List<string>  GetAddonPlacementFiles(string modName)
+        {
+            return saveData.addonFilesLoaded[modName];
+        }
+
+        /// <summary>
+        /// Gets the full dictionary of placement files
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, List<string>> GetAddonPlacementDict()
+        {
+            return saveData.addonFilesLoaded;
+        }
+
+        /// <summary>
+        /// Gets a list of hint files provided by addons that were loaded by the save file
+        /// </summary>
+        /// <param name="modName">Unique name of the mod</param>
+        /// <returns></returns>
+        public List<string> GetAddonHintFiles(string modName)
+        {
+            return saveData.addonHintsLoaded[modName];
+        }
+
+        /// <summary>
+        /// Gets the full dictionary of saved hints
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, List<string>> GetAddonHintsDict()
+        {
+            return saveData.addonHintsLoaded;
         }
 
         /// <summary>

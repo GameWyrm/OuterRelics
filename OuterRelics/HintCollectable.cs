@@ -6,6 +6,9 @@ namespace OuterRelics
     public class HintCollectable : ItemCollectable
     {
         public string hint;
+        public string body;
+        public string location;
+        public string spawnPoint;
         public int id;
 
         private float cooldown;

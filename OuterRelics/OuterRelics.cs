@@ -3,8 +3,10 @@ using OWML.ModHelper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -65,6 +67,10 @@ namespace OuterRelics
         /// </summary>
         public bool[] hasKey = new bool[12]; //TODO FIX
         /// <summary>
+        /// Turns true while in the Vessel at the eye scene. If you go to the main menu while this bool is true, the save file will be reset to the solar system.
+        /// </summary>
+        public bool prepareSaveReset = false;
+        /// <summary>
         /// Enables debug tools and placing indicators
         /// </summary>
         public bool debugMode = true;
@@ -120,10 +126,27 @@ namespace OuterRelics
         /// Handles stats
         /// </summary>
         public StatManager statManager;
+        /// <summary>
+        /// Handles loading of addon files
+        /// </summary>
+        public AddonManager addonManager;
+        //Events
+        /// <summary>
+        /// Event called right before randomization
+        /// </summary>
+        public UnityEvent PreRandomize;
+        /// <summary>
+        /// Event called right after randomization
+        /// </summary>
+        public UnityEvent PostRandomize;
 
         //Handles placing indicators
         PlacerManager placer;
+        //Pause menu button for selecting group
         PopupInputMenu groupSelector;
+        //Object that holds the stats in the eye scene
+        GameObject statsDisplay;
+
         //Menu Framework
         IMenuAPI menuAPI;
         //New Horizons API
@@ -142,6 +165,7 @@ namespace OuterRelics
             //Initialize objects independant of OWML
             itemManager = new ItemManager();
             placer = gameObject.AddComponent<PlacerManager>();
+            addonManager = new AddonManager();
         }
 
         private void Start()
@@ -185,11 +209,19 @@ namespace OuterRelics
                 {
                     Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
 
-                    GameObject statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
+                    statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
                     statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
                     statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
 
                     statsDisplay.AddComponent<EndingSceneStats>();
+                }
+
+                if (loadScene == OWScene.TitleScreen)
+                {
+                    if (prepareSaveReset)
+                    {
+                        PlayerData.SaveEyeCompletion();
+                    }
                 }
             };
             if (nhAPI != null)
@@ -275,8 +307,20 @@ namespace OuterRelics
         public override void Configure(IModConfig config)
         {
             debugMode = config.GetSettingsValue<bool>("Debug");
+            if (statsDisplay != null)
+            {
+                bool allowMusic = config.GetSettingsValue<bool>("StatMusic");
+                AudioSource aud = statsDisplay.GetComponent<AudioSource>();
+                if(allowMusic) aud.Play(); 
+                else aud.Stop();
+            }
 
             base.Configure(config);
+        }
+
+        public override object GetApi()
+        {
+            return new OuterRelicsAPI();
         }
 
         private void dumbRequiredString(string sceneName)
@@ -561,5 +605,6 @@ namespace OuterRelics
             ModHelper.Console.WriteLine(text, MessageType.Message);
         }
         #endregion
+
     }
 }

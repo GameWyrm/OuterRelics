@@ -46,10 +46,6 @@ namespace OuterRelics
         /// </summary>
         protected OuterRelics main;
         /// <summary>
-        /// Sibling visibility to compare against to determine item visibility
-        /// </summary>
-        protected MeshRenderer siblingRenderer;
-        /// <summary>
         /// MeshRenderer attached to the item
         /// </summary>
         protected MeshRenderer myRenderer;
@@ -83,18 +79,6 @@ namespace OuterRelics
                 main.LogInfo("No higher parent found");
                 return;
             }
-            MeshRenderer[] renderers = transform.parent.transform.parent.transform.parent.gameObject.GetComponentsInChildren<MeshRenderer>();
-            foreach (MeshRenderer renderer in renderers)
-            {
-                //main.LogInfo("2: " + (renderer == null ? "NULL" : "NOT NULL"));
-                if (renderer == myRenderer) continue;
-                else
-                {
-                    siblingRenderer = renderer;
-                }
-                //main.LogMessage("A sibling was found for " + transform.parent.name);
-                return;
-            }
         }
 
         protected virtual void Update()
@@ -107,17 +91,6 @@ namespace OuterRelics
             else if (isRingWorldLocation)
             {
                 myRenderer.enabled = PlayerState.InCloakingField();
-            }
-            else
-            {
-                //Hide item if attached object is invisible
-                if (siblingRenderer != null)
-                {
-                    if (myRenderer.enabled != siblingRenderer.enabled)
-                    {
-                        myRenderer.enabled = !myRenderer.enabled;
-                    }
-                }
             }
             transform.GetChild(0).gameObject.SetActive(myRenderer.enabled);
             

@@ -28,12 +28,15 @@ namespace OuterRelics
         public List<int> hintIDsObtained = new();
 
         SaveManager save => OuterRelics.Main.saveManager;
-        
+
         private void Update()
         {
             if (runTimer) timer += Time.deltaTime;
         }
 
+        /// <summary>
+        /// Loads stats from save file
+        /// </summary>
         public void LoadStats()
         {
             timer = save.GetTimer();
@@ -43,6 +46,10 @@ namespace OuterRelics
             OuterRelics.Main.LogInfo("TIMER: " + timer);
         }
 
+        /// <summary>
+        /// Adds a hint to the obtained hint list if it has not been obtained before
+        /// </summary>
+        /// <param name="id"></param>
         public void AddHint(int id)
         {
             if (!hintIDsObtained.Contains(id))
@@ -51,11 +58,19 @@ namespace OuterRelics
             }
         }
 
+        /// <summary>
+        /// Gets the total number of loops the player has done
+        /// </summary>
+        /// <returns></returns>
         public int TotalLoops()
         {
             return (PlayerData.LoadLoopCount() - startingLoop) + 1;
         }
 
+        /// <summary>
+        /// Converts timer from number of seconds to standard xx:xx:xx.xx format
+        /// </summary>
+        /// <returns></returns>
         public string TimerToStandardFormat()
         {
             string standardTimer = "";

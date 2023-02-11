@@ -15,9 +15,18 @@ namespace OuterRelics
         private void Start()
         {
             OuterRelics.Main.LogInfo("Stats display loaded!");
-            
+            OuterRelics.Main.prepareSaveReset = true;
 
             StartCoroutine(StartMusic());
+        }
+
+        private void Update()
+        {
+            if (!(Locator.GetEyeStateManager().GetState() == EyeState.AboardVessel))
+            {
+                OuterRelics.Main.prepareSaveReset = false;
+                gameObject.SetActive(false);
+            }
         }
 
         IEnumerator StartMusic()
@@ -51,7 +60,7 @@ namespace OuterRelics
             if (hintsText != null) hintsText.text = stats.hintIDsObtained.Count.ToString();
             if (loopText != null) loopText.text = stats.TotalLoops().ToString();
 
-            GetComponent<AudioSource>().Play();
+            if (OuterRelics.GetConfigBool("StatMusic")) GetComponent<AudioSource>().Play();
         }
     }
 }

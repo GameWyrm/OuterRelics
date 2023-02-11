@@ -18,6 +18,18 @@ namespace OuterRelics
         /// List of hints
         /// </summary>
         public List<string> hints;
+        /// <summary>
+        /// List of bodies, corresponds to each hint
+        /// </summary>
+        public List<string> bodies;
+        /// <summary>
+        /// List of locations, corresponds to each hint
+        /// </summary>
+        public List<string> locations;
+        /// <summary>
+        /// List of spawnPoints, corresponds to each hint
+        /// </summary>
+        public List<string> spawnPoints;
         ///<summary>
         ///List of locations that an item has been placed in
         ///</summary>
@@ -60,6 +72,7 @@ namespace OuterRelics
 
         public void Randomize(bool SingleMode, out bool success)
         {
+            main.PreRandomize.Invoke();
             if (seed != null && seed != "")
             {
                 main.LogInfo("Randomizing with seed \"" + seed + "\"");
@@ -116,6 +129,7 @@ namespace OuterRelics
                 if (availableLocations.Count == 0)
                 {
                     success = false;
+                    main.PostRandomize.Invoke();
                     return;
                 }
                 int itemIndex = rnd.Next(0, availableLocations.Count - 1);
@@ -137,14 +151,18 @@ namespace OuterRelics
                 }
             }
 
-            GenerateHints();
+            GenerateHintPlacements();
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
 
             success = true;
+            main.PostRandomize.Invoke();
         }
 
-        public void GenerateHints()
+        /// <summary>
+        /// Determines where hints should be placed in the world
+        /// </summary>
+        public void GenerateHintPlacements()
         {
             rnd = new Random(seed.GetHashCode());
 
@@ -165,7 +183,7 @@ namespace OuterRelics
             }
 
             HintManager hintManager = new();
-            hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements);
+            hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements, out bodies, out locations, out spawnPoints);
         }
 
         public void SpawnItems()
@@ -259,6 +277,9 @@ namespace OuterRelics
             HintCollectable hint = hintObject.AddComponent<HintCollectable>();
 
             hint.hint = hints[placement.id];
+            hint.body = bodies[placement.id];
+            hint.location = locations[placement.id];
+            hint.spawnPoint = spawnPoints[placement.id];
             hint.id = placement.id;
 
             main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
@@ -278,12 +299,26 @@ namespace OuterRelics
                     main.LogError("Could not parse file " + file);
                     continue;
                 }
-                //TODO add addon support
+                if (main.saveManager.GetPools()[11])
+                {
+                    foreach (ItemSpawnList list in main.addonManager.GetSavedPlacements())
+                    {
+                        spawnLists.Add(list);
+                    }
+                }
+                        
             }
 
             main.LogInfo("Loaded " + spawnLists.Count + " placement files");
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
+            if (main.saveManager.GetPools()[11])
+            {
+                foreach (ItemSpawnList list in main.addonManager.GetSavedHints())
+                {
+                    hintList += list;
+                }
+            }
             if (hintList != null)
             {
                 main.LogSuccess($"Loaded Hint Data with {hintList.spawnLocations.Count} possible locations");

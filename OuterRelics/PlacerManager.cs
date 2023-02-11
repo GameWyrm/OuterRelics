@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using OWML.Common;
 using System.Collections.Generic;
 using System.Linq;
+using OWML.ModHelper;
+using System.IO;
 
 namespace OuterRelics
 {
@@ -46,6 +48,8 @@ namespace OuterRelics
         private GameObject maskIndicator;
         //List of indicators
         private List<GameObject> positionalIndicators;
+        //Main mod file
+        private ModBehaviour modMain => AddonManager.GetMod(OuterRelics.GetConfigString("ModName"));
         //Used for indicator spawner
         int indicatorIndex = -1;
 
@@ -91,11 +95,12 @@ namespace OuterRelics
 
         public void LoadBody(string bodyName)
         {
-            spawnList = main.ModHelper.Storage.Load<ItemSpawnList>($"PlacementInfo/{bodyName}.json");
+            spawnList = modMain.ModHelper.Storage.Load<ItemSpawnList>($"PlacementInfo/{bodyName}.json");
             if (spawnList == null)
             {
                 main.LogInfo($"Unable to find placement info for {bodyName}, creating new file");
                 spawnList = new ItemSpawnList();
+                spawnList.modName = OuterRelics.GetConfigString("ModName");
                 spawnList.spawnLocations = new List<ItemSpawnLocation>();
             }
 
@@ -104,19 +109,20 @@ namespace OuterRelics
 
         public void SaveBody()
         {
+            Directory.CreateDirectory(modMain.ModHelper.Manifest.ModFolderPath + (placeHints ? "Hints" : "PlacementInfo"));
             if (!placeHints)
             {
-                main.ModHelper.Storage.Save<ItemSpawnList>(spawnList, "PlacementInfo/" + currentBody + ".json");
+                modMain.ModHelper.Storage.Save<ItemSpawnList>(spawnList, "PlacementInfo/" + currentBody + ".json");
             }
             else
             {
-                main.ModHelper.Storage.Save<ItemSpawnList>(hintSpawns, "Hints/HintPlacements.json");
+                modMain.ModHelper.Storage.Save<ItemSpawnList>(hintSpawns, "Hints/HintPlacements.json");
             }
         }
 
         public void LoadHints()
         {
-            hintSpawns = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
+            hintSpawns = modMain.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
             if (hintSpawns == null)
             {
                 main.LogInfo("Unable to locate hint placement data, creating new file");
@@ -247,7 +253,9 @@ namespace OuterRelics
             {
                 LoadHints();
             }
+
             currentBody = OuterRelics.GetBody(indicator).name;
+
             AddSpawnpoint(GetSpawnLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
             main.LogSuccess("Saved new spawn location for " + currentGroup + " on " + currentBody);
             main.notifManager.AddNotification("NEW " + (placeHints ? "HINT " : "") + "LOCATION SAVED");

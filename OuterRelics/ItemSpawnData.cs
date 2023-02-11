@@ -119,11 +119,20 @@ namespace OuterRelics
     [Serializable]
     public class ItemSpawnList
     {
+        public string modName;
         public List<ItemSpawnLocation> spawnLocations;
 
         public ItemSpawnList()
         {
             spawnLocations = new List<ItemSpawnLocation>();
+        }
+
+        public static ItemSpawnList operator +(ItemSpawnList a, ItemSpawnList b)
+        {
+            ItemSpawnList list = new ItemSpawnList();
+            list.spawnLocations.AddRange(a.spawnLocations);
+            list.spawnLocations.AddRange(b.spawnLocations);
+            return list;
         }
     }
 }
