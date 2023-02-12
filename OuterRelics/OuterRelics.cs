@@ -166,6 +166,8 @@ namespace OuterRelics
             itemManager = new ItemManager();
             placer = gameObject.AddComponent<PlacerManager>();
             addonManager = new AddonManager();
+            PreRandomize = new UnityEvent();
+            PostRandomize = new UnityEvent();
         }
 
         private void Start()
@@ -359,7 +361,7 @@ namespace OuterRelics
 
             if (itemManager.itemPlacements == null || itemManager.itemPlacements.Count <= 0)
             {
-                itemManager.Randomize(saveManager.GetSinglePerGroup(), out bool succeeded);
+                itemManager.Randomize(out bool succeeded);
                 if (!succeeded)
                 {
                     LogError("Failed to randomize, ran out of spawn points! Have the placement files been edited?");
@@ -480,61 +482,75 @@ namespace OuterRelics
             seedMenu.OnActivateMenu += () => popupOpenTime = Time.time;
             seedMenu.OnPopupConfirm += () =>
             {
-                bool dryMode = GetConfigBool("DryMode");
                 if (OWMath.ApproxEquals(Time.time, popupOpenTime)) return;
-
-                if (saveManager == null) saveManager = new SaveManager();
 
                 seedMenu.EnableMenu(false);
                 seed = seedMenu.GetInputText();
 
-                Regex reg = new Regex("^[a-zA-Z0-9 ]*$");
+                NewFileRandomization();
+            };
+        }
 
-                if (!reg.IsMatch(seed))
-                {
-                    ModHelper.Menus.PopupManager.CreateMessagePopup("ERROR: Seeds can only have alpha-numeric characters");
-                    return;
-                }
+        private void NewFileRandomization()
+        {
+            bool dryMode = GetConfigBool("DryMode");
+            if (OWMath.ApproxEquals(Time.time, popupOpenTime)) return;
 
-                if (string.IsNullOrEmpty(seed))
-                {
-                    seed = DateTime.Now.Ticks.ToString();
-                }
+            if (saveManager == null) saveManager = new SaveManager();
 
-                LogInfo($"Seed:{seed}");
-                
-                itemManager.Randomize(GetConfigBool("SingleMode"), out bool succeeded);
+            Regex reg = new Regex("^[a-zA-Z0-9 ]*$");
+
+            if (!reg.IsMatch(seed))
+            {
+                ModHelper.Menus.PopupManager.CreateMessagePopup("ERROR: Seeds can only have alpha-numeric characters");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(seed))
+            {
+                seed = DateTime.Now.Ticks.ToString();
+            }
+
+            LogInfo($"Seed:{seed}");
+
+            if (!dryMode)
+            {
+                if (saveManager == null) saveManager = new SaveManager();
+                saveManager.ClearSaveData();
+                saveManager.NewSave();
+                itemManager.Randomize(out bool succeeded);
                 if (!succeeded)
                 {
                     ModHelper.Menus.PopupManager.CreateMessagePopup("RANDOMIZATION FAILED: Not enough spawn points available for placement! Enable more pools in the mod config");
                     return;
                 }
-
-                if (!dryMode)
+                saveManager.SaveData();
+                PlayerData.SaveEyeCompletion();
+                if (PlayerData.LoadLoopCount() > 1)
                 {
-                    if (saveManager == null) saveManager = new SaveManager();
-                    saveManager.ClearSaveData();
-                    saveManager.NewSave();
-                    saveManager.SaveData(singleMode: GetConfigBool("SingleMode"));
-                    PlayerData.SaveEyeCompletion();
-                    if (PlayerData.LoadLoopCount() > 1)
-                    {
-                        FindObjectOfType<TitleScreenManager>()._resumeGameAction.ConfirmSubmit();
-                    }
-                    else
-                    {
-                        FindObjectOfType<TitleScreenManager>()._newGameAction.ConfirmSubmit();
-                    }
-
-                    newGame = true;
+                    FindObjectOfType<TitleScreenManager>()._resumeGameAction.ConfirmSubmit();
                 }
                 else
                 {
-                    itemManager.itemPlacements = null;
-                    itemManager.hintPlacements = null;
-                    ModHelper.Menus.PopupManager.CreateMessagePopup($"Generated Dry Run with seed {seed}, check your Spoiler Log folder");
+                    FindObjectOfType<TitleScreenManager>()._newGameAction.ConfirmSubmit();
                 }
-            };
+
+                newGame = true;
+            }
+            else
+            {
+                if (saveManager == null) saveManager = new SaveManager();
+                saveManager.NewSave();
+                itemManager.Randomize(out bool succeeded);
+                if (!succeeded)
+                {
+                    ModHelper.Menus.PopupManager.CreateMessagePopup("RANDOMIZATION FAILED: Not enough spawn points available for placement! Enable more pools in the mod config");
+                    return;
+                }
+                itemManager.itemPlacements = null;
+                itemManager.hintPlacements = null;
+                ModHelper.Menus.PopupManager.CreateMessagePopup($"Generated Dry Run with seed {seed}, check your Spoiler Log folder");
+            }
         }
 
         public static string GetSystemName()

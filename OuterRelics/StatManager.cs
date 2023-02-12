@@ -25,9 +25,14 @@ namespace OuterRelics
         /// <summary>
         /// Every unique hint
         /// </summary>
-        public List<int> hintIDsObtained = new();
+        public List<int> hintIDsObtained;
 
         SaveManager save => OuterRelics.Main.saveManager;
+
+        private void Start()
+        {
+            hintIDsObtained = new();
+        }
 
         private void Update()
         {

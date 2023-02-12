@@ -29,6 +29,7 @@ namespace OuterRelics
                 {
                     addons.AddFile(modName, listToAdd, Path.GetFileName(file), false);
                     //addons.addonFilesLoaded[modName].Add(listToAdd);
+                    main.LogInfo($"Registered addon file {file}");
                 }
                 else
                 {
@@ -43,6 +44,7 @@ namespace OuterRelics
                 {
                     addons.AddFile(modName, listToAdd, Path.GetFileName(file), true);
                     //addons.addonHintsLoaded[modName].Add(listToAdd);
+                    main.LogInfo($"Registered hint file {file}");
                 }
                 else
                 {

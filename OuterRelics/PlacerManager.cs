@@ -133,15 +133,16 @@ namespace OuterRelics
 
         public ItemSpawnLocation GetSpawnLocation(string name)
         {
+            string locName = name;
             if (placeHints)
             {
                 if (PlayerState.InDreamWorld() || PlayerState.InCloakingField())
                 {
-                    name = "DLCHints";
+                    locName = "DLCHints";
                 }
                 else
                 {
-                    name = "NormalHints";
+                    locName = "NormalHints";
                 }
                 currentGroup = name;
             }
@@ -152,13 +153,13 @@ namespace OuterRelics
             }
             else
             {
-                spawnLocation = hintSpawns.spawnLocations.SingleOrDefault(loc => loc.locationName == name);
+                spawnLocation = hintSpawns.spawnLocations.SingleOrDefault(bod => bod.body == name);
             }
 
             if (spawnLocation.locationName == null)
             {
                 main.LogInfo($"Created new location group {name}");
-                spawnLocation = new ItemSpawnLocation(SceneManager.GetActiveScene().name, currentBody, name, new List<ItemSpawnPoint>());
+                spawnLocation = new ItemSpawnLocation(OuterRelics.GetSystemName(), currentBody, name, new List<ItemSpawnPoint>());
                 if (!placeHints)
                 {
                     spawnList.spawnLocations.Add(spawnLocation);
@@ -256,7 +257,15 @@ namespace OuterRelics
 
             currentBody = OuterRelics.GetBody(indicator).name;
 
-            AddSpawnpoint(GetSpawnLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+
+            if (placeHints)
+            {
+                AddSpawnpoint(GetSpawnLocation(currentBody), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+            }
+            else
+            {
+                AddSpawnpoint(GetSpawnLocation(currentGroup), OuterRelics.GetObjectPath(indicator), indicator.transform.localPosition, indicator.transform.localEulerAngles);
+            }
             main.LogSuccess("Saved new spawn location for " + currentGroup + " on " + currentBody);
             main.notifManager.AddNotification("NEW " + (placeHints ? "HINT " : "") + "LOCATION SAVED");
             

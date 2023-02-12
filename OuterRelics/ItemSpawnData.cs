@@ -127,7 +127,7 @@ namespace OuterRelics
             spawnLocations = new List<ItemSpawnLocation>();
         }
 
-        public static ItemSpawnList operator +(ItemSpawnList a, ItemSpawnList b)
+        public static ItemSpawnList operator + (ItemSpawnList a, ItemSpawnList b)
         {
             ItemSpawnList list = new ItemSpawnList();
             list.spawnLocations.AddRange(a.spawnLocations);

@@ -65,6 +65,8 @@ namespace OuterRelics
             if (saveData == null)
             {
                 saveData = new OuterRelicsSaveData();
+                
+
                 main.LogInfo("Save file did not exist, creating new save info");
             }
             else main.LogSuccess("Loaded save data for " + profile);
@@ -75,7 +77,7 @@ namespace OuterRelics
         /// Saves which items have been obtained
         /// </summary>
         /// <param name="keysObtained">List of keys obtained</param>
-        public void SaveData(bool[] keysObtained = null, bool? singleMode = null)
+        public void SaveData(bool[] keysObtained = null)
         {
             if (SceneManager.GetActiveScene().name != "SolarSystem")
             {
@@ -99,15 +101,6 @@ namespace OuterRelics
                 }
             }
 
-            saveData.version = main.ModHelper.Manifest.Version;
-            if (singleMode != null) saveData.singlePerGroup = (bool)singleMode;
-            saveData.hints = main.hintDifficulty;
-            saveData.uselessHintChance = main.uselessHints;
-            saveData.timer = main.statManager.timer;
-            saveData.hintIDsObtained = main.statManager.hintIDsObtained;
-            saveData.addonHintsLoaded = main.addonManager.addonHintNames;
-            saveData.addonFilesLoaded = main.addonManager.addonFileNames;
-
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
             main.LogInfo($"Saved Outer Relics data for {profile}");
@@ -116,28 +109,34 @@ namespace OuterRelics
         public void NewSave()
         {
             saveData = new OuterRelicsSaveData();
+
             saveData.seed = main.seed;
             saveData.version = main.ModHelper.Manifest.Version;
-            for (int i = 0; i < saveData.enabledPools.Length; i++)
+            saveData.enabledPools = new bool[]
             {
-                saveData.enabledPools[i] = OuterRelics.GetConfigBool(Pools[i]);
-            }
+                    OuterRelics.GetConfigBool("HourglassTwins"),
+                    OuterRelics.GetConfigBool("TimberHearth"),
+                    OuterRelics.GetConfigBool("BrittleHollow"),
+                    OuterRelics.GetConfigBool("GiantsDeep"),
+                    OuterRelics.GetConfigBool("DarkBramble"),
+                    OuterRelics.GetConfigBool("QuantumMoon"),
+                    OuterRelics.GetConfigBool("Interloper"),
+                    OuterRelics.GetConfigBool("Stranger"),
+                    OuterRelics.GetConfigBool("DreamWorld"),
+                    OuterRelics.GetConfigBool("DreamWorldStealth"),
+                    OuterRelics.GetConfigBool("HardMode"),
+                    OuterRelics.GetConfigBool("Addons")
+            };
+            saveData.addonFilesLoaded = main.addonManager.addonFileNames;
+            saveData.addonHintsLoaded = main.addonManager.addonHintNames;
             saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
-            if (Enum.TryParse(OuterRelics.GetConfigString("Hints"), true, out HintDifficulty hintDifficulty))
-            { 
-                saveData.hints = hintDifficulty; 
-            }
-            else
-            {
-                main.LogWarning("Invalid hint difficulty found, returning Balanced");
-                saveData.hints = HintDifficulty.Balanced;
-            }
+            saveData.hints = (HintDifficulty)Enum.Parse(typeof(HintDifficulty), OuterRelics.GetConfigInt("Hints").ToString());
             saveData.uselessHintChance = OuterRelics.GetConfigInt("Useless Hint Chance");
             saveData.savedKeysObtained = new bool[12];
             saveData.totalSavedKeys = 0;
-            saveData.timer = 0;
+            saveData.timer = 0f;
             saveData.startLoop = PlayerData.LoadLoopCount();
-            saveData.hintIDsObtained = new List<int>();
+            saveData.hintIDsObtained = new();
         }
 
         /// <summary>

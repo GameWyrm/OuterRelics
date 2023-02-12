@@ -14,6 +14,15 @@ namespace OuterRelics
         OuterRelics main => OuterRelics.Main;
         SaveManager save => main.saveManager;
 
+        public AddonManager()
+        {
+            activeMods = new();
+            addonFilesLoaded = new();
+            addonHintsLoaded = new();
+            addonFileNames = new();
+            addonHintNames = new();
+        }
+
         /// <summary>
         /// Adds an addon File
         /// </summary>
@@ -23,8 +32,13 @@ namespace OuterRelics
         /// <param name="isHint">Whether this is a hint</param>
         public void AddFile(string modName, ItemSpawnList listToAdd, string fileName, bool isHint)
         {
-            if (isHint)
+            if (!addonFilesLoaded.ContainsKey(modName)) addonFilesLoaded.Add(modName, new());
+            if (!addonFileNames.ContainsKey(modName)) addonFileNames.Add(modName, new());
+            if (!addonHintsLoaded.ContainsKey(modName)) addonHintsLoaded.Add(modName, new());
+            if (!addonHintNames.ContainsKey(modName)) addonHintNames.Add(modName, new());
+            if (!isHint)
             {
+                
                 addonFilesLoaded[modName].Add(listToAdd);
                 addonFileNames[modName].Add(fileName);
             }
@@ -33,6 +47,7 @@ namespace OuterRelics
                 addonHintsLoaded[modName].Add(listToAdd);
                 addonHintNames[modName].Add(fileName);
             }
+            main.LogInfo($"Added file {modName}.{fileName}. There are now {addonFilesLoaded[modName].Count} addon placement files loaded, and {addonHintsLoaded[modName].Count} addon hint files loaded.");
         }
 
         public static ModBehaviour GetMod(string modName)
@@ -46,7 +61,7 @@ namespace OuterRelics
         /// <returns></returns>
         public List<ItemSpawnList> GetSavedPlacements()
         {
-            addonFileNames = new();
+            //addonFileNames = new();
             List<ItemSpawnList> savedPlacements = new();
 
             foreach (string modName in save.GetAddonPlacementDict().Keys)
@@ -83,13 +98,12 @@ namespace OuterRelics
         /// <returns></returns>
         public List<ItemSpawnList> GetSavedHints()
         {
-            addonFileNames = new();
+            //addonHintNames = new();
             List<ItemSpawnList> savedPlacements = new();
-
-            foreach (string modName in save.GetAddonPlacementDict().Keys)
+            foreach (string modName in save.GetAddonHintsDict().Keys)
             {
                 ModBehaviour mod = GetMod(modName);
-                foreach (string fileName in save.GetAddonPlacementDict()[modName])
+                foreach (string fileName in save.GetAddonHintsDict()[modName])
                 {
                     savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
                 }
