@@ -14,18 +14,18 @@ namespace OuterRelics
     {
         public class OuterRelicsSaveData
         {
-            public string seed = "";
-            public string version = "";
-            public bool[] enabledPools = new bool[12];
+            public string seed;
+            public string version;
+            public bool[] enabledPools;
             public Dictionary<string, List<string>> addonFilesLoaded;
             public Dictionary<string, List<string>> addonHintsLoaded;
-            public bool singlePerGroup = true;
-            public HintDifficulty hints = HintDifficulty.Balanced;
-            public int uselessHintChance = 25;
-            public bool[] savedKeysObtained = new bool[12];
-            public int totalSavedKeys = 0;
-            public float timer = 0f;
-            public int startLoop = 1;
+            public bool singlePerGroup;
+            public HintDifficulty hints;
+            public int uselessHintChance;
+            public bool[] savedKeysObtained;
+            public int totalSavedKeys;
+            public float timer;
+            public int startLoop;
             public List<int> hintIDsObtained;
         }
 
@@ -50,12 +50,13 @@ namespace OuterRelics
         };
 
         private OuterRelicsSaveData saveData;
-        private OuterRelics main;
+        private OuterRelics main => OuterRelics.Main;
         string profile => StandaloneProfileManager.s_instance.currentProfile.profileName;
+        StatManager stats => main.statManager;
+        AddonManager addons => main.addonManager;
 
         public SaveManager()
         {
-            main = OuterRelics.Main;
             LoadData();
         }
 
@@ -77,9 +78,9 @@ namespace OuterRelics
         /// Saves which items have been obtained
         /// </summary>
         /// <param name="keysObtained">List of keys obtained</param>
-        public void SaveData(bool[] keysObtained = null)
+        public void SaveData(bool titleOverride, bool[] keysObtained = null)
         {
-            if (SceneManager.GetActiveScene().name != "SolarSystem")
+            if (!titleOverride && SceneManager.GetActiveScene().name != "SolarSystem")
             {
                 main.LogInfo("Cannot save outside of the standard solar system scene, aborting save");
                 return;
@@ -88,8 +89,6 @@ namespace OuterRelics
             {
                 keysObtained = main.hasKey;
             }
-
-            saveData.seed = main.seed;
 
             saveData.totalSavedKeys = 0;
             for (int i = 0; i < keysObtained.Length; i++)
@@ -100,6 +99,10 @@ namespace OuterRelics
                     saveData.totalSavedKeys++;
                 }
             }
+
+            saveData.timer = stats.timer;
+            saveData.startLoop = stats.startingLoop;
+            saveData.hintIDsObtained = stats.hintIDsObtained;
 
             main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
 
@@ -127,16 +130,26 @@ namespace OuterRelics
                     OuterRelics.GetConfigBool("HardMode"),
                     OuterRelics.GetConfigBool("Addons")
             };
-            saveData.addonFilesLoaded = main.addonManager.addonFileNames;
-            saveData.addonHintsLoaded = main.addonManager.addonHintNames;
+            if (saveData.enabledPools[11])
+            {
+                saveData.addonFilesLoaded = addons.addonFileNames;
+                saveData.addonHintsLoaded = addons.addonHintNames;
+            }
+            else
+            {
+                saveData.addonFilesLoaded = new();
+                saveData.addonHintsLoaded = new();
+            }
             saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
-            saveData.hints = (HintDifficulty)Enum.Parse(typeof(HintDifficulty), OuterRelics.GetConfigInt("Hints").ToString());
-            saveData.uselessHintChance = OuterRelics.GetConfigInt("Useless Hint Chance");
+            saveData.hints = (HintDifficulty)Enum.Parse(typeof(HintDifficulty), OuterRelics.GetConfigString("Hints"));
+            saveData.uselessHintChance = OuterRelics.GetConfigInt("UselessHintChance");
             saveData.savedKeysObtained = new bool[12];
             saveData.totalSavedKeys = 0;
             saveData.timer = 0f;
             saveData.startLoop = PlayerData.LoadLoopCount();
-            saveData.hintIDsObtained = new();
+            saveData.hintIDsObtained = new List<int>();
+
+            main.LogSuccess("Created new file info");
         }
 
         /// <summary>

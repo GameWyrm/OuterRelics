@@ -20,6 +20,13 @@ namespace OuterRelics
         public void UnregisterMod(ModBehaviour modClass);
 
         /// <summary>
+        /// Give a body a name
+        /// </summary>
+        /// <param name="internalName">The internal name of the body you made (i.e. "CaveTwin_Body")</param>
+        /// <param name="properName">The proper name of the body you want to appear in hints</param>
+        public void RegisterBody(string internalName, string properName);
+
+        /// <summary>
         /// Registers a specific file. Must be placed within the PlacementInfo or Hints folder in your mod's root directory
         /// </summary>
         /// <param name="modClass">Your mod's ModBehavior</param>

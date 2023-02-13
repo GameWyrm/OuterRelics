@@ -32,10 +32,10 @@ namespace OuterRelics
         /// <param name="isHint">Whether this is a hint</param>
         public void AddFile(string modName, ItemSpawnList listToAdd, string fileName, bool isHint)
         {
-            if (!addonFilesLoaded.ContainsKey(modName)) addonFilesLoaded.Add(modName, new());
-            if (!addonFileNames.ContainsKey(modName)) addonFileNames.Add(modName, new());
-            if (!addonHintsLoaded.ContainsKey(modName)) addonHintsLoaded.Add(modName, new());
-            if (!addonHintNames.ContainsKey(modName)) addonHintNames.Add(modName, new());
+            if (!addonFilesLoaded.ContainsKey(modName)) addonFilesLoaded.Add(modName, new List<ItemSpawnList>());
+            if (!addonFileNames.ContainsKey(modName)) addonFileNames.Add(modName, new List<string>());
+            if (!addonHintsLoaded.ContainsKey(modName)) addonHintsLoaded.Add(modName, new List<ItemSpawnList>());
+            if (!addonHintNames.ContainsKey(modName)) addonHintNames.Add(modName, new List<string>());
             if (!isHint)
             {
                 
@@ -66,28 +66,21 @@ namespace OuterRelics
 
             foreach (string modName in save.GetAddonPlacementDict().Keys)
             {
+                main.LogInfo("Loading mod " + modName);
                 ModBehaviour mod = GetMod(modName);
                 foreach (string fileName in save.GetAddonPlacementDict()[modName])
                 {
-                    savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Placement/" + fileName));
+                    ItemSpawnList list = mod.ModHelper.Storage.Load<ItemSpawnList>("PlacementInfo/" + fileName);
+                    if (list == null)
+                    {
+                        main.LogError("Could not find the file specified! Make sure the file is in a folder named PlacementInfo");
+                        continue;
+                    }
+                    savedPlacements.Add(list);
+                    //main.LogInfo($"Loaded {fileName}");
+                    //main.LogInfo($"{list.spawnLocations.Count} spawn locations");
                 }
             }
-            /*
-            foreach (ModBehaviour mod in activeMods)
-            {
-                string modName = mod.ModHelper.Manifest.UniqueName;
-                foreach (string fileName in save.GetAddonPlacementFiles(modName))
-                {
-                    addonFileNames[modName].Add(fileName);
-                }
-                foreach (ItemSpawnList placementList in addonFilesLoaded[modName])
-                {
-                    if (addonFileNames[modName].Contains(placementList.modName))
-                    {
-                        savedPlacements.Add(placementList);
-                    }
-                }
-            }*/
 
             return savedPlacements;
         }

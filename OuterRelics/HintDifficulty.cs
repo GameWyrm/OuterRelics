@@ -8,7 +8,7 @@
         /// <summary>
         /// All hints are useless hints
         /// </summary>
-        Disabled,
+        Disabled = -100,
         /// <summary>
         /// All hints are vague
         /// </summary>

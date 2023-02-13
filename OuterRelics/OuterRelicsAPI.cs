@@ -8,6 +8,7 @@ namespace OuterRelics
     public class OuterRelicsAPI : IOuterRelicsAPI
     {
         OuterRelics main => OuterRelics.Main;
+        ItemSpawnData itemData => main.itemData;
         AddonManager addons => main.addonManager;
 
         /// <summary>
@@ -68,6 +69,11 @@ namespace OuterRelics
                 addons.addonHintsLoaded.Remove(modName);
             }
             else main.LogError($"Mod {modClass.ModHelper.Manifest.UniqueName} not registered, cannot unregister");
+        }
+
+        public void RegisterBody(string internalName, string properName)
+        {
+            itemData.bodies.Add(internalName, properName);
         }
 
         /// <summary>

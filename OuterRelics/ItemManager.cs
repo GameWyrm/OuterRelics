@@ -86,19 +86,19 @@ namespace OuterRelics
 
             LoadFiles();
             main.LogInfo("spawnLists count: " + spawnLists.Count);
-            foreach (ItemSpawnList list in spawnLists)
+            /*foreach (ItemSpawnList list in spawnLists)
             {
                 main.LogInfo($"Mod: {list.modName}, Count: {list.spawnLocations.Count}, Body: {list.spawnLocations[0].body}");
-            }
+            }*/
 
             List<ItemSpawnLocation> allAvailableLocations = new();
 
             foreach (ItemSpawnList list in spawnLists)
             {
-                main.LogInfo($"Adding list {list.modName}.{list.spawnLocations[0].body}");
+                //main.LogInfo($"Adding list {list.modName}.{list.spawnLocations[0].body}");
                 foreach (ItemSpawnLocation location in list.spawnLocations)
                 {
-                    main.LogInfo($"Adding location {location.locationName}");
+                    //main.LogInfo($"Adding location {location.locationName}");
                     allAvailableLocations.Add(location);
                 }
             }
@@ -114,7 +114,7 @@ namespace OuterRelics
                 for (int j = 0; j < allAvailableLocations[i].spawnPoints.Count; j++)
                 {
                     ItemSpawnPoint itemSpawnPoint = allAvailableLocations[i].spawnPoints[j];
-                    if (LogicTokenizer.TestConditions(itemSpawnPoint.logic))
+                    if (itemSpawnPoint.logic.Count <= 0 || LogicTokenizer.TestConditions(itemSpawnPoint.logic))
                     {
                         availableLocations[i].spawnPoints.Add(itemSpawnPoint);
                     }
@@ -166,7 +166,6 @@ namespace OuterRelics
 
             success = true;
             main.PostRandomize.Invoke();
-            main.LogWarning("If you see this there's something weird going on");
         }
 
         /// <summary>
@@ -191,18 +190,6 @@ namespace OuterRelics
                     index++;
                 }
             }
-            /*foreach (ItemSpawnList list in addons.GetSavedHints())
-            {
-                foreach (ItemSpawnLocation location in list.spawnLocations)
-                {
-                    foreach (ItemSpawnPoint spawnPoint in location.spawnPoints)
-                    {
-                        hintPlacements.Add(new RandomizedPlacement(ItemType.Key, index, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
-                        //main.LogInfo($"Registered new hint at {spawnPoint.parent}");
-                        index++;
-                    }
-                }
-            }*/
 
             HintManager hintManager = new();
             hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements, out bodies, out locations, out spawnPoints);
@@ -250,7 +237,7 @@ namespace OuterRelics
             
             if (main.hasKey[placement.id]) return;
 
-            if (SceneManager.GetActiveScene().name == placement.system)
+            if (OuterRelics.GetSystemName() == placement.system)
             {
                 GameObject keyParent = new GameObject();
                 keyParent.transform.SetParent(GameObject.Find(placement.body).transform.Find(placement.parent), true);
@@ -322,28 +309,28 @@ namespace OuterRelics
                 if (listToAdd != null)
                 {
                     spawnLists.Add(listToAdd);
-                    main.LogInfo("Loaded spawn list " + listToAdd.modName + " " + listToAdd.spawnLocations[0].body);
+                    //main.LogInfo("Loaded base spawn list " + listToAdd.modName + " " + listToAdd.spawnLocations[0].body);
                 }
                 else
                 {
                     main.LogError("Could not parse file " + file);
                     continue;
                 }
-                if (main.saveManager.GetPools()[11])
+            }
+
+            if (main.saveManager.GetPools()[11])
                 {
-                    foreach (ItemSpawnList list in main.addonManager.GetSavedPlacements())
+                    foreach (ItemSpawnList list in addons.GetSavedPlacements())
                     {
                         spawnLists.Add(list);
-                        main.LogInfo("Loaded spawn list " + list.modName + " " + listToAdd.spawnLocations[0].body);
+                        //main.LogInfo("Loaded spawn list " + list.modName + " " + list.spawnLocations[0].body);
                     }
                 }
-                        
-            }
 
             main.LogInfo("Loaded " + spawnLists.Count + " placement files");
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
-            foreach (ItemSpawnList list in main.addonManager.GetSavedHints())
+            foreach (ItemSpawnList list in addons.GetSavedHints())
             {
                 hintList += list;
                 main.LogInfo($"Added hint list {list.modName}");

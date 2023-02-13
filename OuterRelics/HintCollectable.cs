@@ -25,7 +25,7 @@ namespace OuterRelics
             {
                 main.notifManager.AddNotification(hint);
                 main.statManager.AddHint(id);
-                main.saveManager.SaveData();
+                main.saveManager.SaveData(false);
             }
         }
     }

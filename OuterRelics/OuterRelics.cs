@@ -115,6 +115,10 @@ namespace OuterRelics
         /// </summary>
         public ItemManager itemManager;
         /// <summary>
+        /// Data for items spawning
+        /// </summary>
+        public ItemSpawnData itemData;
+        /// <summary>
         /// Handles pools
         /// </summary>
         public RegistrationManager registrationManager;
@@ -168,6 +172,7 @@ namespace OuterRelics
             addonManager = new AddonManager();
             PreRandomize = new UnityEvent();
             PostRandomize = new UnityEvent();
+            itemData = new ItemSpawnData();
         }
 
         private void Start()
@@ -232,7 +237,7 @@ namespace OuterRelics
             }
 
             //Quit event, no cheating
-            Application.quitting += () => { if (saveManager != null && SceneManager.GetActiveScene().name == "SolarSystem") saveManager.SaveData(); };
+            Application.quitting += () => { if (saveManager != null && SceneManager.GetActiveScene().name == "SolarSystem") saveManager.SaveData(false); };
 
             //Get materials
             collectedMat = assets.LoadAsset<Material>("Collected");
@@ -289,11 +294,6 @@ namespace OuterRelics
                     LogInfo(mat.name);
                 }
             }
-        }
-
-        private void Application_quitting()
-        {
-            throw new NotImplementedException();
         }
 
         private void Update()
@@ -374,7 +374,7 @@ namespace OuterRelics
 
             statManager.LoadStats();
 
-            saveManager.SaveData();
+            saveManager.SaveData(false);
 
         }
 
@@ -524,7 +524,7 @@ namespace OuterRelics
                     ModHelper.Menus.PopupManager.CreateMessagePopup("RANDOMIZATION FAILED: Not enough spawn points available for placement! Enable more pools in the mod config");
                     return;
                 }
-                saveManager.SaveData();
+                saveManager.SaveData(true);
                 PlayerData.SaveEyeCompletion();
                 if (PlayerData.LoadLoopCount() > 1)
                 {
