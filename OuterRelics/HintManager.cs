@@ -11,7 +11,7 @@ namespace OuterRelics
         OuterRelics main => OuterRelics.Main;
         SaveManager save => main.saveManager;
         Random rnd = new Random();
-        ItemSpawnData data = new ItemSpawnData();
+        ItemSpawnData data => main.itemData;
         HintList hintList;
 
         public HintManager()
@@ -141,7 +141,18 @@ namespace OuterRelics
             }
             if (input.Contains("%BODY%"))
             {
-                input = input.Replace("%BODY%", data.bodies[placement.body]);
+                string bodyName;
+                if (data.bodies.ContainsKey(placement.body))
+                {
+                    input = input.Replace("%BODY%", data.bodies[placement.body]);
+                }
+                else
+                {
+                    bodyName = placement.body;
+                    bodyName = bodyName.Replace("_Body", "");
+                    bodyName = System.Text.RegularExpressions.Regex.Replace(bodyName, "([A-Z])", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim();
+                    input = input.Replace("%BODY%", bodyName);
+                }
                 body = placement.body;
             }
             return input;

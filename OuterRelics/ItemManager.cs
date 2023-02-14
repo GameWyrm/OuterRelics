@@ -54,7 +54,8 @@ namespace OuterRelics
         string seed => main.seed;
         string spoilerLog;
 
-        OuterRelics main;
+        OuterRelics main => OuterRelics.Main;
+        AddonManager addons => main.addonManager;
         List<string> items = new List<string>();
         Random rnd;
 
@@ -65,12 +66,10 @@ namespace OuterRelics
             spawnLists = new List<ItemSpawnList>();
             hintList = new ItemSpawnList();
 
-            main = OuterRelics.Main;
-
             rnd = new Random();
         }
 
-        public void Randomize(bool SingleMode, out bool success)
+        public void Randomize(out bool success)
         {
             main.PreRandomize.Invoke();
             if (seed != null && seed != "")
@@ -86,16 +85,25 @@ namespace OuterRelics
             spoilerLog = $"Seed: {seed}\n";
 
             LoadFiles();
+            main.LogInfo("spawnLists count: " + spawnLists.Count);
+            /*foreach (ItemSpawnList list in spawnLists)
+            {
+                main.LogInfo($"Mod: {list.modName}, Count: {list.spawnLocations.Count}, Body: {list.spawnLocations[0].body}");
+            }*/
 
             List<ItemSpawnLocation> allAvailableLocations = new();
 
             foreach (ItemSpawnList list in spawnLists)
             {
+                //main.LogInfo($"Adding list {list.modName}.{list.spawnLocations[0].body}");
                 foreach (ItemSpawnLocation location in list.spawnLocations)
                 {
+                    //main.LogInfo($"Adding location {location.locationName}");
                     allAvailableLocations.Add(location);
                 }
             }
+
+            main.LogInfo($"All locations available: {allAvailableLocations.Count}");
 
             List<ItemSpawnLocation> availableLocations = new();
 
@@ -106,7 +114,7 @@ namespace OuterRelics
                 for (int j = 0; j < allAvailableLocations[i].spawnPoints.Count; j++)
                 {
                     ItemSpawnPoint itemSpawnPoint = allAvailableLocations[i].spawnPoints[j];
-                    if (LogicTokenizer.TestConditions(itemSpawnPoint.logic))
+                    if (itemSpawnPoint.logic.Count <= 0 || LogicTokenizer.TestConditions(itemSpawnPoint.logic))
                     {
                         availableLocations[i].spawnPoints.Add(itemSpawnPoint);
                     }
@@ -130,6 +138,7 @@ namespace OuterRelics
                 {
                     success = false;
                     main.PostRandomize.Invoke();
+                    main.LogError("Randomization failed due to lack of spawnpoints! Total Locations: " + allAvailableLocations.Count);
                     return;
                 }
                 int itemIndex = rnd.Next(0, availableLocations.Count - 1);
@@ -140,7 +149,7 @@ namespace OuterRelics
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
                 spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
 
-                if (SingleMode)
+                if (main.saveManager.GetSinglePerGroup())
                 {
                     availableLocations.RemoveAt(itemIndex);
                 }
@@ -228,16 +237,19 @@ namespace OuterRelics
             
             if (main.hasKey[placement.id]) return;
 
-            if (SceneManager.GetActiveScene().name == placement.system)
+            if (OuterRelics.GetSystemName() == placement.system)
             {
                 GameObject keyParent = new GameObject();
-                keyParent.transform.parent = GameObject.Find(placement.body).transform.Find(placement.parent);
+                keyParent.transform.SetParent(GameObject.Find(placement.body).transform.Find(placement.parent), true);
                 keyParent.transform.localPosition = placement.position;
                 keyParent.transform.localEulerAngles = placement.rotation;
-                keyParent.transform.position = keyParent.transform.position + keyParent.transform.TransformDirection(Vector3.up * 2);
+                keyParent.transform.position += keyParent.transform.TransformDirection(Vector3.up * 2);
                 keyParent.name = "NOMAI KEY " + (placement.id + 1);
-                GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (placement.id + 1)), keyParent.transform);
+                GameObject key = GameObject.Instantiate(main.assets.LoadAsset<GameObject>("NK" + (placement.id + 1)));
                 keyParent.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                key.transform.position = keyParent.transform.position;
+                key.transform.rotation = keyParent.transform.rotation;
+                key.transform.SetParent(keyParent.transform, true);
                 KeyCollectable kc = key.AddComponent<KeyCollectable>();
                 kc.itemName = "KEY OF " + OuterRelics.KeyNames[placement.id];
                 kc.lockManager = main.lockManager;
@@ -253,13 +265,8 @@ namespace OuterRelics
         /// <param name="hintType"></param>
         public void CreateHint(RandomizedPlacement placement)
         {
-            //if (OuterRelics.GetSystemName() != placement.system) return;
+            if (OuterRelics.GetSystemName() != placement.system) return;
             GameObject hintParent = new GameObject();
-            hintParent.transform.parent = GameObject.Find(placement.body).transform.Find(placement.parent);
-            if (hintParent.transform.parent == null) main.LogError($"Unable to find {placement.body}/{placement.parent}");
-            hintParent.transform.localPosition = placement.position;
-            hintParent.transform.localEulerAngles = placement.rotation;
-            hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
 
             int hintType;
             if (placement.body == "RingWorld_Body" || placement.body == "DreamWorld_Body")
@@ -273,6 +280,15 @@ namespace OuterRelics
 
             GameObject hintObject = GameObject.Instantiate(hintModels[hintType], hintParent.transform);
             hintParent.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            hintObject.transform.position = hintParent.transform.position;
+            hintObject.transform.rotation = hintParent.transform.rotation;
+            hintObject.transform.SetParent(hintParent.transform, true);
+
+            hintParent.transform.SetParent(GameObject.Find(placement.body).transform.Find(placement.parent), true);
+            if (hintParent.transform.parent == null) main.LogError($"Unable to find {placement.body}/{placement.parent}");
+            hintParent.transform.localPosition = placement.position;
+            hintParent.transform.localEulerAngles = placement.rotation;
+            hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
 
             HintCollectable hint = hintObject.AddComponent<HintCollectable>();
 
@@ -293,31 +309,31 @@ namespace OuterRelics
                 if (listToAdd != null)
                 {
                     spawnLists.Add(listToAdd);
+                    //main.LogInfo("Loaded base spawn list " + listToAdd.modName + " " + listToAdd.spawnLocations[0].body);
                 }
                 else
                 {
                     main.LogError("Could not parse file " + file);
                     continue;
                 }
-                if (main.saveManager.GetPools()[11])
+            }
+
+            if (main.saveManager.GetPools()[11])
                 {
-                    foreach (ItemSpawnList list in main.addonManager.GetSavedPlacements())
+                    foreach (ItemSpawnList list in addons.GetSavedPlacements())
                     {
                         spawnLists.Add(list);
+                        //main.LogInfo("Loaded spawn list " + list.modName + " " + list.spawnLocations[0].body);
                     }
                 }
-                        
-            }
 
             main.LogInfo("Loaded " + spawnLists.Count + " placement files");
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
-            if (main.saveManager.GetPools()[11])
+            foreach (ItemSpawnList list in addons.GetSavedHints())
             {
-                foreach (ItemSpawnList list in main.addonManager.GetSavedHints())
-                {
-                    hintList += list;
-                }
+                hintList += list;
+                main.LogInfo($"Added hint list {list.modName}");
             }
             if (hintList != null)
             {

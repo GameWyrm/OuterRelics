@@ -44,7 +44,7 @@ namespace OuterRelics
         {
             hasKey[keyID] = true;
             main.hasKey[keyID] = true;
-            keys[keyID].GetComponent<MeshRenderer>().material = collectedMat;
+            if (keys[keyID] != null) keys[keyID].GetComponent<MeshRenderer>().material = collectedMat;
 
             keyCount++;
             main.keyCount++;
@@ -55,7 +55,7 @@ namespace OuterRelics
                 UnlockATP();
             }
 
-            main.saveManager.SaveData(main.hasKey);
+            main.saveManager.SaveData(false, main.hasKey);
         }
 
         /// <summary>
@@ -67,8 +67,11 @@ namespace OuterRelics
             NotificationData pinnedCompletion = new NotificationData("ASH TWIN PROJECT UNLOCKED");
             pinnedCompletion.minDuration = 60;
             NotificationManager.s_instance.PostNotification(pinnedCompletion);
-            orbLock.SetActive(false);
-            orbInterface.RemoveLock();
+            if (OuterRelics.GetSystemName() == "SolarSystem")
+            {
+                orbLock.SetActive(false);
+                orbInterface.RemoveLock();
+            }
         }
 
         public void LockATP()
