@@ -316,8 +316,6 @@ namespace OuterRelics
                 if(allowMusic) aud.Play(); 
                 else aud.Stop();
             }
-
-            base.Configure(config);
         }
 
         public override object GetApi()

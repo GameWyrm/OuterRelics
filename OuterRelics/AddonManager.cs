@@ -36,9 +36,15 @@ namespace OuterRelics
             if (!addonFileNames.ContainsKey(modName)) addonFileNames.Add(modName, new List<string>());
             if (!addonHintsLoaded.ContainsKey(modName)) addonHintsLoaded.Add(modName, new List<ItemSpawnList>());
             if (!addonHintNames.ContainsKey(modName)) addonHintNames.Add(modName, new List<string>());
+
+            if ((isHint && addonHintNames[modName].Contains(fileName)) || (!isHint && addonFileNames[modName].Contains(fileName)))
+            {
+                main.LogWarning($"File {fileName} already registered, aborting");
+                return;
+            }
+
             if (!isHint)
             {
-                
                 addonFilesLoaded[modName].Add(listToAdd);
                 addonFileNames[modName].Add(fileName);
             }
