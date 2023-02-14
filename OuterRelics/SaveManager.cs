@@ -123,7 +123,7 @@ namespace OuterRelics
                 saveData.enabledPools[i] = OuterRelics.GetConfigBool(Pools[i]);
             }
             saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
-            if (Enum.TryParse(OuterRelics.GetConfigString("Hints"), true, out HintDifficulty hintDifficulty))
+            if (Enum.TryParse(OuterRelics.GetConfigString("Hints").Replace(" ", ""), true, out HintDifficulty hintDifficulty))
             { 
                 saveData.hints = hintDifficulty; 
             }
