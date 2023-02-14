@@ -8,6 +8,7 @@ namespace OuterRelics
     public class OuterRelicsAPI : IOuterRelicsAPI
     {
         OuterRelics main => OuterRelics.Main;
+        ItemSpawnData itemData => main.itemData;
         AddonManager addons => main.addonManager;
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace OuterRelics
                 {
                     addons.AddFile(modName, listToAdd, Path.GetFileName(file), false);
                     //addons.addonFilesLoaded[modName].Add(listToAdd);
+                    main.LogInfo($"Registered addon file {file}");
                 }
                 else
                 {
@@ -43,6 +45,7 @@ namespace OuterRelics
                 {
                     addons.AddFile(modName, listToAdd, Path.GetFileName(file), true);
                     //addons.addonHintsLoaded[modName].Add(listToAdd);
+                    main.LogInfo($"Registered hint file {file}");
                 }
                 else
                 {
@@ -66,6 +69,11 @@ namespace OuterRelics
                 addons.addonHintsLoaded.Remove(modName);
             }
             else main.LogError($"Mod {modClass.ModHelper.Manifest.UniqueName} not registered, cannot unregister");
+        }
+
+        public void RegisterBody(string internalName, string properName)
+        {
+            itemData.bodies.Add(internalName, properName);
         }
 
         /// <summary>

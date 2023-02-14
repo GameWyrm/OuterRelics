@@ -25,9 +25,14 @@ namespace OuterRelics
         /// <summary>
         /// Every unique hint
         /// </summary>
-        public List<int> hintIDsObtained = new();
+        public List<int> hintIDsObtained;
 
         SaveManager save => OuterRelics.Main.saveManager;
+
+        private void Start()
+        {
+            hintIDsObtained = new();
+        }
 
         private void Update()
         {
@@ -41,7 +46,9 @@ namespace OuterRelics
         {
             timer = save.GetTimer();
             startingLoop = save.GetStartLoop();
+            if (startingLoop <= 1) startingLoop = PlayerData.LoadLoopCount();
             hintIDsObtained = save.GetHintIDs();
+            if (hintIDsObtained == null) hintIDsObtained = new();
 
             OuterRelics.Main.LogInfo("TIMER: " + timer);
         }
