@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2613049008
+CRC: 4223015913
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e2a84816516eead670ccb341d74198de
+    Hash: 4a038e0ee37e667379486ba4fa1677c4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d0a910d6360d2bcd00311842119f936e
+    Hash: 872c9a63270dc1bc1a2f6111734f4c1b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -44,6 +44,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 034b758dcb27c9746a7640cdb345b333, type: 3}
@@ -70,6 +72,7 @@ Assets:
 - Assets/Nomai Keys/Prefabs/Orb Lock.prefab
 - Assets/Nomai Keys/Prefabs/NK P9.prefab
 - Assets/Nomai Keys/NomaiHintLoop.ogg
+- Assets/Custom UI/StatsCanvas.prefab
 - Assets/Nomai Keys/Prefabs/NK P6.prefab
 - Assets/Nomai Keys/Materials/Uncollected.mat
 - Assets/Nomai Keys/Prefabs/NK5.prefab

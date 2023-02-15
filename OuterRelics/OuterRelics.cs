@@ -374,6 +374,17 @@ namespace OuterRelics
 
             saveManager.SaveData(false);
 
+            if (statManager.TotalLoops() >= GetConfigInt("LoopHints") && GetConfigInt("LoopHints") != 0 && TimeLoop.GetSecondsElapsed() < 5)
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    if (!saveManager.GetHasKey(i))
+                    {
+                        notifManager.AddNotification(itemManager.loopHints[i]);
+                        break;
+                    }
+                }
+            }
         }
 
         private void ConfirmGroup()

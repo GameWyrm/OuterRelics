@@ -27,7 +27,7 @@ namespace OuterRelics
         /// <param name="itemPlacements">List of locations where items are spawning</param>
         /// <param name="hintPlacements">List of locations that a hint object will be created</param>
         /// <returns>List of hints for the run</returns>
-        public List<string> GenerateHints(string seed, List<RandomizedPlacement> itemPlacements, List<RandomizedPlacement> hintPlacements, out List<string> bodies, out List<string> locations, out List<string> spawnPoints)
+        public List<string> GenerateHints(string seed, List<RandomizedPlacement> itemPlacements, List<RandomizedPlacement> hintPlacements, out List<string> bodies, out List<string> locations, out List<string> spawnPoints, out List<string> loopHints)
         {
             hints = new();
             rnd = new Random(seed.GetHashCode());
@@ -84,37 +84,54 @@ namespace OuterRelics
                 }
             }
 
+            loopHints = new();
+            for (int i = 0; i < 12; i++)
+            {
+                loopHints.Add(CreatePreciseHint(itemPlacements[i]));
+            }
+
             return hints;
         }
 
         //creates a hint with neccessary data
-        private string CreateHint(RandomizedPlacement placement, bool allowUseless, out string body, out string location, out string spawnpoint)
+        private string CreateHint(RandomizedPlacement placement, bool allowUseless,out string body, out string location, out string spawnpoint)
         {
             string newHint = "";
-            if ((rnd.Next(0, 100) > save.GetUselessHintChance() || !allowUseless) && save.GetHintDifficulty() != HintDifficulty.Disabled)
-            {
-                if (rnd.Next(0, 100) < (int)save.GetHintDifficulty())
+                if ((rnd.Next(0, 100) > save.GetUselessHintChance() || !allowUseless) && save.GetHintDifficulty() != HintDifficulty.Disabled)
                 {
-                    newHint = hintList.vagueHints[rnd.Next(0, hintList.vagueHints.Length - 1)];
+                    if (rnd.Next(0, 100) < (int)save.GetHintDifficulty())
+                    {
+                        newHint = hintList.vagueHints[rnd.Next(0, hintList.vagueHints.Length - 1)];
+                    }
+                    else
+                    {
+                        newHint = hintList.preciseHints[0];
+                    }
                 }
                 else
                 {
-                    newHint = hintList.preciseHints[0];
+                    if ((placement.body == "RingWorld_Body" || placement.body == "DreamWorld_Body") && OuterRelics.HasDLC)
+                    {
+                        newHint = hintList.uselessHintsStranger[rnd.Next(0, hintList.uselessHintsStranger.Length - 1)];
+                    }
+                    else
+                    {
+                        newHint = hintList.uselessHints[rnd.Next(0, hintList.uselessHints.Length - 1)];
+                    }
                 }
-            }
-            else
-            {
-                if ((placement.body == "RingWorld_Body" || placement.body == "DreamWorld_Body") && OuterRelics.HasDLC)
-                {
-                    newHint = hintList.uselessHintsStranger[rnd.Next(0, hintList.uselessHintsStranger.Length - 1)];
-                }
-                else
-                {
-                    newHint = hintList.uselessHints[rnd.Next(0, hintList.uselessHints.Length - 1)];
-                }
-            }
 
             newHint = ConvertFields(newHint, placement, out body, out location, out spawnpoint);
+            return newHint;
+        }
+
+        
+        // Similar to CreateHint, but only makes precise hints
+        private string CreatePreciseHint(RandomizedPlacement placement)
+        {
+            string newHint = "";
+            newHint = hintList.preciseHints[0];
+            newHint = ConvertFields(newHint, placement, out string body, out string location, out string spawnPoint);
+
             return newHint;
         }
 
