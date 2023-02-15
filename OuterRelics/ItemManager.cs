@@ -19,6 +19,10 @@ namespace OuterRelics
         /// </summary>
         public List<string> hints;
         /// <summary>
+        /// List of hints that can appear at the beginning of a loop
+        /// </summary>
+        public List<string> loopHints;
+        /// <summary>
         /// List of bodies, corresponds to each hint
         /// </summary>
         public List<string> bodies;
@@ -192,7 +196,7 @@ namespace OuterRelics
             }
 
             HintManager hintManager = new();
-            hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements, out bodies, out locations, out spawnPoints);
+            hints = hintManager.GenerateHints(seed, itemPlacements, hintPlacements, out bodies, out locations, out spawnPoints, out loopHints);
         }
 
         public void SpawnItems()
@@ -222,9 +226,12 @@ namespace OuterRelics
                 }
             }
             main.LogSuccess("Finished creating major items! Generating hints...");
-            foreach (RandomizedPlacement hintSpawn in hintPlacements)
+            if (main.saveManager.GetHintDifficulty() != HintDifficulty.Disabled)
             {
-                CreateHint(hintSpawn);
+                foreach (RandomizedPlacement hintSpawn in hintPlacements)
+                {
+                    CreateHint(hintSpawn);
+                }
             }
         }
 

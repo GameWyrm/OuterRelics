@@ -141,7 +141,7 @@ namespace OuterRelics
                 saveData.addonHintsLoaded = new();
             }
             saveData.singlePerGroup = OuterRelics.GetConfigBool("SingleMode");
-            saveData.hints = (HintDifficulty)Enum.Parse(typeof(HintDifficulty), OuterRelics.GetConfigString("Hints"));
+            saveData.hints = (HintDifficulty)Enum.Parse(typeof(HintDifficulty), OuterRelics.GetConfigString("Hints").Replace(" ", ""));
             saveData.uselessHintChance = OuterRelics.GetConfigInt("UselessHintChance");
             saveData.savedKeysObtained = new bool[12];
             saveData.totalSavedKeys = 0;

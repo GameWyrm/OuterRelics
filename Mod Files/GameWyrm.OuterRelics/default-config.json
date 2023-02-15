@@ -48,18 +48,21 @@
       "title": "DLC: Main Area (4/44)",
       "type": "toggle",
       "value": true,
+      "dlcOnly": true,
       "tooltip": "Requires Echoes of the Eye."
     },
     "DreamWorld": {
       "title": "DLC: Sub-Area (5/41)",
       "type": "toggle",
       "value": true,
+      "dlcOnly": true,
       "tooltip": "Requires Echoes of the Eye."
     },
     "DreamWorldStealth": {
       "title": "DLC: Sub-Area Lights Out (4/23)",
       "type": "toggle",
       "value": false,
+      "dlcOnly": true,
       "tooltip": "Requires Echoes of the Eye. Not for the faint of heart."
     },
     "HardMode": {
@@ -94,7 +97,7 @@
       ],
       "tooltip": "Select how many of your hints will be vague, only telling you part of the location, vs. how many will tell you exactly where to go. Disabled makes all hints useless"
     },
-    "Useless Hint Chance": {
+    "UselessHintChance": {
       "type": "selector",
       "value": 25,
       "options": [
@@ -105,12 +108,31 @@
       ],
       "tooltip": "Select the chance that a hint will be a joke statement rather than tell you where an item is. This does not generate misleading hints."
     },
+    "LoopHints": {
+      "type": "slider",
+      "min": 0,
+      "max": 15,
+      "value": 3,
+      "tooltip": "At the beginning of a loop, you'll be given a hint for where a key you haven't obtained is. Choose how many loops you must be into the run before these start appearing. Select 0 to disable."
+    },
+    "StatMusic": {
+      "title": "Stat Screen Music",
+      "type": "toggle",
+      "value": true,
+      "tooltip": "A custom song plays at the end of a run when your stats are displayed. However, if you find this distracting or immersion-breaking, you can turn it off."
+    },
     "Advanced": {"type": "separator"},
     "Debug": {
       "title": "Dev Mode",
       "type": "toggle",
       "value": false,
       "tooltip": "Enables the ability to create placement info for addons, and adds a lot more debug information to the console."
+    },
+    "ModName": {
+      "title": "Mod Folder Name",
+      "type": "text",
+      "value": "",
+      "tooltip": "Want to add support for Outer Relics in your own mod? Insert the full name of your mod here (i.e. Gamewyrm.OuterRelics) and placement and hint files will automatically be put in your mod's folder"
     },
     "DryMode": {
       "title": "Dry Runs",

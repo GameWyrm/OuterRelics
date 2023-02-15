@@ -11,11 +11,10 @@ namespace OuterRelics
         private float timer;
         private bool isInSuit => PlayerState.IsWearingSuit();
         private Text myText;
-        private OuterRelics main;
+        OuterRelics main => OuterRelics.Main;
 
-        private void Start()
+        private void Awake()
         {
-            main = OuterRelics.Main;
             myText = GetComponent<Text>();
             foreach (Font font in Resources.FindObjectsOfTypeAll<Font>())
             {
@@ -45,7 +44,10 @@ namespace OuterRelics
                 NotificationManager.s_instance.PostNotification(notif);
                 if (!main.useQSB)
                 {
-                    myText.text = notification;
+                    if (!myText.text.Contains(notification))
+                    {
+                        myText.text = notification + "\n" + myText.text;
+                    }
                     timer = 5f;
                 }
             }

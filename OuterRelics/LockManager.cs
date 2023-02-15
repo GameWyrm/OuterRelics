@@ -106,7 +106,7 @@ namespace OuterRelics
               
             hasKey = new bool[12];
             keyCount = main.keyCount;
-            mask.transform.position = mask.transform.position + transform.TransformDirection(Vector3.up * 0.5f);
+            mask.transform.position += mask.transform.TransformDirection(Vector3.up);
 
             uncollectedMat = main.assets.LoadAsset<Material>("Uncollected");
             collectedMat = main.assets.LoadAsset<Material>("Collected");
