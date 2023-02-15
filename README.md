@@ -4,6 +4,8 @@ A mod for Outer Wilds that adds various Nomai Keys to the world which must be co
 Like most mods for Outer Wilds, this mod assumes that you have beaten the game before installing and reading this. There will be spoilers within this Readme. As Outer Wilds is best experienced with as few spoilers as possible, I urge you to click off this page and experience the game for yourself first before continuing if you have not already played it. There are no Echoes of the Eye spoilers in this readme.
 
 ## Introduction
+![753640_20230214194738_1](https://user-images.githubusercontent.com/78181444/218914472-d2d48a00-8f14-4854-b661-e79698270525.png)
+
 *As tensions and division arose between the Nomai during the construction of the Sun Station, concerns were raised over the security of the Ash Twin Project. While unlikely, it was possible for one to sneak into the Project and attempt to sabotage the Project's most precious component, the Advanced Warp Core. This would force the halting of the Project - and thus prevent the firing of the Sun Station. To prevent this, the ATP was set to lock itself in the event of disaster, and distribute 12 keys required to unlock it to trusted Nomai. But, when disaster did strike, when no Nomai were found, a bug in the system caused the Project to distribute the keys in random locations across the universe...*
 
 Outer Relics adds up to 12 Nomai Keys in the Solar System, placed in random locations. The Ash Twin Project is locked down until all keys are found. The keys appear as holographic, glow, and give off a hum, so you'll know them when you see them. Collected keys are maintained across loops and are also saved.
@@ -11,11 +13,15 @@ Outer Relics adds up to 12 Nomai Keys in the Solar System, placed in random loca
 If this sounds daunting, don't worry! A generous (and configurable) hint system exists to help you out. As you explore the Outer Wilds, you'll find question marks floating around that may tell you where a key can be found.
 
 ## Installation
+![753640_20230214192239_1](https://user-images.githubusercontent.com/78181444/218913129-e597f29c-c8ea-4d88-8b44-83d8c52ed1a8.png)
+
 Recommended: Simply find the mod in Outer Wilds Mod Manager and install it and its dependancies.. To uninstall, simply disable the mod.
 
 Manual: After unzipping, drag and drop the folder into %APPDATA%\OuterWildsModManager\OWML\Mods. You will also need to install Menu Framework. To uninstall, simply remove those files from your mods folder. 
 
 ## How To Play
+![753640_20230214192923_1](https://user-images.githubusercontent.com/78181444/218913051-ea7dd8f4-31c9-4bb9-a61e-ae19e1363465.png)
+
 On the Main Menu, you'll notice a new button: "NEW OUTER RELICS RUN". If you're all right with default settings, you can start, but you should take a look at the mod config regardless. 
 
 The config is seperated into three different categories:
@@ -47,6 +53,8 @@ Once you've selected your settings, go back to the Main Menu and click NEW OUTER
 To find keys, explore! They give off a loud hum, so you'll know if you're near one. There are twelve in total, and you can see which ones you have or do not have from the pause screen. Once you've found all twelve, a message will appear, informing you that the Ash Twin Project is now unlocked. You know what to do. A run isn't over until you you get to the end!
 
 ## Compatibility
+![753640_20230214193129_1](https://user-images.githubusercontent.com/78181444/218913074-5d5fcfdc-485e-4c7b-a160-dc9f70d613d1.png)
+
 Outer Relics is designed to be compatible with any mod, except mods that delete major objects in the base Hearthian Solar System, or mods that make significant changes to the Ash Twin Project.
 
 You can use New Horizons with Outer Relics, provided the NH addons you are using do not delete major base system objects. Check for addons that support Outer Relics for more locations to search!
@@ -54,6 +62,8 @@ You can use New Horizons with Outer Relics, provided the NH addons you are using
 Outer Relics is compatible with Outer Wilds Randomizer, and Randomizer is actually recommended for more interesting runs! Note that Outer Wilds Randomizer is not compatible with New Horizons.
 
 ## Roadmap
+![753640_20230214193403_1](https://user-images.githubusercontent.com/78181444/218913101-aa35075d-4917-48b3-afb4-013f24886669.png)
+
 Here are the features planned for the future:
 
 -GOODIES: In addition to finding keys, you can also find goodies in the world! These provide bonuses to your abilities that will last for the duration of the run, such as extra jetpack power or more health.
