@@ -1,4 +1,6 @@
 # Outer Relics
+![OUTER_RELICS_LOGO](https://github.com/GameWyrm/OuterRelics/blob/Readme-Update/OuterRelics/Images/Main%20Logo%20Github.png?raw=true)
+
 A mod for Outer Wilds that adds various Nomai Keys to the world which must be collected before the game can be completed.
 
 Like most mods for Outer Wilds, this mod assumes that you have beaten the game before installing and reading this. There will be spoilers within this Readme. As Outer Wilds is best experienced with as few spoilers as possible, I urge you to click off this page and experience the game for yourself first before continuing if you have not already played it. There are no Echoes of the Eye spoilers in this readme.
