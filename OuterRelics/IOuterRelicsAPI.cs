@@ -10,13 +10,13 @@ namespace OuterRelics
         /// <summary>
         /// Registers your placement files and hints placed in the mod's specific PlacementInfo and Hints folder in your mod's root directory
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         public void RegisterMod(ModBehaviour modClass);
 
         /// <summary>
         /// Removes all your placement files and hints
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         public void UnregisterMod(ModBehaviour modClass);
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace OuterRelics
         /// <summary>
         /// Registers a specific file. Must be placed within the PlacementInfo or Hints folder in your mod's root directory
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileName">Name of the file. You do not need to inclue the .json extension.</param>
         /// <param name="isHint">If true, the file being registered is a hint. If false, it is a placment info file.</param>
         /// <returns>If true, the file was successfully registered.</returns>
@@ -38,7 +38,7 @@ namespace OuterRelics
         /// <summary>
         /// Removes a specific placement or hint file
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileName">Name of the file. You do not need to include the .json extension.</param>
         /// <param name="isHint">If true, the file being removed is a hint.</param>
         /// <returns>If true, the file was successfully unregistered.</returns>
@@ -47,7 +47,7 @@ namespace OuterRelics
         /// <summary>
         /// Registers a list of files. Must be placed within the PlacementInfo or Hints folder in your mod's root directory
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileNames">Names of the files. You do not need to inclue the .json extension.</param>
         /// <param name="isHint">If true, the files being registered are hints. If false, they are placment info files.</param>
         /// <returns>If true, all of the files were successfully registered.</returns>
@@ -56,7 +56,7 @@ namespace OuterRelics
         /// <summary>
         /// Removes a list of placement or hint files
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileNames">Names of the files. You do not need to include the .json extension.</param>
         /// <param name="isHint">If true, the files being removed are hints.</param>
         /// <returns>If true, the files were successfully unregistered.</returns>
@@ -65,7 +65,7 @@ namespace OuterRelics
         /// <summary>
         /// Registers an array of files. Must be placed within the PlacementInfo or Hints folder in your mod's root directory
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileNames">Names of the files. You do not need to inclue the .json extension.</param>
         /// <param name="isHint">If true, the files being registered are hints. If false, they are placment info files.</param>
         /// <returns>If true, all of the files were successfully registered.</returns>
@@ -74,7 +74,7 @@ namespace OuterRelics
         /// <summary>
         /// Removes an array of placement or hint files
         /// </summary>
-        /// <param name="modClass">Your mod's ModBehavior</param>
+        /// <param name="modClass">Your mod's ModBehaviour</param>
         /// <param name="fileNames">Names of the files. You do not need to include the .json extension.</param>
         /// <param name="isHint">If true, the files being removed are hints.</param>
         /// <returns>If true, the files were successfully unregistered.</returns>
