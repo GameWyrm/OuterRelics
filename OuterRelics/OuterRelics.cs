@@ -579,10 +579,10 @@ namespace OuterRelics
         /// Logs an Info message to the OWML console. Will be blue.
         /// </summary>
         /// <param name="text">Text to print</param>
-        /// <param name="debug">Should text only get logged if in debug mode?</param>
-        public void LogInfo(string text, bool debug = true)
+        /// <param name="debugOnly">Should text only get logged if in debug mode?</param>
+        public void LogInfo(string text, bool debugOnly = true)
         {
-            if (!debug && !debugMode) return;
+            if (debugOnly && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Info);
         }
 
@@ -590,10 +590,10 @@ namespace OuterRelics
         /// Logs a Warning message to the OWML console. Will be yellow.
         /// </summary>
         /// <param name="text">Text to print</param>
-        /// <param name="debug">Should text only get logged if in debug mode?</param>
-        public void LogWarning(string text, bool debug = false)
+        /// <param name="debugOnly">Should text only get logged if in debug mode?</param>
+        public void LogWarning(string text, bool debugOnly = false)
         {
-            if (!debug && !debugMode) return;
+            if (debugOnly && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Warning);
         }
 
@@ -601,10 +601,10 @@ namespace OuterRelics
         /// Logs an Error message to the OWML console. Will be red.
         /// </summary>
         /// <param name="text">Text to print</param>
-        /// <param name="debug">Should text only get logged if in debug mode?</param>
-        public void LogError(string text, bool debug = false)
+        /// <param name="debugOnly">Should text only get logged if in debug mode?</param>
+        public void LogError(string text, bool debugOnly = false)
         {
-            if (!debug && !debugMode) return;
+            if (debugOnly && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Error);
         }
 
@@ -612,10 +612,10 @@ namespace OuterRelics
         /// Logs a Success message to the OWML console. Will be green.
         /// </summary>
         /// <param name="text">Text to print</param>
-        /// <param name="debug">Should text only get logged if in debug mode?</param>
-        public void LogSuccess(string text, bool debug = true)
+        /// <param name="debugOnly">Should text only get logged if in debug mode?</param>
+        public void LogSuccess(string text, bool debugOnly = true)
         {
-            if (!debug && !debugMode) return;
+            if (debugOnly && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Success);
         }
 
@@ -623,10 +623,10 @@ namespace OuterRelics
         /// Logs a message to the OWML console. Will be white.
         /// </summary>
         /// <param name="text">Text to print</param>
-        /// <param name="debug">Should text only get logged if in debug mode?</param>
-        public void LogMessage(string text, bool debug = true)
+        /// <param name="debugOnly">Should text only get logged if in debug mode?</param>
+        public void LogMessage(string text, bool debugOnly = true)
         {
-            if (!debug && !debugMode) return;
+            if (debugOnly && !debugMode) return;
             ModHelper.Console.WriteLine(text, MessageType.Message);
         }
         #endregion
