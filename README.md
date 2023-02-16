@@ -42,7 +42,7 @@ Outer Relics is very customizable. You can tweak quite a few settings to match y
 
   * HINTS: Select the difficulty of hints. You can disable hints, make hints more vague, or make them more precise.
 
-  * USELESS HINT CHANCE: There is a chance that hints will instead of telling you where a key is, to instead simply tell you something pointless. As there are a lot of hints in the world, you can turn this up if you find runs too easy.
+  * USELESS HINT CHANCE: There is a chance that hints will tell you something pointless instead of where a key is. As there are a lot of hints in the world, you can turn this up if you find runs too easy.
 
   * START OF LOOP HINTS: At the beginning of a loop, you'll be given a hint to the location of one key you don't have. You can set the number of loops that must pass before you start getting hints, or disable the feature entirely.
 
@@ -64,6 +64,14 @@ Outer Relics is designed to be compatible with any mod, except mods that delete 
 You can use [New Horizons](https://github.com/Outer-Wilds-New-Horizons/new-horizons) with Outer Relics, provided the NH addons you are using do not delete major base system objects. Check for addons that support Outer Relics for more locations to search!
 
 Outer Relics is compatible with [Outer Wilds Randomizer](https://github.com/PacificEngine/OW_Randomizer), and Randomizer is actually recommended for more interesting runs! Note that Outer Wilds Randomizer is not compatible with New Horizons.
+
+## Addons
+Outer Relics supports addons! You can add spawn points to any New Horizons mods that support Outer Relics. Check the Mod Manager to see what mods support Outer Relics.
+
+If you want to create your own addons, check out the [Addon Guide](https://github.com/GameWyrm/OuterRelics/wiki/Addon-Guide).
+
+## Feedback
+If you run into a bug, or you want to suggest a new feature, [make an issue](https://github.com/GameWyrm/OuterRelics/issues) for it.
 
 ## Roadmap
 ![753640_20230214193403_1](https://user-images.githubusercontent.com/78181444/218913101-aa35075d-4917-48b3-afb4-013f24886669.png)
