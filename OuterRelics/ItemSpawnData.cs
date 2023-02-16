@@ -120,6 +120,8 @@ namespace OuterRelics
     public class ItemSpawnList
     {
         public string modName;
+        public string orVersion;
+        public string modVersion;
         public List<ItemSpawnLocation> spawnLocations;
 
         public ItemSpawnList()

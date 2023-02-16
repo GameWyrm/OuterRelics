@@ -110,12 +110,17 @@ namespace OuterRelics
         public void SaveBody()
         {
             Directory.CreateDirectory(modMain.ModHelper.Manifest.ModFolderPath + (placeHints ? "Hints" : "PlacementInfo"));
+
             if (!placeHints)
             {
+                spawnList.orVersion = main.ModHelper.Manifest.Version;
+                spawnList.modVersion = modMain.ModHelper.Manifest.Version;
                 modMain.ModHelper.Storage.Save<ItemSpawnList>(spawnList, "PlacementInfo/" + currentBody + ".json");
             }
             else
             {
+                hintSpawns.orVersion = main.ModHelper.Manifest.Version;
+                hintSpawns.modVersion = modMain.ModHelper.Manifest.Version;
                 modMain.ModHelper.Storage.Save<ItemSpawnList>(hintSpawns, "Hints/HintPlacements.json");
             }
         }
@@ -127,6 +132,7 @@ namespace OuterRelics
             {
                 main.LogInfo("Unable to locate hint placement data, creating new file");
                 hintSpawns = new ItemSpawnList();
+                hintSpawns.modName = OuterRelics.GetConfigString("ModName");
                 hintSpawns.spawnLocations = new List<ItemSpawnLocation>();
             }
         }

@@ -111,7 +111,7 @@
     "LoopHints": {
       "type": "slider",
       "min": 0,
-      "max": 15,
+      "max": 10,
       "value": 3,
       "tooltip": "At the beginning of a loop, you'll be given a hint for where a key you haven't obtained is. Choose how many loops you must be into the run before these start appearing. Select 0 to disable."
     },

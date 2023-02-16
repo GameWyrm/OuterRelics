@@ -4,9 +4,13 @@
   "author": "GameWyrm",
   "name": "Outer Relics",
   "uniqueName": "GameWyrm.OuterRelics",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "owmlVersion": "2.9.0",
     "dependencies": [
         "_nebula.MenuFramework"
+    ],
+    "pathsToPreserve": [
+      "SaveData",
+      "SpoilerLogs"
     ]
 }

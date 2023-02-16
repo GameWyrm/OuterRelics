@@ -1,5 +1,7 @@
 {
   "modName": "GameWyrm.OuterRelics",
+  "orVersion": "1.0.0",
+  "modVersion": "1.0.0",
   "spawnLocations": [
     {
       "system": "SolarSystem",
