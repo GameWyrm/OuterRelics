@@ -76,7 +76,7 @@ If you want to create your own addons, check out the [Addon Guide](https://githu
 If you run into a bug, or you want to suggest a new feature, [make an issue](https://github.com/GameWyrm/OuterRelics/issues) for it.
 
 ## Roadmap
-![Overlooking Chert's Camp](/OuterRelics/Images/Overlooking%20Chert's%20Camp.png)
+![Overlooking Chert's Camp](/OuterRelics/Images/OverlookingChertsCamp.png)
 
 Here are the features planned for the future:
 
