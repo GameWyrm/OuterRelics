@@ -310,6 +310,8 @@ namespace OuterRelics
 
         private void LoadFiles()
         {
+            spawnLists = new();
+
             foreach (string file in Directory.GetFiles(main.ModHelper.Manifest.ModFolderPath + "PlacementInfo"))
             {
                 ItemSpawnList listToAdd = main.ModHelper.Storage.Load<ItemSpawnList>("PlacementInfo/" + Path.GetFileName(file));
@@ -335,6 +337,8 @@ namespace OuterRelics
                 }
 
             main.LogInfo("Loaded " + spawnLists.Count + " placement files");
+
+            hintList = new();
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
             foreach (ItemSpawnList list in addons.GetSavedHints())
