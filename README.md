@@ -30,6 +30,8 @@ Once you've selected your settings, go back to the Main Menu and click NEW OUTER
 
 To find keys, explore! They give off a loud hum, so you'll know if you're near one. There are twelve in total, and you can see which ones you have or do not have from the pause screen. Once you've found all twelve, a message will appear, informing you that the Ash Twin Project is now unlocked. You know what to do. A run isn't over until you you get to the end!
 
+![Find Nomai Keys to beat the game. Find Hints to locate keys.](https://github.com/GameWyrm/OuterRelics/blob/Readme-Update/OuterRelics/Images/KeyHintDisplay.png)
+
 ## Settings
 
 Outer Relics is very customizable. You can tweak quite a few settings to match your taste:
