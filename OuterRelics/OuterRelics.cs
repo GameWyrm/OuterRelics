@@ -33,7 +33,7 @@ namespace OuterRelics
         /// <summary>
         /// Names for every Nomai key
         /// </summary>
-        public static List<string> KeyNames = new List<string>
+        public static List<string> KeyNames = new()
         {
             "TRUTH",
             "CURIOSITY",
@@ -192,14 +192,14 @@ namespace OuterRelics
             {
                 if (loadScene != OWScene.TitleScreen)
                 {
-                    if (saveManager == null) saveManager = new SaveManager();
+                    saveManager ??= new SaveManager();
                     if (saveManager.GetSaveDataExists()) saveManager.LoadData();
                     statManager.LoadStats();
                 }
                 if (loadScene == OWScene.SolarSystem)
                 {
                     LogSuccess("Loaded into solar system!");
-                    StartCoroutine(LoadIn(GetSystemName()));
+                    StartCoroutine(LoadIn());
                     statManager.runTimer = true;
                 }
                 else
@@ -209,6 +209,7 @@ namespace OuterRelics
                         itemManager.itemPlacements = null;
                         itemManager.hintPlacements = null;
                     }
+                    saveManager.SaveData(true);
                     statManager.runTimer = false;
                 }
 
@@ -233,7 +234,7 @@ namespace OuterRelics
             };
             if (nhAPI != null)
             {
-                nhAPI.GetStarSystemLoadedEvent().AddListener(dumbRequiredString);
+                nhAPI.GetStarSystemLoadedEvent().AddListener(DumbRequiredString);
             }
 
             //Quit event, no cheating
@@ -283,9 +284,11 @@ namespace OuterRelics
             }
 
             //Load key models
-            itemManager.hintModels = new List<GameObject>();
-            itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint"));
-            itemManager.hintModels.Add(assets.LoadAsset<GameObject>("Hint Stranger"));
+            itemManager.hintModels = new()
+            {
+                assets.LoadAsset<GameObject>("Hint"),
+                assets.LoadAsset<GameObject>("Hint Stranger")
+            };
 
             foreach (Material mat in Resources.FindObjectsOfTypeAll<Material>())
             {
@@ -294,6 +297,9 @@ namespace OuterRelics
                     LogInfo(mat.name);
                 }
             }
+
+            //Add death event
+            GlobalMessenger<DeathType>.AddListener("PlayerDeath", new Callback<DeathType>(this.OnPlayerDeath));
         }
 
         private void Update()
@@ -304,6 +310,11 @@ namespace OuterRelics
                 LogInfo("ATP Unlock was manually triggerred");
                 lockManager.UnlockATP();
             }
+        }
+
+        private void OnPlayerDeath(DeathType deathType)
+        {
+            saveManager.SaveData(false);
         }
 
         public override void Configure(IModConfig config)
@@ -323,9 +334,9 @@ namespace OuterRelics
             return new OuterRelicsAPI();
         }
 
-        private void dumbRequiredString(string sceneName)
+        private void DumbRequiredString(string sceneName)
         {
-            StartCoroutine(LoadIn(sceneName));
+            StartCoroutine(LoadIn());
             return;
         }
 
@@ -333,9 +344,9 @@ namespace OuterRelics
         /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system
         /// </summary>
         /// <returns></returns>
-        IEnumerator LoadIn(string sceneName)
+        IEnumerator LoadIn()
         {
-            if (saveManager == null) saveManager = new SaveManager();
+            saveManager ??= new SaveManager();
             if (!saveManager.GetSaveDataExists() && !newGame) yield break;
 
             saveManager.LoadData();
@@ -505,9 +516,9 @@ namespace OuterRelics
             bool dryMode = GetConfigBool("DryMode");
             if (OWMath.ApproxEquals(Time.time, popupOpenTime)) return;
 
-            if (saveManager == null) saveManager = new SaveManager();
+            saveManager ??= new SaveManager();
 
-            Regex reg = new Regex("^[a-zA-Z0-9 ]*$");
+            Regex reg = new("^[a-zA-Z0-9 ]*$");
 
             if (!reg.IsMatch(seed))
             {
@@ -524,7 +535,7 @@ namespace OuterRelics
 
             if (!dryMode)
             {
-                if (saveManager == null) saveManager = new SaveManager();
+                saveManager ??= new SaveManager();
                 saveManager.ClearSaveData();
                 saveManager.NewSave();
                 itemManager.Randomize(out bool succeeded);
@@ -548,7 +559,7 @@ namespace OuterRelics
             }
             else
             {
-                if (saveManager == null) saveManager = new SaveManager();
+                saveManager ??= new SaveManager();
                 saveManager.NewSave();
                 itemManager.Randomize(out bool succeeded);
                 if (!succeeded)

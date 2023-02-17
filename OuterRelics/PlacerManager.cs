@@ -88,6 +88,18 @@ namespace OuterRelics
                     main.LogError("No Indicators placed, place one first to determine spawn point");
                     return;
                 }
+                if (string.IsNullOrEmpty(OuterRelics.GetConfigString("ModName")))
+                {
+                    main.notifManager.AddNotification("FAILURE: INSERT MOD NAME IN CONFIG");
+                    main.LogError("Mod Folder Name in config is blank! Please enter your mod's full name");
+                    return;
+                }
+                if (main.ModHelper.Interaction.TryGetMod(OuterRelics.GetConfigString("ModName")) == null)
+                {
+                    main.notifManager.AddNotification("FAILURE: MOD NAME NOT FOUND, CHECK CONFIG");
+                    main.LogError("Mod Folder Name in config points to an invalid mod! Please double-check you've correctly entered your mod's full name");
+                    return;
+                }
                 SaveSpawnLocation();
                 SaveBody();
             }

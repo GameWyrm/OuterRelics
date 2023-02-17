@@ -80,6 +80,7 @@ namespace OuterRelics
         /// <param name="keysObtained">List of keys obtained</param>
         public void SaveData(bool titleOverride, bool[] keysObtained = null)
         {
+            if (saveData == null) return;
             if (!titleOverride && SceneManager.GetActiveScene().name != "SolarSystem")
             {
                 main.LogInfo("Cannot save outside of the standard solar system scene, aborting save");
