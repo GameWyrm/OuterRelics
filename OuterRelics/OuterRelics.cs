@@ -179,8 +179,8 @@ namespace OuterRelics
         private void Start()
         {
             //Create saving folders
-            Directory.CreateDirectory(ModHelper.Manifest.ModFolderPath + "SaveData");
-            Directory.CreateDirectory(ModHelper.Manifest.ModFolderPath + "SpoilerLogs");
+            Directory.CreateDirectory(Path.Combine(ModHelper.Manifest.ModFolderPath, "SaveData"));
+            Directory.CreateDirectory(Path.Combine(ModHelper.Manifest.ModFolderPath + "SpoilerLogs"));
 
             //Load game assets
             assets = ModHelper.Assets.LoadBundle("Models/OuterRelicsassets");
@@ -191,12 +191,22 @@ namespace OuterRelics
             //Initialize stat manager
             statManager = gameObject.AddComponent<StatManager>();
 
+            //Create save manager
+            saveManager = new();
+
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
                 if (loadScene == OWScene.EyeOfTheUniverse)
                 {
-                    if (statManager.runTimer) saveManager.SaveData(true);
+                    if (statManager.runTimer)
+                    {
+                        saveManager.SaveData(true);
+                        if (statManager.timer < saveManager.GetBestTime() || saveManager.GetBestTime() == -1f)
+                        {
+                            saveManager.SaveGlobalData(GlobalData.BestTime, statManager.timer.ToString());
+                        }
+                    }
 
                     Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
 
@@ -308,6 +318,15 @@ namespace OuterRelics
 
             //Add death event
             GlobalMessenger<DeathType>.AddListener("PlayerDeath", new Callback<DeathType>(this.OnPlayerDeath));
+
+            //Add intro message
+            saveManager.LoadGlobalData();
+
+            if (!saveManager.GetHasSeenIntro())
+            {
+                menuAPI.RegisterStartupPopup("Welcome to Outer Relics! Check out the mod config and pick your settings, then select \"New Outer Relics Run\" to begin your search! For more information, check the readme.");
+                saveManager.SaveGlobalData(GlobalData.HasSeenIntro, true.ToString());
+            }
         }
 
         private void Update()

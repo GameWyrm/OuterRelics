@@ -29,6 +29,12 @@ namespace OuterRelics
             public List<int> hintIDsObtained;
         }
 
+        public class OuterRelicsGlobalData
+        {
+            public bool hasSeenIntro;
+            public float bestTime;
+        }
+
         /// <summary>
         /// Seed for randomization stored in the save file
         /// </summary>
@@ -50,15 +56,16 @@ namespace OuterRelics
         };
 
         private OuterRelicsSaveData saveData;
+        private OuterRelicsGlobalData globalData;
         private OuterRelics main => OuterRelics.Main;
         string profile => StandaloneProfileManager.s_instance.currentProfile.profileName;
         StatManager stats => main.statManager;
         AddonManager addons => main.addonManager;
 
-        public SaveManager()
+        /*public SaveManager()
         {
             LoadData();
-        }
+        }*/
 
         public void LoadData()
         {
@@ -151,6 +158,50 @@ namespace OuterRelics
             saveData.hintIDsObtained = new List<int>();
 
             main.LogSuccess("Created new file info");
+        }
+
+        public void LoadGlobalData()
+        {
+            globalData = main.ModHelper.Storage.Load<OuterRelicsGlobalData>("SaveData/GlobalData.json");
+            if (globalData == null)
+            {
+                globalData = new();
+                globalData.hasSeenIntro = false;
+                globalData.bestTime = -1f;
+            }
+        }
+
+        public void SaveGlobalData(GlobalData key, string value)
+        {
+            string valueString = value;
+            bool successFloat = float.TryParse(value, out float valueFloat);
+            bool successBool = bool.TryParse(value, out bool valueBool);
+
+            switch (key)
+            {
+                case GlobalData.HasSeenIntro:
+                    if (successBool)
+                    {
+                        globalData.hasSeenIntro = valueBool;
+                    }
+                    else
+                    {
+                        main.LogError($"Did not successfully parse \"{value}\" into a bool");
+                    }
+                    break;
+                case GlobalData.BestTime:
+                    if (successFloat)
+                    {
+                        globalData.bestTime = valueFloat;
+                    }
+                    else
+                    {
+                        main.LogError($"Did not successfully parse \"{value}\" into a float");
+                    }
+                    break;
+            }
+
+            main.ModHelper.Storage.Save<OuterRelicsGlobalData>(globalData, "SaveData/GlobalData.json");
         }
 
         /// <summary>
@@ -303,6 +354,16 @@ namespace OuterRelics
         public Dictionary<string, List<string>> GetAddonHintsDict()
         {
             return saveData.addonHintsLoaded;
+        }
+
+        public bool GetHasSeenIntro()
+        {
+            return globalData.hasSeenIntro;
+        }
+
+        public float GetBestTime()
+        {
+            return globalData.bestTime;
         }
 
         /// <summary>

@@ -121,7 +121,7 @@ namespace OuterRelics
 
         public void SaveBody()
         {
-            Directory.CreateDirectory(modMain.ModHelper.Manifest.ModFolderPath + (placeHints ? "Hints" : "PlacementInfo"));
+            Directory.CreateDirectory(Path.Combine(modMain.ModHelper.Manifest.ModFolderPath + (placeHints ? "Hints" : "PlacementInfo")));
 
             if (!placeHints)
             {
