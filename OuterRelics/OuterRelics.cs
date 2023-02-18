@@ -190,6 +190,19 @@ namespace OuterRelics
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
+                if (loadScene == OWScene.EyeOfTheUniverse)
+                {
+                    if (statManager.runTimer) saveManager.SaveData(true);
+
+                    Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
+
+                    statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
+                    statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
+                    statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+
+                    statsDisplay.AddComponent<EndingSceneStats>();
+                }
+
                 if (loadScene != OWScene.TitleScreen)
                 {
                     saveManager ??= new SaveManager();
@@ -213,16 +226,7 @@ namespace OuterRelics
                     statManager.runTimer = false;
                 }
 
-                if (loadScene == OWScene.EyeOfTheUniverse)
-                {
-                    Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
-
-                    statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
-                    statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
-                    statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
-
-                    statsDisplay.AddComponent<EndingSceneStats>();
-                }
+                
 
                 if (loadScene == OWScene.TitleScreen)
                 {
