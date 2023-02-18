@@ -19,7 +19,7 @@ If this sounds daunting, don't worry! A generous (and configurable) hint system 
 
 Recommended: Simply find the mod in Outer Wilds Mod Manager and install it and its dependancies. To uninstall, simply disable the mod.
 
-Manual: Download the latest release from the releases page. After unzipping, drag and drop the folder into %APPDATA%\OuterWildsModManager\OWML\Mods. You will also need to install [Menu Framework](https://github.com/misternebula/MenuFramework). To uninstall, simply remove those files from your mods folder. 
+Manual: Download the latest release from the [releases page](https://github.com/GameWyrm/OuterRelics/releases). After unzipping, drag and drop the folder into %APPDATA%\OuterWildsModManager\OWML\Mods. You will also need to install [Menu Framework](https://github.com/misternebula/MenuFramework). To uninstall, simply remove those files from your mods folder. 
 
 ## How To Play
 ![A Key on Timber Hearth](/OuterRelics/Images/Key%20on%20Timber%20Hearth.png)
