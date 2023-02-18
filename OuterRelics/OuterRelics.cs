@@ -3,6 +3,7 @@ using OWML.ModHelper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -177,6 +178,9 @@ namespace OuterRelics
 
         private void Start()
         {
+            //Create saving folders
+            Directory.CreateDirectory(ModHelper.Manifest.ModFolderPath + "SaveData");
+            Directory.CreateDirectory(ModHelper.Manifest.ModFolderPath + "SpoilerLogs");
 
             //Load game assets
             assets = ModHelper.Assets.LoadBundle("Models/OuterRelicsassets");
