@@ -48,7 +48,7 @@ Outer Relics is very customizable. You can tweak quite a few settings to match y
 
   * START OF LOOP HINTS: At the beginning of a loop, you'll be given a hint to the location of one key you don't have. You can set the number of loops that must pass before you start getting hints, or disable the feature entirely.
 
-  * STAT SCREEN MUSIC: At the end of a run a stat screen will show up. This screen has custom music arranged by GameWyrm. If you don't like this music, you can disable it.
+  * STAT SCREEN MUSIC: At the end of a run a stat screen will show up. This screen has custom music arranged by GameWyrm, which you can listen to [here](https://youtu.be/nEuI75Owb_4). If you don't like this music, you can disable it.
 
 * ADVANCED: These are settings designed for users creating Outer Relics addons or attempting to fix bugs.
 
