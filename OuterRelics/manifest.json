@@ -1,12 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
-  "filename": "ScavengerHunt.dll",
+  "filename": "OuterRelics.dll",
   "author": "GameWyrm",
-  "name": "ScavengerHunt",
-  "uniqueName": "GameWyrm.ScavengerHunt",
-  "version": "0.1.0",
+  "name": "Outer Relics",
+  "uniqueName": "GameWyrm.OuterRelics",
+  "version": "0.9.3",
   "owmlVersion": "2.9.0",
     "dependencies": [
         "_nebula.MenuFramework"
+    ],
+    "pathsToPreserve": [
+      "SaveData",
+      "SpoilerLogs"
     ]
 }
