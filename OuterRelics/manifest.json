@@ -4,7 +4,7 @@
   "author": "GameWyrm",
   "name": "Outer Relics",
   "uniqueName": "GameWyrm.OuterRelics",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "owmlVersion": "2.9.0",
     "dependencies": [
         "_nebula.MenuFramework"
