@@ -12,7 +12,7 @@
         /// <summary>
         /// All hints are vague
         /// </summary>
-        Vague = 100,
+        AllVague = 100,
         /// <summary>
         /// 75% vague, 25% precise
         /// </summary>
@@ -28,6 +28,6 @@
         /// <summary>
         /// All hints are precise
         /// </summary>
-        Precise = 0
+        AllPrecise = 0
     }
 }
