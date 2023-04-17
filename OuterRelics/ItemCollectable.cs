@@ -74,11 +74,11 @@ namespace OuterRelics
                 isRingWorldLocation = OuterRelics.GetBody(gameObject).name == "RingWorld_Body";
             }
 
-            if (transform.parent.transform.parent.transform.parent == null)
+            /*if (transform.parent.transform.parent.transform.parent == null)
             {
                 main.LogInfo("No higher parent found");
                 return;
-            }
+            }*/
         }
 
         protected virtual void Update()

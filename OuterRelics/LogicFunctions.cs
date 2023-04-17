@@ -72,29 +72,32 @@ namespace OuterRelics
 
         public bool CanDoStranger()
         {
+            if (!OuterRelics.HasDLC) return false;
             if (isTitle)
             {
                 return OuterRelics.GetConfigBool("Stranger");
             }
-            else return save.GetPools()[7] && OuterRelics.HasDLC;
+            else return save.GetPools()[7];
         }
 
         public bool CanDoDreamWorld()
         {
+            if (!OuterRelics.HasDLC) return false;
             if (isTitle)
             {
                 return OuterRelics.GetConfigBool("DreamWorld");
             }
-            else return save.GetPools()[8] && OuterRelics.HasDLC;
+            else return save.GetPools()[8];
         }
 
         public bool CanDoDreamWorldStealth()
         {
+            if (!OuterRelics.HasDLC) return false;
             if (isTitle)
             {
                 return OuterRelics.GetConfigBool("DreamWorldStealth");
             }
-            else return save.GetPools()[9] && OuterRelics.HasDLC;
+            else return save.GetPools()[9];
         }
 
         public bool CanDoHardMode()
@@ -108,11 +111,12 @@ namespace OuterRelics
 
         public bool CanDoHardModeDLC()
         {
+            if (!OuterRelics.HasDLC) return false;
             if (isTitle)
             {
-                return OuterRelics.GetConfigBool("HardMode") && OuterRelics.HasDLC;
+                return OuterRelics.GetConfigBool("HardMode");
             }
-            else return save.GetPools()[10] && OuterRelics.HasDLC;
+            else return save.GetPools()[10];
         }
 
         public bool CanDoAddons()

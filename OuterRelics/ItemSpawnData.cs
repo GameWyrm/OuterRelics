@@ -35,7 +35,6 @@ namespace OuterRelics
                 {"QuantumMoon_Body", "Quantum Moon"},
                 {"RingWorld_Body", "The Stranger"},
                 {"Satellite_Body", "Timber Hearth"},
-                {"Sector_EscapePodBody", "Dark Bramble"},
                 {"StatueIsland_Body", "Giant's Deep"},
                 {"SunStation_Body", "Sun Station"},
                 {"TimberHearth_Body", "Timber Hearth"},

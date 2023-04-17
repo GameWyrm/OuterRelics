@@ -10,7 +10,7 @@
     <NoWarn>MSB3270</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugType></DebugType>
+    <DebugType>Portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="OWML" Version="2.9.0" />
