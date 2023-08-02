@@ -54,7 +54,7 @@ namespace OuterRelics
         private int frameCounter;
         
 
-        private void Start()
+        protected virtual void Start()
         {
             main = OuterRelics.Main;
             hasDLC = OuterRelics.HasDLC;

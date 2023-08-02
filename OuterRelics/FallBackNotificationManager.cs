@@ -38,19 +38,13 @@ namespace OuterRelics
 
         public void AddNotification(string notification)
         {
-            if (!main.useQSB)
+            NotificationData notif = new NotificationData(notification.ToUpper());
+            NotificationManager.s_instance.PostNotification(notif);
+            if (!myText.text.Contains(notification))
             {
-                NotificationData notif = new NotificationData(notification.ToUpper());
-                NotificationManager.s_instance.PostNotification(notif);
-                if (!main.useQSB)
-                {
-                    if (!myText.text.Contains(notification))
-                    {
-                        myText.text = notification + "\n" + myText.text;
-                    }
-                    timer = 5f;
-                }
+                myText.text = notification + "\n" + myText.text;
             }
+            timer = 5f;
             
         }
     }

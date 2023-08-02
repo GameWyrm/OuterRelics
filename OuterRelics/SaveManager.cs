@@ -1,5 +1,7 @@
 ﻿using Epic.OnlineServices;
+using HarmonyLib;
 using OWML.ModHelper;
+using OWML.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,7 +60,6 @@ namespace OuterRelics
         private OuterRelicsSaveData saveData;
         private OuterRelicsGlobalData globalData;
         private OuterRelics main => OuterRelics.Main;
-        string profile => StandaloneProfileManager.s_instance.currentProfile.profileName;
         StatManager stats => main.statManager;
         AddonManager addons => main.addonManager;
 
@@ -67,9 +68,34 @@ namespace OuterRelics
             LoadData();
         }*/
 
+        string Profile()
+        {
+            if (main.qsb == null)
+            {
+                return StandaloneProfileManager.s_instance.currentProfile.profileName;
+            }
+            else
+            {
+                return AccessTools.Field(AccessTools.TypeByName("QSBStandaloneProfileManager"), "s_instance").GetValue(null).GetValue<object>("currentProfile").GetValue<string>("profileName");
+            }
+        }
+
         public void LoadData()
         {
-            saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + profile + "OuterRelicsSave.json");
+            if (main.useQSB)
+            {
+                foreach (uint player in main.qsb.GetPlayerIDs())
+                {
+                    main.LogInfo($"Player: {player}");
+                }
+            }
+            
+            if (main.useQSB && !main.qsb.GetIsHost())
+            {
+                saveData = main.qsb.GetCustomData<OuterRelicsSaveData>(main.qsb.GetPlayerIDs()[0], "ORSave");
+            }
+
+            saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + Profile() + "OuterRelicsSave.json");
             if (saveData == null)
             {
                 saveData = new OuterRelicsSaveData();
@@ -77,8 +103,13 @@ namespace OuterRelics
 
                 main.LogInfo("Save file did not exist, creating new save info");
             }
-            else main.LogSuccess("Loaded save data for " + profile);
+            else main.LogSuccess("Loaded save data for " + Profile());
             main.LogInfo("TIMER FROM SAVE: " + saveData.timer);
+
+            if (main.useQSB && main.qsb.GetIsHost())
+            {
+                main.qsb.SetCustomData<OuterRelicsSaveData>(main.qsb.GetPlayerIDs()[0], "ORSave", saveData);
+            }
         }
 
         /// <summary>
@@ -88,6 +119,15 @@ namespace OuterRelics
         public void SaveData(bool titleOverride, bool[] keysObtained = null)
         {
             if (saveData == null) return;
+            if (main.useQSB)
+            {
+                main.LogSuccess("Using QSB!");
+                if (!main.qsb.GetIsHost())
+                {
+                    main.LogInfo("Not the host, will not save data");
+                    return;
+                }
+            }
             if (!titleOverride && SceneManager.GetActiveScene().name != "SolarSystem")
             {
                 main.LogInfo("Cannot save outside of the standard solar system scene, aborting save");
@@ -112,9 +152,9 @@ namespace OuterRelics
             saveData.startLoop = stats.startingLoop;
             saveData.hintIDsObtained = stats.hintIDsObtained;
 
-            main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{profile}OuterRelicsSave.json");
+            main.ModHelper.Storage.Save<OuterRelicsSaveData>(saveData, $"SaveData/{Profile()}OuterRelicsSave.json");
 
-            main.LogInfo($"Saved Outer Relics data for {profile}");
+            main.LogInfo($"Saved Outer Relics data for {Profile()}");
         }
 
         public void NewSave()
@@ -373,7 +413,7 @@ namespace OuterRelics
         {
             try
             {
-                File.Delete(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
+                File.Delete(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{Profile()}OuterRelicsSave.json");
                 saveData = new OuterRelicsSaveData();
                 main.LogInfo("Deleted Outer Relics data");
             }
@@ -389,7 +429,7 @@ namespace OuterRelics
         /// <returns></returns>
         public bool GetSaveDataExists()
         {
-            return File.Exists(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{profile}OuterRelicsSave.json");
+            return File.Exists(main.ModHelper.Manifest.ModFolderPath + $"SaveData/{Profile()}OuterRelicsSave.json");
         }
 
         

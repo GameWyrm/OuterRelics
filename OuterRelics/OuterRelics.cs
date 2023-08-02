@@ -76,9 +76,9 @@ namespace OuterRelics
         /// </summary>
         public bool debugMode = true;
         /// <summary>
-        /// Whether Quantum Space Buddies is installed, in which case notifications will use QSB's system instead
+        /// Whether Quantum Space Buddies is installed, which will trigger syncing
         /// </summary>
-        public bool useQSB = false;
+        public bool useQSB => qsb != null && qsb.GetIsInMultiplayer();
         /// <summary>
         /// Seed used for randomization
         /// </summary>
@@ -156,6 +156,8 @@ namespace OuterRelics
         IMenuAPI menuAPI;
         //New Horizons API
         INewHorizons nhAPI;
+        //Quantum Space Buddies API
+        public IQSBAPI qsb;
         //Is the player starting a new Outer Relics file?
         bool newGame = false;
         //Time that the popup was opened
@@ -197,59 +199,13 @@ namespace OuterRelics
             //Register scene load event
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
-                if (loadScene == OWScene.EyeOfTheUniverse)
-                {
-                    if (statManager.runTimer)
-                    {
-                        saveManager.SaveData(true);
-                        if (statManager.timer < saveManager.GetBestTime() || saveManager.GetBestTime() == -1f)
-                        {
-                            saveManager.SaveGlobalData(GlobalData.BestTime, statManager.timer.ToString());
-                        }
-                    }
-
-                    Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
-
-                    statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
-                    statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
-                    statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
-
-                    statsDisplay.AddComponent<EndingSceneStats>();
-                }
-
-                if (loadScene != OWScene.TitleScreen)
-                {
-                    saveManager ??= new SaveManager();
-                    if (saveManager.GetSaveDataExists()) saveManager.LoadData();
-                    statManager.LoadStats();
-                }
-                if (loadScene == OWScene.SolarSystem)
-                {
-                    LogSuccess("Loaded into solar system!");
-                    StartCoroutine(LoadIn());
-                    statManager.runTimer = true;
-                }
-                else
-                {
-                    if (itemManager != null)
-                    {
-                        itemManager.itemPlacements = null;
-                        itemManager.hintPlacements = null;
-                    }
-                    saveManager.SaveData(true);
-                    statManager.runTimer = false;
-                }
-
-                
-
-                if (loadScene == OWScene.TitleScreen)
-                {
-                    if (prepareSaveReset)
-                    {
-                        PlayerData.SaveEyeCompletion();
-                    }
-                }
+                StartCoroutine(LoadScene(scene, loadScene));
             };
+
+            //Get New Horizons API if possible
+            nhAPI = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
+            LogInfo("New Horizons API: " + (nhAPI == null ? "NULL" : "FOUND"));
+
             if (nhAPI != null)
             {
                 nhAPI.GetStarSystemLoadedEvent().AddListener(DumbRequiredString);
@@ -287,9 +243,6 @@ namespace OuterRelics
                 itemDisplayManager = itemList.AddComponent<ItemDisplayManager>();
             };
 
-            //Get New Horizons API if possible
-            nhAPI = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
-            LogInfo("New Horizons API: " + (nhAPI == null ? "NULL" : "FOUND"));
 
             //DLC detection debug
             if (HasDLC)
@@ -327,6 +280,16 @@ namespace OuterRelics
                 menuAPI.RegisterStartupPopup("Welcome to Outer Relics! Check out the mod config and pick your settings, then select \"New Outer Relics Run\" to begin your search! For more information, check the readme.");
                 saveManager.SaveGlobalData(GlobalData.HasSeenIntro, true.ToString());
             }
+
+            //Load QSB API
+            qsb = ModHelper.Interaction.TryGetModApi<IQSBAPI>("Raicuparta.QuantumSpaceBuddies");
+            LogInfo("QSB API: " + (qsb == null ? "NULL" : "FOUND"));
+            if (qsb != null)
+            {
+                //useQSB = true;
+                qsb.OnPlayerJoin().AddListener(OnPlayerJoin);
+                qsb.RegisterHandler<int>("ORCollect", (uint playerID, int keyID) => OnObtainKey(playerID, keyID));
+            }
         }
 
         private void Update()
@@ -361,6 +324,20 @@ namespace OuterRelics
             return new OuterRelicsAPI();
         }
 
+        /// <summary>
+        /// If the player is using QSB, this runs whenever a player joins
+        /// </summary>
+        /// <param name="playerID">The ID of the player joining, used by QSB.</param>
+        public void OnPlayerJoin(uint playerID)
+        {
+            if (qsb.GetIsHost())
+            {
+
+            }
+        }
+
+        public Action<uint, int> OnObtainKey;
+
         private void DumbRequiredString(string sceneName)
         {
             StartCoroutine(LoadIn());
@@ -368,7 +345,7 @@ namespace OuterRelics
         }
 
         /// <summary>
-        /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system
+        /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system, already done I think?
         /// </summary>
         /// <returns></returns>
         IEnumerator LoadIn()
@@ -376,6 +353,7 @@ namespace OuterRelics
             saveManager ??= new SaveManager();
             if (!saveManager.GetSaveDataExists() && !newGame) yield break;
 
+            // Load save data
             saveManager.LoadData();
 
             if (seed == null || seed == "") seed = saveManager.GetSeed();
@@ -421,6 +399,78 @@ namespace OuterRelics
                         notifManager.AddNotification(itemManager.loopHints[i]);
                         break;
                     }
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Code that runs whenever you load into any scene
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator LoadScene(OWScene scene, OWScene loadScene)
+        {
+            if (useQSB)
+            {
+                yield return null;
+            }
+            else
+            {
+                LogInfo("Multiplayer, waiting a few frames");
+                float timer = Time.frameCount;
+                yield return new WaitUntil(() => Time.frameCount >= timer + 20);
+            }
+
+            if (loadScene == OWScene.EyeOfTheUniverse)
+            {
+                if (statManager.runTimer)
+                {
+                    saveManager.SaveData(true);
+                    if (statManager.timer < saveManager.GetBestTime() || saveManager.GetBestTime() == -1f)
+                    {
+                        saveManager.SaveGlobalData(GlobalData.BestTime, statManager.timer.ToString());
+                    }
+                }
+
+                Transform vessel = GameObject.Find("Vessel_Body").transform.Find("Sector_VesselBridge/Geometry_VesselBridge/Structure_NOM_Vessel/body_collider");
+
+                statsDisplay = Instantiate(assets.LoadAsset<GameObject>("StatsCanvas"), vessel);
+                statsDisplay.transform.localPosition = new Vector3(0f, 27f, 163f);
+                statsDisplay.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+
+                statsDisplay.AddComponent<EndingSceneStats>();
+            }
+
+            if (loadScene != OWScene.TitleScreen)
+            {
+                saveManager ??= new SaveManager();
+                if (saveManager.GetSaveDataExists()) saveManager.LoadData();
+                statManager.LoadStats();
+            }
+            if (loadScene == OWScene.SolarSystem)
+            {
+                LogSuccess("Loaded into solar system!");
+                StartCoroutine(LoadIn());
+                statManager.runTimer = true;
+            }
+            else
+            {
+                if (itemManager != null)
+                {
+                    itemManager.itemPlacements = null;
+                    itemManager.hintPlacements = null;
+                }
+                saveManager.SaveData(true);
+                statManager.runTimer = false;
+            }
+
+
+
+            if (loadScene == OWScene.TitleScreen)
+            {
+                if (prepareSaveReset)
+                {
+                    PlayerData.SaveEyeCompletion();
                 }
             }
         }
@@ -563,7 +613,7 @@ namespace OuterRelics
             if (!dryMode)
             {
                 saveManager ??= new SaveManager();
-                saveManager.ClearSaveData();
+                if (saveManager.GetSaveDataExists()) saveManager.ClearSaveData();
                 saveManager.NewSave();
                 itemManager.Randomize(out bool succeeded);
                 if (!succeeded)
