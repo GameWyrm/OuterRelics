@@ -5,6 +5,7 @@ using OWML.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 namespace OuterRelics
@@ -14,6 +15,14 @@ namespace OuterRelics
     /// </summary>
     public class SaveManager
     {
+        public SaveManager()
+        {
+            if (main.useQSB)
+            {
+                //main.qsb.RegisterHandler<>
+            }
+        }
+
         public class OuterRelicsSaveData
         {
             public string seed;
@@ -89,13 +98,27 @@ namespace OuterRelics
                     main.LogInfo($"Player: {player}");
                 }
             }
-            
+
             if (main.useQSB && !main.qsb.GetIsHost())
             {
-                saveData = main.qsb.GetCustomData<OuterRelicsSaveData>(main.qsb.GetPlayerIDs()[0], "ORSave");
+                saveData = new();
+                //saveData = main.qsb.GetCustomData<OuterRelicsSaveData>(main.host, "ORSave");
+                saveData.seed = main.qsb.GetCustomData<string>(main.host, "ORSeed");
+                main.LogInfo($"Seed received: {saveData.seed}");
+                saveData.enabledPools = main.qsb.GetCustomData<bool[]>(main.host, "ORPools");
+                saveData.singlePerGroup = main.qsb.GetCustomData<bool>(main.host, "ORSingle");
+                saveData.hints = main.qsb.GetCustomData<HintDifficulty>(main.host, "ORHints");
+                saveData.uselessHintChance = main.qsb.GetCustomData<int>(main.host, "ORUseless");
+                saveData.savedKeysObtained = main.qsb.GetCustomData<bool[]>(main.host, "ORKeys");
+                saveData.totalSavedKeys = main.qsb.GetCustomData<int>(main.host, "ORTotalKeys");
+                saveData.timer = main.qsb.GetCustomData<float>(main.host, "ORTimer");
+                saveData.startLoop = main.qsb.GetCustomData<int>(main.host, "ORStartLoop");
+                saveData.hintIDsObtained = main.qsb.GetCustomData<int[]>(main.host, "ORHintsObtained").ToList();
             }
-
-            saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + Profile() + "OuterRelicsSave.json");
+            else
+            {
+                saveData = main.ModHelper.Storage.Load<OuterRelicsSaveData>("SaveData/" + Profile() + "OuterRelicsSave.json");
+            }
             if (saveData == null)
             {
                 saveData = new OuterRelicsSaveData();
@@ -108,9 +131,76 @@ namespace OuterRelics
 
             if (main.useQSB && main.qsb.GetIsHost())
             {
-                main.qsb.SetCustomData<OuterRelicsSaveData>(main.qsb.GetPlayerIDs()[0], "ORSave", saveData);
+                main.LogInfo("Writing host info");
+                //main.qsb.SetCustomData<OuterRelicsSaveData>(main.host, "ORSave", saveData);
+                // Kind of problematic, since this can technically be empty, but the player can't start a QSB session without a seed already generated
+                // This will need to be changed if this is ever changed, however
+                main.qsb.SetCustomData<string>(main.host, "ORSeed", saveData.seed);
+                main.LogInfo($"Wrote seed {main.qsb.GetCustomData<string>(main.host, "ORSeed")}");
+                main.qsb.SetCustomData<bool[]>(main.host, "ORPools", saveData.enabledPools);
+                main.qsb.SetCustomData<bool>(main.host, "ORSingle", saveData.singlePerGroup);
+                main.qsb.SetCustomData<HintDifficulty>(main.host, "ORHints", saveData.hints);
+                main.qsb.SetCustomData<int>(main.host, "ORUseless", saveData.uselessHintChance);
+                main.qsb.SetCustomData<bool[]>(main.host, "ORKeys", saveData.savedKeysObtained);
+                main.qsb.SetCustomData<int>(main.host, "ORTotalKeys", saveData.totalSavedKeys);
+                main.qsb.SetCustomData<float>(main.host, "ORTimer", saveData.timer);
+                main.qsb.SetCustomData<int>(main.host, "ORStartLoop", saveData.startLoop);
+                main.qsb.SetCustomData<int[]>(main.host, "ORHintsObtained", saveData.hintIDsObtained.ToArray());
             }
         }
+
+        #region QSBLoads
+        // These functions set local data read from the host player
+        private void LoadQSBSeed(uint player, string seed)
+        {
+            saveData.seed = seed;
+        }
+
+        private void LoadQSBPools(uint player, bool[] pools)
+        {
+            saveData.enabledPools = pools;
+        }
+
+        private void LoadQSBSinglePerGroup(uint player, bool singlePerGroup)
+        {
+            saveData.singlePerGroup = singlePerGroup;
+        }
+
+        private void LoadQSBHintDifficulty(uint player, HintDifficulty hintDifficulty)
+        {
+            saveData.hints = hintDifficulty;
+        }
+
+        private void LoadQSBUselessHints(uint player, int uselessHintChance)
+        {
+            saveData.uselessHintChance = uselessHintChance;
+        }
+
+        private void LoadQSBSavedKeys(uint player, bool[] savedKeys)
+        {
+            saveData.savedKeysObtained = savedKeys;
+        }
+
+        private void LoadQSBKeyCount(uint player, int keyCount)
+        {
+            saveData.totalSavedKeys = keyCount;
+        }
+
+        private void LoadQSBTimer(uint player, float timer)
+        {
+            saveData.timer = timer;
+        }
+
+        private void LoadQSBStartLoop(uint player, int startLoop)
+        {
+            saveData.startLoop = startLoop;
+        }
+
+        private void LoadQSBHintsObtained(uint player, int[] hints)
+        {
+            saveData.hintIDsObtained = hints.ToList();
+        }
+        #endregion
 
         /// <summary>
         /// Saves which items have been obtained

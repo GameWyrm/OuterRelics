@@ -63,6 +63,7 @@ namespace OuterRelics
         /// % chance of a hint being useless
         /// </summary>
         public int uselessHints = 25;
+        public uint host => qsb.GetPlayerIDs()[0];
         /// <summary>
         /// Specific keys found
         /// </summary>
@@ -160,6 +161,8 @@ namespace OuterRelics
         public IQSBAPI qsb;
         //Is the player starting a new Outer Relics file?
         bool newGame = false;
+        //Is the host fully loaded?
+        bool hostLoaded = true;
         //Time that the popup was opened
         float popupOpenTime;
         
@@ -289,6 +292,11 @@ namespace OuterRelics
                 //useQSB = true;
                 qsb.OnPlayerJoin().AddListener(OnPlayerJoin);
                 qsb.RegisterHandler<int>("ORCollect", (uint playerID, int keyID) => OnObtainKey(playerID, keyID));
+                qsb.RegisterHandler<bool>("ORLoadIn", (uint playerID, bool loaded) => OnHostLoaded(playerID, loaded));
+                OnHostLoaded += OnHostFinishedLoad;
+                qsb.RegisterRequiredForAllPlayers(this);
+
+                menuAPI.RegisterStartupPopup("Quantum Space Buddies detected. If you plan to play with friends, be sure to read the Readme. It is also important that you DISABLE ADDONS in the Outer Relics config for seeds you plan to play with friends.");
             }
         }
 
@@ -302,9 +310,15 @@ namespace OuterRelics
             }
         }
 
+        private void OnHostFinishedLoad(uint playerID, bool hosted)
+        {
+            hostLoaded = true;
+        }
+
         private void OnPlayerDeath(DeathType deathType)
         {
             saveManager.SaveData(false);
+            hostLoaded = false;
         }
 
         public override void Configure(IModConfig config)
@@ -337,6 +351,7 @@ namespace OuterRelics
         }
 
         public Action<uint, int> OnObtainKey;
+        public Action<uint, bool> OnHostLoaded;
 
         private void DumbRequiredString(string sceneName)
         {
@@ -410,7 +425,7 @@ namespace OuterRelics
         /// <returns></returns>
         IEnumerator LoadScene(OWScene scene, OWScene loadScene)
         {
-            if (useQSB)
+            if (qsb == null)
             {
                 yield return null;
             }
@@ -418,7 +433,20 @@ namespace OuterRelics
             {
                 LogInfo("Multiplayer, waiting a few frames");
                 float timer = Time.frameCount;
-                yield return new WaitUntil(() => Time.frameCount >= timer + 20);
+                yield return new WaitUntil(() => Time.frameCount >= timer + 5);
+                if (useQSB)
+                {
+                    if (qsb.GetIsHost())
+                    {
+                        qsb.SendMessage("ORLoadIn", true);
+                    }
+                    else
+                    {
+                        LogInfo("Waiting for host to finish loading...");
+                        yield return new WaitUntil(() => hostLoaded);
+                    }
+                }
+
             }
 
             if (loadScene == OWScene.EyeOfTheUniverse)

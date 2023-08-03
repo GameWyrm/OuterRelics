@@ -82,7 +82,7 @@ namespace OuterRelics
             if(keyList != null) keyList.SetActive(show);
             if(spriteHolder != null) spriteHolder.SetActive(show);
 
-            UpdateList();
+            if (show) UpdateList();
         }
     }
 }

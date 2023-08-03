@@ -97,7 +97,12 @@ namespace OuterRelics
         /// <returns></returns>
         public List<ItemSpawnList> GetSavedHints()
         {
-            //addonHintNames = new();
+            if (main.useQSB)
+            {
+                main.LogWarning("Outer Relics does not support syncing addon data.\nHaving addons enabled in the Outer Relics config can result in locations between players being wildly different.\n(This is just a PSA, and does not mean that anything has broken.)");
+                return null;
+            }
+
             List<ItemSpawnList> savedPlacements = new();
             foreach (string modName in save.GetAddonHintsDict().Keys)
             {
@@ -107,22 +112,6 @@ namespace OuterRelics
                     savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
                 }
             }
-            /*
-            foreach (ModBehaviour mod in activeMods)
-            {
-                string modName = mod.ModHelper.Manifest.UniqueName;
-                foreach (string fileName in save.GetAddonHintFiles(modName))
-                {
-                    addonFileNames[modName].Add(fileName);
-                }
-                foreach (ItemSpawnList placementList in addonFilesLoaded[modName])
-                {
-                    if (addonFileNames[modName].Contains(placementList.modName))
-                    {
-                        savedPlacements.Add(placementList);
-                    }
-                }
-            }*/
 
             return savedPlacements;
         }

@@ -151,7 +151,7 @@ namespace OuterRelics
                 ItemSpawnPoint spawnPoint = location.spawnPoints[spawnIndex];
 
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
-                spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
+                spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {location.locationName}, {spawnPoint.spawnPointName}\n";
 
                 if (main.saveManager.GetSinglePerGroup())
                 {
@@ -341,10 +341,13 @@ namespace OuterRelics
             hintList = new();
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
-            foreach (ItemSpawnList list in addons.GetSavedHints())
+            if (!main.useQSB)
             {
-                hintList += list;
-                main.LogInfo($"Added hint list {list.modName}");
+                foreach (ItemSpawnList list in addons.GetSavedHints())
+                {
+                    hintList += list;
+                    main.LogInfo($"Added hint list {list.modName}");
+                }
             }
             if (hintList != null)
             {

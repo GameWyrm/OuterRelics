@@ -65,7 +65,6 @@ namespace OuterRelics
 
         private void OnCollectKey(uint playerID, int keyID)
         {
-            main.LogSuccess("A key has been collected!");
             if (keyID == this.keyID)
             {
                 main.LogInfo($"Key {keyID} has been collected and is syncing.");
