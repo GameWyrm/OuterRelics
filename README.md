@@ -83,6 +83,8 @@ If you're not the host, just connect and the data from the host will be synced w
 
 (Note, occasionally an item may be grabbed but won't sync for whatever reason. This is because, contrary to popular belief, neither QSB or Outer Relics are perfect mods. If you reset the loop, the items should properly sync again and all players should get what they're missing.)
 
+IMMENSE thanks to the QSB team (primarily JohnCorby, xen, and _nebula) for creating the QSB API and implementing features that I requested so that I could be lazy and not have to write a whole separate addon for multiplayer.
+
 ## Addons
 Outer Relics supports addons! You can add spawn points to any New Horizons mods that support Outer Relics. Check the Mod Manager to see what mods support Outer Relics.
 
