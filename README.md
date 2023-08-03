@@ -100,8 +100,6 @@ Here are the features planned for the future:
 
 -GOODIES: In addition to finding keys, you can also find goodies in the world! These provide bonuses to your abilities that will last for the duration of the run, such as extra jetpack power or more health.
 
--MULTIPLAYER: Once John Corby improves addon support for [Quantum Space Buddies](https://github.com/misternebula/quantum-space-buddies), I plan to add multiplayer so that you can hunt for keys with your friends! Hints, keys, and goodies will be shared.
-
 -HINT LOGGING: Currently, you'll have to keep your own notes for where keys are, but I plan to eventually use Custom Ship Log Modes to create a menu that keeps track of what hints you have gotten.
 
 -METROIDVANIA MODE: Finding keys is fun and all, but what if there were MORE arbitrary blockades in your way? Tornadoes, Quantum Rules, your jetpack, and more randomized!
