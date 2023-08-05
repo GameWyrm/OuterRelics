@@ -296,7 +296,11 @@ namespace OuterRelics
                 OnHostLoaded += OnHostFinishedLoad;
                 qsb.RegisterRequiredForAllPlayers(this);
 
-                menuAPI.RegisterStartupPopup("Quantum Space Buddies detected. If you plan to play with friends, be sure to read the Readme. It is also important that you DISABLE ADDONS in the Outer Relics config for seeds you plan to play with friends.");
+                if (!saveManager.GetHasSeenQSBIntro())
+                {
+                    menuAPI.RegisterStartupPopup("Quantum Space Buddies detected. If you plan to play with friends, be sure to read the Readme. It is also important that you DISABLE ADDONS in the Outer Relics config for seeds you plan to play with friends.");
+                    saveManager.SaveGlobalData(GlobalData.HasSeenQSBMessage, true.ToString());
+                }
             }
         }
 

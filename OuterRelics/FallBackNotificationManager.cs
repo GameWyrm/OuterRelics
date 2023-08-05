@@ -16,13 +16,7 @@ namespace OuterRelics
         private void Awake()
         {
             myText = GetComponent<Text>();
-            foreach (Font font in Resources.FindObjectsOfTypeAll<Font>())
-            {
-                if (font.name == "SpaceMono-Regular")
-                {
-                    myText.font = font;
-                }
-            }
+            myText.font = Resources.Load<Font>("fonts/english - latin/SpaceMono-Regular");
             myText.text = "";
             main.LogInfo("Custom Notification system created");
         }

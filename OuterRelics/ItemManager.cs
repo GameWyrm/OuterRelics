@@ -261,8 +261,9 @@ namespace OuterRelics
                 kc.itemName = "KEY OF " + OuterRelics.KeyNames[placement.id];
                 kc.lockManager = main.lockManager;
                 kc.keyID = placement.id;
+                if (main.useQSB) main.OnObtainKey += kc.OnCollectKey;
 
-                main.LogMessage("Created key " + placement.id + " on " + placement.body + " at " + placement.locationName + " " + (placement.spawnPointName != null ? placement.spawnPointName : ""));
+                OuterRelics.Main.LogMessage("Created key " + placement.id + " on " + placement.body + " at " + placement.locationName + " " + (placement.spawnPointName != null ? placement.spawnPointName : ""));
             }
         }
 
@@ -292,7 +293,7 @@ namespace OuterRelics
             hintObject.transform.SetParent(hintParent.transform, true);
 
             hintParent.transform.SetParent(GameObject.Find(placement.body).transform.Find(placement.parent), true);
-            if (hintParent.transform.parent == null) main.LogError($"Unable to find {placement.body}/{placement.parent}");
+            if (hintParent.transform.parent == null) OuterRelics.Main.LogError($"Unable to find {placement.body}/{placement.parent}");
             hintParent.transform.localPosition = placement.position;
             hintParent.transform.localEulerAngles = placement.rotation;
             hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
@@ -305,7 +306,7 @@ namespace OuterRelics
             hint.spawnPoint = spawnPoints[placement.id];
             hint.id = placement.id;
 
-            main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
+            OuterRelics.Main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
         }
 
         private void LoadFiles()

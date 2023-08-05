@@ -28,13 +28,7 @@ namespace OuterRelics
             spriteHolder = transform.Find("KeyDisplayHolder").gameObject;
             keySprites = spriteHolder.GetComponentsInChildren<Image>();
 
-            foreach (Font font in Resources.FindObjectsOfTypeAll<Font>())
-            {
-                if (font.name == "SpaceMono-Regular")
-                {
-                    keyText.font = font;
-                }
-            }
+            keyText.font = Resources.Load<Font>("fonts/english - latin/SpaceMono-Regular");
 
             ShowItemList(false);
         }

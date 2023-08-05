@@ -44,6 +44,7 @@ namespace OuterRelics
         {
             public bool hasSeenIntro;
             public float bestTime;
+            public bool hasSeenQSBMessage;
         }
 
         /// <summary>
@@ -329,6 +330,16 @@ namespace OuterRelics
                         main.LogError($"Did not successfully parse \"{value}\" into a float");
                     }
                     break;
+                case GlobalData.HasSeenQSBMessage:
+                    if (successBool)
+                    {
+                        globalData.hasSeenQSBMessage = valueBool;
+                    }
+                    else
+                    {
+                        main.LogError($"Did not successfully parse \"{value}\" into a bool");
+                    }
+                    break;
             }
 
             main.ModHelper.Storage.Save<OuterRelicsGlobalData>(globalData, "SaveData/GlobalData.json");
@@ -494,6 +505,11 @@ namespace OuterRelics
         public float GetBestTime()
         {
             return globalData.bestTime;
+        }
+
+        public bool GetHasSeenQSBIntro()
+        {
+            return globalData.hasSeenQSBMessage;
         }
 
         /// <summary>

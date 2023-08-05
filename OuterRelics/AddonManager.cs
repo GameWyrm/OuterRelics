@@ -103,13 +103,18 @@ namespace OuterRelics
                 return null;
             }
 
+
+
             List<ItemSpawnList> savedPlacements = new();
-            foreach (string modName in save.GetAddonHintsDict().Keys)
+            if (save.GetAddonHintsDict() != null && save.GetAddonHintsDict().Count > 0)
             {
-                ModBehaviour mod = GetMod(modName);
-                foreach (string fileName in save.GetAddonHintsDict()[modName])
+                foreach (string modName in save.GetAddonHintsDict().Keys)
                 {
-                    savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
+                    ModBehaviour mod = GetMod(modName);
+                    foreach (string fileName in save.GetAddonHintsDict()[modName])
+                    {
+                        savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
+                    }
                 }
             }
 
