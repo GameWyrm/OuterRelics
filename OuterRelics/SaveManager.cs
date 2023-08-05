@@ -78,11 +78,19 @@ namespace OuterRelics
             LoadData();
         }*/
 
-        string Profile()
+        public string Profile()
         {
             if (main.qsb == null)
             {
-                return StandaloneProfileManager.s_instance.currentProfile.profileName;
+                try
+                {
+                    return StandaloneProfileManager.s_instance.currentProfile.profileName;
+                }
+                catch (Exception e)
+                {
+                    main.LogWarning($"EXCEPTION: {e.Message} Assuming player is on Xbox.");
+                    return "Xbox";
+                }
             }
             else
             {

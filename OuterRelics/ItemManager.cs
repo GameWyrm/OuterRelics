@@ -166,6 +166,37 @@ namespace OuterRelics
 
             GenerateHintPlacements();
 
+            string placementsString = "";
+            if (main.saveManager.GetPools()[0]) placementsString += "  Hourglass Twins\n";
+            if (main.saveManager.GetPools()[1]) placementsString += "  Timber Hearth\n";
+            if (main.saveManager.GetPools()[2]) placementsString += "  Brittle Hollow\n";
+            if (main.saveManager.GetPools()[3]) placementsString += "  Giant's Deep\n";
+            if (main.saveManager.GetPools()[4]) placementsString += "  Dark Bramble\n";
+            if (main.saveManager.GetPools()[5]) placementsString += "  Quantum Moon\n";
+            if (main.saveManager.GetPools()[6]) placementsString += "  Interloper\n";
+            if (main.saveManager.GetPools()[7]) placementsString += "  Stranger\n";
+            if (main.saveManager.GetPools()[8]) placementsString += "  Dreamworld\n";
+            if (main.saveManager.GetPools()[9]) placementsString += "  Dreamworld: Lights Out\n";
+            if (main.saveManager.GetPools()[10]) placementsString += "  Difficult Locations\n";
+
+            if (main.saveManager.GetPools()[11])
+            {
+                if (main.saveManager.GetAddonPlacementDict() != null && main.saveManager.GetAddonPlacementDict().Count > 0)
+                {
+                    foreach (var val in main.saveManager.GetAddonPlacementDict().Values) placementsString += $"  {val}\n";
+                }
+            }
+
+            spoilerLog +=
+                $"\n\n======SETTINGS======\nSEED: {seed}\n" +
+                $"VERSION: {main.ModHelper.Manifest.Version}\n" +
+                $"SINGLE PER GROUP: {main.saveManager.GetSinglePerGroup()}\n" +
+                $"HINT DIFFICULTY: {(HintDifficulty)Enum.Parse(typeof(HintDifficulty), main.saveManager.GetHintDifficulty().ToString())}\n" +
+                $"USELESS HINT CHANCE: {main.saveManager.GetUselessHintChance()}\n" +
+                $"POOLS:\n{placementsString}\n" +
+                $"\n\nGenerated for {main.saveManager.Profile()} at {DateTime.Now}";
+            
+
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
 
             success = true;
