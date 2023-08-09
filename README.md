@@ -81,7 +81,7 @@ To connect with QSB, there are a couple of steps if you're the host:
 
 If you're not the host, just connect and the data from the host will be synced with you.
 
-(Note, occasionally an item may be grabbed but won't sync for whatever reason. This is because, contrary to popular belief, neither QSB or Outer Relics are perfect mods. If you reset the loop, the items should properly sync again and all players should get what they're missing.)
+Note, there are a few minor issues with the QSB support. Particularly, the Loop Counter in the stats do not work, and quitting in the Vessel at the Eye of the Universe will not reset your multiplayer save file, as QSB uses its own save system.
 
 IMMENSE thanks to the QSB team (primarily JohnCorby, xen, and _nebula) for creating the QSB API and implementing features that I requested so that I could be lazy and not have to write a whole separate addon for multiplayer.
 
