@@ -60,7 +60,7 @@ namespace OuterRelics
                 keyString += "\n";
                 index++;
             }
-            keyString += $"\n{stats.TimerToStandardFormat()}\nHints: {stats.hintIDsObtained.Count}\nLoops: {stats.TotalLoops()}";
+            keyString += $"\n{stats.TimerToStandardFormat()}\nHints: {stats.hintIDsObtained.Count}\nLoops: {(main.useQSB ? "QSB Not Supported" : stats.TotalLoops())}";
             keyText.text = keyString;
             index = 0;
             foreach (Image image in keySprites)

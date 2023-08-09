@@ -110,6 +110,7 @@ namespace OuterRelics
 
             if (main.useQSB && !main.qsb.GetIsHost())
             {
+                main.LogWarning("(Not an actual issue) Syncing save data...");
                 saveData = new();
                 //saveData = main.qsb.GetCustomData<OuterRelicsSaveData>(main.host, "ORSave");
                 saveData.seed = main.qsb.GetCustomData<string>(main.host, "ORSeed");

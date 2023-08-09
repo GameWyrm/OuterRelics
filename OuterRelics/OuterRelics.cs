@@ -291,7 +291,9 @@ namespace OuterRelics
             {
                 //useQSB = true;
                 qsb.OnPlayerJoin().AddListener(OnPlayerJoin);
-                qsb.RegisterHandler<int>("ORCollect", (uint playerID, int keyID) => OnObtainKey(playerID, keyID));
+                qsb.RegisterHandler<int>("ORCollect", 
+                    (uint playerID, int keyID) => 
+                    OnObtainKey(playerID, keyID));
                 qsb.RegisterHandler<bool>("ORLoadIn", (uint playerID, bool loaded) => OnHostLoaded(playerID, loaded));
                 OnHostLoaded += OnHostFinishedLoad;
                 qsb.RegisterRequiredForAllPlayers(this);
@@ -370,7 +372,18 @@ namespace OuterRelics
         IEnumerator LoadIn()
         {
             saveManager ??= new SaveManager();
-            if (!saveManager.GetSaveDataExists() && !newGame) yield break;
+            if (!saveManager.GetSaveDataExists() && !newGame)
+            {
+                if (useQSB && !qsb.GetIsHost())
+                {
+                    LogInfo("Not the host, loading host save data");
+                }
+                else
+                {
+                    LogError("There's no save data, and you didn't make a new game!");
+                    yield break;
+                }
+            }
 
             // Load save data
             saveManager.LoadData();
@@ -448,6 +461,7 @@ namespace OuterRelics
                     {
                         LogInfo("Waiting for host to finish loading...");
                         yield return new WaitUntil(() => hostLoaded);
+                        LogInfo("Host loaded in!");
                     }
                 }
 
@@ -476,7 +490,7 @@ namespace OuterRelics
             if (loadScene != OWScene.TitleScreen)
             {
                 saveManager ??= new SaveManager();
-                if (saveManager.GetSaveDataExists()) saveManager.LoadData();
+                if (useQSB && !qsb.GetIsHost() || saveManager.GetSaveDataExists()) saveManager.LoadData();
                 statManager.LoadStats();
             }
             if (loadScene == OWScene.SolarSystem)
