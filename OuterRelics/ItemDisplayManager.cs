@@ -28,13 +28,7 @@ namespace OuterRelics
             spriteHolder = transform.Find("KeyDisplayHolder").gameObject;
             keySprites = spriteHolder.GetComponentsInChildren<Image>();
 
-            foreach (Font font in Resources.FindObjectsOfTypeAll<Font>())
-            {
-                if (font.name == "SpaceMono-Regular")
-                {
-                    keyText.font = font;
-                }
-            }
+            keyText.font = Resources.Load<Font>("fonts/english - latin/SpaceMono-Regular");
 
             ShowItemList(false);
         }
@@ -66,7 +60,7 @@ namespace OuterRelics
                 keyString += "\n";
                 index++;
             }
-            keyString += $"\n{stats.TimerToStandardFormat()}\nHints: {stats.hintIDsObtained.Count}\nLoops: {stats.TotalLoops()}";
+            keyString += $"\n{stats.TimerToStandardFormat()}\nHints: {stats.hintIDsObtained.Count}\nLoops: {(main.useQSB ? "QSB Not Supported" : stats.TotalLoops())}";
             keyText.text = keyString;
             index = 0;
             foreach (Image image in keySprites)
@@ -82,7 +76,7 @@ namespace OuterRelics
             if(keyList != null) keyList.SetActive(show);
             if(spriteHolder != null) spriteHolder.SetActive(show);
 
-            UpdateList();
+            if (show) UpdateList();
         }
     }
 }

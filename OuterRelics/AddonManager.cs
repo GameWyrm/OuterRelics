@@ -97,32 +97,26 @@ namespace OuterRelics
         /// <returns></returns>
         public List<ItemSpawnList> GetSavedHints()
         {
-            //addonHintNames = new();
-            List<ItemSpawnList> savedPlacements = new();
-            foreach (string modName in save.GetAddonHintsDict().Keys)
+            if (main.useQSB)
             {
-                ModBehaviour mod = GetMod(modName);
-                foreach (string fileName in save.GetAddonHintsDict()[modName])
-                {
-                    savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
-                }
+                main.LogWarning("Outer Relics does not support syncing addon data.\nHaving addons enabled in the Outer Relics config can result in locations between players being wildly different.\n(This is just a PSA, and does not mean that anything has broken.)");
+                return null;
             }
-            /*
-            foreach (ModBehaviour mod in activeMods)
+
+
+
+            List<ItemSpawnList> savedPlacements = new();
+            if (save.GetAddonHintsDict() != null && save.GetAddonHintsDict().Count > 0)
             {
-                string modName = mod.ModHelper.Manifest.UniqueName;
-                foreach (string fileName in save.GetAddonHintFiles(modName))
+                foreach (string modName in save.GetAddonHintsDict().Keys)
                 {
-                    addonFileNames[modName].Add(fileName);
-                }
-                foreach (ItemSpawnList placementList in addonFilesLoaded[modName])
-                {
-                    if (addonFileNames[modName].Contains(placementList.modName))
+                    ModBehaviour mod = GetMod(modName);
+                    foreach (string fileName in save.GetAddonHintsDict()[modName])
                     {
-                        savedPlacements.Add(placementList);
+                        savedPlacements.Add(mod.ModHelper.Storage.Load<ItemSpawnList>("Hints/" + fileName));
                     }
                 }
-            }*/
+            }
 
             return savedPlacements;
         }

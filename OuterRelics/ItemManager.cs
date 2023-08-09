@@ -151,7 +151,7 @@ namespace OuterRelics
                 ItemSpawnPoint spawnPoint = location.spawnPoints[spawnIndex];
 
                 itemPlacements.Add(new RandomizedPlacement(ItemType.Key, i, location.system, location.body, spawnPoint.parent, location.locationName, spawnPoint.spawnPointName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), new Vector3(spawnPoint.rotation.x, spawnPoint.rotation.y, spawnPoint.rotation.z)));
-                spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {spawnPoint.spawnPointName}\n";
+                spoilerLog += $"Key of {OuterRelics.KeyNames[i]} ({i}): {location.system}, {location.body}, {location.locationName}, {spawnPoint.spawnPointName}\n";
 
                 if (main.saveManager.GetSinglePerGroup())
                 {
@@ -165,6 +165,37 @@ namespace OuterRelics
             }
 
             GenerateHintPlacements();
+
+            string placementsString = "";
+            if (main.saveManager.GetPools()[0]) placementsString += "  Hourglass Twins\n";
+            if (main.saveManager.GetPools()[1]) placementsString += "  Timber Hearth\n";
+            if (main.saveManager.GetPools()[2]) placementsString += "  Brittle Hollow\n";
+            if (main.saveManager.GetPools()[3]) placementsString += "  Giant's Deep\n";
+            if (main.saveManager.GetPools()[4]) placementsString += "  Dark Bramble\n";
+            if (main.saveManager.GetPools()[5]) placementsString += "  Quantum Moon\n";
+            if (main.saveManager.GetPools()[6]) placementsString += "  Interloper\n";
+            if (main.saveManager.GetPools()[7]) placementsString += "  Stranger\n";
+            if (main.saveManager.GetPools()[8]) placementsString += "  Dreamworld\n";
+            if (main.saveManager.GetPools()[9]) placementsString += "  Dreamworld: Lights Out\n";
+            if (main.saveManager.GetPools()[10]) placementsString += "  Difficult Locations\n";
+
+            if (main.saveManager.GetPools()[11])
+            {
+                if (main.saveManager.GetAddonPlacementDict() != null && main.saveManager.GetAddonPlacementDict().Count > 0)
+                {
+                    foreach (var val in main.saveManager.GetAddonPlacementDict().Values) placementsString += $"  {val}\n";
+                }
+            }
+
+            spoilerLog +=
+                $"\n\n======SETTINGS======\nSEED: {seed}\n" +
+                $"VERSION: {main.ModHelper.Manifest.Version}\n" +
+                $"SINGLE PER GROUP: {main.saveManager.GetSinglePerGroup()}\n" +
+                $"HINT DIFFICULTY: {(HintDifficulty)Enum.Parse(typeof(HintDifficulty), main.saveManager.GetHintDifficulty().ToString())}\n" +
+                $"USELESS HINT CHANCE: {main.saveManager.GetUselessHintChance()}\n" +
+                $"POOLS:\n{placementsString}\n" +
+                $"\n\nGenerated for {main.saveManager.Profile()} at {DateTime.Now}";
+            
 
             File.WriteAllText(main.ModHelper.Manifest.ModFolderPath + "/SpoilerLogs/" + seed + ".txt", spoilerLog);
 
@@ -261,8 +292,9 @@ namespace OuterRelics
                 kc.itemName = "KEY OF " + OuterRelics.KeyNames[placement.id];
                 kc.lockManager = main.lockManager;
                 kc.keyID = placement.id;
+                if (main.useQSB) main.OnObtainKey += kc.OnCollectKey;
 
-                main.LogMessage("Created key " + placement.id + " on " + placement.body + " at " + placement.locationName + " " + (placement.spawnPointName != null ? placement.spawnPointName : ""));
+                OuterRelics.Main.LogMessage("Created key " + placement.id + " on " + placement.body + " at " + placement.locationName + " " + (placement.spawnPointName != null ? placement.spawnPointName : ""));
             }
         }
 
@@ -292,7 +324,7 @@ namespace OuterRelics
             hintObject.transform.SetParent(hintParent.transform, true);
 
             hintParent.transform.SetParent(GameObject.Find(placement.body).transform.Find(placement.parent), true);
-            if (hintParent.transform.parent == null) main.LogError($"Unable to find {placement.body}/{placement.parent}");
+            if (hintParent.transform.parent == null) OuterRelics.Main.LogError($"Unable to find {placement.body}/{placement.parent}");
             hintParent.transform.localPosition = placement.position;
             hintParent.transform.localEulerAngles = placement.rotation;
             hintParent.transform.position += hintParent.transform.TransformDirection(Vector3.up * 0.5f);
@@ -305,7 +337,7 @@ namespace OuterRelics
             hint.spawnPoint = spawnPoints[placement.id];
             hint.id = placement.id;
 
-            main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
+            OuterRelics.Main.LogMessage($"Created a hint at {placement.body}/{placement.parent}, ID {placement.id}");
         }
 
         private void LoadFiles()
@@ -341,10 +373,13 @@ namespace OuterRelics
             hintList = new();
 
             hintList = main.ModHelper.Storage.Load<ItemSpawnList>("Hints/HintPlacements.json");
-            foreach (ItemSpawnList list in addons.GetSavedHints())
+            if (!main.useQSB)
             {
-                hintList += list;
-                main.LogInfo($"Added hint list {list.modName}");
+                foreach (ItemSpawnList list in addons.GetSavedHints())
+                {
+                    hintList += list;
+                    main.LogInfo($"Added hint list {list.modName}");
+                }
             }
             if (hintList != null)
             {

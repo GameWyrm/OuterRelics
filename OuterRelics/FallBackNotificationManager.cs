@@ -16,13 +16,7 @@ namespace OuterRelics
         private void Awake()
         {
             myText = GetComponent<Text>();
-            foreach (Font font in Resources.FindObjectsOfTypeAll<Font>())
-            {
-                if (font.name == "SpaceMono-Regular")
-                {
-                    myText.font = font;
-                }
-            }
+            myText.font = Resources.Load<Font>("fonts/english - latin/SpaceMono-Regular");
             myText.text = "";
             main.LogInfo("Custom Notification system created");
         }
@@ -38,19 +32,13 @@ namespace OuterRelics
 
         public void AddNotification(string notification)
         {
-            if (!main.useQSB)
+            NotificationData notif = new NotificationData(notification.ToUpper());
+            NotificationManager.s_instance.PostNotification(notif);
+            if (!myText.text.Contains(notification))
             {
-                NotificationData notif = new NotificationData(notification.ToUpper());
-                NotificationManager.s_instance.PostNotification(notif);
-                if (!main.useQSB)
-                {
-                    if (!myText.text.Contains(notification))
-                    {
-                        myText.text = notification + "\n" + myText.text;
-                    }
-                    timer = 5f;
-                }
+                myText.text = notification + "\n" + myText.text;
             }
+            timer = 5f;
             
         }
     }

@@ -3,6 +3,7 @@
     public enum GlobalData
     {
         HasSeenIntro,
-        BestTime
+        BestTime,
+        HasSeenQSBMessage
     }
 }
