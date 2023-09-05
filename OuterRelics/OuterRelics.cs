@@ -145,6 +145,10 @@ namespace OuterRelics
         /// Event called right after randomization
         /// </summary>
         public UnityEvent PostRandomize;
+        /// <summary>
+        /// List of hints in ship log
+        /// </summary>
+        public List<Tuple<string, bool, bool, bool>> HintModeList;
 
         //Handles placing indicators
         PlacerManager placer;
@@ -152,6 +156,8 @@ namespace OuterRelics
         PopupInputMenu groupSelector;
         //Object that holds the stats in the eye scene
         GameObject statsDisplay;
+        //Custom hint viewer
+        HintMode hintMode;
 
         //Menu Framework
         IMenuAPI menuAPI;
@@ -159,6 +165,8 @@ namespace OuterRelics
         INewHorizons nhAPI;
         //Quantum Space Buddies API
         public IQSBAPI qsb;
+        //Custom Ship Log Modes API
+        public ICustomShipLogModesAPI shipLogs;
         //Is the player starting a new Outer Relics file?
         bool newGame = false;
         //Is the host fully loaded?
@@ -246,6 +254,21 @@ namespace OuterRelics
                 itemDisplayManager = itemList.AddComponent<ItemDisplayManager>();
             };
 
+            //Getting Custom Ship Log Modes API
+            shipLogs = ModHelper.Interaction.TryGetModApi<ICustomShipLogModesAPI>("dgarro.CustomShipLogModes");
+            LogInfo("Custom Ship Log Modes API: " + (shipLogs == null ? "NULL" : "FOUND"));
+            HintModeList = new();
+            foreach (string keyName in KeyNames)
+            {
+                HintModeList.Add(new Tuple<string, bool, bool, bool>( keyName, false, false, false));
+            }
+
+            shipLogs.ItemListMake(false, false, itemList =>
+            {
+                hintMode = gameObject.AddComponent<HintMode>();
+
+                hintMode.Wrapper = new(shipLogs, itemList);
+            });
 
             //DLC detection debug
             if (HasDLC)
@@ -366,7 +389,7 @@ namespace OuterRelics
         }
 
         /// <summary>
-        /// Initial set up that occurs on loading any scene TODO clean up so it doesn't require vanilla solar system, already done I think?
+        /// Initial set up that occurs on loading any scene
         /// </summary>
         /// <returns></returns>
         IEnumerator LoadIn()
@@ -434,6 +457,10 @@ namespace OuterRelics
                 }
             }
 
+            //create hint log mode
+            shipLogs.AddMode(hintMode, () => true, () => "Outer Relics Hints");
+
+            
         }
 
         /// <summary>
