@@ -89,6 +89,10 @@ namespace OuterRelics
         /// </summary>
         public HintDifficulty hintDifficulty = HintDifficulty.Balanced;
         /// <summary>
+        /// Object in the pause menu that holds your obtained items
+        /// </summary>
+        public GameObject itemList;
+        /// <summary>
         /// Orange glowing material
         /// </summary>
         public Material collectedMat;
@@ -250,7 +254,7 @@ namespace OuterRelics
                     menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
                 }
 
-                GameObject itemList = Instantiate(assets.LoadAsset<GameObject>("ItemListCanvas"));
+                itemList = Instantiate(assets.LoadAsset<GameObject>("ItemListCanvas"));
                 itemDisplayManager = itemList.AddComponent<ItemDisplayManager>();
             };
 
@@ -263,12 +267,7 @@ namespace OuterRelics
                 HintModeList.Add(new Tuple<string, bool, bool, bool>( keyName, false, false, false));
             }
 
-            shipLogs.ItemListMake(false, false, itemList =>
-            {
-                hintMode = gameObject.AddComponent<HintMode>();
-
-                hintMode.Wrapper = new(shipLogs, itemList);
-            });
+            hintMode = gameObject.AddComponent<HintMode>();
 
             //DLC detection debug
             if (HasDLC)
@@ -459,8 +458,13 @@ namespace OuterRelics
 
             //create hint log mode
             shipLogs.AddMode(hintMode, () => true, () => "Outer Relics Hints");
+            shipLogs.ItemListMake(false, false, itemList =>
+            {
+                hintMode.Wrapper = new(shipLogs, itemList);
+                hintMode.RootObject = itemList.gameObject;
+            });
 
-            
+
         }
 
         /// <summary>

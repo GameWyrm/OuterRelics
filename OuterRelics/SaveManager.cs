@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace OuterRelics
 {
@@ -38,6 +39,9 @@ namespace OuterRelics
             public float timer;
             public int startLoop;
             public List<int> hintIDsObtained;
+            public bool[] hintBodiesObtained;
+            public bool[] hintAreasObtained;
+            public bool[] hintLocationsObtained;
         }
 
         public class OuterRelicsGlobalData
@@ -124,6 +128,9 @@ namespace OuterRelics
                 saveData.timer = main.qsb.GetCustomData<float>(main.host, "ORTimer");
                 saveData.startLoop = main.qsb.GetCustomData<int>(main.host, "ORStartLoop");
                 saveData.hintIDsObtained = main.qsb.GetCustomData<int[]>(main.host, "ORHintsObtained").ToList();
+                saveData.hintBodiesObtained = main.qsb.GetCustomData<bool[]>(main.host, "ORHintBodies");
+                saveData.hintAreasObtained = main.qsb.GetCustomData<bool[]>(main.host, "ORHintAreas");
+                saveData.hintLocationsObtained = main.qsb.GetCustomData<bool[]>(main.host, "ORHintLocations");
             }
             else
             {
@@ -156,6 +163,9 @@ namespace OuterRelics
                 main.qsb.SetCustomData<float>(main.host, "ORTimer", saveData.timer);
                 main.qsb.SetCustomData<int>(main.host, "ORStartLoop", saveData.startLoop);
                 main.qsb.SetCustomData<int[]>(main.host, "ORHintsObtained", saveData.hintIDsObtained.ToArray());
+                main.qsb.SetCustomData<bool[]>(main.host, "ORHintBodies", saveData.hintBodiesObtained);
+                main.qsb.SetCustomData<bool[]>(main.host, "ORHintAreas", saveData.hintAreasObtained);
+                main.qsb.SetCustomData<bool[]>(main.host, "ORHintLocations", saveData.hintLocationsObtained);
             }
         }
 
@@ -257,6 +267,9 @@ namespace OuterRelics
             main.LogInfo($"Saved Outer Relics data for {Profile()}");
         }
 
+        /// <summary>
+        /// Creates a new save
+        /// </summary>
         public void NewSave()
         {
             saveData = new OuterRelicsSaveData();
@@ -296,10 +309,16 @@ namespace OuterRelics
             saveData.timer = 0f;
             saveData.startLoop = PlayerData.LoadLoopCount();
             saveData.hintIDsObtained = new List<int>();
+            saveData.hintBodiesObtained = new bool[12];
+            saveData.hintAreasObtained = new bool[12];
+            saveData.hintLocationsObtained = new bool[12];
 
             main.LogSuccess("Created new file info");
         }
 
+        /// <summary>
+        /// Loads the global save data, such as best time
+        /// </summary>
         public void LoadGlobalData()
         {
             globalData = main.ModHelper.Storage.Load<OuterRelicsGlobalData>("SaveData/GlobalData.json");
@@ -311,6 +330,11 @@ namespace OuterRelics
             }
         }
 
+        /// <summary>
+        /// Saves global save data
+        /// </summary>
+        /// <param name="key">The name of the save data entry to write to</param>
+        /// <param name="value">The new value the entry should have</param>
         public void SaveGlobalData(GlobalData key, string value)
         {
             string valueString = value;
@@ -506,19 +530,61 @@ namespace OuterRelics
             return saveData.addonHintsLoaded;
         }
 
+        /// <summary>
+        /// Returns whether the player has seen the popup at the beginning
+        /// </summary>
+        /// <returns></returns>
         public bool GetHasSeenIntro()
         {
             return globalData.hasSeenIntro;
         }
 
+        /// <summary>
+        /// Returns the best time of the player
+        /// </summary>
+        /// <returns></returns>
         public float GetBestTime()
         {
             return globalData.bestTime;
         }
 
+        /// <summary>
+        /// Returnsn whether the player has seen the QSB popup at the beginning
+        /// </summary>
+        /// <returns></returns>
         public bool GetHasSeenQSBIntro()
         {
             return globalData.hasSeenQSBMessage;
+        }
+
+        /// <summary>
+        /// Registers that a hint about a specific body has been found
+        /// </summary>
+        /// <param name="id"></param>
+        public void SaveBodyHint(int id)
+        {
+            saveData.hintBodiesObtained[id] = true;
+            SaveData(false);
+        }
+
+        /// <summary>
+        /// Registers that a hint about a specific area has been found
+        /// </summary>
+        /// <param name="id"></param>
+        public void SaveAreaHint(int id)
+        {
+            saveData.hintAreasObtained[id] = true;
+            SaveData(false);
+        }
+
+        /// <summary>
+        /// Registers that a hint about a specific location has been found
+        /// </summary>
+        /// <param name="id"></param>
+        public void SaveLocationHint(int id)
+        {
+            saveData.hintLocationsObtained[id] = true;
+            SaveData(false);
         }
 
         /// <summary>
