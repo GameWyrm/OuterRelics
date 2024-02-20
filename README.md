@@ -96,12 +96,14 @@ If you run into a bug, or you want to suggest a new feature, [make an issue](htt
 ## Roadmap
 ![Overlooking Chert's Camp](/OuterRelics/Images/OverlookingChertsCamp.png)
 
-Here are the features planned for the future:
+These plans have largely been superceded by the [Archipelago Randomizer Mod](https://github.com/Ixrec/OuterWildsArchipelagoRandomizer). That already has most of these features with more being actively developed.
 
--GOODIES: In addition to finding keys, you can also find goodies in the world! These provide bonuses to your abilities that will last for the duration of the run, such as extra jetpack power or more health.
+~~Here are the features planned for the future:~~
 
--HINT LOGGING: Currently, you'll have to keep your own notes for where keys are, but I plan to eventually use Custom Ship Log Modes to create a menu that keeps track of what hints you have gotten.
+~~-GOODIES: In addition to finding keys, you can also find goodies in the world! These provide bonuses to your abilities that will last for the duration of the run, such as extra jetpack power or more health.~~
 
--METROIDVANIA MODE: Finding keys is fun and all, but what if there were MORE arbitrary blockades in your way? Tornadoes, Quantum Rules, your jetpack, and more randomized!
+~~-HINT LOGGING: Currently, you'll have to keep your own notes for where keys are, but I plan to eventually use Custom Ship Log Modes to create a menu that keeps track of what hints you have gotten.~~
+
+~~-METROIDVANIA MODE: Finding keys is fun and all, but what if there were MORE arbitrary blockades in your way? Tornadoes, Quantum Rules, your jetpack, and more randomized!~~
 
 -ARCHIPELAGO SUPPORT: While it would be cool to add Outer Relics support for the Story Jam mod, I'm actually talking about the cross-game multiworld randomizer system, Archipelago. Other people can find your items, and you can find theirs in Outer Wilds.
