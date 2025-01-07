@@ -1,12 +1,12 @@
 # Outer Relics
-![OUTER_RELICS_LOGO](/OuterRelics/Images/Main%20Logo%20Github.png)
+![OUTER_RELICS_LOGO](OuterRelics/Images/MainLogoGithub.png)
 
 Outer Relics is a mod for Outer Wilds that adds various Nomai Keys to the world which must be collected before the game can be completed.
 
 Like most mods for Outer Wilds, this mod assumes that you have beaten the game before installing and reading this. There will be spoilers within this Readme. As Outer Wilds is best experienced with as few spoilers as possible, I urge you to click off this page and experience the game for yourself first before continuing if you have not already played it. There are no Echoes of the Eye spoilers in this readme.
 
 ## Introduction
-![Ash Twin Project](/OuterRelics/Images/Ash%20Twin%20Project%202.png)
+![Ash Twin Project](OuterRelics/Images/AshTwinProject2.png)
 
 *As tensions and division arose between the Nomai during the construction of the Sun Station, concerns were raised over the security of the Ash Twin Project. While unlikely, it was possible for one to sneak into the Project and attempt to sabotage the Project's most precious component, the Advanced Warp Core. This would force the halting of the Project - and thus prevent the firing of the Sun Station. To prevent this, the ATP was set to lock itself in the event of disaster, and distribute 12 keys required to unlock it to trusted Nomai. But, when disaster did strike, when no Nomai were found, a bug in the system caused the Project to distribute the keys in random locations across the universe...*
 
@@ -15,14 +15,14 @@ Outer Relics adds up to 12 Nomai Keys in the Solar System, placed in random loca
 If this sounds daunting, don't worry! A generous (and configurable) hint system exists to help you out. As you explore the Outer Wilds, you'll find question marks floating around that may tell you where a key can be found.
 
 ## Installation
-![The sun rises over Timber Hearth](/OuterRelics/Images/Timber%20Hearth%20Sunrise.png)
+![The sun rises over Timber Hearth](OuterRelics/Images/TimberHearthSunrise.png)
 
 Recommended: Simply find the mod in Outer Wilds Mod Manager and install it and its dependancies. To uninstall, simply disable the mod.
 
 Manual: Download the latest release from the [releases page](https://github.com/GameWyrm/OuterRelics/releases). After unzipping, drag and drop the folder into %APPDATA%\OuterWildsModManager\OWML\Mods. You will also need to install [Menu Framework](https://github.com/misternebula/MenuFramework). To uninstall, simply remove those files from your mods folder. 
 
 ## How To Play
-![A Key on Timber Hearth](/OuterRelics/Images/Key%20on%20Timber%20Hearth.png)
+![A Key on Timber Hearth](OuterRelics/Images/KeyOnTimberHearth.png)
 
 On the Main Menu, you'll notice a new button: "NEW OUTER RELICS RUN". If you're all right with default settings, you can start, but you should take a look at the mod config regardless. For information about the the configuration, check the [Settings](https://github.com/GameWyrm/OuterRelics/blob/Readme-Update/README.md#Settings) section.
 
@@ -30,7 +30,7 @@ Once you've selected your settings, go back to the Main Menu and click NEW OUTER
 
 To find keys, explore! They give off a loud hum, so you'll know if you're near one. There are twelve in total, and you can see which ones you have or do not have from the pause screen. Once you've found all twelve, a message will appear, informing you that the Ash Twin Project is now unlocked. You know what to do. A run isn't over until you you get to the end!
 
-![Find Nomai Keys to beat the game. Find Hints to locate keys.](/OuterRelics/Images/KeyHintDisplay.png)
+![Find Nomai Keys to beat the game. Find Hints to locate keys.](OuterRelics/Images/KeyHintDisplay.png)
 
 ## Settings
 
@@ -59,7 +59,7 @@ Outer Relics is very customizable. You can tweak quite a few settings to match y
   * DRY MODE: Starting a run generates a spoiler log but does not actually start a run or affect your save file.
 
 ## Compatibility
-![Roasting Marshmallows with Riebeck](/OuterRelics/Images/Marshmallows%20with%20Riebeck.png)
+![Roasting Marshmallows with Riebeck](OuterRelics/Images/MarshmallowsWithRiebeck.png)
 
 Outer Relics is designed to be compatible with any mod, except mods that delete major objects in the base Hearthian Solar System, or mods that make significant changes to the Ash Twin Project.
 
@@ -94,7 +94,7 @@ If you want to create your own addons, check out the [Addon Guide](https://githu
 If you run into a bug, or you want to suggest a new feature, [make an issue](https://github.com/GameWyrm/OuterRelics/issues) for it.
 
 ## Roadmap
-![Overlooking Chert's Camp](/OuterRelics/Images/OverlookingChertsCamp.png)
+![Overlooking Chert's Camp](OuterRelics/Images/OverlookingChertsCamp.png)
 
 These plans have largely been superceded by the [Archipelago Randomizer Mod](https://github.com/Ixrec/OuterWildsArchipelagoRandomizer). That already has most of these features with more being actively developed.
 
