@@ -6,9 +6,6 @@
   "uniqueName": "GameWyrm.OuterRelics",
   "version": "1.0.0",
   "owmlVersion": "2.9.0",
-    "dependencies": [
-        "_nebula.MenuFramework"
-    ],
     "pathsToPreserve": [
       "SaveData",
       "SpoilerLogs"
