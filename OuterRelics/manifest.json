@@ -4,7 +4,7 @@
   "author": "GameWyrm",
   "name": "Outer Relics",
   "uniqueName": "GameWyrm.OuterRelics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "owmlVersion": "2.9.0",
     "pathsToPreserve": [
       "SaveData",
