@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.AccessControl;
 using System.Text.RegularExpressions;
+using OWML.Common.Interfaces.Menus;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -149,12 +150,10 @@ namespace OuterRelics
         //Handles placing indicators
         PlacerManager placer;
         //Pause menu button for selecting group
-        PopupInputMenu groupSelector;
+        IOWMLPopupInputMenu groupSelector;
         //Object that holds the stats in the eye scene
         GameObject statsDisplay;
 
-        //Menu Framework
-        IMenuAPI menuAPI;
         //New Horizons API
         INewHorizons nhAPI;
         //Quantum Space Buddies API
@@ -222,24 +221,21 @@ namespace OuterRelics
             uncollectedMat = assets.LoadAsset<Material>("Uncollected");
 
             //Menu Initialization
-            menuAPI = ModHelper.Interaction.TryGetModApi<IMenuAPI>("_nebula.MenuFramework");
-            LogInfo("Menu API: " + (menuAPI == null ? "NULL" : "FOUND"));
-
             ModHelper.Menus.MainMenu.OnInit += () => StartCoroutine(MainMenuButtons());
             ModHelper.Menus.PauseMenu.OnInit += () =>
             {
                 if (debugMode)
                 {
-                    groupSelector = menuAPI.MakeInputFieldPopup("Select group of locations to place spawn points in within current body. If not found, will create a new group.", "User-Friendly name, i.e. \"Chert's Camp\".", "Change Group", "Cancel");
+                    groupSelector = ModHelper.MenuHelper.PopupMenuManager.CreateInputFieldPopup("Select group of locations to place spawn points in within current body. If not found, will create a new group.", "User-Friendly name, i.e. \"Chert's Camp\".", "Change Group", "Cancel");
                     groupSelector.OnPopupConfirm += ConfirmGroup;
-                    menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: SELECT PLACEMENT GROUP", groupSelector);
-                    PopupMenu confirmHintMode = menuAPI.MakeInfoPopup("Placement mode has been changed", "OK");
+                    ModHelper.MenuHelper.PauseMenuManager.MakeMenuOpenButton("OUTER RELICS: SELECT PLACEMENT GROUP", (Menu)groupSelector, 0, false);
+                    PopupMenu confirmHintMode = ModHelper.MenuHelper.PopupMenuManager.CreateInfoPopup("Placement mode has been changed", "OK");
                     confirmHintMode.OnPopupConfirm += () =>
                     {
                         placer.placeHints = !placer.placeHints;
                         notifManager.AddNotification("PLACEMENT MODE SET TO " + (placer.placeHints ? "HINT MODE" : "INDICATOR MODE"));
                     };
-                    menuAPI.PauseMenu_MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode);
+                    ModHelper.MenuHelper.PauseMenuManager.MakeMenuOpenButton("OUTER RELICS: TOGGLE PLACER MODE", confirmHintMode, 0, false);
                 }
 
                 GameObject itemList = Instantiate(assets.LoadAsset<GameObject>("ItemListCanvas"));
@@ -280,7 +276,7 @@ namespace OuterRelics
 
             if (!saveManager.GetHasSeenIntro())
             {
-                menuAPI.RegisterStartupPopup("Welcome to Outer Relics! Check out the mod config and pick your settings, then select \"New Outer Relics Run\" to begin your search! For more information, check the readme.");
+	            ModHelper.MenuHelper.PopupMenuManager.RegisterStartupPopup("Welcome to Outer Relics! Check out the mod config and pick your settings, then select \"New Outer Relics Run\" to begin your search! For more information, check the readme.");
                 saveManager.SaveGlobalData(GlobalData.HasSeenIntro, true.ToString());
             }
 
@@ -300,7 +296,7 @@ namespace OuterRelics
 
                 if (!saveManager.GetHasSeenQSBIntro())
                 {
-                    menuAPI.RegisterStartupPopup("Quantum Space Buddies detected. If you plan to play with friends, be sure to read the Readme. It is also important that you DISABLE ADDONS in the Outer Relics config for seeds you plan to play with friends.");
+	                ModHelper.MenuHelper.PopupMenuManager.RegisterStartupPopup("Quantum Space Buddies detected. If you plan to play with friends, be sure to read the Readme. It is also important that you DISABLE ADDONS in the Outer Relics config for seeds you plan to play with friends.");
                     saveManager.SaveGlobalData(GlobalData.HasSeenQSBMessage, true.ToString());
                 }
             }
@@ -616,10 +612,11 @@ namespace OuterRelics
         {
             yield return new WaitForEndOfFrame();
 
-            PopupInputMenu seedMenu = menuAPI.MakeInputFieldPopup("Input a seed to generate a new run! Alpha-numeric characters only", "Leave blank for random seed", "Start new run", "Cancel");
-            menuAPI.TitleScreen_MakeMenuOpenButton("NEW OUTER RELICS RUN", 1, seedMenu);
+            var seedMenu = ModHelper.MenuHelper.PopupMenuManager.CreateInputFieldPopup("Input a seed to generate a new run! Alpha-numeric characters only", "Leave blank for random seed", "Start new run", "Cancel");
+            var button = ModHelper.MenuHelper.TitleMenuManager.CreateTitleButton("NEW OUTER RELICS RUN", 1, true);
+            button.OnSubmitAction += () => seedMenu.EnableMenu(true);
 
-            seedMenu.CloseMenuOnOk(false);
+			seedMenu.CloseMenuOnOk(false);
             
 
             seedMenu.OnActivateMenu += () => popupOpenTime = Time.time;

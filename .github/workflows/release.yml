@@ -23,7 +23,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: "actions/checkout@v3"
+              uses: "actions/checkout@v4"
               
             - name: Fetch
               run: git fetch
@@ -54,10 +54,10 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: Checkout
-              uses: "actions/checkout@v3"
+              uses: "actions/checkout@v4"
 
             - name: Setup .NET
-              uses: "actions/setup-dotnet@v3"
+              uses: "actions/setup-dotnet@v4"
 
             - name: Remove .csproj.user
               run: rm ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user
@@ -66,7 +66,7 @@ jobs:
               run: dotnet build -c Release
 
             - name: Upload Artifact
-              uses: "actions/upload-artifact@v3"
+              uses: "actions/upload-artifact@v4"
               with:
                 name: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
                 path: "${{ env.PROJ_NAME }}/bin/Release"
